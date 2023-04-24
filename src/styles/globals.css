@@ -1,0 +1,40 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+  --tw-bg-opacity: 1;
+  --tw-text-opacity: 1;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.input-border-gradient,
+.input-border-gradient {
+  background-image: linear-gradient(268.91deg, #fb3 14.72%, #fff 51.94%, #e300bd 82.34%, #ff006a 94.81%);
+  border-radius: inherit;
+  /* bottom: 0; */
+  content: var(--tw-content);
+  /* left: 0; */
+  /* margin: -0.125rem; */
+  /* position: absolute; */
+  /* right: 0; */
+  /* top: 0; */
+}
+.input-border-gradient:before {
+  z-index: -10;
+}
+.input-border-gradient {
+  background-color: rgb(0 0 0/1);
+}
+:after,:before {
+  --tw-content: 
+}
