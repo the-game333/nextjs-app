@@ -10,7 +10,7 @@ import { gridSpacing } from 'store/constant';
 // const { docco } = dynamic(() => import('react-syntax-highlighter/dist/esm/styles/hljs'), { ssr: false });
 
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { dark } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 
 // =============================|| LANDING - Language PAGE ||============================= //
 const style = dark;
