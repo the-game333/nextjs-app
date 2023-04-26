@@ -8,9 +8,9 @@ import Howtowworks2 from 'components/landingpage/Howtowork2';
 import FullyFeatured from 'components/landingpage/FullyFeatured';
 import BulitCommunity from 'components/landingpage/BulitCommunity';
 import LanguageCodeType from 'components/landingpage/LanguageCodeType';
-import Subscribe from 'components/landingpage/Subscribe';
+import Notification from 'components/landingpage/Notification';
 import Footer from 'components/landingpage/Footer';
-import Customization from 'layout/Customization';
+// import Customization from 'layout/Customization';
 import AppBar from 'ui-component/extended/AppBar';
 import Banner from 'ui-component/extended/Banner';
 import { Box } from '@mui/material';
@@ -88,11 +88,13 @@ const Landing: React.FC = () => (
     <FullyWrapper>
       <LanguageCodeType />
     </FullyWrapper>
-    <SecondWrapper>
-      <Subscribe />
-    </SecondWrapper>
-    <Footer />
-    <Customization />
+
+    <ThirdWrapper>
+      {/* <Subscribe /> */}
+      <Notification />
+      <Footer />
+    </ThirdWrapper>
+    {/* <Customization /> */}
   </>
 );
 

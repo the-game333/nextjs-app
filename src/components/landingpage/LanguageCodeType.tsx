@@ -114,7 +114,7 @@ fun main() {
     )
 } 
   `,
-    `curl -X POST
+        `curl -X POST
   -H "Content-Type: application/json"
   -H "Authorization: ApiKey REPLACE_WITH_API_KEY"
   -d '{
@@ -129,7 +129,7 @@ fun main() {
       "lastName": "Doe",
     }
   }' `,
-    `import (
+        `import (
         "context"
         "fmt"
         novu "github.com/novuhq/go-novu/lib"
@@ -168,7 +168,7 @@ fmt.Println(resp)`
     ]
     return (
         <Container>
-            <Grid container spacing={gridSpacing} alignItems={'center'} gap={"10px"}>
+            <Grid container spacing={gridSpacing} alignItems={'center'} paddingBottom={15} gap={"10px"}>
                 <Grid item md={6} sm={12} sx={{ backgroundColor: "black", borderRadius: "20px" }}>
                     <Grid container gap={"5px"}>
                         <Button variant={selectedLanguge === 0 ? 'contained' : 'outlined'} color={selectedLanguge === 0 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(0)}>node.js</Button>
@@ -217,7 +217,7 @@ fmt.Println(resp)`
                     </Grid>
                 </Grid>
             </Grid>
-            <Divider sx={{ mt: 15 }} />
+            {/* <Divider sx={{ mt: 15, backgroundColor: "transparent" }} /> */}
         </Container>
     );
 };
