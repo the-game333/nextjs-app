@@ -114,7 +114,10 @@ const HeaderPage = () => {
                   width: 400,
                   borderRadius: "10px",
                   padding: "2px",
-                  margin: "auto"
+                  margin: "auto",
+                  [theme.breakpoints.down('md')]: {
+                    width: "100%"
+                  }
                 }}>
                   <Paper
                     component="form"

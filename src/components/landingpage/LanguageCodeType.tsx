@@ -9,14 +9,14 @@ import { a11yDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
 
 
 import { useState } from 'react';
-
+import { useTheme } from '@mui/material/styles';
 // =============================|| LANDING - Language PAGE ||============================= //
 const style = a11yDark;
 
 const LanguageCodeTypePage = () => {
     const [language, setLanguage] = useState("javascript");
     const [selectedLanguge, setSelectedLanguge] = useState(0);
-
+    const theme = useTheme();
     const codeStrings = [
         `import { Novu } from '@novu/node';
 const novu = new Novu(process.env.NOVU_API_KEY);
@@ -168,8 +168,12 @@ fmt.Println(resp)`
     ]
     return (
         <Container>
-            <Grid container spacing={gridSpacing} alignItems={'center'} paddingBottom={15} gap={"10px"}>
-                <Grid item md={6} sm={12} sx={{ backgroundColor: "black", borderRadius: "20px" }}>
+            <Grid container spacing={gridSpacing} alignItems={'center'} paddingBottom={15} gap={"10px"} sx={{
+                [theme.breakpoints.down("sm")]: {
+                    justifyContent: "center"
+                }
+            }}>
+                <Grid item md={6} sm={11} sx={{ backgroundColor: "black", borderRadius: "20px" }}>
                     <Grid container gap={"5px"}>
                         <Button variant={selectedLanguge === 0 ? 'contained' : 'outlined'} color={selectedLanguge === 0 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(0)}>node.js</Button>
                         <Button variant={selectedLanguge === 1 ? 'contained' : 'outlined'} color={selectedLanguge === 1 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(1)}>Ruby</Button>
@@ -179,9 +183,13 @@ fmt.Println(resp)`
                         <Button variant={selectedLanguge === 5 ? 'contained' : 'outlined'} color={selectedLanguge === 5 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(5)}>curl</Button>
                         <Button variant={selectedLanguge === 6 ? 'contained' : 'outlined'} color={selectedLanguge === 6 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(6)}>go</Button>
                     </Grid>
-                    <Grid container sx={{
+                    <Grid item sx={{
                         '& pre': {
-                            backgroundColor: "transparent !important"
+                            backgroundColor: "transparent !important",
+                            width: "100%",
+                            [theme.breakpoints.down("sm")]: {
+                                maxWidth: "300px",
+                            }
                         }
                     }}>
                         <SyntaxHighlighter
