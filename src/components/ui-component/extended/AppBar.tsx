@@ -73,7 +73,7 @@ const AppBar = ({ ...others }) => {
           background: "transparent !important"
         }}>
         <Container>
-          <Toolbar>
+          <Toolbar sx={{padding:"10px"}}>
             <Typography component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
               <Logo />
             </Typography>

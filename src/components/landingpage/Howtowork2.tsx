@@ -1,5 +1,5 @@
 // material-ui
-import { Container, Grid, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 // project imports
 import FadeInWhenVisible from './Animation';
 import { gridSpacing } from 'store/constant';
@@ -26,7 +26,7 @@ const Howtowork2 = () => (
             <FadeInWhenVisible>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={12} sx={{ padding: "2 !important", textAlign: "left" }}>
-                  <EmailIcon sx={{ fontSize: "3rem" }} />
+                  <Box component={'img'} src="/assets/animation/icon-1.gif" width={"30%"} sx={{ marginLeft: "-2%" }} />
                 </Grid>
                 <Grid item xs={12} textAlign={'left'}>
                   <Typography variant="h3">Digest</Typography>
@@ -43,7 +43,7 @@ const Howtowork2 = () => (
             <FadeInWhenVisible>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={12} sx={{ padding: "2 !important", textAlign: "left" }}>
-                  <PersonRoundedIcon sx={{ fontSize: "3rem" }} />
+                  <Box component={'img'} src="/assets/animation/icon-2.gif" width={"30%"} sx={{ marginLeft: "-2%" }} />
                 </Grid>
                 <Grid item xs={12} textAlign={'left'}>
                   <Typography variant="h3">User preferences</Typography>
@@ -60,7 +60,7 @@ const Howtowork2 = () => (
             <FadeInWhenVisible>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={12} sx={{ padding: "2 !important", textAlign: "left" }}>
-                  <CheckCircleRoundedIcon sx={{ fontSize: "3rem" }} />
+                  <Box component={'img'} src="/assets/animation/icon-3.gif" width={"30%"} sx={{ marginLeft: "-2%" }} />
                 </Grid>
                 <Grid item xs={12} textAlign={'left'}>
                   <Typography variant="h3">Priority management</Typography>
@@ -77,7 +77,7 @@ const Howtowork2 = () => (
             <FadeInWhenVisible>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={12} sx={{ padding: "2 !important", textAlign: "left" }}>
-                  <ComputerRoundedIcon sx={{ fontSize: "3rem" }} />
+                  <Box component={'img'} src="/assets/animation/icon-4.gif" width={"30%"} sx={{ marginLeft: "-2%" }} />
                 </Grid>
                 <Grid item xs={12} textAlign={'left'}>
                   <Typography variant="h3">Monitoring</Typography>
@@ -94,7 +94,7 @@ const Howtowork2 = () => (
             <FadeInWhenVisible>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={12} sx={{ padding: "2 !important", textAlign: "left" }}>
-                  <EditRoundedIcon sx={{ fontSize: "3rem" }} />
+                  <Box component={'img'} src="/assets/animation/icon-5.gif" width={"30%"} sx={{ marginLeft: "-2%" }} />
                 </Grid>
                 <Grid item xs={12} textAlign={'left'}>
                   <Typography variant="h3">Content management</Typography>
@@ -111,7 +111,7 @@ const Howtowork2 = () => (
             <FadeInWhenVisible>
               <Grid container spacing={2}>
                 <Grid item xs={12} md={12} sx={{ padding: "2 !important", textAlign: "left" }}>
-                  <WatchLaterRoundedIcon sx={{ fontSize: "3rem" }} />
+                  <Box component={'img'} src="/assets/animation/icon-6.gif" width={"30%"} sx={{ marginLeft: "-2%" }} />
                 </Grid>
                 <Grid item xs={12} textAlign={'left'}>
                   <Typography variant="h3">Timezone awareness</Typography>

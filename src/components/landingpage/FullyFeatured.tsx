@@ -133,7 +133,7 @@ const FullyFeatured = () => {
     <Container>
       <Grid container spacing={gridSpacing} alignItems={'center'}>
         <Grid item md={7} sm={12}>
-          <Box component={'img'} src='/assets/images/fully.png' borderRadius={"20px"} width={"100%"} />
+          <Box component={'img'} src='/assets/animation/fully_featured.gif' borderRadius={"20px"} width={"100%"} />
         </Grid>
         <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={"20px"}>
           <Grid item xs={12} textAlign={'left'}>

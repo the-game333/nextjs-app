@@ -23,7 +23,7 @@ const Logo = () => {
      *
      */
     <Box component={'img'} src='/assets/images/header/logo.png' sx = {{
-      width:"40px"
+      width:"150px"
     }} />
     // <svg width="92" height="32" viewBox="0 0 92 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     //   <path

@@ -21,7 +21,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import BookIcon from '@mui/icons-material/Book';
 
-const logo = '/assets/images/logo.svg';
+const logo = '/assets/images/logo.png';
 const logoDark = '/assets/images/logo-dark.svg';
 const companyLogo = '/assets/images/maintenance/img-ct-logo.png';
 const imageBackground = '/assets/images/maintenance/img-soon-bg.svg';
