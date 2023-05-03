@@ -43,7 +43,7 @@ const BulitCommunityPage = () => {
           </Grid>
         </Grid>
         <Grid item md={8} sm={6}>
-          <Box component={'img'} src={"/assets/images/peoples.webp"} width={"100%"} />
+          <Box component={'img'} src={"/assets/images/peoples.png"} width={"100%"} />
         </Grid>
       </Grid>
       <Divider sx={{ mt: 15 }} />
