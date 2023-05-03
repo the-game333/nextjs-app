@@ -1,5 +1,5 @@
 // material-ui
-import { Button, Container, Divider, Grid, Typography } from '@mui/material';
+import { Box, Button, Container, Divider, Grid, Typography } from '@mui/material';
 
 // project imports
 import { gridSpacing } from 'store/constant';
@@ -184,7 +184,8 @@ fmt.Println(resp)`
                         <Button variant={selectedLanguge === 6 ? 'contained' : 'outlined'} color={selectedLanguge === 6 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(6)}>go</Button>
                     </Grid>
                     <Grid item sx={{
-                        '& pre': {
+                        position: "relative"
+                        , '& pre': {
                             backgroundColor: "transparent !important",
                             width: "100%",
                             [theme.breakpoints.down("sm")]: {
@@ -192,6 +193,19 @@ fmt.Println(resp)`
                             }
                         }
                     }}>
+                        <Box sx={{
+                            position: "absolute",
+                            backgroundImage:`url(/assets/images/landing/background-blur.jpg)`,
+                            backgroundSize:"100% 100%",
+                            borderRadius:"15px",
+                            // opacity:"0.95",
+                            width: "95%",
+                            height: "99%",
+                            display:"flex"
+                        }}>
+                        <Typography variant="h1" fontSize={"3rem"} margin={"auto"} sx={{
+                        }}>Upcoming</Typography>
+                        </Box>
                         <SyntaxHighlighter
                             language={language}
                             style={style}

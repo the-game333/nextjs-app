@@ -22,22 +22,7 @@ const Notification = () => (
                     Ready to send your first notification?
                 </Typography>
             </Grid>
-            <Grid container zIndex={2}>
-                <Grid item md={6} xs={12} display={"flex"} flexDirection={"column"} alignItems={"center"} p={3}>
-                    <CardBox sx={{ backgroundColor: "#141414c4" }} >
-                        <Stack direction={"column"} gap={"10px"}>
-                            <Typography variant="h2" component="div">
-                                Self-Hosted
-                            </Typography>
-                            <Typography variant="h4" component="div">
-                                Run locally with docker-compose
-                            </Typography>
-                        </Stack>
-                        <Button variant='outlined' color='inherit' sx={{ width: "60%", margin: "auto" }} size='medium'>
-                            Read Docs
-                        </Button>
-                    </CardBox>
-                </Grid>
+            <Grid container zIndex={2} justifyContent={"center"}>
                 <Grid item md={6} xs={12} display={"flex"} flexDirection={"column"} alignItems={"center"} p={3}>
                     <CardBox sx={{ background: "linear-gradient(180deg,transparent 54.67%,rgba(0,0,0,.3)),linear-gradient(257.22deg,#fb3 21.09%,#e300bd 55.18%,#ff006a 92.64%)" }} >
                         <Stack direction={"column"} gap={"10px"}>

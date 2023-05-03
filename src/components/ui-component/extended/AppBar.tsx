@@ -78,17 +78,8 @@ const AppBar = ({ ...others }) => {
               <Logo />
             </Typography>
             <Stack direction="row" sx={{ display: { xs: 'none', sm: 'block' } }} spacing={2}>
-              <Button color="inherit" component={Link} href="#" target="_blank">
-                Contributors
-              </Button>
               <Button color="inherit" component={Link} href="login" target="_blank">
                 Pricing
-              </Button>
-              <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
-                Blog
-              </Button>
-              <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
-                Documentation
               </Button>
               <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
                 Careers

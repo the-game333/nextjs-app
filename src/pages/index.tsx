@@ -23,7 +23,7 @@ const HeaderWrapper = styled('div')(({ theme }) => ({
 
 const SecondWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
-  paddingTop: 350,
+  paddingTop: 10,
   background: "black",
   [theme.breakpoints.down('md')]: {
     paddingTop: 60
@@ -50,7 +50,7 @@ const FullyWrapper = styled('div')(({ theme }) => ({
 const Landing: React.FC = () => (
   <>
     <HeaderWrapper id="home">
-      <Banner />
+      {/* <Banner /> */}
       <AppBar />
       <Box component={'img'} src='/assets/images/header/background.svg'
         sx={{
