@@ -12,7 +12,7 @@ import Notification from 'components/landingpage/Notification';
 import Footer from 'components/landingpage/Footer';
 // import Customization from 'layout/Customization';
 import AppBar from 'ui-component/extended/AppBar';
-import Banner from 'ui-component/extended/Banner';
+// import Banner from 'ui-component/extended/Banner';
 import { Box } from '@mui/material';
 
 const HeaderWrapper = styled('div')(({ theme }) => ({

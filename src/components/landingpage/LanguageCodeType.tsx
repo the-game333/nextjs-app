@@ -171,9 +171,9 @@ fmt.Println(resp)`
             <Grid container spacing={gridSpacing} alignItems={'center'} paddingBottom={15} gap={"10px"} sx={{
                 [theme.breakpoints.down("sm")]: {
                     justifyContent: "center"
-                }
+                },
             }}>
-                <Grid item md={6} sm={11} sx={{ backgroundColor: "black", borderRadius: "20px" }}>
+                <Grid item md={6} sm={11} sx={{ backgroundColor: "black", borderRadius: "20px", paddingLeft: "10px !important",paddingRight: "10px !important"}}>
                     <Grid container gap={"5px"}>
                         <Button variant={selectedLanguge === 0 ? 'contained' : 'outlined'} color={selectedLanguge === 0 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(0)}>node.js</Button>
                         <Button variant={selectedLanguge === 1 ? 'contained' : 'outlined'} color={selectedLanguge === 1 ? "primary" : 'inherit'} sx={{ borderRadius: "20px" }} onClick={() => setSelectedLanguge(1)}>Ruby</Button>
@@ -195,16 +195,16 @@ fmt.Println(resp)`
                     }}>
                         <Box sx={{
                             position: "absolute",
-                            backgroundImage:`url(/assets/images/landing/background-blur.jpg)`,
-                            backgroundSize:"100% 100%",
-                            borderRadius:"15px",
+                            backgroundImage: `url(/assets/images/landing/background-blur.jpg)`,
+                            backgroundSize: "100% 100%",
+                            borderRadius: "15px",
                             // opacity:"0.95",
-                            width: "95%",
+                            width: "100%",
                             height: "99%",
-                            display:"flex"
+                            display: "flex"
                         }}>
-                        <Typography variant="h1" fontSize={"3rem"} margin={"auto"} sx={{
-                        }}>Upcoming</Typography>
+                            <Typography variant="h1" fontSize={"3rem"} margin={"auto"} sx={{
+                            }}>Upcoming</Typography>
                         </Box>
                         <SyntaxHighlighter
                             language={language}

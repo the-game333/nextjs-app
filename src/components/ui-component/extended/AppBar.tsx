@@ -78,7 +78,9 @@ const AppBar = ({ ...others }) => {
               <Logo />
             </Typography>
             <Stack direction="row" sx={{ display: { xs: 'none', sm: 'block' } }} spacing={2}>
-              <Button color="inherit" component={Link} href="login" target="_blank">
+              <Button color="inherit" component={Link} href="price" 
+              // target="_blank"
+              >
                 Pricing
               </Button>
               <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
@@ -108,7 +110,9 @@ const AppBar = ({ ...others }) => {
                   </Typography>
                 </Stack>
               </Button>
-              <Button color="inherit" sx={{ color: "black",height:"43px" }} variant='contained' component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
+              <Button color="inherit" sx={{ color: "black",height:"43px" }} variant='contained' component={Link} href="/auth/login"
+              //  target="_blank"
+               >
                 get started
               </Button>
             </Stack>
