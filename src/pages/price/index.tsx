@@ -316,5 +316,6 @@ const Price = () => {
     </>
   );
 };
-Price.Layout = 'authGuard';
+// Price.Layout = 'authGuard';
+Price.Layout = 'infraLayout';
 export default Price;

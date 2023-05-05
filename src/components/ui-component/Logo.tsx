@@ -1,6 +1,7 @@
 // material-ui
 import { Box } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
+import { useRouter } from 'next/router';
 
 /**
  * if you want to use image instead of <svg> uncomment following.
@@ -14,6 +15,7 @@ import { useTheme } from '@mui/material/styles';
 
 const Logo = () => {
   const theme = useTheme();
+  const router = useRouter();
 
   return (
     /**
@@ -22,8 +24,9 @@ const Logo = () => {
      * <img src={theme.palette.mode === 'dark' ? logoDark : logo} alt="Berry" width="100" />
      *
      */
-    <Box component={'img'} src='/assets/images/header/logo.png' sx = {{
-      width:"150px"
+    <Box component={'img'} onClick={() => router.push('/')} src='/assets/images/header/logo.png' sx={{
+      width: "150px",
+      cursor: "pointer"
     }} />
     // <svg width="92" height="32" viewBox="0 0 92 32" fill="none" xmlns="http://www.w3.org/2000/svg">
     //   <path

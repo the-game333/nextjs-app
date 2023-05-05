@@ -182,7 +182,7 @@ export interface FormInputProps {
 
 export type HandleFunction = (i: string, s: string) => Promise<void>;
 
-export type LayoutType = 'authGuard' | 'guestGuard' | 'minimalLayout';
+export type LayoutType = 'authGuard' | 'guestGuard' | 'minimalLayout' | 'infraLayout';
 /** ---- Common Functions types ---- */
 
 export type StringBoolFunc = (s: string) => boolean;

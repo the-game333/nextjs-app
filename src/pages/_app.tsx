@@ -22,6 +22,7 @@ import Snackbar from 'ui-component/extended/Snackbar';
 import MainLayout from 'layout/MainLayout';
 import GuestGuard from 'layout/GuestGuard';
 import MinimalLayout from 'layout/MinimalLayout';
+import InfraLayout from 'layout/InfraLayout';
 import { LayoutType } from 'types';
 const Noop: React.FC = ({ children }) => {
   return <> {children} </>;
@@ -39,6 +40,10 @@ function MyApp({ Component, pageProps }: AppProps & { Component: { Layout: Layou
     case 'minimalLayout':
       Layout = MinimalLayout;
       break;
+    case 'infraLayout':
+      Layout = InfraLayout;
+      break;
+
     default:
       Layout = Noop;
   }

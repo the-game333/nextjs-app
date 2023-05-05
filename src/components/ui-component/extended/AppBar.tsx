@@ -17,13 +17,18 @@ import {
   Stack,
   Toolbar,
   Typography,
-  useScrollTrigger
+  useScrollTrigger,
+  Grid,
+  Card, CardContent
 } from '@mui/material';
 import Divider from '@mui/material/Divider';
+import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
+import { styled } from '@mui/material/styles';
 
 // project imports
 import Logo from '../Logo';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import TooltipButton from 'components/customers/tooltip';
 
 // assets
 import { IconBook, IconCreditCard, IconDashboard, IconHome2 } from '@tabler/icons';
@@ -54,6 +59,16 @@ function ElevationScroll({ children, window }: ElevationScrollProps) {
   });
 }
 
+const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
+  <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+  [`& .${tooltipClasses.tooltip}`]: {
+    backgroundColor: theme.palette.dark.dark,
+    color: 'rgba(0, 0, 0, 0.87)',
+    fontSize: theme.typography.pxToRem(12),
+    minWidth: 800
+  },
+}));
 // ==============================|| MINIMAL LAYOUT APP BAR ||============================== //
 
 const AppBar = ({ ...others }) => {
@@ -73,18 +88,71 @@ const AppBar = ({ ...others }) => {
           background: "transparent !important"
         }}>
         <Container>
-          <Toolbar sx={{padding:"10px"}}>
+          <Toolbar sx={{ padding: "10px" }}>
             <Typography component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
               <Logo />
             </Typography>
             <Stack direction="row" sx={{ display: { xs: 'none', sm: 'block' } }} spacing={2}>
-              <Button color="inherit" component={Link} href="price" 
+              <Button color="inherit" component={Link} href="price"
               // target="_blank"
               >
                 Pricing
               </Button>
               <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
                 Careers
+              </Button>
+              <HtmlTooltip
+                title={
+                  // <React.Fragment>
+                  <Card>
+                    <CardContent>
+                      <Grid container spacing={2}>
+                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
+                          <Typography>GENERATIVE AI</Typography>
+                          <TooltipButton text={"Open AI"} image={"open-ai"} />
+                          <TooltipButton text={"Core:here"} image={"co_here"} />
+                          <TooltipButton text={"Adept"} image={"adept"} />
+                          <TooltipButton text={"CarperAI"} image={"carperai"} />
+                          <TooltipButton text={"Stability AI"} image={"stability-ai"} />
+                        </Grid>
+                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
+                          <Typography>U.S. GOVERNMENT</Typography>
+                          <TooltipButton text={"US Army"} image={"usarmy"} />
+                          <TooltipButton text={"US Airforce"} image={"airforce"} />
+                          <TooltipButton text={"Defense Innovation Unit"} image={"defense-innovation-unit"} />
+                          <TooltipButton text={"CDAO"} image={"cdao"} />
+                          <TooltipButton text={"Oshkosh"} image={"oshkosh"} />
+                        </Grid>
+                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
+                          <Typography>ENTERPRISES</Typography>
+                          <TooltipButton text={"Microsoft"} image={"microsoft"} />
+                          <TooltipButton text={"Meta"} image={"meta"} />
+                          <TooltipButton text={"GM"} image={"gm"} />
+                          <TooltipButton text={"Toyota"} image={"toyota"} />
+                          <TooltipButton text={"Etsy"} image={"etsy"} />
+                        </Grid>
+                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
+                          <Typography>STARTUPS</Typography>
+                          <TooltipButton text={"Brex"} image={"brex"} />
+                          <TooltipButton text={"Flexport"} image={"flexport"} />
+                          <TooltipButton text={"Instacart"} image={"instacart"} />
+                          <TooltipButton text={"Faire"} image={"faire"} />
+                          <TooltipButton text={"OpenSea"} image={"opensea"} />
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                  // </React.Fragment>
+                }
+                arrow
+              >
+                {/* <Button>HTML</Button> */}
+                <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
+                  Customers
+                </Button>
+              </HtmlTooltip>
+              <Button color="inherit" component={Link} href="/contact-us">
+                Contact Us
               </Button>
               <Button
                 component={Link}
@@ -110,9 +178,9 @@ const AppBar = ({ ...others }) => {
                   </Typography>
                 </Stack>
               </Button>
-              <Button color="inherit" sx={{ color: "black",height:"43px" }} variant='contained' component={Link} href="/auth/login"
+              <Button color="inherit" sx={{ color: "black", height: "43px" }} variant='contained' component={Link} href="/auth/login"
               //  target="_blank"
-               >
+              >
                 get started
               </Button>
             </Stack>
@@ -167,8 +235,8 @@ const AppBar = ({ ...others }) => {
             </Box>
           </Toolbar>
         </Container>
-      </MuiAppBar>
-    </ElevationScroll>
+      </MuiAppBar >
+    </ElevationScroll >
   );
 };
 

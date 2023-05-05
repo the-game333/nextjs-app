@@ -69,7 +69,7 @@ const HeaderPage = () => {
                     lineHeight: 1.4,
                   }}
                 >
-                  The open-source notification infrastructure for developers
+                  Power Automotive AI With Your Data
                 </Typography>
               </motion.div>
             </Grid>
@@ -164,7 +164,7 @@ const HeaderPage = () => {
                   spacing={2}
                   sx={{ [theme.breakpoints.down('lg')]: { display: 'inline-flex', width: 'auto' } }}
                 >
-                    <Box component={'img'} src='/assets/animation/Main Comp.gif' width={"100%"} />
+                  <Box component={'img'} src='/assets/animation/Main Comp.gif' width={"100%"} />
                 </Grid>
               </motion.div>
             </Grid>

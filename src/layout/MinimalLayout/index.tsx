@@ -7,7 +7,6 @@ import { FC } from 'react';
 const MinimalLayout: FC = ({ children }) => (
   <>
     {children}
-    {/* <Customization /> */}
   </>
 );
 
