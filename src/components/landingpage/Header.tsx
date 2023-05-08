@@ -51,8 +51,18 @@ const HeaderPage = () => {
       >
         <Grid item xs={12} md={12} sx={{ zIndex: 2 }}>
           <Grid container spacing={gridSpacing} sx={{ pr: 10, [theme.breakpoints.down('lg')]: { pr: 0, textAlign: 'center' } }}>
-            <Grid item xs={12} textAlign={"center"}>
-              <motion.div
+            <Grid item xs={12} display={"flex"} gap={2} justifyContent={"center"}>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                  fontWeight: 700,
+                  lineHeight: 1.4,
+                }}
+              >
+                Power
+              </Typography>
+              {/* <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
                 animate={{ opacity: 1, translateY: 0 }}
                 transition={{
@@ -60,18 +70,64 @@ const HeaderPage = () => {
                   stiffness: 150,
                   damping: 30
                 }}
-              >
+              > */}
+
+              <div className="cubespinner">
                 <Typography
                   variant="h5"
+                  className="face1"
                   sx={{
                     fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
+                    background: "linear-gradient(90.13deg,#d1aad7 .11%,#c88bc4 25.06%,#7b8fdd 50%,#86bff2 74.8%,#bbdef2 99.76%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent"
                   }}
                 >
-                  Power Automotive AI With Your Data
+                  Automotive AI
                 </Typography>
-              </motion.div>
+                <Typography
+                  variant="h5"
+                  className="face2"
+                  sx={{
+                    fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                    fontWeight: 700,
+                    lineHeight: 1.4,
+                    background: "linear-gradient(90.13deg,#d1aad7 .11%,#c88bc4 25.06%,#7b8fdd 50%,#86bff2 74.8%,#bbdef2 99.76%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent"
+                  }}
+                >
+                  Generative AI
+
+                </Typography>
+                <Typography
+                  variant="h5"
+                  className="face3"
+                  sx={{
+                    fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                    fontWeight: 700,
+                    lineHeight: 1.4,
+                    background: "linear-gradient(90.13deg,#d1aad7 .11%,#c88bc4 25.06%,#7b8fdd 50%,#86bff2 74.8%,#bbdef2 99.76%)",
+                    WebkitBackgroundClip: "text",
+                    WebkitTextFillColor: "transparent"
+                  }}
+                >
+                  Government AI
+                </Typography>
+              </div>
+              {/* </motion.div> */}
+              <Typography
+                variant="h5"
+                sx={{
+                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                  fontWeight: 700,
+                  lineHeight: 1.4,
+                }}
+              >
+                With Your Data
+              </Typography>
             </Grid>
             <Grid item xs={12} textAlign={"center"}>
               <motion.div

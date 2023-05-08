@@ -49,10 +49,10 @@ const FooterPage = () => {
       <FooterWrapper>
         <Container>
           <Grid container spacing={gridSpacing} zIndex={2}>
-            <Grid item xs={12} sm={2} textAlign={"left"}>
+            <Grid item xs={12} sm={2.4} textAlign={"left"}>
               <Logo />
             </Grid>
-            <Grid item xs={6} sm={2} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
               <Grid item>
                 <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
                   Blog
@@ -84,7 +84,7 @@ const FooterPage = () => {
                 </FooterLink>
               </Grid>
             </Grid>
-            <Grid item xs={6} sm={2} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
               <Grid item>
                 <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
                   Documentation
@@ -121,7 +121,7 @@ const FooterPage = () => {
                 </FooterLink>
               </Grid>
             </Grid>
-            <Grid item xs={6} sm={2} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
               <Grid item>
                 <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
                   Disocord
@@ -139,7 +139,7 @@ const FooterPage = () => {
               </Grid>
               {/* </Grid> */}
             </Grid>
-            <Grid item xs={6} sm={2} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
               <Grid item>
                 <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
                   Terms of Use
@@ -161,12 +161,11 @@ const FooterPage = () => {
                 </FooterLink>
               </Grid>
             </Grid>
-            <Grid item xs={12} sm={2} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+            {/* <Grid item xs={12} sm={2} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
               <Grid item>
                 <Button
                   component={Link}
                   href="https://github.com/novuhq/novu"
-                  // disableElevation
                   variant="outlined"
                   sx={{
                     borderColor: "white", color: "white", '&:hover': {
@@ -189,8 +188,7 @@ const FooterPage = () => {
                   </Stack>
                 </Button>
               </Grid>
-              {/* </Grid> */}
-            </Grid>
+            </Grid> */}
           </Grid>
           {theme.breakpoints.down('md') && <br />}
           <Grid container justifyContent={"space-between"}>

@@ -3,13 +3,48 @@
  */
 
 import axios from 'axios';
+import { BASE_URL } from 'config';
+import { store } from 'store';
+// import { Logout } from 'store/reducers/auth';
+// import snackbar from './snackbar';
 
 const axiosServices = axios.create();
 
-// interceptor for http
+axiosServices.interceptors.request.use(
+  (config: any) => {
+    console.log(BASE_URL, ":::BASE_URL");
+    config.baseURL = BASE_URL;
+    // const state = store.getState() as any;
+    // const accessToken = state.auth.token;
+    // if (accessToken) {
+    //   config.headers.authorization = accessToken;
+    // }
+    return config;
+  },
+  (error) => Promise.reject(error)
+);
+
 axiosServices.interceptors.response.use(
   (response) => response,
-  (error) => Promise.reject((error.response && error.response.data) || 'Wrong Services')
+  (error) => {
+    const { response } = error;
+    if (response && response.status === 500) {
+      console.log('500 error');
+      // snackbar(response.data, 'error');
+    } else if (response && response.status === 401) {
+      console.log('401 error');
+      // store.dispatch(Logout({}));
+    } else if (response && response.status === 413) {
+      console.log('413 error');
+      // snackbar(response.data, 'error');
+    } else if (response && response.status === 429) {
+      console.log('429 error');
+      // snackbar(response.data, 'error');
+    } else {
+      console.log(response, "response");
+    }
+    return Promise.reject(error);
+  }
 );
 
 export default axiosServices;

@@ -21,13 +21,11 @@ import {
   Grid,
   Card, CardContent
 } from '@mui/material';
-import Divider from '@mui/material/Divider';
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
 
 // project imports
 import Logo from '../Logo';
-import GitHubIcon from '@mui/icons-material/GitHub';
 import TooltipButton from 'components/customers/tooltip';
 
 // assets
@@ -63,7 +61,7 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
   [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: theme.palette.dark.dark,
+    backgroundColor: "transparent",
     color: 'rgba(0, 0, 0, 0.87)',
     fontSize: theme.typography.pxToRem(12),
     minWidth: 800
@@ -72,6 +70,7 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
 // ==============================|| MINIMAL LAYOUT APP BAR ||============================== //
 
 const AppBar = ({ ...others }) => {
+  console.log(others, "others")
   const [drawerToggle, setDrawerToggle] = React.useState<boolean>(false);
   /** Method called on multiple components with different event types */
   const drawerToggler = (open: boolean) => (event: any) => {
@@ -85,8 +84,9 @@ const AppBar = ({ ...others }) => {
     <ElevationScroll {...others}>
       <MuiAppBar position='sticky'
         sx={{
-          background: "transparent !important"
-        }}>
+          background: others.background+" !important"
+        }}
+      >
         <Container>
           <Toolbar sx={{ padding: "10px" }}>
             <Typography component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
@@ -98,13 +98,9 @@ const AppBar = ({ ...others }) => {
               >
                 Pricing
               </Button>
-              <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
-                Careers
-              </Button>
               <HtmlTooltip
                 title={
-                  // <React.Fragment>
-                  <Card>
+                  <Card sx={{ boxShadow: "0px 1px 4px 0px black" }}>
                     <CardContent>
                       <Grid container spacing={2}>
                         <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
@@ -142,19 +138,17 @@ const AppBar = ({ ...others }) => {
                       </Grid>
                     </CardContent>
                   </Card>
-                  // </React.Fragment>
                 }
                 arrow
               >
-                {/* <Button>HTML</Button> */}
-                <Button color="inherit" component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
+                <Button color="inherit" sx={{ "&:hover": { backgroundColor: "transparent" } }} component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
                   Customers
                 </Button>
               </HtmlTooltip>
               <Button color="inherit" component={Link} href="/contact-us">
                 Contact Us
               </Button>
-              <Button
+              {/* <Button
                 component={Link}
                 href="https://github.com/novuhq/novu"
                 // disableElevation
@@ -177,11 +171,14 @@ const AppBar = ({ ...others }) => {
                     20.1K
                   </Typography>
                 </Stack>
+              </Button> */}
+              <Button color="inherit" component={Link} href="/auth/login">
+                Login
               </Button>
-              <Button color="inherit" sx={{ color: "black", height: "43px" }} variant='contained' component={Link} href="/auth/login"
+              <Button color="inherit" sx={{ color: "black", height: "43px" }} variant='contained' component={Link} href="/waitlist"
               //  target="_blank"
               >
-                get started
+                Join Waitlist
               </Button>
             </Stack>
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>

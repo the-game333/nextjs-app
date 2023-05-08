@@ -25,6 +25,14 @@ export const AWS_API = {
   poolId: 'us-east-1_AOfOTXLvD',
   appClientId: '3eau2osduslvb7vks3vsh9t7b0'
 };
+const urls = {
+  SERVER_URL:
+    process.env.NODE_ENV === "development"
+      ? "http://localhost:2000"
+      : "https://",
+};
+
+export const BASE_URL = urls.SERVER_URL;
 
 // basename: only at build time to set, and Don't add '/' at end off BASENAME for breadcrumbs, also Don't put only '/' use blank('') instead,
 // like '/berry-material-react/react/default'

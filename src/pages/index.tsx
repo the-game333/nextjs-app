@@ -51,7 +51,7 @@ const Landing: React.FC = () => (
   <>
     <HeaderWrapper id="home">
       {/* <Banner /> */}
-      <AppBar />
+      <AppBar background={"transparent"} />
       <Box component={'img'} src='/assets/images/header/background.svg'
         sx={{
           position: "absolute",
