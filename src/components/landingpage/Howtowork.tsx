@@ -27,11 +27,6 @@ const HowtowworksPage = () => {
                 How it works?
               </Typography>
             </Grid>
-            <Grid item xs={12}>
-              <Typography variant="body2">
-                READ QUICK START GUIDE
-              </Typography>
-            </Grid>
           </Grid>
         </Grid>
         <Grid item xs={12}>
@@ -40,15 +35,32 @@ const HowtowworksPage = () => {
               <FadeInWhenVisible>
                 <SubCard>
                   <Grid container justifyContent="center" spacing={2}>
-                    <Grid item xs={12} md={12} sx={{ padding: "0 !important" }}>
-                      <Box component={'img'} src={"/assets/images/cards/create-template.svg"} width={"100%"} />
+                    <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
+                      <Box component={'img'} src={'/assets/images/cards/create-app.png'} width={'100%'} />
                     </Grid>
                     <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="h3">Create template</Typography>
+                      <Typography variant="h3">Create AI App with One-Click</Typography>
+                    </Grid>
+                    <Grid item xs={12} textAlign={'left'}>
+                      <Typography variant="body2">Select Use Case, Choose AI Model</Typography>
+                    </Grid>
+                  </Grid>
+                </SubCard>
+              </FadeInWhenVisible>
+            </Grid>
+            <Grid item md={4} sm={6}>
+              <FadeInWhenVisible>
+                <SubCard>
+                  <Grid container justifyContent="center" spacing={2}>
+                    <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
+                      <Box component={'img'} src={'/assets/images/cards/connect-data.png'} width={'100%'} />
+                    </Grid>
+                    <Grid item xs={12} textAlign={'left'}>
+                      <Typography variant="h3">Connect Data</Typography>
                     </Grid>
                     <Grid item xs={12} textAlign={'left'}>
                       <Typography variant="body2">
-                        Select channels, add content with  ( dynamic )  syntax, and custom rules to control the delivery of notifications.
+                        Train AI Model with your Data with supported formats as PDFs, CSVs, TEXTs, URLs, Google Drive, DropBox, etc.
                       </Typography>
                     </Grid>
                   </Grid>
@@ -59,35 +71,14 @@ const HowtowworksPage = () => {
               <FadeInWhenVisible>
                 <SubCard>
                   <Grid container justifyContent="center" spacing={2}>
-                    <Grid item xs={12} md={12} sx={{ padding: "0 !important" }}>
-                      <Box component={'img'} src={"/assets/images/cards/connect-provider.svg"} width={"100%"} />
+                    <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
+                      <Box component={'img'} src={'/assets/images/cards/deploy-app.png'} width={'100%'} />
                     </Grid>
                     <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="h3">Connect providers</Typography>
+                      <Typography variant="h3">Deploy App</Typography>
                     </Grid>
                     <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="body2">
-                        Use a built in collection of popular providers - Sendgrid, Mailgun, Twilio and many more. Add API key and you're ready to go.
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </SubCard>
-              </FadeInWhenVisible>
-            </Grid>
-            <Grid item md={4} sm={6}>
-              <FadeInWhenVisible>
-                <SubCard>
-                  <Grid container justifyContent="center" spacing={2}>
-                    <Grid item xs={12} md={12} sx={{ padding: "0 !important" }}>
-                      <Box component={'img'} src={"/assets/images/cards/add-trigger.svg"} width={"100%"} />
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="h3">Add trigger</Typography>
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="body2">
-                        Send an event trigger using one of our community built SDK's, and we will handle it from there.
-                      </Typography>
+                      <Typography variant="body2">Deploy App or Integrate in your App with Production-Ready APIS</Typography>
                     </Grid>
                   </Grid>
                 </SubCard>
@@ -96,7 +87,7 @@ const HowtowworksPage = () => {
           </Grid>
         </Grid>
       </Grid>
-      <Divider sx={{mt:15}} />
+      <Divider sx={{ mt: 15 }} />
     </Container>
   );
 };
