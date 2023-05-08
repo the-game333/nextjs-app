@@ -1,6 +1,6 @@
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import {  Badge, Box, Container, Grid, IconButton, Divider, Typography } from '@mui/material';
+import { Badge, Box, Container, Grid, IconButton, Divider, Typography } from '@mui/material';
 
 // project imports
 import { gridSpacing } from 'store/constant';
@@ -13,37 +13,27 @@ import { FaDiscord } from 'react-icons/fa';
 const BulitCommunityPage = () => {
   return (
     <Container>
-      <Grid container spacing={gridSpacing} alignItems={"center"}>
-        <Grid item md={4} sm={6} display={"flex"} flexDirection={"column"} gap={"20px"}>
+      <Grid container spacing={gridSpacing} alignItems={'center'}>
+        <Grid item md={4} sm={6} display={'flex'} flexDirection={'column'} gap={'20px'}>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h1" fontSize={"3rem"}>Built by the community</Typography>
+            <Typography variant="h1" fontSize={'3rem'}>
+              Simplify <br />
+              AI Development with <span style={{ color: 'rgb(253, 224, 71)' }}> InfraHive</span>
+            </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
             <Typography variant="h4" fontWeight={'unset'}>
-              Open-source is in the heart of Novu. We keep all the source code and work publicly available. Join our community driven project with over <b>3,000+ developers</b> from around the world who contribute code and help building the modern notification infrastructure.
+              At InfraHive, we're committed to empowering innovation through our state-of-the-art AI infrastructure. Our platform provides
+              businesses and individuals with everything they need to build powerful AI apps with ease. From API integration to full-stack
+              infrastructure, we've got you covered.
+              <br />
+              <br />
+              Experience the future of AI with InfraHive and take your capabilities to the next level.
             </Typography>
-          </Grid>
-          <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h4" fontWeight={'unset'} color={"white"}>
-              Join the community:
-            </Typography>
-          </Grid>
-          <Grid item xs={12} textAlign={'left'} display={"flex"} gap={"15px"}>
-            <Badge badgeContent={"20k"} color="primary" sx={{ color: "black" }}>
-              <IconButton sx={{ borderRadius: "20px", background: "#090909", width: "80px", height: "80px" }} size='large'>
-                <GitHubIcon sx={{ fontSize: "3rem" }} />
-              </IconButton>
-            </Badge>
-            <IconButton sx={{ borderRadius: "20px", background: "#090909", width: "80px", height: "80px" }} size='large'>
-              <FaDiscord style={{ fontSize: "3rem" }} />
-            </IconButton>
-            <IconButton sx={{ borderRadius: "20px", background: "#090909", width: "80px", height: "80px" }} size='large'>
-              <TwitterIcon sx={{ fontSize: "3rem" }} />
-            </IconButton>
           </Grid>
         </Grid>
         <Grid item md={8} sm={6}>
-          <Box component={'img'} src={"/assets/images/peoples.png"} width={"100%"} />
+          <Box component={'img'} src={'/assets/images/peoples.png'} width={'100%'} />
         </Grid>
       </Grid>
       <Divider sx={{ mt: 15 }} />

@@ -1,9 +1,21 @@
 import Image from 'next/image';
 import React from 'react';
 import Link from 'Link';
+import { useState } from 'react';
+import axios from 'axios';
+import CircularProgress from '@mui/material/CircularProgress';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
+import Stack from '@mui/material/Stack';
+import Snackbar from '@mui/material/Snackbar';
+import MuiAlert, { AlertProps } from '@mui/material/Alert';
+
+// alert
+const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+  return <MuiAlert elevation={6} ref={ref} variant="filled" {...props} />;
+});
+
 import {
   Button,
   Box,
@@ -32,31 +44,39 @@ const mailImg = '/assets/images/landing/img-contact-mail.svg';
 // select options
 const currencies = [
   {
-    value: '1',
+    value: '<$1000',
     label: 'Below $1000'
   },
   {
-    value: '2',
+    value: '$1000-$5000',
     label: '$1000 - $5000'
   },
   {
-    value: '3',
-    label: 'Not specified'
+    value: '>$5000',
+    label: 'Above $5000'
   }
 ];
 
 const sizes = [
   {
-    value: '1',
-    label: '1 - 5'
+    value: 'Generative-AI',
+    label: 'Generative AI'
   },
   {
-    value: '2',
-    label: '5 - 10'
+    value: 'Government-AI',
+    label: 'Government AI'
   },
   {
-    value: '3',
-    label: '10+'
+    value: 'Enterprise-AI',
+    label: 'Enterprise AI'
+  },
+  {
+    value: 'Education-AI',
+    label: 'Education AI'
+  },
+  {
+    value: 'others',
+    label: 'Others'
   }
 ];
 
@@ -65,14 +85,87 @@ const sizes = [
 const ContactCard = () => {
   const theme = useTheme();
 
-  const [budget, setBudget] = React.useState(1);
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setBudget(Number(event.target?.value!));
+  const [messageSent, setMessageSent] = useState({
+    message: '',
+    type: 'success',
+    open: false,
+    loading: false
+  });
+
+  const handleClick = () => {
+    setMessageSent({ ...messageSent, open: true });
   };
 
-  const [size, setSize] = React.useState(1);
-  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setSize(Number(event.target?.value!));
+  const handleClose = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    setMessageSent({ ...messageSent, open: false });
+  };
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: '',
+    company_name: '',
+    budget: '',
+    project: 'Generative AI'
+  });
+  const submitHandler = async (e: any) => {
+    e.preventDefault();
+    setMessageSent({ ...messageSent, loading: true });
+    //send mail
+    // console.log("form input :  ", form)
+    try {
+      const msg = `Name : ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany Name: ${formData.company_name}\nBudget: ${formData.budget}\nProject: ${formData.project}\nMessage: ${formData.message}`;
+      // console.log(msg);
+      const resp = await axios.post('https://api.aivinya.com/admin/api/customemail', {
+        email: 'omeshankar@gmail.com',
+        body: msg
+      });
+      console.log(resp);
+      // set alert
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        company_name: '',
+        budget: '',
+        project: 'Generative AI'
+      });
+      setMessageSent({ ...messageSent, message: 'Message sent', open: true, loading: false, type: 'success' });
+      setTimeout(() => {
+        setMessageSent({ ...messageSent, message: '', loading: false, open: false, type: '' });
+      }, 5000);
+    } catch (err) {
+      console.log('Error : ', err);
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: '',
+        company_name: '',
+        budget: '',
+        project: 'Generative AI'
+      });
+      setMessageSent({
+        ...messageSent,
+        message: 'Oops. Please try again later',
+        loading: false,
+        open: false,
+        type: 'error'
+      });
+
+      setTimeout(() => {
+        setMessageSent({ ...messageSent, message: '', loading: false, type: '' });
+      }, 5000);
+    }
+  };
+  const InputHandler = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    e.preventDefault();
+    // console.log(e.target.value);
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   return (
@@ -85,29 +178,61 @@ const ContactCard = () => {
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
                     <InputLabel>Name</InputLabel>
-                    <OutlinedInput type="text" label="Name" />
+                    <OutlinedInput required={true} type="text" name="name" label="Name" value={formData.name} onChange={InputHandler} />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
                     <InputLabel>Company Name</InputLabel>
-                    <OutlinedInput type="text" label="Company Name" />
+                    <OutlinedInput
+                      type="text"
+                      required={true}
+                      name="company_name"
+                      value={formData.company_name}
+                      label="Company Name"
+                      onChange={InputHandler}
+                    />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
                     <InputLabel>Email Address</InputLabel>
-                    <OutlinedInput type="text" label="Email Address" />
+                    <OutlinedInput
+                      required={true}
+                      type="text"
+                      name="email"
+                      value={formData.email}
+                      label="Email Address"
+                      onChange={InputHandler}
+                    />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
-                    <NumberFormat format="+1 (###) ###-####" mask="_" fullWidth customInput={TextField} label="Phone Number" />
+                    <NumberFormat
+                      name="phone"
+                      mask="_"
+                      placeholder="+91-12345667890"
+                      fullWidth
+                      value={formData.phone}
+                      customInput={TextField}
+                      label="Phone Number"
+                      onChange={InputHandler}
+                    />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth sx={{ textAlign: 'left' }}>
-                    <TextField id="outlined-select-Size" select fullWidth label="Company Size" value={size} onChange={handleChange1}>
+                    <TextField
+                      id="outlined-select-Size"
+                      name="project"
+                      select
+                      required={true}
+                      fullWidth
+                      label="AI Development"
+                      value={formData.project}
+                      onChange={InputHandler}
+                    >
                       {sizes.map((option, index) => (
                         <MenuItem key={index} value={option.value}>
                           {option.label}
@@ -118,7 +243,16 @@ const ContactCard = () => {
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth sx={{ textAlign: 'left' }}>
-                    <TextField id="outlined-select-budget" select fullWidth label="Project Budget" value={budget} onChange={handleChange}>
+                    <TextField
+                      id="outlined-select-budget"
+                      select
+                      name="budget"
+                      required={true}
+                      fullWidth
+                      label="Project Budget"
+                      value={formData.budget}
+                      onChange={InputHandler}
+                    >
                       {currencies.map((option, index) => (
                         <MenuItem key={index} value={option.value}>
                           {option.label}
@@ -129,7 +263,17 @@ const ContactCard = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <FormControl fullWidth>
-                    <TextField id="outlined-multiline-static1" placeholder="Message" multiline fullWidth rows={4} defaultValue="" />
+                    <TextField
+                      id="outlined-multiline-static1"
+                      placeholder="Please describe your project in detail (data, volume, timeline, budget, etc)"
+                      multiline
+                      fullWidth
+                      required={true}
+                      name="message"
+                      rows={4}
+                      value={formData.message}
+                      onChange={InputHandler}
+                    />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12}>
@@ -137,19 +281,34 @@ const ContactCard = () => {
                     <Grid item sm zeroMinWidth>
                       <Typography align="left" variant="body2">
                         By submitting this, you agree to the
-                        <Typography variant="subtitle1" component={Link} href="#" color="primary" sx={{ mx: 0.5 }}>
+                        <Typography variant="subtitle1" component={Link} href="/privacy-policy" color="primary" sx={{ mx: 0.5 }}>
                           Privacy Policy
                         </Typography>
                         and
-                        <Typography variant="subtitle1" component={Link} href="#" color="primary" sx={{ ml: 0.5 }}>
-                          Cookie Policy
+                        <Typography variant="subtitle1" component={Link} href="/terms" color="primary" sx={{ ml: 0.5 }}>
+                          Terms
                         </Typography>
                       </Typography>
                     </Grid>
                     <Grid item>
                       <AnimateButton>
-                        <Button variant="contained" color="secondary">
-                          Get Started
+                        <Button
+                          onClick={submitHandler}
+                          disabled={formData.message === '' ? true : false}
+                          variant="contained"
+                          color="secondary"
+                        >
+                          {messageSent.loading ? <CircularProgress color="inherit" /> : 'Submit'}
+                          <Snackbar
+                            anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+                            open={messageSent.open}
+                            autoHideDuration={6000}
+                            onClose={handleClose}
+                          >
+                            <Alert onClose={handleClose} severity={messageSent.type} sx={{ width: '100%' }}>
+                              {messageSent.message}
+                            </Alert>
+                          </Snackbar>
                         </Button>
                       </AnimateButton>
                     </Grid>
