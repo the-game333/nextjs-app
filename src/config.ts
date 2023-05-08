@@ -26,10 +26,7 @@ export const AWS_API = {
   appClientId: '3eau2osduslvb7vks3vsh9t7b0'
 };
 const urls = {
-  SERVER_URL:
-    process.env.NODE_ENV === "development"
-      ? "http://localhost:2000"
-      : "https://",
+  SERVER_URL: process.env.NODE_ENV === 'development' ? 'http://localhost:2000' : 'https://'
 };
 
 export const BASE_URL = urls.SERVER_URL;
@@ -39,6 +36,8 @@ export const BASE_URL = urls.SERVER_URL;
 export const BASE_PATH = '';
 
 export const DASHBOARD_PATH = '/dashboard/default';
+
+export const HOME_PATH = '/';
 
 const config: ConfigProps = {
   fontFamily: `'Roboto', sans-serif`,

@@ -23,22 +23,21 @@ const HeaderImage = styled('img')(({ theme }) => ({
   }
 }));
 
-
 // ==============================|| LANDING - HEADER PAGE ||============================== //
 
 const HeaderPage = () => {
   const theme = useTheme();
-  const [text, setText] = useState("COPY");
+  const [text, setText] = useState('COPY');
   const copy = () => {
-    navigator.clipboard.writeText("npx novu init");
-    setText("COPIED!");
+    navigator.clipboard.writeText('npx novu init');
+    setText('COPIED!');
     setTimeout(() => {
       reasync();
     }, 1500);
-  }
+  };
   const reasync = () => {
-    setText("COPY");
-  }
+    setText('COPY');
+  };
   return (
     <Container>
       <Grid
@@ -51,27 +50,17 @@ const HeaderPage = () => {
       >
         <Grid item xs={12} md={12} sx={{ zIndex: 2 }}>
           <Grid container spacing={gridSpacing} sx={{ pr: 10, [theme.breakpoints.down('lg')]: { pr: 0, textAlign: 'center' } }}>
-            <Grid item xs={12} display={"flex"} gap={2} justifyContent={"center"}>
+            <Grid item xs={12} display={'flex'} gap={2} justifyContent={'center'}>
               <Typography
                 variant="h5"
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
                   fontWeight: 700,
-                  lineHeight: 1.4,
+                  lineHeight: 1.4
                 }}
               >
-                Power
+                Build
               </Typography>
-              {/* <motion.div
-                initial={{ opacity: 0, translateY: 550 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 30
-                }}
-              > */}
-
               <div className="cubespinner">
                 <Typography
                   variant="h5"
@@ -80,12 +69,12 @@ const HeaderPage = () => {
                     fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
-                    background: "linear-gradient(90.13deg,#d1aad7 .11%,#c88bc4 25.06%,#7b8fdd 50%,#86bff2 74.8%,#bbdef2 99.76%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent"
+                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
                   }}
                 >
-                  Automotive AI
+                  Generative AI
                 </Typography>
                 <Typography
                   variant="h5"
@@ -93,15 +82,15 @@ const HeaderPage = () => {
                   sx={{
                     fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
                     fontWeight: 700,
-                    lineHeight: 1.4,
-                    background: "linear-gradient(90.13deg,#d1aad7 .11%,#c88bc4 25.06%,#7b8fdd 50%,#86bff2 74.8%,#bbdef2 99.76%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent"
+                    lineHeight: 1.0,
+                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
                   }}
                 >
-                  Generative AI
-
+                  Enterprise AI
                 </Typography>
+
                 <Typography
                   variant="h5"
                   className="face3"
@@ -109,9 +98,9 @@ const HeaderPage = () => {
                     fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
-                    background: "linear-gradient(90.13deg,#d1aad7 .11%,#c88bc4 25.06%,#7b8fdd 50%,#86bff2 74.8%,#bbdef2 99.76%)",
-                    WebkitBackgroundClip: "text",
-                    WebkitTextFillColor: "transparent"
+                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent'
                   }}
                 >
                   Government AI
@@ -123,13 +112,13 @@ const HeaderPage = () => {
                 sx={{
                   fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
                   fontWeight: 700,
-                  lineHeight: 1.4,
+                  lineHeight: 1.4
                 }}
               >
                 With Your Data
               </Typography>
             </Grid>
-            <Grid item xs={12} textAlign={"center"}>
+            <Grid item xs={12} textAlign={'center'}>
               <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
                 animate={{ opacity: 1, translateY: 0 }}
@@ -150,11 +139,13 @@ const HeaderPage = () => {
                     lineHeight: 1.4
                   }}
                 >
-                  Simple components and APIs for managing all communication channels in one place: Email, SMS, Direct, and Push
+                  Build powerful AI apps with ease using InfraHive's state-of-the-art infrastructure and cutting-edge AI technologies.
                 </Typography>
               </motion.div>
             </Grid>
-            <Grid item xs={12} sx={{ my: 3.25 }} textAlign={"center"}>
+            <br />
+            <br />
+            {/* <Grid item xs={12} sx={{ my: 3.25 }} textAlign={'center'}>
               <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
                 animate={{ opacity: 1, translateY: 0 }}
@@ -165,44 +156,49 @@ const HeaderPage = () => {
                   delay: 0.4
                 }}
               >
-                <Box sx={{
-                  backgroundImage: "linear-gradient(268.91deg, #fb3 14.72%, #fff 51.94%, #e300bd 82.34%, #ff006a 94.81%)",
-                  width: 400,
-                  borderRadius: "10px",
-                  padding: "2px",
-                  margin: "auto",
-                  [theme.breakpoints.down('md')]: {
-                    width: "100%"
-                  }
-                }}>
+                <Box
+                  sx={{
+                    backgroundImage: 'linear-gradient(268.91deg, #fb3 14.72%, #fff 51.94%, #e300bd 82.34%, #ff006a 94.81%)',
+                    width: 400,
+                    borderRadius: '10px',
+                    padding: '2px',
+                    margin: 'auto',
+                    [theme.breakpoints.down('md')]: {
+                      width: '100%'
+                    }
+                  }}
+                >
                   <Paper
                     component="form"
                     sx={{
                       p: '8px 8px',
                       display: 'flex',
                       alignItems: 'center',
-                      width: "100%",
+                      width: '100%'
                     }}
                   >
                     <NavigateNextIcon />
                     <InputBase
-                      sx={{ ml: 1, flex: 1, fontSize: "1.2rem" }}
+                      sx={{ ml: 1, flex: 1, fontSize: '1.2rem' }}
                       // inputProps={{ 'aria-label': 'search google maps' }}
-                      defaultValue={"npx novu init"}
+                      defaultValue={'npx novu init'}
                       readOnly
                     />
-                    <Button variant='contained' color='inherit' type="button" sx={{ p: '10px', color: "black" }} aria-label="copy"
+                    <Button
+                      variant="contained"
+                      color="inherit"
+                      type="button"
+                      sx={{ p: '10px', color: 'black' }}
+                      aria-label="copy"
                       onClick={copy}
                     >
                       {text}
                     </Button>
                   </Paper>
                 </Box>
-                {/* <TextField aria-readonly
-                  >
-                </TextField> */}
+                
               </motion.div>
-            </Grid>
+            </Grid> */}
             <Grid item xs={12}>
               <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
@@ -220,7 +216,7 @@ const HeaderPage = () => {
                   spacing={2}
                   sx={{ [theme.breakpoints.down('lg')]: { display: 'inline-flex', width: 'auto' } }}
                 >
-                  <Box component={'img'} src='/assets/animation/Main Comp.gif' width={"100%"} />
+                  <Box component={'img'} src="/assets/animation/Main Comp.gif" width={'100%'} />
                 </Grid>
               </motion.div>
             </Grid>

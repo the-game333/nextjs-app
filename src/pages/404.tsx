@@ -79,7 +79,7 @@ const Error = () => {
               />
               <CardMediaBlock src={imageText} title="Slider 1 image" />
               <CardMediaBlue src={imageBlue} title="Slider 2 image" />
-              <CardMediaPurple src={imagePurple} title="Slider 3 image" />
+              <CardMediaPurple src={imagePurple} title="Page Not Found" />
             </CardMediaWrapper>
           </Grid>
           <Grid item xs={12}>
