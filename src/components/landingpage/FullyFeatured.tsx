@@ -133,20 +133,22 @@ const FullyFeatured = () => {
     <Container>
       <Grid container spacing={gridSpacing} alignItems={'center'}>
         <Grid item md={7} sm={12}>
-          <Box component={'img'} src='/assets/animation/fully_featured.gif' borderRadius={"20px"} width={"100%"} />
+          <Box component={'img'} src="/assets/animation/fully_featured.gif" borderRadius={'20px'} width={'100%'} />
         </Grid>
-        <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={"20px"}>
+        <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h1" fontSize={"3rem"}>Fully featured notification center in minutes</Typography>
-          </Grid>
-          <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h2" fontWeight={'unset'}>
-              Build a real-time notification center using our embeddable components or connect your custom UI with our notification feed API.
+            <Typography variant="h1" fontSize={'3rem'}>
+              Full Stack AI Infrastructure, Production Ready APIs
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
-            <Button variant='outlined' color='inherit' size='large'>
-              Read Docs
+            <Typography variant="h2" fontWeight={'unset'}>
+              Build AI Apps on advanced LLMs and integrate with in your domain
+            </Typography>
+          </Grid>
+          <Grid item xs={12} textAlign={'left'}>
+            <Button variant="outlined" color="inherit" size="large">
+              Get Started
             </Button>
           </Grid>
         </Grid>

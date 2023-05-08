@@ -18,7 +18,7 @@ import Logo from '../ui-component/Logo';
 const FooterWrapper = styled('div')(({ theme }) => ({
   padding: '35px 0',
   color: '#fff',
-  background: "black",
+  background: 'black',
   [theme.breakpoints.down('md')]: {
     textAlign: 'center'
   }
@@ -39,7 +39,6 @@ const FooterLink = styled(Link)({
   }
 });
 
-
 // ==============================|| LANDING - FOOTER PAGE ||============================== //
 
 const FooterPage = () => {
@@ -49,79 +48,64 @@ const FooterPage = () => {
       <FooterWrapper>
         <Container>
           <Grid container spacing={gridSpacing} zIndex={2}>
-            <Grid item xs={12} sm={2.4} textAlign={"left"}>
+            <Grid item xs={12} sm={2.4} textAlign={'left'}>
               <Logo />
             </Grid>
-            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+            <Grid item xs={6} sm={2.4} textAlign={'left'} display={'flex'} flexDirection={'column'} gap={'10px'}>
               <Grid item>
-                <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
-                  Blog
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="https://www.facebook.com/codedthemes" target="_blank" underline="hover">
-                  Contributors
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
-                  Podcast
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
+                <FooterLink href="/price" target="" underline="hover">
                   Pricing
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
-                  Careers
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
-                  2022 Events
-                </FooterLink>
-              </Grid>
-            </Grid>
-            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
-              <Grid item>
-                <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
-                  Documentation
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="https://www.facebook.com/codedthemes" target="_blank" underline="hover">
-                  Providers
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
-                  Handbook
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
+                <FooterLink href="/contact-us" target="" underline="hover">
                   Contact Us
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
-                  Press Kit
+                <FooterLink href="privacy-policy" target="" underline="hover">
+                  Privacy Policy
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
-                  Polishing Season
+                <FooterLink href="/terms" target="" underline="hover">
+                  Terms
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="https://twitter.com/codedthemes" target="_blank" underline="hover">
-                  Notifications Directory
+                <FooterLink href="/contact-us" target="" underline="hover">
+                  Careers
+                </FooterLink>
+              </Grid>
+              <Grid item>
+                <FooterLink href="#" target="" underline="hover">
+                  Blogs
                 </FooterLink>
               </Grid>
             </Grid>
-            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+            <Grid item xs={6} sm={2.4} textAlign={'left'} display={'flex'} flexDirection={'column'} gap={'10px'}>
+              <Grid item>
+                <FooterLink href="/contact-us" target="" underline="hover">
+                  Government AI
+                </FooterLink>
+              </Grid>
+              <Grid item>
+                <FooterLink href="/contact-us" target="" underline="hover">
+                  Enterprise AI
+                </FooterLink>
+              </Grid>
+              <Grid item>
+                <FooterLink href="/contact-us" target="" underline="hover">
+                  Consumer AI
+                </FooterLink>
+              </Grid>
+              <Grid item>
+                <FooterLink href="/contact-us" target="" underline="hover">
+                  Education AI
+                </FooterLink>
+              </Grid>
+            </Grid>
+            {/* <Grid item xs={6} sm={2.4} textAlign={'left'} display={'flex'} flexDirection={'column'} gap={'10px'}>
               <Grid item>
                 <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
                   Disocord
@@ -137,9 +121,9 @@ const FooterPage = () => {
                   Github
                 </FooterLink>
               </Grid>
-              {/* </Grid> */}
-            </Grid>
-            <Grid item xs={6} sm={2.4} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
+              
+            </Grid> */}
+            {/* <Grid item xs={6} sm={2.4} textAlign={'left'} display={'flex'} flexDirection={'column'} gap={'10px'}>
               <Grid item>
                 <FooterLink href="https://blog.berrydashboard.io/" target="_blank" underline="hover">
                   Terms of Use
@@ -160,7 +144,7 @@ const FooterPage = () => {
                   Status Page
                 </FooterLink>
               </Grid>
-            </Grid>
+            </Grid> */}
             {/* <Grid item xs={12} sm={2} textAlign={"left"} display={"flex"} flexDirection={"column"} gap={"10px"}>
               <Grid item>
                 <Button
@@ -191,13 +175,17 @@ const FooterPage = () => {
             </Grid> */}
           </Grid>
           {theme.breakpoints.down('md') && <br />}
-          <Grid container justifyContent={"space-between"}>
+          <Grid container justifyContent={'space-between'}>
             <Grid item>
-              <Typography color={"grey !important"} component={"div"}>Ⓒ {new Date().getFullYear()} AI</Typography>
+              <Typography color={'grey !important'} component={'div'}>
+                Ⓒ {new Date().getFullYear()} Aivinya Inc.
+              </Typography>
             </Grid>
-            <Grid item>
-              <Typography color={"grey !important"} component={"div"}>Design made by Pixel Point</Typography>
-            </Grid>
+            {/* <Grid item>
+              <Typography color={'grey !important'} component={'div'}>
+                Design made by Pixel Point
+              </Typography>
+            </Grid> */}
           </Grid>
         </Container>
       </FooterWrapper>
