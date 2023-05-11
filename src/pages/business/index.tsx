@@ -5,6 +5,11 @@ import Intro from 'components/business/Intro';
 import Features from 'components/business/Features';
 import GetDemo from 'components/business/GetDemo';
 import Create from 'components/business/Create';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+library.add(fas)
+
 const index = () => {
   return (
     <div>
