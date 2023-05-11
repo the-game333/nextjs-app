@@ -7,6 +7,9 @@ import GetDemo from 'components/business/GetDemo';
 import Create from 'components/business/Create';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
+import PricingComp from 'components/business/PricingComp';
+import Notification from 'components/landingpage/Notification';
+import FooterPage from 'components/landingpage/Footer';
 
 library.add(fas)
 
@@ -27,6 +30,11 @@ const index = () => {
       <Features />
       <GetDemo />
       <Create />
+      <PricingComp />
+      <div className='mt-48'>
+      <Notification />
+      <FooterPage />
+      </div>
     </div>
   )
 }
