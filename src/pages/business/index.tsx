@@ -4,6 +4,7 @@ import { Box } from '@mui/material';
 import Intro from 'components/business/Intro';
 import Features from 'components/business/Features';
 import GetDemo from 'components/business/GetDemo';
+import Create from 'components/business/Create';
 const index = () => {
   return (
     <div>
@@ -20,6 +21,7 @@ const index = () => {
       <Intro />
       <Features />
       <GetDemo />
+      <Create />
     </div>
   )
 }
