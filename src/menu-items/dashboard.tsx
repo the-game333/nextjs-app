@@ -34,7 +34,7 @@ const dashboard: DashboardMenuProps = {
   children: [
     {
       id: 'default',
-      title: <FormattedMessage id="default" />,
+      title: <FormattedMessage id="Explore" />,
       type: 'item',
       url: '/dashboard/default',
       icon: icons.IconDashboard,
@@ -42,7 +42,7 @@ const dashboard: DashboardMenuProps = {
     },
     {
       id: 'analytics',
-      title: <FormattedMessage id="analytics" />,
+      title: <FormattedMessage id="Data" />,
       type: 'item',
       url: '/dashboard/analytics',
       icon: icons.IconDeviceAnalytics,
