@@ -14,10 +14,10 @@ const perks: string[] = [
 const PricingComp = () => {
   return (
     <div className="h-full pt-38 text-center text-white ">
-      <h2 className="text-4xl font-semibold mt-24 ml-4">Try for free and see how AI can work for you</h2>
+      <h2 className="text-3xl lg:text-4xl font-semibold mt-24 lg:ml-4">Try for free and see how AI can work for you</h2>
 
       {/* Pricing Card */}
-      <div className="p-6 text-left max-w-xl mx-auto bg-grey rounded-xl mt-20">
+      <div className="p-6 text-left max-w-xl mx-4 md:mx-auto bg-grey rounded-xl mt-20">
         <img src="https://uploads-ssl.webflow.com/5f23b456c81e6bebb921e9cb/6315e2a30cc3cf2cba3aabe8_plan3.svg" height={48} />
         <p className="text-2xl ">Enterprise</p>
         <p className="opacity-75 text-lg -mt-1">For content teams looking for personalized, on-brand storytelling.</p>

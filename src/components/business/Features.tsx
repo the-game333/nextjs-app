@@ -35,8 +35,8 @@ const FeaturesData:FeaturesDataType[] = [
 
 const Features = () => {
   return (
-    <div className="text-center pt-16 text-white">
-      <h2 className="text-4xl font-semibold mt-12">
+    <div className="text-center pt-16 text-white px-4 md:px-0">
+      <h2 className="text-3xl lg:text-4xl font-semibold mt-12">
         Write as a team, in one voice
       </h2>
       <p className="mt-6 font-light text-white opacity-60 mx-auto text-xl text-center max-w-3xl">
@@ -45,7 +45,7 @@ const Features = () => {
         writer.
       </p>
 
-      <div className="mt-24 flex flex-col gap-32">
+      <div className="mt-24 flex flex-col gap-12 md:gap-24 lg:gap-32">
         {FeaturesData.map((feat, index) => (
           
             <FeaturesCard

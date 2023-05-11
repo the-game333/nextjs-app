@@ -9,7 +9,8 @@ module.exports = {
       "grey": "#1d2939" ,
       "dark-blue": '#3A00B7',
       "black": "#000000",
-      "btn-blue": "#5148d7"
+      "btn-blue": "#5148d7",
+      "infra-yellow": "#eab308"
     },
     boxShadow: {
       'custom': '0 0 10px rgba(66,24,209,.2)',

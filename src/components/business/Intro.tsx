@@ -3,8 +3,8 @@ import React from 'react'
 
 const Intro = () => {
   return (
-    <div className="text-center pt-16 pb-24 text-white">
-      <h1 className="text-6xl font-bold ">Generative AI, tailored to your business</h1>
+    <div className="text-center pt-16 pb-12 md:pb-24 text-white px-4 md:px-0">
+      <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold ">Generative AI, tailored to your business</h1>
       <p className="text-xl mt-8">Train AI on your own data to create on-brand content at scale.</p>
       <div className="flex justify-center mt-12 gap-2 text-md">
         <Button
@@ -17,16 +17,16 @@ const Intro = () => {
               >
                 Request demo
               </Button>
-        <Button
-                color="inherit"
-                sx={{ backgroundColor: '#5148d7', height: '55px', width: '140px' }}
-                variant="contained"
-                component={Link}
-                href="/contact-us"
-                 target="_blank"
-              >
-                Get started
-              </Button>
+              <Button
+                    sx={{
+                      color: '#FFFFFF',
+                      fontWeight: 'bold',
+                      background: 'rgb(234, 179, 8)',width: '140px'
+                    }}
+                    variant="contained"
+                  >
+                    Get Started
+                  </Button>
       </div>
     </div>
   )

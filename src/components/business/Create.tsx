@@ -57,18 +57,18 @@ const Create = () => {
         setImageURL(CreateData[isActive].image)
     }, [isActive])
   return (
-    <div className="max-w-[70%] mx-auto">
+    <div className="max-w-full md:max-w-[85%] lg:max-w-[70%] mx-4 md:mx-auto">
       <h2 className="text-4xl font-semibold mt-24 ml-4">
         See what your team can create
       </h2>
 
-      <div className="mt-12 grid grid-cols-2 ">
-        <div className="flex flex-col gap-2 max-w-md ml-auto mr-24">
+      <div className="mt-12 grid grid-cols-1 lg:grid-cols-2 ">
+        <div className="flex flex-col gap-2 md:max-w-xl lg:max-w-md mx-auto lg:ml-auto  md:mr-24">
             {CreateData.map((card,index) => (
             <CreateCard heading={card.heading} desc={card.desc} icon={card.icon} index={index} isActive={isActive} setIsActive={setIsActive} imageURL={imageURL} setImageURL={setImageURL} />
             ))}
         </div>
-        <div>
+        <div className="hidden lg:block">
                 <img src={imageURL} height={600} width={600}/>
         </div>
 
