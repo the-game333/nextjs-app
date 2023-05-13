@@ -55,5 +55,5 @@ const Dashboard = () => {
     </Grid>
   );
 };
-Dashboard.Layout = 'authGuard';
+Dashboard.Layout = 'dashboardLayout';
 export default Dashboard;

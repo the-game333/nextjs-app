@@ -20,6 +20,7 @@ import { FirebaseProvider as AuthProvider } from '../contexts/FirebaseContext';
 // import { AWSCognitoProvider as AuthProvider } from 'contexts/AWSCognitoContext';
 import Snackbar from 'ui-component/extended/Snackbar';
 import MainLayout from 'layout/MainLayout';
+import DashboardLayout from 'layout/MainLayout/forDashboard';
 import GuestGuard from 'layout/GuestGuard';
 import MinimalLayout from 'layout/MinimalLayout';
 import InfraLayout from 'layout/InfraLayout';
@@ -43,7 +44,9 @@ function MyApp({ Component, pageProps }: AppProps & { Component: { Layout: Layou
     case 'infraLayout':
       Layout = InfraLayout;
       break;
-
+    case 'dashboardLayout':
+      Layout = DashboardLayout;
+      break;
     default:
       Layout = Noop;
   }

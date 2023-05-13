@@ -14,6 +14,8 @@ import Footer from 'components/landingpage/Footer';
 import AppBar from 'ui-component/extended/AppBar';
 // import Banner from 'ui-component/extended/Banner';
 import { Box } from '@mui/material';
+import useConfig from 'hooks/useConfig';
+import { useEffect } from 'react';
 
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
@@ -47,55 +49,60 @@ const FullyWrapper = styled('div')(({ theme }) => ({
 
 // =============================|| LANDING MAIN ||============================= //
 
-const Landing: React.FC = () => (
-  <>
-    <HeaderWrapper id="home">
-      {/* <Banner /> */}
-      <AppBar background={"transparent"} />
-      <Box component={'img'} src='/assets/images/header/background.svg'
-        sx={{
-          position: "absolute",
-          top: "40px",
-          maxWidth: "100%",
-          zIndex: 1,
-          width: "100%"
-        }}
-      />
-      <Header />
-    </HeaderWrapper>
-    <SecondWrapper>
-      <Howtowworks />
-    </SecondWrapper>
-    <ThirdWrapper>
-      <Box component={'img'} src='/assets/images/header/background.svg'
-        sx={{
-          position: "absolute",
-          top: "0",
-          maxWidth: "100%",
-          zIndex: 1,
-          height: "700px",
-          width: "100%"
-        }}
-      />
-      <Howtowworks2 />
-    </ThirdWrapper>
-    <FullyWrapper>
-      <FullyFeatured />
-    </FullyWrapper>
-    <FullyWrapper>
-      <BulitCommunity />
-    </FullyWrapper>
-    <FullyWrapper>
-      <LanguageCodeType />
-    </FullyWrapper>
+const Landing: React.FC = () => {
+  const { onChangeMenuType } = useConfig();
+  useEffect(() => {
+    onChangeMenuType('dark');
+  }, [])
+  return (
+    <>
+      <HeaderWrapper id="home">
+        {/* <Banner /> */}
+        <AppBar background={"transparent"} />
+        <Box component={'img'} src='/assets/images/header/background.svg'
+          sx={{
+            position: "absolute",
+            top: "40px",
+            maxWidth: "100%",
+            zIndex: 1,
+            width: "100%"
+          }}
+        />
+        <Header />
+      </HeaderWrapper>
+      <SecondWrapper>
+        <Howtowworks />
+      </SecondWrapper>
+      <ThirdWrapper>
+        <Box component={'img'} src='/assets/images/header/background.svg'
+          sx={{
+            position: "absolute",
+            top: "0",
+            maxWidth: "100%",
+            zIndex: 1,
+            height: "700px",
+            width: "100%"
+          }}
+        />
+        <Howtowworks2 />
+      </ThirdWrapper>
+      <FullyWrapper>
+        <FullyFeatured />
+      </FullyWrapper>
+      <FullyWrapper>
+        <BulitCommunity />
+      </FullyWrapper>
+      <FullyWrapper>
+        <LanguageCodeType />
+      </FullyWrapper>
 
-    <ThirdWrapper>
-      {/* <Subscribe /> */}
-      <Notification />
-      <Footer />
-    </ThirdWrapper>
-    {/* <Customization /> */}
-  </>
-);
+      <ThirdWrapper>
+        {/* <Subscribe /> */}
+        <Notification />
+        <Footer />
+      </ThirdWrapper>
+      {/* <Customization /> */}
+    </>)
+};
 
 export default Landing;
