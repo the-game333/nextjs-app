@@ -19,7 +19,8 @@ import {
   Typography,
   useScrollTrigger,
   Grid,
-  Card, CardContent
+  Card,
+  CardContent
 } from '@mui/material';
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
@@ -57,20 +58,20 @@ function ElevationScroll({ children, window }: ElevationScrollProps) {
   });
 }
 
-const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
-  <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-  [`& .${tooltipClasses.tooltip}`]: {
-    backgroundColor: "transparent",
-    color: 'rgba(0, 0, 0, 0.87)',
-    fontSize: theme.typography.pxToRem(12),
-    minWidth: 800
-  },
-}));
+const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {...props} classes={{ popper: className }} />)(
+  ({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+      backgroundColor: 'transparent',
+      color: 'rgba(0, 0, 0, 0.87)',
+      fontSize: theme.typography.pxToRem(12),
+      minWidth: 800
+    }
+  })
+);
 // ==============================|| MINIMAL LAYOUT APP BAR ||============================== //
 
 const AppBar = ({ ...others }) => {
-  console.log(others, "others")
+  console.log(others, 'others');
   const [drawerToggle, setDrawerToggle] = React.useState<boolean>(false);
   /** Method called on multiple components with different event types */
   const drawerToggler = (open: boolean) => (event: any) => {
@@ -82,71 +83,74 @@ const AppBar = ({ ...others }) => {
 
   return (
     <ElevationScroll {...others}>
-      <MuiAppBar position='sticky'
+      <MuiAppBar
+        position="sticky"
         sx={{
-          background: others.background+" !important"
+          background: others.background + ' !important'
         }}
       >
         <Container>
-          <Toolbar sx={{ padding: "10px" }}>
+          <Toolbar sx={{ padding: '10px' }}>
             <Typography component="div" sx={{ flexGrow: 1, textAlign: 'left' }}>
               <Logo />
             </Typography>
             <Stack direction="row" sx={{ display: { xs: 'none', sm: 'block' } }} spacing={2}>
-              <Button color="inherit" component={Link} href="price"
-              // target="_blank"
+              {/* <Button
+                color="inherit"
+                component={Link}
+                href="price"
+                // target="_blank"
               >
                 Pricing
-              </Button>
+              </Button> */}
               <HtmlTooltip
                 title={
-                  <Card sx={{ boxShadow: "0px 1px 4px 0px black" }}>
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
                     <CardContent>
                       <Grid container spacing={2}>
-                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>GENERATIVE AI</Typography>
-                          <TooltipButton text={"Open AI"} image={"open-ai"} />
-                          <TooltipButton text={"Core:here"} image={"co_here"} />
-                          <TooltipButton text={"Adept"} image={"adept"} />
-                          <TooltipButton text={"CarperAI"} image={"carperai"} />
-                          <TooltipButton text={"Stability AI"} image={"stability-ai"} />
+                          <TooltipButton text={'Open AI'} image={'openai'} />
+                          <TooltipButton text={'Anthropic'} image={'anthropic'} />
+                          <TooltipButton text={'Co:here'} image={'cohere'} />
+                          <TooltipButton text={'Stability AI'} image={'stability'} />
                         </Grid>
-                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
-                          <Typography>U.S. GOVERNMENT</Typography>
-                          <TooltipButton text={"US Army"} image={"usarmy"} />
-                          <TooltipButton text={"US Airforce"} image={"airforce"} />
-                          <TooltipButton text={"Defense Innovation Unit"} image={"defense-innovation-unit"} />
-                          <TooltipButton text={"CDAO"} image={"cdao"} />
-                          <TooltipButton text={"Oshkosh"} image={"oshkosh"} />
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>GOVERNMENT</Typography>
+                          <TooltipButton text={'Forest Department, GoR'} image={'fdgor'} />
                         </Grid>
-                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
-                          <Typography>ENTERPRISES</Typography>
-                          <TooltipButton text={"Microsoft"} image={"microsoft"} />
-                          <TooltipButton text={"Meta"} image={"meta"} />
-                          <TooltipButton text={"GM"} image={"gm"} />
-                          <TooltipButton text={"Toyota"} image={"toyota"} />
-                          <TooltipButton text={"Etsy"} image={"etsy"} />
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>BUSINESSES</Typography>
+                          <TooltipButton text={'Aivinya'} image={'aivinya'} />
+                          <TooltipButton text={'MPass'} image={'mpass'} />
                         </Grid>
-                        <Grid item md={3} display={"flex"} flexDirection={"column"} gap={"20px"}>
+                        {/* <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>STARTUPS</Typography>
-                          <TooltipButton text={"Brex"} image={"brex"} />
-                          <TooltipButton text={"Flexport"} image={"flexport"} />
-                          <TooltipButton text={"Instacart"} image={"instacart"} />
-                          <TooltipButton text={"Faire"} image={"faire"} />
-                          <TooltipButton text={"OpenSea"} image={"opensea"} />
-                        </Grid>
+                          <TooltipButton text={'Brex'} image={'brex'} />
+                          <TooltipButton text={'Flexport'} image={'flexport'} />
+                          <TooltipButton text={'Instacart'} image={'instacart'} />
+                          <TooltipButton text={'Faire'} image={'faire'} />
+                          <TooltipButton text={'OpenSea'} image={'opensea'} />
+                        </Grid> */}
                       </Grid>
                     </CardContent>
                   </Card>
                 }
                 arrow
               >
-                <Button color="inherit" sx={{ "&:hover": { backgroundColor: "transparent" } }} component={Link} href="https://codedthemes.gitbook.io/berry" target="_blank">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Customers
                 </Button>
               </HtmlTooltip>
-              <Button color="inherit" component={Link} href="/contact-us">
-                Contact Us
+              <Button
+                color="inherit"
+                sx={{ color: 'black', height: '43px' }}
+                variant="contained"
+                component={Link}
+                href="/contact-us"
+                //  target="_blank"
+              >
+                Book Demo
               </Button>
               {/* <Button
                 component={Link}
@@ -172,14 +176,20 @@ const AppBar = ({ ...others }) => {
                   </Typography>
                 </Stack>
               </Button> */}
-              <Button color="inherit" component={Link} href="/auth/login">
+              {/* <Button color="inherit" component={Link} href="/auth/login">
                 Login
-              </Button>
-              <Button color="inherit" sx={{ color: "black", height: "43px" }} variant='contained' component={Link} href="/waitlist"
-              //  target="_blank"
+              </Button> */}
+              {/* // waitlist below */}
+              {/* <Button
+                color="inherit"
+                sx={{ color: 'black', height: '43px' }}
+                variant="contained"
+                component={Link}
+                href="/waitlist"
+                //  target="_blank"
               >
                 Join Waitlist
-              </Button>
+              </Button> */}
             </Stack>
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
               <IconButton color="inherit" onClick={drawerToggler(true)} size="large">
@@ -232,8 +242,8 @@ const AppBar = ({ ...others }) => {
             </Box>
           </Toolbar>
         </Container>
-      </MuiAppBar >
-    </ElevationScroll >
+      </MuiAppBar>
+    </ElevationScroll>
   );
 };
 
