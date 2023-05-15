@@ -38,7 +38,7 @@ const Explore = () => {
                     {headerButtons.map(item => <Button key={item} onClick={() => setSelectedBtn(item)} sx={{ borderRadius: "10px" }} variant={selectedBtn === item ? 'contained' : 'outlined'}>{item}</Button>)}
                 </Grid>
                 <Grid item xs={12} lg={4} md={4} display={'flex'} justifyContent={'flex-end'} gap={1}>
-                    <Paper
+                    {/* <Paper
                         component="form"
                         sx={{ p: '2px 4px', display: 'flex', alignItems: 'center', width: 400 }}
                     >
@@ -50,7 +50,8 @@ const Explore = () => {
                             placeholder="Request Template"
                             inputProps={{ 'aria-label': 'search' }}
                         />
-                    </Paper>
+                    </Paper> */}
+                    <Button variant='contained' color='primary'>Request Template</Button>
                 </Grid>
             </Grid>
             <Grid item xs={12} lg={12} md={12} >

@@ -61,6 +61,13 @@ const application = {
       icon: icons.IconUserCheck,
     },
     {
+      id: 'data_extractor',
+      title: <FormattedMessage id="data_extractor" />,
+      type: 'item',
+      icon: icons.IconUserCheck,
+    },
+    
+    {
       id: 'image_classification',
       title: <FormattedMessage id="image_classification" />,
       type: 'item',
@@ -78,12 +85,13 @@ const application = {
       type: 'item',
       icon: icons.IconUserCheck,
     },
-    {
-      id: 'questions_ans',
-      title: <FormattedMessage id="questions_ans" />,
-      type: 'item',
-      icon: icons.QuestionAnswer,
-    },
+    // {
+    //   id: 'questions_ans',
+    //   title: <FormattedMessage id="questions_ans" />,
+    //   type: 'item',
+    //   icon: icons.QuestionAnswer,
+    // },
+    
     {
       id: 'structure_data_converter',
       title: <FormattedMessage id="structure_data_converter" />,
@@ -91,8 +99,8 @@ const application = {
       icon: icons.Mediation,
     },
     {
-      id: 'text_annotation',
-      title: <FormattedMessage id="text_annotation" />,
+      id: 'text_classification',
+      title: <FormattedMessage id="text_classification" />,
       type: 'item',
       icon: icons.IconUserCheck,
     },
