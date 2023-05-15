@@ -3,7 +3,7 @@ import { FormattedMessage } from 'react-intl';
 
 // assets
 import { IconDashboard, IconDeviceAnalytics, IconDatabase, IconZoomQuestion } from '@tabler/icons';
-import { Explore,Storage } from '@mui/icons-material';
+import { Explore, Storage } from '@mui/icons-material';
 import { OverrideIcon } from 'types';
 
 // constant
@@ -37,14 +37,14 @@ const dashboard: DashboardMenuProps = {
   title: <FormattedMessage id="dashboard" />,
   type: 'group',
   children: [
-    {
-      id: 'dashboard',
-      title: <FormattedMessage id="dashboard" />,
-      type: 'item',
-      url: '/dashboard',
-      icon: icons.IconDashboard,
-      breadcrumbs: false
-    },
+    // {
+    //   id: 'dashboard',
+    //   title: <FormattedMessage id="dashboard" />,
+    //   type: 'item',
+    //   url: '/dashboard',
+    //   icon: icons.IconDashboard,
+    //   breadcrumbs: false
+    // },
     {
       id: 'default',
       title: <FormattedMessage id="Default" />,

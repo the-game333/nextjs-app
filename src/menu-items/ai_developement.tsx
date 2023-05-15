@@ -22,6 +22,20 @@ const ai_developement = {
   type: 'group',
   children: [
     {
+      id: 'enterprise_ai',
+      title: <FormattedMessage id="enterprise_ai" />,
+      type: 'item',
+      icon: icons.IconBorderAll,
+
+    },
+    {
+      id: 'government_ai',
+      title: <FormattedMessage id="government_ai" />,
+      type: 'item',
+      icon: icons.IconForms,
+
+    },
+    {
       id: 'lang_chain_app',
       title: <FormattedMessage id="lang_chain_app" />,
       type: 'item',
@@ -33,20 +47,6 @@ const ai_developement = {
       title: <FormattedMessage id="plugins" />,
       type: 'item',
       icon: icons.IconForms,
-
-    },
-    {
-      id: 'government_ai',
-      title: <FormattedMessage id="government_ai" />,
-      type: 'item',
-      icon: icons.IconForms,
-
-    },
-    {
-      id: 'enterprise_ai',
-      title: <FormattedMessage id="enterprise_ai" />,
-      type: 'item',
-      icon: icons.IconBorderAll,
 
     },
   ]

@@ -21,18 +21,18 @@ const GenerativeAI = {
   type: 'group',
   children: [
     {
-      id: 'text',
-      title: <FormattedMessage id="text" />,
-      type: 'item',
-      url: '/widget/statistics',
-      icon: icons.IconCursorText
-    },
-    {
       id: 'image',
       title: <FormattedMessage id="image" />,
       type: 'item',
       url: '/widget/data',
       icon: icons.PhotoSizeSelectActual
+    },
+    {
+      id: 'text',
+      title: <FormattedMessage id="text" />,
+      type: 'item',
+      url: '/widget/statistics',
+      icon: icons.IconCursorText
     },
     {
       id: 'voice',

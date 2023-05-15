@@ -27,7 +27,19 @@ const application = {
   id: 'application',
   title: <FormattedMessage id="application" />,
   type: 'group',
-  children: [
+  children: [,
+    {
+      id: 'aivinya_things',
+      title: <FormattedMessage id="Aivinya Things" />,
+      type: 'item',
+      icon: icons.IconUserCheck,
+    },
+    {
+      id: 'customer_support',
+      title: <FormattedMessage id="customer_support" />,
+      type: 'item',
+      icon: icons.SupportAgent,
+    },
     {
       id: 'data_analysis',
       title: <FormattedMessage id="data_analysis" />,
@@ -43,28 +55,6 @@ const application = {
       
     },
     {
-      id: 'customer_support',
-      title: <FormattedMessage id="customer_support" />,
-      type: 'item',
-      icon: icons.SupportAgent,
-    },
-    {
-      id: 'questions_ans',
-      title: <FormattedMessage id="questions_ans" />,
-      type: 'item',
-      icon: icons.QuestionAnswer,
-    },
-
-
-
-
-    {
-      id: 'structure_data_converter',
-      title: <FormattedMessage id="structure_data_converter" />,
-      type: 'item',
-      icon: icons.Mediation,
-    },
-    {
       id: 'data_annotation',
       title: <FormattedMessage id="data_annotation" />,
       type: 'item',
@@ -77,16 +67,28 @@ const application = {
       icon: icons.IconUserCheck,
     },
     {
+      id: 'image_annotatino',
+      title: <FormattedMessage id="image_annotatino" />,
+      type: 'item',
+      icon: icons.IconUserCheck,
+    },
+    {
       id: 'name_entity_recognition',
       title: <FormattedMessage id="name_entity_recognition" />,
       type: 'item',
       icon: icons.IconUserCheck,
     },
     {
-      id: 'aivinya_things',
-      title: <FormattedMessage id="Aivinya Things" />,
+      id: 'questions_ans',
+      title: <FormattedMessage id="questions_ans" />,
       type: 'item',
-      icon: icons.IconUserCheck,
+      icon: icons.QuestionAnswer,
+    },
+    {
+      id: 'structure_data_converter',
+      title: <FormattedMessage id="structure_data_converter" />,
+      type: 'item',
+      icon: icons.Mediation,
     },
     {
       id: 'text_annotation',
@@ -94,12 +96,7 @@ const application = {
       type: 'item',
       icon: icons.IconUserCheck,
     },
-    {
-      id: 'image_annotatino',
-      title: <FormattedMessage id="image_annotatino" />,
-      type: 'item',
-      icon: icons.IconUserCheck,
-    },
+   
 
   ]
 };

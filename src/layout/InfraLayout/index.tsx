@@ -11,7 +11,7 @@ import useConfig from 'hooks/useConfig';
 const InfraLayout: FC = ({ children }) => {
   const { onChangeMenuType } = useConfig();
   useEffect(() => {
-    onChangeMenuType('dark');
+    onChangeMenuType('light');
   }, [])
   return (<>
     <AppBar />

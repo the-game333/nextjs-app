@@ -27,12 +27,12 @@ const Howtowork2 = () => (
           We've built it so you don't have to
         </Typography>
       </Grid>
-      <Grid container spacing={5} zIndex={2} mt = {5} direction={"row"} alignItems={"stretch"}>
-        <Grid item md={4} sm={6}   sx={{ position: 'relative',height:"450px" }}>
+      <Grid container spacing={5} zIndex={2} mt={5} direction={"row"} alignItems={"stretch"}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
           <FadeInWhenVisible>
             <Grid container spacing={2} alignItems={"stretch"}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/animation/icon-1.gif" width={'30%'} sx={{ marginLeft: '-2%' }} />
+                <Box component={'img'} src="/assets/images/howtowork/generative_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Generative AI</Typography>
@@ -78,11 +78,11 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative',height:"450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/animation/icon-2.gif" width={'30%'} sx={{ marginLeft: '-2%' }} />
+                <Box component={'img'} src="/assets/images/howtowork/government_ai.png" width={'20%'} sx={{background:"white",marginLeft: '-2%',borderRadius:"30px" }} />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Government AI</Typography>
@@ -129,11 +129,11 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative',height:"450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/animation/icon-3.gif" width={'30%'} sx={{ marginLeft: '-2%' }} />
+                <Box component={'img'} src="/assets/images/howtowork/enterprise_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Enterprise AI</Typography>
@@ -181,11 +181,11 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative',height:"450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/animation/icon-6.gif" width={'30%'} sx={{ marginLeft: '-2%' }} />
+                <Box component={'img'} src="/assets/images/howtowork/consumer_ai.jpg" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Consumer AI</Typography>
@@ -228,11 +228,11 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative',height:"450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/animation/icon-6.gif" width={'30%'} sx={{ marginLeft: '-2%' }} />
+                <Box component={'img'} src="/assets/images/howtowork/education_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Education AI</Typography>
@@ -278,11 +278,11 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative',height:"450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/animation/icon-6.gif" width={'30%'} sx={{ marginLeft: '-2%' }} />
+                <Box component={'img'} src="/assets/images/howtowork/developer_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Developer AI</Typography>

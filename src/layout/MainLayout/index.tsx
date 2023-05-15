@@ -80,7 +80,7 @@ const MainLayout: FC = ({ children }) => {
   React.useEffect(() => {
     dispatch(openDrawer(!matchDownMd));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    onChangeMenuType('dark');
+    onChangeMenuType('light');
   }, [matchDownMd]);
 
   const header = useMemo(
