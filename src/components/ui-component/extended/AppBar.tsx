@@ -64,14 +64,13 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {
       backgroundColor: 'transparent',
       color: 'rgba(0, 0, 0, 0.87)',
       fontSize: theme.typography.pxToRem(12),
-      minWidth: 800
+      maxWidth: 800
     }
   })
 );
 // ==============================|| MINIMAL LAYOUT APP BAR ||============================== //
 
 const AppBar = ({ ...others }) => {
-  console.log(others, 'others');
   const [drawerToggle, setDrawerToggle] = React.useState<boolean>(false);
   /** Method called on multiple components with different event types */
   const drawerToggler = (open: boolean) => (event: any) => {
@@ -107,31 +106,23 @@ const AppBar = ({ ...others }) => {
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
                     <CardContent>
-                      <Grid container spacing={2}>
-                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                      <Grid container spacing={1}>
+                        <Grid item md={4} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>GENERATIVE AI</Typography>
-                          <TooltipButton text={'Open AI'} image={'openai'} />
-                          <TooltipButton text={'Anthropic'} image={'anthropic'} />
-                          <TooltipButton text={'Co:here'} image={'cohere'} />
-                          <TooltipButton text={'Stability AI'} image={'stability'} />
+                          <TooltipButton text={'Open AI'} image={'customers/openai'} />
+                          <TooltipButton text={'Anthropic'} image={'customers/anthropic'} />
+                          <TooltipButton text={'Co:here'} image={'customers/cohere'} />
+                          <TooltipButton text={'Stability AI'} image={'customers/stability'} />
                         </Grid>
-                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                        <Grid item md={4} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>GOVERNMENT</Typography>
-                          <TooltipButton text={'Forest Department, GoR'} image={'fdgor'} />
+                          <TooltipButton text={'Forest Department, GoR'} image={'customers/fdgor'} />
                         </Grid>
-                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                        <Grid item md={4} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>BUSINESSES</Typography>
-                          <TooltipButton text={'Aivinya'} image={'aivinya'} />
-                          <TooltipButton text={'MPass'} image={'mpass'} />
+                          <TooltipButton text={'Aivinya'} image={'customers/aivinya'} />
+                          <TooltipButton text={'MPass'} image={'customers/mpass'} />
                         </Grid>
-                        {/* <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
-                          <Typography>STARTUPS</Typography>
-                          <TooltipButton text={'Brex'} image={'brex'} />
-                          <TooltipButton text={'Flexport'} image={'flexport'} />
-                          <TooltipButton text={'Instacart'} image={'instacart'} />
-                          <TooltipButton text={'Faire'} image={'faire'} />
-                          <TooltipButton text={'OpenSea'} image={'opensea'} />
-                        </Grid> */}
                       </Grid>
                     </CardContent>
                   </Card>
@@ -142,13 +133,37 @@ const AppBar = ({ ...others }) => {
                   Customers
                 </Button>
               </HtmlTooltip>
+              <HtmlTooltip
+                title={
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
+                    <CardContent>
+                      <Grid container spacing={2}>
+                        <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <TooltipButton text={'Open AIResource Library'} image={'solutions/ai-readiness-report'} />
+                          <TooltipButton text={'Blog'} image={'solutions/blog'} />
+                          <TooltipButton text={'Documentation'} image={'solutions/documentation'} />
+                          <TooltipButton text={'Events'} image={'solutions/events'} />
+                          <TooltipButton text={'Guides'} image={'solutions/guides'} />
+                          <TooltipButton text={'Open Datasets'} image={'solutions/open-datasets'} />
+                          <TooltipButton text={`AI Readiness Report ${new Date().getFullYear()}`} image={'solutions/resources'} />
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                }
+                arrow
+              >
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Solutions
+                </Button>
+              </HtmlTooltip>
               <Button
                 color="inherit"
                 sx={{ color: 'black', height: '43px' }}
                 variant="contained"
                 component={Link}
                 href="/contact-us"
-                //  target="_blank"
+              //  target="_blank"
               >
                 Book Demo
               </Button>

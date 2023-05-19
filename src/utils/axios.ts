@@ -5,6 +5,7 @@
 import axios from 'axios';
 import { BASE_URL } from 'config';
 import { store } from 'store';
+import snackbar from './snackbar';
 // import { Logout } from 'store/reducers/auth';
 // import snackbar from './snackbar';
 
@@ -12,7 +13,6 @@ const axiosServices = axios.create();
 
 axiosServices.interceptors.request.use(
   (config: any) => {
-    console.log(BASE_URL, ":::BASE_URL");
     config.baseURL = BASE_URL;
     // const state = store.getState() as any;
     // const accessToken = state.auth.token;
@@ -29,14 +29,13 @@ axiosServices.interceptors.response.use(
   (error) => {
     const { response } = error;
     if (response && response.status === 500) {
-      console.log('500 error');
-      // snackbar(response.data, 'error');
-    } else if (response && response.status === 401) {
-      console.log('401 error');
+      snackbar(response.data, 'error');
+    } else if (response && response.status === 400) {
+      snackbar(response.data, 'error');
       // store.dispatch(Logout({}));
     } else if (response && response.status === 413) {
       console.log('413 error');
-      // snackbar(response.data, 'error');
+      snackbar(response.data, 'error');
     } else if (response && response.status === 429) {
       console.log('429 error');
       // snackbar(response.data, 'error');

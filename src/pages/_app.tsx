@@ -64,14 +64,14 @@ function MyApp({ Component, pageProps }: AppProps & { Component: { Layout: Layou
             <ThemeCustomization>
               <RTLLayout>
                 <Locales>
-                  <NavigationScroll>
+                  {/* <NavigationScroll> */}
                     <AuthProvider>
                       <Layout>
                         <Component {...pageProps} />
                         <Snackbar />
                       </Layout>
                     </AuthProvider>
-                  </NavigationScroll>
+                  {/* </NavigationScroll> */}
                 </Locales>
               </RTLLayout>
             </ThemeCustomization>

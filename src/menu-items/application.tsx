@@ -52,6 +52,8 @@ const application = {
       title: <FormattedMessage id="document_analysis" />,
       type: 'item',
       icon: icons.Article,
+      url:"/app/docu_analysis"
+
       
     },
     {

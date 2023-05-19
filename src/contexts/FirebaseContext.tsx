@@ -18,11 +18,16 @@ import { FirebaseContextType } from 'types/auth';
 if (!firebase.apps.length) {
   firebase.initializeApp(FIREBASE_API);
 }
-
+// import api request
+import { Register, Login } from 'actions/auth';
+import snackbar from 'utils/snackbar';
+import { useRouter } from 'next/router';
+import { useSelector } from 'store';
 // const
 const initialState: InitialLoginContextProps = {
   isLoggedIn: false,
   isInitialized: false,
+  // accessToken: "",
   user: null
 };
 
@@ -32,32 +37,41 @@ const FirebaseContext = createContext<FirebaseContextType | null>(null);
 
 export const FirebaseProvider = ({ children }: { children: React.ReactElement }) => {
   const [state, dispatch] = useReducer(accountReducer, initialState);
+  console.log(state);
+  const router = useRouter();
+  useEffect(() => {
+    // if (user.isLoggedIn) {
 
-  useEffect(
-    () =>
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          dispatch({
-            type: LOGIN,
-            payload: {
-              isLoggedIn: true,
-              user: {
-                id: user.uid,
-                email: user.email!,
-                name: user.displayName || 'Betty'
-              }
+    // } else {
+    //   dispatch({
+    //     type: LOGOUT
+    //   });
+    // }
+    // } 
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        dispatch({
+          type: LOGIN,
+          payload: {
+            isLoggedIn: true,
+            user: {
+              id: user.uid,
+              email: user.email!,
+              name: user.displayName || 'Betty'
             }
-          });
-        } else {
-          dispatch({
-            type: LOGOUT
-          });
-        }
-      }),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [dispatch]
-  );
+          }
+        });
+      } else {
+        dispatch({
+          type: LOGOUT
+        });
+      }
+    })
 
+  }, [dispatch]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+
+  // 
   const firebaseEmailPasswordSignIn = (email: string, password: string) => firebase.auth().signInWithEmailAndPassword(email, password);
 
   const firebaseGoogleSignIn = () => {
@@ -74,9 +88,28 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
     await firebase.auth().sendPasswordResetEmail(email);
   };
 
-  const updateProfile = () => {};
+  const updateProfile = () => { };
   if (state.isInitialized !== undefined && !state.isInitialized) {
     return <Loader />;
+  }
+  // here ------>
+  const apiRegister = async (values: Object) => {
+    const data = await Register(values);
+    snackbar(data.data);
+    router.push('login');
+    return data;
+  }
+  const apiLogin = async (email: String, password: String) => {
+    const { data } = await Login(email, password);
+    snackbar("You are logged successfully in Our Site.");
+    dispatch({
+      type: LOGIN,
+      payload: {
+        isLoggedIn: true,
+        user: data.user,
+        // accessToken: data.accessToken
+      }
+    });
   }
 
   return (
@@ -85,11 +118,13 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
         ...state,
         firebaseRegister,
         firebaseEmailPasswordSignIn,
-        login: () => {},
+        login: () => { },
         firebaseGoogleSignIn,
         logout,
         resetPassword,
-        updateProfile
+        updateProfile,
+        apiRegister,
+        apiLogin
       }}
     >
       {children}
