@@ -3,6 +3,10 @@ import {
   Grid,
   ImageList,
   ImageListItem,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
   Slider,
   TextField,
   ThemeProvider,
@@ -21,15 +25,10 @@ import { toNumber } from 'lodash';
 //   display: inline-block;
 // })
 
-const ImageContainer = styled('div')`
-  position: relative;
-  display: inline-block;
-`;
-
 const DownloadBtn = styled('a')`
   position: absolute;
   top: 10px; /* Adjust the top position as needed */
-  left: 10px; /* Adjust the left position as needed */
+  right: 10px; /* Adjust the left position as needed */
   background-color: #ffffff;
   padding: 8px 16px;
   border-radius: 4px;
@@ -59,8 +58,8 @@ const images = () => {
 
   useEffect(() => {
     let imageData = '/placeholder.png';
-
     const newArray: string[] = Array(numImages).fill(imageData);
+
     setImageArray(newArray);
     setImgLoaded(false);
   }, [numImages]);
@@ -71,7 +70,10 @@ const images = () => {
       }
     }
   });
-
+  const numOfImages = [];
+  for (let i = 1; i <= 10; i++) {
+    numOfImages.push(i);
+  }
   const breakpoints = {
     xs: 1,
     sm: 2,
@@ -79,10 +81,8 @@ const images = () => {
     lg: 4
   };
 
-  // const imageArray = Array(numImages).fill(imageData)
-
-  const handleToggle = (event: React.MouseEvent<HTMLElement>, newMode: string) => {
-    setMode(newMode);
+  const handleToggle = (event: SelectChangeEvent) => {
+    setMode(event.target.value);
   };
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -91,11 +91,7 @@ const images = () => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    // console.log(mode);
-    // console.log(prompt);
-    // console.log(sizes[imageSize]);
     if (mode == 'dalle') {
-      // console.log('Dalle hit')
       const data = {
         prompt: prompt,
         num_outputs: numImages,
@@ -144,34 +140,30 @@ const images = () => {
     }
   };
 
-  function size(value: number) {
-    console.log(sizes[value][0]);
-    setImageSize(value);
-    return `${sizes[value]}`;
-  }
+  const sizeHandler = (event: SelectChangeEvent) => {
+    console.log(event.target.value);
+    setImageSize(toNumber(event.target.value));
+    // return `${sizes[value]}`;
+  };
 
-  function numImageSlider(value: number) {
-    setNumImages(value);
-    return `${value}`;
-  }
+  const numImageSlider = (event: SelectChangeEvent) => {
+    setNumImages(toNumber(event.target.value));
+    // return `${value}`;
+  };
 
-  const handleDownload = async (image: string, index:number) => {
+  const handleDownload = async (image: string, index: number) => {
     try {
-      if (mode == 'dalle') {
-        const response = await fetch(image);
-        const blob = await response.blob();
-        const blobURL = URL.createObjectURL(blob);
+      console.log('button pressed');
+      console.log(image);
+      const response = await fetch(image);
+      const blob = await response.blob();
+      const blobURL = URL.createObjectURL(blob);
 
-        const link = document.createElement('a');
-        link.href = blobURL;
-        link.download = `${prompt}-${index}.jpg`
-        link.click()
-        URL.revokeObjectURL(blobURL);
-      } else if(mode == 'dream'){
-          const base64Img = image;
-          const byteChar = atob(base64Img);
-          
-      }
+      const link = document.createElement('a');
+      link.href = blobURL;
+      link.download = `${prompt}-${index}.jpg`;
+      link.click();
+      URL.revokeObjectURL(blobURL);
     } catch (e) {
       console.log(e);
     }
@@ -181,10 +173,19 @@ const images = () => {
       <Grid container spacing={4}>
         <Grid item md={3}>
           <form onSubmit={handleSubmit}>
-            <ToggleButtonGroup color="primary" value={mode} exclusive onChange={handleToggle} aria-label="Platform">
-              <ToggleButton value={'dream'}>DreamStudio AI</ToggleButton>
-              <ToggleButton value={'dalle'}>Dall.E 2</ToggleButton>
-            </ToggleButtonGroup>
+            <InputLabel id="engine-select-label">Engine</InputLabel>
+            <Select
+              labelId="engine-select-label"
+              id="engine-select"
+              value={mode}
+              label="Engine"
+              onChange={handleToggle}
+              //  sx={{width: "full"}}
+              autoWidth
+            >
+              <MenuItem value={'dream'}>DreamStudio AI</MenuItem>
+              <MenuItem value={'dalle'}>Dalle AI</MenuItem>
+            </Select>
 
             <div style={{ marginTop: '24px' }}>
               <TextField
@@ -197,34 +198,44 @@ const images = () => {
                 onChange={handleChange}
                 value={prompt}
               />
-              <p style={{ textAlign: 'center', marginTop: '24px' }}>
-                {sizes[imageSize][0]} {sizes[imageSize][1]}
-              </p>
-              <Slider
-                aria-label="Image Size"
-                defaultValue={4}
-                getAriaValueText={size}
-                step={1}
-                marks
-                min={0}
-                max={8}
-                track={false}
-                size="small"
-                style={{ width: 'full', display: 'block', marginTop: '2px' }}
-              />
-              <p style={{ textAlign: 'center', marginTop: '24px' }}>Number of images</p>
-              <Slider
-                aria-label="Image Number"
-                defaultValue={5}
-                getAriaValueText={numImageSlider}
-                step={1}
-                marks
-                min={1}
-                max={9}
-                valueLabelDisplay="auto"
-                size="small"
-                style={{ width: 'full', display: 'block', marginTop: '2px' }}
-              />
+
+              <div style={{display:'flex', justifyContent: 'space-between'}}>
+                <div>
+                  <InputLabel id="image-size-select-label">Image Size</InputLabel>
+                  <Select
+                    labelId="image-size-select-label"
+                    id="image-select"
+                    value={imageSize.toString()}
+                    label="Image Size"
+                    onChange={sizeHandler}
+                    autoWidth
+                  >
+                    {sizes.map((size, index) => (
+                      <MenuItem key={index} value={index}>
+                        {size[0]} {size[1]}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </div>
+
+                <div>
+                  <InputLabel id="image-number-select-label">Number</InputLabel>
+                  <Select
+                    labelId="image-number-select-label"
+                    id="image-number-select"
+                    value={numImages.toString()}
+                    label="Number of Images"
+                    onChange={numImageSlider}
+                    autoWidth
+                  >
+                    {numOfImages.map((num, index) => (
+                      <MenuItem value={num} key={index}>
+                        {num}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </div>
+              </div>
 
               <Button variant="contained" endIcon={<EmojiObjectsIcon />} sx={{ marginTop: '24px' }} fullWidth={true} type="submit">
                 Imagine
@@ -250,9 +261,13 @@ const images = () => {
                 ) : (
                   <img src={`${item}`} srcSet={`${item}`} alt={prompt} loading="lazy" />
                 )}
-                <DownloadBtn href={`data:image/png;base64,${item}`} download={`${prompt}-${index}.png`}>
-                  Download
-                </DownloadBtn>
+                {mode == 'dream' ? (
+                  <DownloadBtn href={`data:image/png;base64,${item}`} download={`${prompt}-${index}.png`}>
+                    Download
+                  </DownloadBtn>
+                ) : (
+                  <DownloadBtn onClick={() => handleDownload(item, index)}>Download</DownloadBtn>
+                )}
               </ImageListItem>
             ))}
           </ImageList>
