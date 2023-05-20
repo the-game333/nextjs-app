@@ -1,4 +1,4 @@
-// import Axios from 'utils/axios';
+import Axios from 'utils/axios';
 import axios from "axios";
 import { BASE_URL } from 'config';
 
@@ -12,28 +12,13 @@ const documentSubmit = async (values: any) => {
     });
     return data;
 };
+const loadAlldocuments = async (email: String) => {
+    const data = await Axios.post('api/app/loadDcouments', { email });
+    return data;
+};
+const getChatText = async (message: String, prompt: String) => {
+    const data = await Axios.post('api/app/getChatText', { message, prompt });
+    return data;
+};
 
-export { documentSubmit };
-
-
-
-// import axios from 'axios';
-// // export const SERVER_URL = 'http://localhost:8080/';
-// export const SERVER_URL = 'https://api.zionlabs.info/';
-
-// const API = async (method = 'GET', url, data = {}) => {
-//     try {
-//         const response = await axios({
-//             method,
-//             url: `${SERVER_URL}api/${url}`,
-//             data,
-//             headers: { "Content-Type": "multipart/form-data" },
-//         });
-
-//         return response;
-//     } catch (error) {
-//         console.log(error)
-//     }
-// };
-
-// export default API;
+export { documentSubmit, loadAlldocuments, getChatText };

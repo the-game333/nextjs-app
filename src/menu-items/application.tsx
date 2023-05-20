@@ -30,7 +30,7 @@ const application = {
   children: [,
     {
       id: 'aivinya_things',
-      title: <FormattedMessage id="Aivinya Things" />,
+      title: <FormattedMessage id="aivinya_things" />,
       type: 'item',
       icon: icons.IconUserCheck,
     },

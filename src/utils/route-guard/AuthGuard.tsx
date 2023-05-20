@@ -1,9 +1,10 @@
 import { useRouter } from 'next/router';
 // project imports
-import useAuth from 'hooks/useAuth';
+// import useAuth from 'hooks/useAuth';
 import { GuardProps } from 'types';
 import { useEffect } from 'react';
 import Loader from 'components/ui-component/Loader';
+import { useSelector } from 'store';
 
 // ==============================|| AUTH GUARD ||============================== //
 
@@ -12,16 +13,16 @@ import Loader from 'components/ui-component/Loader';
  * @param {PropTypes.node} children children element/node
  */
 const AuthGuard = ({ children }: GuardProps) => {
-  const { isLoggedIn } = useAuth();
+  const user = useSelector(state => state.auth);
   const router = useRouter();
   useEffect(() => {
-    if (!isLoggedIn) {
-      router.push('/login');
+    if (!user.isLoggedIn) {
+      router.push('/auth/login');
     }
     // eslint-disable-next-line
-  }, [isLoggedIn]);
+  }, [user.isLoggedIn]);
 
-  if (!isLoggedIn) return <Loader />;
+  if (!user.isLoggedIn) return <Loader />;
 
   return children;
 };

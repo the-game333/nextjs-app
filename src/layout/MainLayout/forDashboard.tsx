@@ -80,7 +80,6 @@ const MainLayout: FC = ({ children }) => {
   React.useEffect(() => {
     dispatch(openDrawer(!matchDownMd));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    console.log("here");
     onChangeMenuType('light');
   }, [matchDownMd]);
 

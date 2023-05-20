@@ -6,11 +6,12 @@ import { persistStore } from 'redux-persist';
 
 // project imports
 import rootReducer from './reducer';
+import persistReducer from './persistReducer';
 
 // ==============================|| REDUX - MAIN STORE ||============================== //
 
 const store = configureStore({
-  reducer: rootReducer,
+  reducer: persistReducer(rootReducer),
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({ serializableCheck: false, immutableCheck: false })
 });
 

@@ -22,53 +22,57 @@ if (!firebase.apps.length) {
 import { Register, Login } from 'actions/auth';
 import snackbar from 'utils/snackbar';
 import { useRouter } from 'next/router';
-import { useSelector } from 'store';
+import { useDispatch, useSelector } from 'store';
+import { rLogin } from 'store/slices/auth';
 // const
-const initialState: InitialLoginContextProps = {
-  isLoggedIn: false,
-  isInitialized: false,
-  // accessToken: "",
-  user: null
-};
+// const initialState: InitialLoginContextProps = {
+//   isLoggedIn: false,
+//   isInitialized: false,
+//   // accessToken: "",
+//   user: null
+// };
 
 // ==============================|| FIREBASE CONTEXT & PROVIDER ||============================== //
 
 const FirebaseContext = createContext<FirebaseContextType | null>(null);
 
 export const FirebaseProvider = ({ children }: { children: React.ReactElement }) => {
-  const [state, dispatch] = useReducer(accountReducer, initialState);
+  // const [state, dispatch] = useReducer(accountReducer, initialState);
+  const dispatchF = useDispatch();
+  const state = useSelector(state => state.auth);
+
   console.log(state);
   const router = useRouter();
-  useEffect(() => {
-    // if (user.isLoggedIn) {
+  // useEffect(() => {
+  // if (user.isLoggedIn) {
 
-    // } else {
-    //   dispatch({
-    //     type: LOGOUT
-    //   });
-    // }
-    // } 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
-        dispatch({
-          type: LOGIN,
-          payload: {
-            isLoggedIn: true,
-            user: {
-              id: user.uid,
-              email: user.email!,
-              name: user.displayName || 'Betty'
-            }
-          }
-        });
-      } else {
-        dispatch({
-          type: LOGOUT
-        });
-      }
-    })
+  // } else {
+  //   dispatch({
+  //     type: LOGOUT
+  //   });
+  // }
+  // } 
+  // firebase.auth().onAuthStateChanged((user) => {
+  //   if (user) {
+  // dispatch({
+  //   type: LOGIN,
+  //   payload: {
+  //     isLoggedIn: true,
+  //     user: {
+  //       id: user.uid,
+  //       email: user.email!,
+  //       name: user.displayName || 'Betty'
+  //     }
+  //   }
+  // });
+  // } else {
+  // dispatch({
+  //   type: LOGOUT
+  // });
+  //   }
+  // })
 
-  }, [dispatch]);
+  // }, [dispatch]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   // 
@@ -102,14 +106,15 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
   const apiLogin = async (email: String, password: String) => {
     const { data } = await Login(email, password);
     snackbar("You are logged successfully in Our Site.");
-    dispatch({
-      type: LOGIN,
-      payload: {
-        isLoggedIn: true,
-        user: data.user,
-        // accessToken: data.accessToken
-      }
-    });
+    dispatchF(rLogin(data));
+    // dispatch({
+    //   type: LOGIN,
+    //   payload: {
+    //     isLoggedIn: true,
+    //     user: data.user,
+    //     // accessToken: data.accessToken
+    //   }
+    // });
   }
 
   return (

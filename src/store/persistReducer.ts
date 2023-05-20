@@ -7,6 +7,6 @@ const persistConfig = {
   whitelist: ["auth", "menu"],
 };
 
-// const persist = (reducers:Re) => persistReducer(persistConfig, reducers);
+const persist = (reducers: any) => persistReducer(persistConfig, reducers);
 
-// export default persist;
+export default persist;
