@@ -19,6 +19,7 @@ import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import styled from '@emotion/styled';
 import { positions } from '@mui/system';
 import { toNumber } from 'lodash';
+import { Download } from '@mui/icons-material';
 
 // const ImageContainer = styled('div') => ({
 //   position: relative;
@@ -263,10 +264,10 @@ const images = () => {
                 )}
                 {mode == 'dream' ? (
                   <DownloadBtn href={`data:image/png;base64,${item}`} download={`${prompt}-${index}.png`}>
-                    Download
+                    <Download />
                   </DownloadBtn>
                 ) : (
-                  <DownloadBtn onClick={() => handleDownload(item, index)}>Download</DownloadBtn>
+                  <DownloadBtn onClick={() => handleDownload(item, index)}><Download /></DownloadBtn>
                 )}
               </ImageListItem>
             ))}
