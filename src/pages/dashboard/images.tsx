@@ -21,11 +21,6 @@ import { positions } from '@mui/system';
 import { toNumber } from 'lodash';
 import { Download } from '@mui/icons-material';
 
-// const ImageContainer = styled('div') => ({
-//   position: relative;
-//   display: inline-block;
-// })
-
 const DownloadBtn = styled('a')`
   position: absolute;
   top: 10px; /* Adjust the top position as needed */
@@ -92,7 +87,10 @@ const images = () => {
 
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    // Dalle API
     if (mode == 'dalle') {
+      setImgLoaded(false);
       const data = {
         prompt: prompt,
         num_outputs: numImages,
@@ -109,8 +107,8 @@ const images = () => {
       const res = await response.json();
       console.log(res);
       setImageArray(res);
+      setImgLoaded(true);
     }
-    // console.log(mode);
 
     // StabilityAI API
     if (mode == 'dream') {
@@ -150,24 +148,6 @@ const images = () => {
   const numImageSlider = (event: SelectChangeEvent) => {
     setNumImages(toNumber(event.target.value));
     // return `${value}`;
-  };
-
-  const handleDownload = async (image: string, index: number) => {
-    try {
-      console.log('button pressed');
-      console.log(image);
-      const response = await fetch(image);
-      const blob = await response.blob();
-      const blobURL = URL.createObjectURL(blob);
-
-      const link = document.createElement('a');
-      link.href = blobURL;
-      link.download = `${prompt}-${index}.jpg`;
-      link.click();
-      URL.revokeObjectURL(blobURL);
-    } catch (e) {
-      console.log(e);
-    }
   };
   return (
     <ThemeProvider theme={theme}>
@@ -257,18 +237,13 @@ const images = () => {
                   position: 'relative'
                 }}
               >
-                {mode == 'dream' ? (
+               
                   <img src={imgLoaded ? `data:image/jpeg;base64,${item}` : `${item}`} alt={prompt} loading="lazy" />
-                ) : (
-                  <img src={`${item}`} srcSet={`${item}`} alt={prompt} loading="lazy" />
-                )}
-                {mode == 'dream' ? (
+              
                   <DownloadBtn href={`data:image/png;base64,${item}`} download={`${prompt}-${index}.png`}>
                     <Download />
                   </DownloadBtn>
-                ) : (
-                  <DownloadBtn onClick={() => handleDownload(item, index)}><Download /></DownloadBtn>
-                )}
+               
               </ImageListItem>
             ))}
           </ImageList>
