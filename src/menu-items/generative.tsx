@@ -24,7 +24,7 @@ const GenerativeAI = {
       id: 'image',
       title: <FormattedMessage id="image" />,
       type: 'item',
-      url: '/widget/data',
+      url: '/dashboard/images',
       icon: icons.PhotoSizeSelectActual
     },
     {
