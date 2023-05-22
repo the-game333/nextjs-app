@@ -44,6 +44,8 @@ const images = () => {
   const [imageArray, setImageArray] = useState<string[]>([]);
   //State to track if image is loaded or not
   const [imgLoaded, setImgLoaded] = useState(false);
+  // Image style state
+  const [imgStyle, setImageStyle] = useState('')
 
   // Variable containing all available image sizes
   const sizes: string[][] = [
@@ -57,6 +59,27 @@ const images = () => {
     ['2:3', '512x768'],
     ['4:7', '512x896']
   ];
+
+  // Array of available image styles
+  const ImageSyles: string[] = [
+    "3d-model",
+    "analog-film",
+    "anime",
+    "cinematic",
+    "comic-book",
+    "digital-art",
+    "enhance",
+    "fantasy-art",
+    "isometric",
+    "line-art",
+    "low-poly",
+    "modeling-compound",
+    "neon-punk",
+    "origami",
+    "photographic",
+    "pixel-art",
+    "tile-texture",
+  ]
   
   // useEffect to create an array of placeholder images according to the number of images selected
   useEffect(() => {
@@ -70,7 +93,7 @@ const images = () => {
   const theme = createTheme({
     palette: {
       primary: {
-        main: '#9478cb'
+        main: '#5e35b1'
       }
     }
   });
@@ -98,14 +121,22 @@ const images = () => {
     setNumImages(toNumber(event.target.value));
   };
 
+  // Handler for number of images selector
+  const imageStyleHandler = (event: SelectChangeEvent) => {
+    setImageStyle(event.target.value);
+  };
+
+
   // Form Submit Handler to get the images from the backend
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
+    const newArray: string[] = Array(numImages).fill("/loading.gif");
+    setImageArray(newArray);
     // Dalle API
     if (mode == 'dalle') {
       // Sets loaded images to false
       setImgLoaded(false);
+
       // Defines payload for the API call
       const data = {
         prompt: prompt,
@@ -139,7 +170,8 @@ const images = () => {
         width: toNumber(width),
         samples: numImages,
         steps: 50,
-        style: 'neon-punk'
+        // style: imgStyle,
+        style: "neon-punk"
       };
 
       // Header for the call
@@ -192,7 +224,7 @@ const images = () => {
               />
 
               {/* Div element containing image size and number of images selector in a inline flex */}
-              <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between' , marginTop: "16px"}}>
                 {/* Image Size select MUI Component */}
                 <div>
                   <InputLabel id="image-size-select-label">Image Size</InputLabel>
@@ -213,6 +245,26 @@ const images = () => {
                   </Select>
                 </div>
 
+                {/* Image Style select MUI Component */}
+                <div>
+                  <InputLabel id="image-style-select-label">Style</InputLabel>
+                  <Select
+                    labelId="image-style-select-label"
+                    id="image-style-select"
+                    value={imgStyle}
+                    label="Image Size"
+                    onChange={imageStyleHandler}
+                    autoWidth
+                  >
+                    {/* Options of the selector  */}
+                    {ImageSyles.map((style, index) => (
+                      <MenuItem key={index} value={index}>
+                        {style}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </div>
+
                 {/* Number of images selector MUI Component */}
                 <div>
                   <InputLabel id="image-number-select-label">Number</InputLabel>
@@ -222,12 +274,12 @@ const images = () => {
                     value={numImages.toString()}
                     label="Number of Images"
                     onChange={numImageHandler}
-                    autoWidth
+                    sx={{minWidth: "3rem"}}
                   >
                     {/* Options of the selector */}
                     {numOfImages.map((num, index) => (
                       <MenuItem value={num} key={index}>
-                        {num}
+                        {" "}{num}{" "}
                       </MenuItem>
                     ))}
                   </Select>
@@ -243,21 +295,21 @@ const images = () => {
         </Grid>
         
         {/* Image Grid display component */}
-        <Grid item xs={12} md={9} gap={8}>
+        <Grid item xs={12} md={9}>
           {/* Uses MUI ImageList component */}
           <ImageList sx={{ width: 'full', height: 'full' }} cols={3}>
             {imageArray.map((item, index) => (
               <ImageListItem
                 key={index}
                 style={{
-                  borderWidth: '2px',
-                  borderImage: 'linear-gradient(to bottom right, white, yellow) 1',
+                  borderWidth: '3px',
+                  borderImage: 'linear-gradient(to bottom right, white, #5e35b1) 1',
                   borderStyle: 'solid',
                   position: 'relative'
                 }}
               >
                 {/* Image is displayed directly using the base64 and is conditionally showing either normal image or base64 encoded result based upop imgLoaded state variable */}
-                <img src={imgLoaded ? `data:image/jpeg;base64,${item}` : `${item}`} alt={prompt} loading="lazy" />
+                <img src={imgLoaded ? `data:image/jpeg;base64,${item}` : `${item}`} alt={prompt}  />
                 
                 {/* Download button download the image using the download property */}
                 <DownloadBtn href={`data:image/png;base64,${item}`} download={`${prompt}-${index}.png`}>
