@@ -49,7 +49,7 @@ const FirebaseRegister = ({ ...others }) => {
 
   const [strength, setStrength] = React.useState(0);
   const [level, setLevel] = React.useState<StringColorProps>();
-  const { firebaseRegister, firebaseGoogleSignIn } = useAuth();
+  const { firebaseRegister, firebaseGoogleSignIn, apiRegister } = useAuth();
 
   const googleHandler = async () => {
     try {
@@ -73,10 +73,6 @@ const FirebaseRegister = ({ ...others }) => {
     setLevel(strengthColor(temp));
   };
 
-  useEffect(() => {
-    changePassword('123456');
-  }, []);
-
   return (
     <>
       <Grid container direction="column" justifyContent="center" spacing={2}>
@@ -94,7 +90,7 @@ const FirebaseRegister = ({ ...others }) => {
               }}
             >
               <Box sx={{ mr: { xs: 1, sm: 2 }, width: 20, height: 20, marginRight: matchDownSM ? 8 : 16 }}>
-                <Image src={Google} alt="Berry Dashboard" layout="intrinsic" width={'16px'} height={'16px'} />
+                <Image src={Google} alt="ApiInfra Dashboard" layout="intrinsic" width={'16px'} height={'16px'} />
               </Box>
               Sign up with Google
             </Button>
@@ -133,9 +129,11 @@ const FirebaseRegister = ({ ...others }) => {
 
       <Formik
         initialValues={{
+          fname: '',
+          lname: '',
           email: '',
           password: '',
-          submit: null
+          // submit: null
         }}
         validationSchema={Yup.object().shape({
           email: Yup.string().email('Must be a valid email').max(255).required('Email is required'),
@@ -143,26 +141,28 @@ const FirebaseRegister = ({ ...others }) => {
         })}
         onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {
           try {
-            await firebaseRegister(values.email, values.password).then(
-              () => {
-                // WARNING: do not set any formik state here as formik might be already destroyed here. You may get following error by doing so.
-                // Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
-                // To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
-                // github issue: https://github.com/formium/formik/issues/2430
-              },
-              (err: any) => {
-                if (scriptedRef.current) {
-                  setStatus({ success: false });
-                  setErrors({ submit: err.message });
-                  setSubmitting(false);
-                }
-              }
-            );
+            // await firebaseRegister(values.email, values.password).then(
+            //   () => {
+            //     // WARNING: do not set any formik state here as formik might be already destroyed here. You may get following error by doing so.
+            //     // Warning: Can't perform a React state update on an unmounted component. This is a no-op, but it indicates a memory leak in your application.
+            //     // To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+            //     // github issue: https://github.com/formium/formik/issues/2430
+            //   },
+            //   (err: any) => {
+            //     if (scriptedRef.current) {
+            //       setStatus({ success: false });
+            //       setErrors({ submit: err.message });
+            //       setSubmitting(false);
+            //     }
+            //   }
+            // );
+            await apiRegister(values);
+
           } catch (err: any) {
             console.error(err);
             if (scriptedRef.current) {
               setStatus({ success: false });
-              setErrors({ submit: err.message });
+              // setErrors({ submit: err.message });
               setSubmitting(false);
             }
           }
@@ -179,7 +179,10 @@ const FirebaseRegister = ({ ...others }) => {
                   name="fname"
                   type="text"
                   defaultValue=""
+                  value={values.fname}
                   sx={{ ...theme.typography.customInput }}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
                 />
               </Grid>
               <Grid item xs={12} sm={6}>
@@ -190,7 +193,10 @@ const FirebaseRegister = ({ ...others }) => {
                   name="lname"
                   type="text"
                   defaultValue=""
+                  value={values.lname}
                   sx={{ ...theme.typography.customInput }}
+                  onBlur={handleBlur}
+                  onChange={handleChange}
                 />
               </Grid>
             </Grid>
@@ -281,11 +287,11 @@ const FirebaseRegister = ({ ...others }) => {
                 />
               </Grid>
             </Grid>
-            {errors.submit && (
+            {/* {errors.submit && (
               <Box sx={{ mt: 3 }}>
                 <FormHelperText error>{errors.submit}</FormHelperText>
               </Box>
-            )}
+            )} */}
 
             <Box sx={{ mt: 2 }}>
               <AnimateButton>

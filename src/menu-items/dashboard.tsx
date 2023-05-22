@@ -2,13 +2,18 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { IconDashboard, IconDeviceAnalytics } from '@tabler/icons';
+import { IconDashboard, IconDeviceAnalytics, IconDatabase, IconZoomQuestion } from '@tabler/icons';
+import { Explore, Storage } from '@mui/icons-material';
 import { OverrideIcon } from 'types';
 
 // constant
 const icons = {
   IconDashboard,
-  IconDeviceAnalytics
+  IconDeviceAnalytics,
+  IconDatabase,
+  IconZoomQuestion,
+  Explore,
+  Storage
 };
 
 // ==============================|| DASHBOARD MENU ITEMS ||============================== //
@@ -32,20 +37,36 @@ const dashboard: DashboardMenuProps = {
   title: <FormattedMessage id="dashboard" />,
   type: 'group',
   children: [
+    // {
+    //   id: 'dashboard',
+    //   title: <FormattedMessage id="dashboard" />,
+    //   type: 'item',
+    //   url: '/dashboard',
+    //   icon: icons.IconDashboard,
+    //   breadcrumbs: false
+    // },
     {
       id: 'default',
-      title: <FormattedMessage id="default" />,
+      title: <FormattedMessage id="Default" />,
       type: 'item',
       url: '/dashboard/default',
       icon: icons.IconDashboard,
       breadcrumbs: false
     },
     {
-      id: 'analytics',
-      title: <FormattedMessage id="analytics" />,
+      id: 'explore',
+      title: <FormattedMessage id="Explore" />,
       type: 'item',
-      url: '/dashboard/analytics',
-      icon: icons.IconDeviceAnalytics,
+      url: '/dashboard/explore',
+      icon: icons.Explore,
+      breadcrumbs: false
+    },
+    {
+      id: 'analytics',
+      title: <FormattedMessage id="Data" />,
+      type: 'item',
+      url: '/dashboard/data',
+      icon: icons.Storage,
       breadcrumbs: false
     }
   ]

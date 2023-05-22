@@ -35,7 +35,7 @@ export const BASE_URL = urls.SERVER_URL;
 // like '/berry-material-react/react/default'
 export const BASE_PATH = '';
 
-export const DASHBOARD_PATH = '/dashboard/default';
+export const DASHBOARD_PATH = '/dashboard';
 
 export const HOME_PATH = '/';
 

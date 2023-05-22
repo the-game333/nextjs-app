@@ -7,6 +7,7 @@ import { InitialLoginContextProps } from 'types';
 const initialState: InitialLoginContextProps = {
   isLoggedIn: false,
   isInitialized: false,
+  accessToken: "",
   user: null
 };
 

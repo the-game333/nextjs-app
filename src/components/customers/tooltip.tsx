@@ -20,7 +20,7 @@ const TooltipButton = ({ text, image }: { text: String; image: String }) => {
           backgroundColor: 'transparent'
         }}
       >
-        <Box component={'img'} src={`/assets/images/customers/${image}.png`} width={'100%'} height={'auto'} />
+        <Box component={'img'} src={`/assets/images/${image}.png`} width={'100%'} height={'auto'} />
       </Box>
       <Typography variant="h4">{text}</Typography>
     </Stack>

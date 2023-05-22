@@ -6,6 +6,8 @@ import useAuth from 'hooks/useAuth';
 import { DASHBOARD_PATH } from 'config';
 import { GuardProps } from 'types';
 import Loader from 'components/ui-component/Loader';
+import useConfig from 'hooks/useConfig';
+import { useSelector } from 'store';
 
 // ==============================|| GUEST GUARD ||============================== //
 
@@ -15,10 +17,11 @@ import Loader from 'components/ui-component/Loader';
  */
 
 const GuestGuard = ({ children }: GuardProps) => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn } = useSelector(state => state.auth);
   const router = useRouter();
-
+  const { onChangeMenuType } = useConfig();
   useEffect(() => {
+    onChangeMenuType('dark');
     if (isLoggedIn) {
       router.push(DASHBOARD_PATH);
     }

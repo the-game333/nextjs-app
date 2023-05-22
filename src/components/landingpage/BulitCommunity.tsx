@@ -1,13 +1,21 @@
 // material-ui
-import { useTheme } from '@mui/material/styles';
-import { Badge, Box, Container, Grid, IconButton, Divider, Typography } from '@mui/material';
+// import { useTheme } from '@mui/material/styles';
+import {
+  // Badge,
+  Box,
+  Container,
+  Grid,
+  // IconButton,
+  Divider,
+  Typography
+} from '@mui/material';
 
 // project imports
 import { gridSpacing } from 'store/constant';
 //material-icons
-import GitHubIcon from '@mui/icons-material/GitHub';
-import TwitterIcon from '@mui/icons-material/Twitter';
-import { FaDiscord } from 'react-icons/fa';
+// import GitHubIcon from '@mui/icons-material/GitHub';
+// import TwitterIcon from '@mui/icons-material/Twitter';
+// import { FaDiscord } from 'react-icons/fa';
 // ============================|| LANDING - KEY FEATURE PAGE ||============================ //
 
 const BulitCommunityPage = () => {

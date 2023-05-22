@@ -75,11 +75,12 @@ const MainLayout: FC = ({ children }) => {
 
   const dispatch = useDispatch();
   const { drawerOpen } = useSelector((state) => state.menu);
-  const { container } = useConfig();
+  const { container,onChangeMenuType } = useConfig();
 
   React.useEffect(() => {
     dispatch(openDrawer(!matchDownMd));
     // eslint-disable-next-line react-hooks/exhaustive-deps
+    onChangeMenuType('light');
   }, [matchDownMd]);
 
   const header = useMemo(

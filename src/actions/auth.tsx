@@ -4,5 +4,12 @@ const JoinWaitList = async (values: Object) => {
     const data = await Axios.post('api/auth/join_wait_list', values);
     return data;
 };
-
-export { JoinWaitList };
+const Register = async (values: Object) => {
+    const data = await Axios.post('api/auth/register', values);
+    return data;
+}
+const Login = async (email: String, password: String) => {
+    const data = await Axios.post('api/auth/login', { email, password });
+    return data;
+}
+export { JoinWaitList, Register, Login };

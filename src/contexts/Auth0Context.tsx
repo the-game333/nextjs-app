@@ -19,6 +19,7 @@ let auth0Client: Auth0Client;
 const initialState: InitialLoginContextProps = {
   isLoggedIn: false,
   isInitialized: false,
+  accessToken: "",
   user: null
 };
 
@@ -47,6 +48,7 @@ export const Auth0Provider = ({ children }: { children: React.ReactElement }) =>
             type: LOGIN,
             payload: {
               isLoggedIn: true,
+              accessToken: "",
               user: {
                 id: user?.sub,
                 email: user?.email
@@ -78,6 +80,7 @@ export const Auth0Provider = ({ children }: { children: React.ReactElement }) =>
         type: LOGIN,
         payload: {
           isLoggedIn: true,
+          accessToken: "",
           user: {
             id: user?.sub,
             avatar: user?.picture,
@@ -98,9 +101,9 @@ export const Auth0Provider = ({ children }: { children: React.ReactElement }) =>
     });
   };
 
-  const resetPassword = (email: string) => {};
+  const resetPassword = (email: string) => { };
 
-  const updateProfile = () => {};
+  const updateProfile = () => { };
 
   if (state.isInitialized !== undefined && !state.isInitialized) {
     return <Loader />;

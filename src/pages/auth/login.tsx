@@ -109,7 +109,7 @@ const Login = () => {
                 <Grid item container direction="column" alignItems="flex-end" xs={12}>
                   <Typography
                     component={Link}
-                    href="/pages/authentication/auth1/register"
+                    href="/auth/register"
                     variant="subtitle1"
                     sx={{ textDecoration: 'none' }}
                   >

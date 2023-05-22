@@ -1,8 +1,7 @@
 // material-ui
-import { Container, Grid, Typography, Box, Stack, Button, Divider } from '@mui/material';
+import { Container, Grid, Typography, Box, Button, Divider } from '@mui/material';
 import { styled } from '@mui/material/styles';
 // project imports
-import FadeInWhenVisible from './Animation';
 import { gridSpacing } from 'store/constant';
 const CardBox = styled(Box)(({ theme }) => ({
   display: 'flex',

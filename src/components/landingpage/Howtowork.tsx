@@ -5,13 +5,7 @@ import { Box, Container, Divider, Grid, Typography } from '@mui/material';
 // project imports
 import FadeInWhenVisible from './Animation';
 import SubCard from 'ui-component/cards/SubCard';
-import Avatar from 'ui-component/extended/Avatar';
 import { gridSpacing } from 'store/constant';
-
-// assets
-import PaletteTwoToneIcon from '@mui/icons-material/PaletteTwoTone';
-import ReorderTwoToneIcon from '@mui/icons-material/ReorderTwoTone';
-import SpeedTwoToneIcon from '@mui/icons-material/SpeedTwoTone';
 
 // =============================|| LANDING - FEATURE PAGE ||============================= //
 
