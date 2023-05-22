@@ -1,7 +1,13 @@
-import Image from 'next/image';
+// import Image from 'next/image';
 // material-ui
 import { useTheme, styled } from '@mui/material/styles';
-import { Container, Grid, Link, Typography, Stack, Divider, Button } from '@mui/material';
+import {
+  Container,
+  Grid,
+  Link,
+  Typography
+  // , Stack, Divider, Button
+} from '@mui/material';
 
 // project imports
 import { gridSpacing } from 'store/constant';
@@ -10,7 +16,7 @@ import { gridSpacing } from 'store/constant';
 // import FacebookIcon from '@mui/icons-material/Facebook';
 // import TwitterIcon from '@mui/icons-material/Twitter';
 // import InstagramIcon from '@mui/icons-material/Instagram'
-import GitHubIcon from '@mui/icons-material/GitHub';
+// import GitHubIcon from '@mui/icons-material/GitHub';
 // logo
 import Logo from '../ui-component/Logo';
 

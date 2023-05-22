@@ -164,7 +164,7 @@ export type KeyedObject = {
 export interface InitialLoginContextProps {
   isLoggedIn: boolean;
   isInitialized?: boolean;
-  // accessToken:String;
+  accessToken:String;
   user?: UserProfile | null | undefined;
 }
 

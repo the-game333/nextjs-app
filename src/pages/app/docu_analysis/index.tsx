@@ -12,7 +12,7 @@ import snackbar from 'utils/snackbar';
 // file module imports
 import { FileUploader } from "react-drag-drop-files";
 // action imports
-import { documentSubmit, loadAlldocuments } from 'actions/application';
+import { documentSubmit, loadAlldocuments, apideleteFile } from 'actions/application';
 import { useRouter } from 'next/router';
 // ==============================|| Documnet Analysis ||============================== //
 
@@ -62,24 +62,30 @@ const DocmumentAnalysis = () => {
     const goChatGPT = async (filename: String) => {
         router.push(`/app/chatGPT/${filename}`);
     }
-
+    const deleteFile = async (filename: String) => {
+        const result = await apideleteFile(email, filename);
+        if (result.status == 200) {
+            snackbar("File deleted successfully.");
+            init();
+        }
+    }
     const headCells = [
         {
             id: 'number',
-            numeric: true,
+            // numeric: true,
             disablePadding: true,
             label: 'No',
         },
         {
             id: 'filename',
-            numeric: true,
+            // numeric: true,
             disablePadding: false,
             label: 'File Name',
         },
 
         {
             id: 'action',
-            numeric: true,
+            // numeric: true,
             disablePadding: false,
             label: 'Action',
         },
@@ -156,7 +162,8 @@ const DocmumentAnalysis = () => {
                     <Stack justifyContent={"center"} spacing={3} p={1} sx={{
                         '& label': {
                             height: "200px !important",
-                            width: "100%"
+                            width: "100%",
+                            minWidth: "none"
                         },
                         '& span': {
                             fontSize: "1rem !important"
@@ -179,9 +186,10 @@ const DocmumentAnalysis = () => {
                             handleChange={fileHandleChange}
                             name="file"
                             types={fileTypes}
-                            maxSize={1}
-                            label={`Drag 'n' drop some files here,or click to select files.Maxinum size of each file is 1MB`}
+                            maxSize={5}
+                            label={`Drag 'n' drop some files here,or click to select files.Maxinum size of each file is 5MB`}
                             id="file"
+                            maxWidth="100%"
                         />
                         <Typography variant='body2'>
                             File to be processed
@@ -228,10 +236,12 @@ const DocmumentAnalysis = () => {
                                         >
                                             {item.orignal_name}
                                         </TableCell>
-                                        <TableCell
-                                            align="center">
-                                            <Button onClick={() => goChatGPT(item.filename)} variant='contained'>
-                                                Open chatGPT
+                                        <TableCell sx={{gap:"3px"}} align="center">
+                                            <Button sx={{ width: { sm: "100%", md: "auto" } }} onClick={() => goChatGPT(item.filename)} variant='contained'>
+                                                chatGPT
+                                            </Button>
+                                            <Button sx={{ width: { sm: "100%", md: "auto" } }} onClick={() => deleteFile(item.filename)} variant='contained' color='error'>
+                                                Delete
                                             </Button>
                                         </TableCell>
                                     </TableRow>

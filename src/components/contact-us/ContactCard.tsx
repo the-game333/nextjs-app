@@ -9,7 +9,7 @@ import CircularProgress from '@mui/material/CircularProgress';
 import { useTheme } from '@mui/material/styles';
 import Stack from '@mui/material/Stack';
 import Snackbar from '@mui/material/Snackbar';
-import MuiAlert, { AlertProps } from '@mui/material/Alert';
+import MuiAlert, { AlertColor, AlertProps } from '@mui/material/Alert';
 
 // alert
 const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
@@ -80,12 +80,19 @@ const sizes = [
   }
 ];
 
+interface MessageSentProps {
+  message: string;
+  type: AlertColor,
+  open: boolean,
+  loading: boolean
+}
+
 // ===========================|| CONTACT CARD - FORMS ||=========================== //
 
 const ContactCard = () => {
   const theme = useTheme();
 
-  const [messageSent, setMessageSent] = useState({
+  const [messageSent, setMessageSent] = useState<MessageSentProps>({
     message: '',
     type: 'success',
     open: false,
@@ -136,7 +143,7 @@ const ContactCard = () => {
       });
       setMessageSent({ ...messageSent, message: 'Message sent', open: true, loading: false, type: 'success' });
       setTimeout(() => {
-        setMessageSent({ ...messageSent, message: '', loading: false, open: false, type: '' });
+        setMessageSent({ ...messageSent, message: '', loading: false, open: false, type: 'success' });
       }, 5000);
     } catch (err) {
       console.log('Error : ', err);
@@ -158,7 +165,7 @@ const ContactCard = () => {
       });
 
       setTimeout(() => {
-        setMessageSent({ ...messageSent, message: '', loading: false, type: '' });
+        setMessageSent({ ...messageSent, message: '', loading: false, type: 'success' });
       }, 5000);
     }
   };

@@ -1,43 +1,39 @@
 // material-ui
 import { useTheme, styled } from '@mui/material/styles';
-import { Box, Button, Container, Grid, InputBase, Paper, TextField, Typography } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 
 // third party
 import { motion } from 'framer-motion';
-import Link from 'Link';
 // project imports
 // project imports
-import Avatar from 'ui-component/extended/Avatar';
-import AnimateButton from 'ui-component/extended/AnimateButton';
 import { gridSpacing } from 'store/constant';
-import NavigateNextIcon from '@mui/icons-material/NavigateNext';
-import { useState } from 'react';
+// import { useState } from 'react';
 // styles
-const HeaderImage = styled('img')(({ theme }) => ({
-  maxWidth: '100%',
-  borderRadius: '20px',
-  transform: 'scale(1.7)',
-  transformOrigin: theme.direction === 'rtl' ? '100% 50%' : '0 50%',
-  [theme.breakpoints.down('lg')]: {
-    transform: 'scale(1.2)'
-  }
-}));
+// const HeaderImage = styled('img')(({ theme }) => ({
+//   maxWidth: '100%',
+//   borderRadius: '20px',
+//   transform: 'scale(1.7)',
+//   transformOrigin: theme.direction === 'rtl' ? '100% 50%' : '0 50%',
+//   [theme.breakpoints.down('lg')]: {
+//     transform: 'scale(1.2)'
+//   }
+// }));
 
 // ==============================|| LANDING - HEADER PAGE ||============================== //
 
 const HeaderPage = () => {
   const theme = useTheme();
-  const [text, setText] = useState('COPY');
-  const copy = () => {
-    navigator.clipboard.writeText('npx novu init');
-    setText('COPIED!');
-    setTimeout(() => {
-      reasync();
-    }, 1500);
-  };
-  const reasync = () => {
-    setText('COPY');
-  };
+  // const [text, setText] = useState('COPY');
+  // const copy = () => {
+  //   navigator.clipboard.writeText('npx novu init');
+  //   setText('COPIED!');
+  //   setTimeout(() => {
+  //     reasync();
+  //   }, 1500);
+  // };
+  // const reasync = () => {
+  //   setText('COPY');
+  // };
   return (
     <Container>
       <Grid

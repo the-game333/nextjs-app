@@ -11,12 +11,6 @@ import Button from '@mui/material/Button';
 import FadeInWhenVisible from './Animation';
 import { gridSpacing } from 'store/constant';
 
-import EmailIcon from '@mui/icons-material/Email';
-import PersonRoundedIcon from '@mui/icons-material/PersonRounded';
-import CheckCircleRoundedIcon from '@mui/icons-material/CheckCircleRounded';
-import ComputerRoundedIcon from '@mui/icons-material/ComputerRounded';
-import EditRoundedIcon from '@mui/icons-material/EditRounded';
-import WatchLaterRoundedIcon from '@mui/icons-material/WatchLaterRounded';
 // ==============================|| LANDING - DEMOS PAGE ||============================== //
 
 const Howtowork2 = () => (
@@ -27,20 +21,25 @@ const Howtowork2 = () => (
           We've built it so you don't have to
         </Typography>
       </Grid>
-      <Grid container spacing={5} zIndex={2} mt={5} direction={"row"} alignItems={"stretch"}>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
+      <Grid container spacing={5} zIndex={2} mt={5} direction={'row'} alignItems={'stretch'}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
-            <Grid container spacing={2} alignItems={"stretch"}>
+            <Grid container spacing={2} alignItems={'stretch'}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/images/howtowork/generative_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
+                <Box
+                  component={'img'}
+                  src="/assets/images/howtowork/generative_ai.png"
+                  width={'20%'}
+                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Generative AI</Typography>
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="body2">
-                  With technologies like chatGPT, GPT-4, Dall-E, and more embedded onto our infrastructure, you can easily harness the
-                  power of generative AI to create innovative and dynamic AI applications.
+                  With technologies like chatGPT, GPT-4, Dall-E, and more embedded onto our infrastructure, you can easily harness the power
+                  of generative AI to create innovative and dynamic AI applications.
                 </Typography>
                 <List>
                   <ListItem disablePadding>
@@ -78,20 +77,25 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/images/howtowork/government_ai.png" width={'20%'} sx={{background:"white",marginLeft: '-2%',borderRadius:"30px" }} />
+                <Box
+                  component={'img'}
+                  src="/assets/images/howtowork/government_ai.png"
+                  width={'20%'}
+                  sx={{ background: 'white', marginLeft: '-2%', borderRadius: '30px' }}
+                />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Government AI</Typography>
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="body2">
-                  From natural language processing for citizen interactions to data analysis for policy-making, InfraHive provides the
-                  tools and resources to integrate AI seamlessly into government operations. Our secure and scalable platform ensures data
-                  privacy and compliance, making it an ideal choice for government AI initiatives.{' '}
+                  From natural language processing for citizen interactions to data analysis for policy-making, InfraHive provides the tools
+                  and resources to integrate AI seamlessly into government operations. Our secure and scalable platform ensures data privacy
+                  and compliance, making it an ideal choice for government AI initiatives.{' '}
                 </Typography>
                 <List>
                   <ListItem disablePadding>
@@ -129,11 +133,16 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/images/howtowork/enterprise_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
+                <Box
+                  component={'img'}
+                  src="/assets/images/howtowork/enterprise_ai.png"
+                  width={'20%'}
+                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Enterprise AI</Typography>
@@ -181,11 +190,16 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/images/howtowork/consumer_ai.jpg" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
+                <Box
+                  component={'img'}
+                  src="/assets/images/howtowork/consumer_ai.jpg"
+                  width={'20%'}
+                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Consumer AI</Typography>
@@ -228,11 +242,16 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/images/howtowork/education_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
+                <Box
+                  component={'img'}
+                  src="/assets/images/howtowork/education_ai.png"
+                  width={'20%'}
+                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Education AI</Typography>
@@ -278,20 +297,25 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: "450px" }}>
+        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
-                <Box component={'img'} src="/assets/images/howtowork/developer_ai.png" width={'20%'} sx={{ marginLeft: '-2%',borderRadius:"30px" }} />
+                <Box
+                  component={'img'}
+                  src="/assets/images/howtowork/developer_ai.png"
+                  width={'20%'}
+                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="h3">Developer AI</Typography>
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="body2">
-                  With our infrastructure, developers can access a wide range of AI technologies like chatGPT, GPT-4, AutoGPTs, and more,
-                  as reliable and scalable APIs. InfraHive simplifies the integration process, allowing developers to seamlessly embed
-                  powerful AI capabilities into their applications.
+                  With our infrastructure, developers can access a wide range of AI technologies like chatGPT, GPT-4, AutoGPTs, and more, as
+                  reliable and scalable APIs. InfraHive simplifies the integration process, allowing developers to seamlessly embed powerful
+                  AI capabilities into their applications.
                 </Typography>
                 <List>
                   <ListItem disablePadding>

@@ -1,5 +1,5 @@
 // material-ui
-import { Box, Button, Container, Divider, Grid, InputBase, Paper, Typography } from '@mui/material';
+import { Box, Button, Container, Grid, InputBase, Paper, Typography } from '@mui/material';
 
 // project imports
 import { gridSpacing } from 'store/constant';
@@ -17,7 +17,7 @@ import { useTheme } from '@mui/material/styles';
 const style = a11yDark;
 
 const LanguageCodeTypePage = () => {
-  const [language, setLanguage] = useState('javascript');
+  const [language] = useState('javascript');
   const [selectedLanguge, setSelectedLanguge] = useState(0);
   const theme = useTheme();
 
