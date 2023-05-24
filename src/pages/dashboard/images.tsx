@@ -17,7 +17,6 @@ import styled from '@emotion/styled';
 import { toNumber } from 'lodash';
 import { Download } from '@mui/icons-material';
 
-
 // Download button styled compoennt so it can be displayed on top of the image
 const DownloadBtn = styled('a')`
   position: absolute;
@@ -45,7 +44,7 @@ const images = () => {
   //State to track if image is loaded or not
   const [imgLoaded, setImgLoaded] = useState(false);
   // Image style state
-  const [imgStyle, setImageStyle] = useState('')
+  const [imgStyle, setImageStyle] = useState('3d-model');
 
   // Variable containing all available image sizes
   const sizes: string[][] = [
@@ -64,30 +63,30 @@ const images = () => {
   const dalleSizes: string[][] = [
     ['1:1', '256x256'],
     ['1:1', '512x512'],
-    ['1:1', '1024x1024'],
-  ]
+    ['1:1', '1024x1024']
+  ];
 
   // Array of available image styles
   const ImageSyles: string[] = [
-    "3d-model",
-    "analog-film",
-    "anime",
-    "cinematic",
-    "comic-book",
-    "digital-art",
-    "enhance",
-    "fantasy-art",
-    "isometric",
-    "line-art",
-    "low-poly",
-    "modeling-compound",
-    "neon-punk",
-    "origami",
-    "photographic",
-    "pixel-art",
-    "tile-texture",
-  ]
-  
+    '3d-model',
+    'analog-film',
+    'anime',
+    'cinematic',
+    'comic-book',
+    'digital-art',
+    'enhance',
+    'fantasy-art',
+    'isometric',
+    'line-art',
+    'low-poly',
+    'modeling-compound',
+    'neon-punk',
+    'origami',
+    'photographic',
+    'pixel-art',
+    'tile-texture'
+  ];
+
   // useEffect to create an array of placeholder images according to the number of images selected
   useEffect(() => {
     let imageData = '/placeholder.png';
@@ -105,8 +104,8 @@ const images = () => {
     }
   });
 
-  // An array to store number of images possible. 
-  const numOfImages = [1,2,3,4,5,6,7,8,9,10];
+  // An array to store number of images possible.
+  const numOfImages = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
   // Handler to handle api mode change
   const handleToggle = (event: SelectChangeEvent) => {
@@ -133,32 +132,33 @@ const images = () => {
     setImageStyle(event.target.value);
   };
 
-  const ImageSelectorComp:React.FC<{imageArray:string[][]}> = ({imageArray}) => {
-    return (<div>
-                  <InputLabel id="image-size-select-label">Image Size</InputLabel>
-                  <Select
-                    labelId="image-size-select-label"
-                    id="image-select"
-                    value={imageSize.toString()}
-                    label="Image Size"
-                    onChange={sizeHandler}
-                    autoWidth
-                  >
-                    {/* Options of the selector  */}
-                    {imageArray.map((size, index) => (
-                      <MenuItem key={index} value={index}>
-                        {size[0]} {size[1]}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </div>
-    )
-  }
+  const ImageSelectorComp: React.FC<{ imageArray: string[][] }> = ({ imageArray }) => {
+    return (
+      <div>
+        <InputLabel id="image-size-select-label">Image Size</InputLabel>
+        <Select
+          labelId="image-size-select-label"
+          id="image-select"
+          value={imageSize.toString()}
+          label="Image Size"
+          onChange={sizeHandler}
+          autoWidth
+        >
+          {/* Options of the selector  */}
+          {imageArray.map((size, index) => (
+            <MenuItem key={index} value={index}>
+              {size[0]} {size[1]}
+            </MenuItem>
+          ))}
+        </Select>
+      </div>
+    );
+  };
 
   // Form Submit Handler to get the images from the backend
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const newArray: string[] = Array(numImages).fill("/loading.gif");
+    const newArray: string[] = Array(numImages).fill('/loading.gif');
     setImageArray(newArray);
     // Dalle API
     if (mode == 'dalle') {
@@ -199,7 +199,7 @@ const images = () => {
         samples: numImages,
         steps: 50,
         // style: imgStyle,
-        style: "neon-punk"
+        style: 'neon-punk'
       };
 
       // Header for the call
@@ -225,15 +225,8 @@ const images = () => {
           <form onSubmit={handleSubmit}>
             {/* Selector Component to select engine based on MUI Component */}
             <InputLabel id="engine-select-label">Engine</InputLabel>
-            <Select
-              labelId="engine-select-label"
-              id="engine-select"
-              value={mode}
-              label="Engine"
-              onChange={handleToggle}
-              autoWidth
-            >
-              <MenuItem value={'dream'}>DreamStudio AI</MenuItem>
+            <Select labelId="engine-select-label" id="engine-select" value={mode} label="Engine" onChange={handleToggle} autoWidth>
+              <MenuItem value={'dream'}>Stability AI</MenuItem>
               <MenuItem value={'dalle'}>Dalle AI</MenuItem>
             </Select>
 
@@ -252,54 +245,55 @@ const images = () => {
               />
 
               {/* Div element containing image size and number of images selector in a inline flex */}
-              <div style={{ display: 'flex', justifyContent: 'space-between' , marginTop: "16px"}}>
+              <div style={{ display: 'flex', flexDirection: "column", marginTop: '16px' }}>
                 {/* Image Size select MUI Component */}
-                {
-                  mode=='dream' ? <ImageSelectorComp imageArray={sizes}/> : <ImageSelectorComp imageArray={dalleSizes}/>
-                }
+                {mode == 'dream' ? <ImageSelectorComp imageArray={sizes} /> : <ImageSelectorComp imageArray={dalleSizes} />}
                 {/* <ImageSelectorComp imageArray={sizes}/> */}
 
-                {/* Image Style select MUI Component */}
-                <div>
-                  <InputLabel id="image-style-select-label">Style</InputLabel>
-                  <Select
-                    labelId="image-style-select-label"
-                    id="image-style-select"
-                    value={imgStyle}
-                    label="Image Size"
-                    onChange={imageStyleHandler}
-                    autoWidth
-                  >
-                    {/* Options of the selector  */}
-                    {ImageSyles.map((style, index) => (
-                      <MenuItem key={index} value={index}>
-                        {style}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </div>
+                <div style={{ display: 'flex' , marginTop: '16px' }}>
+                  {/* Image Style select MUI Component */}
+                  <div style={{marginRight: "2rem"}}>
+                    <InputLabel id="image-style-select-label">Style</InputLabel>
+                    <Select
+                      labelId="image-style-select-label"
+                      id="image-style-select"
+                      value={imgStyle}
+                      label="Image Size"
+                      onChange={imageStyleHandler}
+                      autoWidth
+                    >
+                      {/* Options of the selector  */}
+                      {ImageSyles.map((style, index) => (
+                        <MenuItem key={index} value={index}>
+                          {style}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </div>
 
-                {/* Number of images selector MUI Component */}
-                <div>
-                  <InputLabel id="image-number-select-label">Number</InputLabel>
-                  <Select
-                    labelId="image-number-select-label"
-                    id="image-number-select"
-                    value={numImages.toString()}
-                    label="Number of Images"
-                    onChange={numImageHandler}
-                    sx={{minWidth: "3rem"}}
-                  >
-                    {/* Options of the selector */}
-                    {numOfImages.map((num, index) => (
-                      <MenuItem value={num} key={index}>
-                        {" "}{num}{" "}
-                      </MenuItem>
-                    ))}
-                  </Select>
+                  {/* Number of images selector MUI Component */}
+                  <div>
+                    <InputLabel id="image-number-select-label">Number</InputLabel>
+                    <Select
+                      labelId="image-number-select-label"
+                      id="image-number-select"
+                      value={numImages.toString()}
+                      label="Number of Images"
+                      onChange={numImageHandler}
+                      sx={{ minWidth: '3rem' }}
+                    >
+                      {/* Options of the selector */}
+                      {numOfImages.map((num, index) => (
+                        <MenuItem value={num} key={index}>
+                          {' '}
+                          {num}{' '}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </div>
                 </div>
               </div>
-              
+
               {/* Submit Button */}
               <Button variant="contained" endIcon={<EmojiObjectsIcon />} sx={{ marginTop: '24px' }} fullWidth={true} type="submit">
                 Imagine
@@ -307,7 +301,7 @@ const images = () => {
             </div>
           </form>
         </Grid>
-        
+
         {/* Image Grid display component */}
         <Grid item xs={12} md={9}>
           {/* Uses MUI ImageList component */}
@@ -323,8 +317,8 @@ const images = () => {
                 }}
               >
                 {/* Image is displayed directly using the base64 and is conditionally showing either normal image or base64 encoded result based upop imgLoaded state variable */}
-                <img src={imgLoaded ? `data:image/jpeg;base64,${item}` : `${item}`} alt={prompt}  />
-                
+                <img src={imgLoaded ? `data:image/jpeg;base64,${item}` : `${item}`} alt={prompt} />
+
                 {/* Download button download the image using the download property */}
                 <DownloadBtn href={`data:image/png;base64,${item}`} download={`${prompt}-${index}.png`}>
                   <Download />
