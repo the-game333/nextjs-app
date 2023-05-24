@@ -46,23 +46,24 @@ const HeaderPage = () => {
       >
         <Grid item xs={12} md={12} sx={{ zIndex: 2 }}>
           <Grid container spacing={gridSpacing} sx={{ pr: 10, [theme.breakpoints.down('lg')]: { pr: 0, textAlign: 'center' } }}>
-            <Grid item xs={12} display={'flex'} gap={2} justifyContent={'center'}>
+            <Grid item xs={12} sm={12} md={12} display={'flex'} gap={2}  >
               <Typography
                 variant="h5"
                 sx={{
-                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                  fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
                   fontWeight: 700,
-                  lineHeight: 1.4
+                  lineHeight: 1.4,
+                  textAlign: "left",
                 }}
               >
                 Build
               </Typography>
-              <div className="cubespinner">
+              <div className="cubespinner" style={{minWidth: "33%"}} >
                 <Typography
                   variant="h5"
                   className="face1"
                   sx={{
-                    fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
                     background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
@@ -76,9 +77,9 @@ const HeaderPage = () => {
                   variant="h5"
                   className="face2"
                   sx={{
-                    fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
                     fontWeight: 700,
-                    lineHeight: 1.0,
+                    lineHeight: 1.4,
                     background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent'
@@ -91,7 +92,7 @@ const HeaderPage = () => {
                   variant="h5"
                   className="face3"
                   sx={{
-                    fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
                     background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
@@ -106,9 +107,11 @@ const HeaderPage = () => {
               <Typography
                 variant="h5"
                 sx={{
-                  fontSize: { xs: '2.25rem', sm: '3rem', md: '3.5rem' },
+                  fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
                   fontWeight: 700,
-                  lineHeight: 1.4
+                  lineHeight: 1.4,
+                  textAlign:'left',
+                  width:"full"
                 }}
               >
                 With Your Data
