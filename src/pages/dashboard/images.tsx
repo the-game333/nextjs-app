@@ -11,7 +11,7 @@ import {
   ThemeProvider,
   createTheme
 } from '@mui/material';
-import React, { ChangeEvent, FormEvent, useEffect, useState } from 'react';
+import React, { ChangeEvent, FormEvent, ReactComponentElement, useEffect, useState } from 'react';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import styled from '@emotion/styled';
 import { toNumber } from 'lodash';
@@ -59,6 +59,13 @@ const images = () => {
     ['2:3', '512x768'],
     ['4:7', '512x896']
   ];
+
+  // Array of Dalle supported Image sizes
+  const dalleSizes: string[][] = [
+    ['1:1', '256x256'],
+    ['1:1', '512x512'],
+    ['1:1', '1024x1024'],
+  ]
 
   // Array of available image styles
   const ImageSyles: string[] = [
@@ -126,6 +133,27 @@ const images = () => {
     setImageStyle(event.target.value);
   };
 
+  const ImageSelectorComp:React.FC<{imageArray:string[][]}> = ({imageArray}) => {
+    return (<div>
+                  <InputLabel id="image-size-select-label">Image Size</InputLabel>
+                  <Select
+                    labelId="image-size-select-label"
+                    id="image-select"
+                    value={imageSize.toString()}
+                    label="Image Size"
+                    onChange={sizeHandler}
+                    autoWidth
+                  >
+                    {/* Options of the selector  */}
+                    {imageArray.map((size, index) => (
+                      <MenuItem key={index} value={index}>
+                        {size[0]} {size[1]}
+                      </MenuItem>
+                    ))}
+                  </Select>
+                </div>
+    )
+  }
 
   // Form Submit Handler to get the images from the backend
   const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
@@ -136,12 +164,12 @@ const images = () => {
     if (mode == 'dalle') {
       // Sets loaded images to false
       setImgLoaded(false);
-
+      // console.log(sizes[])
       // Defines payload for the API call
       const data = {
         prompt: prompt,
         num_outputs: numImages,
-        size: sizes[imageSize][1]
+        size: dalleSizes[imageSize][1]
       };
 
       const requestOptions = {
@@ -226,24 +254,10 @@ const images = () => {
               {/* Div element containing image size and number of images selector in a inline flex */}
               <div style={{ display: 'flex', justifyContent: 'space-between' , marginTop: "16px"}}>
                 {/* Image Size select MUI Component */}
-                <div>
-                  <InputLabel id="image-size-select-label">Image Size</InputLabel>
-                  <Select
-                    labelId="image-size-select-label"
-                    id="image-select"
-                    value={imageSize.toString()}
-                    label="Image Size"
-                    onChange={sizeHandler}
-                    autoWidth
-                  >
-                    {/* Options of the selector  */}
-                    {sizes.map((size, index) => (
-                      <MenuItem key={index} value={index}>
-                        {size[0]} {size[1]}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </div>
+                {
+                  mode=='dream' ? <ImageSelectorComp imageArray={sizes}/> : <ImageSelectorComp imageArray={dalleSizes}/>
+                }
+                {/* <ImageSelectorComp imageArray={sizes}/> */}
 
                 {/* Image Style select MUI Component */}
                 <div>
