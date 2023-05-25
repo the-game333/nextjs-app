@@ -15,7 +15,7 @@ import { gridSpacing } from 'store/constant';
 
 const Howtowork2 = () => (
   <Container>
-    <Grid container spacing={gridSpacing} minHeight={'650px'} py={5}>
+    <Grid container spacing={gridSpacing} minHeight={'650px'} py={5} px={5}>
       <Grid item textAlign={'center'} xs={12} lg={12} md={12} zIndex={2}>
         <Typography variant="h1" component="div">
           We've built it so you don't have to
@@ -29,8 +29,8 @@ const Howtowork2 = () => (
                 <Box
                   component={'img'}
                   src="/assets/images/howtowork/generative_ai.png"
-                  width={'20%'}
-                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                  width={'5rem'}
+                  sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
@@ -84,8 +84,8 @@ const Howtowork2 = () => (
                 <Box
                   component={'img'}
                   src="/assets/images/howtowork/government_ai.png"
-                  width={'20%'}
-                  sx={{ background: 'white', marginLeft: '-2%', borderRadius: '30px' }}
+                  width={'5rem'}
+                  sx={{ background: 'white', marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
@@ -140,8 +140,8 @@ const Howtowork2 = () => (
                 <Box
                   component={'img'}
                   src="/assets/images/howtowork/enterprise_ai.png"
-                  width={'20%'}
-                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                  width={'5rem'}
+                  sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
@@ -197,8 +197,8 @@ const Howtowork2 = () => (
                 <Box
                   component={'img'}
                   src="/assets/images/howtowork/consumer_ai.jpg"
-                  width={'20%'}
-                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                  width={'5rem'}
+                  sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
@@ -249,8 +249,8 @@ const Howtowork2 = () => (
                 <Box
                   component={'img'}
                   src="/assets/images/howtowork/education_ai.png"
-                  width={'20%'}
-                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                  width={'5rem'}
+                  sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
@@ -304,8 +304,8 @@ const Howtowork2 = () => (
                 <Box
                   component={'img'}
                   src="/assets/images/howtowork/developer_ai.png"
-                  width={'20%'}
-                  sx={{ marginLeft: '-2%', borderRadius: '30px' }}
+                  width={'5rem'}
+                  sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
