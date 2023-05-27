@@ -197,9 +197,9 @@ const texts = () => {
           value={textBox}
           placeholder='Write your prompt here'
           onChange={handleInputChange}
-          className='w-full text-lg pt-4 px-4 rounded-l-xl resize-y h-16 bg-white'
+          className='w-full text-lg pt-4 px-4 rounded-l-xl resize-y min-h-[16] bg-white !border-0'
         />
-        <button onClick={handleSendMessage} className="bg-dark-blue rounded-r-xl px-4 py-2 text-white font-semibold text-lg !border-0">
+        <button onClick={handleSendMessage} className="bg-dark-blue rounded-r-xl px-4 py-2 text-white font-semibold text-lg ">
           Send
         </button>
       </div>
