@@ -188,7 +188,7 @@ const texts = () => {
         </div>
       </div>
 
-      <div className="fixed bottom-0 left-[20%] right-[10%] p-4 flex z-[9999]">
+      <div className="fixed bottom-0 left-[10%] md:left-[20%] right-[10%] p-4 flex z-[9999]">
         <TextField
           id="standard-multiline-flexible"
           multiline
