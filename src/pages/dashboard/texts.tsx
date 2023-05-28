@@ -152,11 +152,11 @@ const texts = () => {
         </div>
 
         {/* Advanced Menu */}
-        <div className="">
+        <div className="my-auto mx-4">
           <button onClick={handleMenuButton} className="my-auto relative">
             <MenuIcon sx={{ height: '28px', marginTop: 'auto', marginBottom: 'auto' }} />
           </button>
-          <div className={`${menuBtnActive ? 'absolute right-12' : 'hidden'} bg-white p-4 border-2 border-grey rounded-sm z-[9999]`}>
+          <div className={`${menuBtnActive ? 'absolute right-12' : 'hidden'} bg-white border p-4 rounded-xl z-[9999]`}>
             <p className='text-lg opacity-70'>Advanced Settings</p>
             <hr className='-mt-2'/>
             {/* Temperature Slider */}
@@ -199,7 +199,7 @@ const texts = () => {
           onChange={handleInputChange}
           className='w-full text-lg pt-4 px-4 rounded-l-xl resize-y min-h-[16] bg-white !border-0'
         />
-        <button onClick={handleSendMessage} className="bg-dark-blue rounded-r-xl px-4 py-2 text-white font-semibold text-lg ">
+        <button onClick={handleSendMessage} className="bg-dark-blue rounded-r-xl px-4 py-2 text-white font-semibold text-lg " disabled={textBox==''?true:false}>
           Send
         </button>
       </div>
