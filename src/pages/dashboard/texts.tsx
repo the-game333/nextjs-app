@@ -181,7 +181,7 @@ const texts = () => {
       </div>
 
       <div className="h-full overflow-auto mb-24  grid grid-cols-1 content-end bg-white">
-        <div className="w-[40%] mx-auto">
+        <div className="w-[90%] sm:w-[80%] md:w-[60%] lg:w-[40%] mx-auto">
           {messages.map((mess, index) => (
             <ChatComp sender={mess.sender} message={mess.message} key={index} />
           ))}
