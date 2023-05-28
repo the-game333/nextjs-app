@@ -20,11 +20,11 @@ const ChatBots: { name: string; models: string[] }[] = [
   },
   {
     name: 'Anthropic',
-    models: ['claude-v1', 'claude-instant-v1.1']
+    models: ['claude-v1', 'claude-instant-v1']
   },
   {
     name: 'Cohere',
-    models: ['command', 'Command-light']
+    models: ['command', 'command-light']
   }
 ];
 
