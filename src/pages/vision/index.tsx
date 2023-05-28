@@ -5,7 +5,7 @@ import AppBar from 'ui-component/extended/AppBar'
 const Card = (props:{heading:string,desc:string,key:number}) => {
     return(
         <div key={props.key} className='p-6 bg-white text-black rounded-lg'>
-            <h2 className='text-5xl'>{props.heading}</h2>
+            <h2 className='text-5xl text-infra-yellow'>{props.heading}</h2>
             <p className='text-xl leading-relaxed'>{props.desc}</p>
         </div>
     )
@@ -33,7 +33,7 @@ const index = () => {
         {/* Vision */}
         <div className='w-full py-24'>
             <div className='max-w-3xl mx-auto'>
-            <h1 className='text-5xl'>vision</h1>
+            <h1 className='text-5xl text-infra-yellow'>vision</h1>
             <p className='text-xl leading-relaxed'>WorkHack is a language AI company focused on building generative AI products with significant delta over current behaviours and tools. We are a layer between Large Language Models and commercial applications with AWS-like guarantees.</p>
             </div>
         </div>
