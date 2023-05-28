@@ -2,12 +2,15 @@ import { InputLabel, MenuItem, Select, SelectChangeEvent, Slider, TextField } fr
 import { toNumber } from 'lodash';
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 
 const ChatComp = (props: { sender: string; message: string; key: number }) => {
   return (
     <div className={`p-4 pt-1 rounded-lg`} key={props.key}>
       <p className="font-black opacity-70">{props.sender}</p>
-      <p className="text-lg">{props.message}</p>
+      <ReactMarkdown>
+      {props.message}
+      </ReactMarkdown>
       <hr />
     </div>
   );
