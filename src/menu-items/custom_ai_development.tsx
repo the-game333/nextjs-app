@@ -11,9 +11,7 @@ import {
   IconBorderAll,
   IconChartDots,
   IconStairsUp,
-  IconPuzzle,
-  IconDna,
-  IconFile3d
+  IconDna
 } from '@tabler/icons';
 
 // constant
@@ -26,46 +24,33 @@ const icons = {
   IconStairsUp,
   IconRobot,
   IconBuildingSkyscraper,
-  IconDna,
-  IconPuzzle,
-  IconFile3d
+  IconDna
 };
 
 // ==============================|| UI FORMS MENU ITEMS ||============================== //
 
-const ai_developement = {
-  id: 'ai_developement',
-  title: <FormattedMessage id="ai_developement" />,
+const custom_ai_development = {
+  id: 'custom_ai_development',
+  title: <FormattedMessage id="custom_ai_development" />,
   type: 'group',
   children: [
     {
-      id: 'auto_gpt_app',
-      title: <FormattedMessage id="auto_gpt_app" />,
+      id: 'enterprise_ai',
+      title: <FormattedMessage id="enterprise_ai" />,
       type: 'item',
-      icon: icons.IconRobot
+      icon: icons.IconBuildingSkyscraper
     },
+
     {
-      id: 'chatgpt_plugins',
-      title: <FormattedMessage id="chatgpt_plugins" />,
+      id: 'government_ai',
+      title: <FormattedMessage id="government_ai" />,
       type: 'item',
-      icon: icons.IconPuzzle
-    },
-    {
-      id: 'lang_chain_app',
-      title: <FormattedMessage id="lang_chain_app" />,
-      type: 'item',
-      icon: icons.IconDna
-    },
-    {
-      id: 'train_fine_tune',
-      title: <FormattedMessage id="train_fine_tune" />,
-      type: 'item',
-      icon: icons.IconFile3d
+      icon: icons.IconForms
     }
   ]
 };
 
-export default ai_developement;
+export default custom_ai_development;
 
 // {
 //   id: 'charts',

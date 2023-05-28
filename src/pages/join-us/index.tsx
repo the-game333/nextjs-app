@@ -8,8 +8,8 @@ const index = () => {
     <div>
         <AppBar />
       <div className='max-w-2xl mx-auto py-24 text-white'>
-        <h1 className='text-5xl text-infra-yellow'>join us</h1>
-        <p className='text-xl leading-relaxed mt-12'>
+        <h1 className='text-5xl text-infra-yellow mx-8'>join us</h1>
+        <p className='text-xl leading-relaxed mt-12 mx-8'>
           WorkHack is building on the frontiers of generative AI. We are looking for folks who are as excited as we are about building
           products with high impact on human productivity and business outcomes. 
           <br/><br/>

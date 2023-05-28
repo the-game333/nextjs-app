@@ -29,7 +29,7 @@ const GenerativeAI = {
     },
     {
       id: 'text',
-      title: <FormattedMessage id="Text Generator" />,
+      title: <FormattedMessage id="Text" />,
       type: 'item',
       url: '/dashboard/texts',
       icon: icons.IconCursorText

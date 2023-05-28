@@ -47,7 +47,7 @@ const dashboard: DashboardMenuProps = {
     // },
     {
       id: 'default',
-      title: <FormattedMessage id="Default" />,
+      title: <FormattedMessage id="My Apps" />,
       type: 'item',
       url: '/dashboard/default',
       icon: icons.IconDashboard,

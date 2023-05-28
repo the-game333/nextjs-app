@@ -31,16 +31,16 @@ const index = () => {
     <div>
         <AppBar />
         {/* Vision */}
-        <div className='w-full py-24'>
-            <div className='max-w-3xl mx-auto'>
+        <div className=' py-24 mx-4'>
+            <div className='max-w-2xl lg:max-w-3xl mx-auto'>
             <h1 className='text-5xl text-infra-yellow'>vision</h1>
             <p className='text-xl leading-relaxed'>WorkHack is a language AI company focused on building generative AI products with significant delta over current behaviours and tools. We are a layer between Large Language Models and commercial applications with AWS-like guarantees.</p>
             </div>
         </div>
 
         {/* Cards */}
-        <div  className='w-full py-24'>
-            <div className='grid grid-cols-2 max-w-5xl mx-auto gap-6'>
+        <div  className=' py-24 mx-4'>
+            <div className='grid grid-cols-1 lg:grid-cols-2 max-w-xl lg:max-w-5xl mx-auto gap-6'>
                 {CardData.map((card,index) => (
                     <Card heading={card.heading} desc={card.desc} key={index}/>
                 ))}
