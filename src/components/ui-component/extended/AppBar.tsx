@@ -102,6 +102,7 @@ const AppBar = ({ ...others }) => {
               >
                 Pricing
               </Button> */}
+
               <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
@@ -157,6 +158,17 @@ const AppBar = ({ ...others }) => {
                   Solutions
                 </Button>
               </HtmlTooltip>
+
+              <a href="/vision">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Vision
+                </Button>
+              </a>
+              <a href="/join-us">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Join Us
+                </Button>
+              </a>
               <Button
                 color="inherit"
                 sx={{ color: 'black', height: '43px' }}

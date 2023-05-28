@@ -2,8 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx,mdx}",],
   theme: {
-    extend: {},
-    colors: {
+    extend: { colors: {
       "btn-blue": "#5148d7",
       "white": "#FFFFFF",
       "grey": "#1d2939" ,
@@ -16,7 +15,8 @@ module.exports = {
       'custom': '0 0 10px rgba(66,24,209,.2)',
       'custom-lite': '0 0 2px rgba(66,24,209,.2)',
     }
-  },
+  }}
+   ,
   plugins: [],
 }
 
