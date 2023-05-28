@@ -153,8 +153,8 @@ const texts = () => {
 
         {/* Advanced Menu */}
         <div className="my-auto mx-4">
-          <button onClick={handleMenuButton} className="my-auto relative">
-            <MenuIcon sx={{ height: '28px', marginTop: 'auto', marginBottom: 'auto' }} />
+          <button onClick={handleMenuButton} className="my-auto relative bg-white border-0">
+            <MenuIcon sx={{ height: '32px', width: "36px"}} />
           </button>
           <div className={`${menuBtnActive ? 'absolute right-12' : 'hidden'} bg-white border p-4 rounded-xl z-[9999]`}>
             <p className='text-lg opacity-70'>Advanced Settings</p>
