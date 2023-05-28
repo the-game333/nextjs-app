@@ -38,12 +38,14 @@ const custom_ai_development = {
       id: 'enterprise_ai',
       title: <FormattedMessage id="enterprise_ai" />,
       type: 'item',
+      url: '/dashboard/enterpriseai',
       icon: icons.IconBuildingSkyscraper
     },
 
     {
       id: 'government_ai',
       title: <FormattedMessage id="government_ai" />,
+      url: '/dashboard/governmentai',
       type: 'item',
       icon: icons.IconForms
     }
