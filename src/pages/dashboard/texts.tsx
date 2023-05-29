@@ -35,6 +35,7 @@ const texts = () => {
   const [chatBotIndex, setChatBotIndex] = useState(0);
   const [menuBtnActive, setMenuBtnActive] = useState(false);
   const [temperature, setTemperature] = useState(0.7);
+  const [tokens, setTokens] = useState(1000);
   const [messages, setMessages] = useState<{ sender: string; message: string }[]>([]);
   const [currentModel, setCurrentModel] = useState(ChatBots[0].models[0]);
 
@@ -63,6 +64,11 @@ const texts = () => {
     return `${value}`;
   }
 
+  function TokenSlider(value:number){
+    setTokens(value);
+    return `${value}`
+  }
+
   const handleSendMessage = async () => {
     const newMessage = { sender: 'You', message: textBox };
     setMessages((prevMessages) => [...prevMessages, newMessage]);
@@ -70,7 +76,8 @@ const texts = () => {
     const data = {
       prompt: textBox,
       model: currentModel,
-      temperature: temperature
+      temperature: temperature,
+      max_tokens: tokens
     };
     setTextBox('');
 
@@ -199,6 +206,18 @@ const texts = () => {
           />
         </div>
         {/* Max Token Count */}
+        <div className="w-32 lg:w-full mt-0 lg:mt-4">
+          <p className="">Max Length</p>
+          <Slider
+            aria-label="Length"
+            defaultValue={1000}
+            getAriaValueText={TokenSlider}
+            valueLabelDisplay="auto"
+            marks
+            min={100}
+            max={4000}
+          />
+        </div>
       </div>
     </div>
   );
