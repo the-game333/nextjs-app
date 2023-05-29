@@ -107,7 +107,7 @@ const texts = () => {
   };
 
   return (
-    <div className="flex h-[80%]  ">
+    <div className="flex h-[80%] flex-col lg:flex-row">
       <div className=' flex-1 m-4 h-full  relative'>
         <div className="flex flex-col h-[38rem] overflow-y-auto bg-white p-2 rounded-xl ">
           {messages.map((mess, index) => (
@@ -115,7 +115,7 @@ const texts = () => {
             ))}
             </div>
 
-        <div className="flex absolute bottom-0 left-0 right-0 z-[9999]">
+        <div className="flex mt-2 z-[9999]">
           <TextField
             id="standard-multiline-flexible"
             multiline
@@ -124,7 +124,7 @@ const texts = () => {
             value={textBox}
             placeholder="Write your prompt here"
             onChange={handleInputChange}
-            className="w-full bg-white p-2"
+            className="w-full bg-white p-2 rounded-l-xl"
           />
           <button
             onClick={handleSendMessage}
@@ -137,7 +137,7 @@ const texts = () => {
       </div>
 
       {/* Chat Bot Selector */}
-      <div className="w-48 m-4 bg-white rounded-xl p-4">
+      <div className="w-full lg:w-48 mx-0 my-4 lg:mx-4 bg-white rounded-xl p-4 flex flex-row lg:flex-col justify-between lg:justify-normal">
         {/* Bot Selector */}
         <div className="mt-4">
           <InputLabel id="chatBot-select-label" className="">
@@ -185,7 +185,7 @@ const texts = () => {
         {/* Advanced Menu */}
 
         {/* Temperature Slider */}
-        <div className="w-full mt-4">
+        <div className="w-32 lg:w-full mt-0 lg:mt-4">
           <p className="">Temperature</p>
           <Slider
             aria-label="Temperature"
