@@ -115,6 +115,7 @@ const texts = () => {
 
   return (
     <div className="flex h-[80%] flex-col lg:flex-row">
+      
       <div className=' flex-1 m-4 h-full  relative'>
         <div className="flex flex-col h-[38rem] overflow-y-auto bg-white p-2 rounded-xl ">
           {messages.map((mess, index) => (
@@ -135,16 +136,18 @@ const texts = () => {
           />
           <button
             onClick={handleSendMessage}
-            className="bg-dark-blue rounded-r-xl px-4 py-2 text-white font-semibold text-lg "
+            className="bg-dark-blue px-4 py-2 text-white font-semibold text-lg rounded-none lg:rounded-r-xl"
             disabled={textBox == '' ? true : false}
           >
             Send
           </button>
+
+      <button onClick={handleMenuButton} className={`w-12 bg-dark-blue text-white rounded-r-xl block lg:hidden`}><MenuIcon /></button>
         </div>
       </div>
 
       {/* Chat Bot Selector */}
-      <div className="w-full lg:w-48 mx-0 my-4 lg:mx-4 bg-white rounded-xl p-4 flex flex-row lg:flex-col justify-between lg:justify-normal">
+      <div className={`w-48 mx-0 my-4 lg:mx-4 bg-white rounded-xl p-4 fixed right-0 lg:static ${menuBtnActive ? 'block' : 'hidden lg:block'}`}>
         {/* Bot Selector */}
         <div className="mt-4">
           <InputLabel id="chatBot-select-label" className="">
