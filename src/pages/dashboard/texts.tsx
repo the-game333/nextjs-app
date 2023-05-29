@@ -1,4 +1,4 @@
-import { InputLabel, MenuItem, Select, SelectChangeEvent, Slider, TextField } from '@mui/material';
+import { InputLabel, MenuItem, Select, SelectChangeEvent, Skeleton, Slider, TextField } from '@mui/material';
 import { toNumber } from 'lodash';
 import React, { ChangeEvent, useEffect, useRef, useState } from 'react';
 import MenuIcon from '@mui/icons-material/Menu';
@@ -36,6 +36,7 @@ const texts = () => {
   const [menuBtnActive, setMenuBtnActive] = useState(false);
   const [temperature, setTemperature] = useState(0.7);
   const [tokens, setTokens] = useState(1000);
+  const [loading, setLoading] = useState(false)
   const [messages, setMessages] = useState<{ sender: string; message: string }[]>([]);
   const [currentModel, setCurrentModel] = useState(ChatBots[0].models[0]);
 
@@ -71,6 +72,7 @@ const texts = () => {
 
   const handleSendMessage = async () => {
     const newMessage = { sender: 'You', message: textBox };
+    setLoading(true)
     setMessages((prevMessages) => [...prevMessages, newMessage]);
 
     const data = {
@@ -110,6 +112,7 @@ const texts = () => {
     const body = await res.text();
     const serverMess = { sender: chatBot, message: body };
     setMessages((prevMessages) => [...prevMessages, serverMess]);
+    setLoading(false)
     console.log(serverMess);
   };
 
@@ -121,6 +124,10 @@ const texts = () => {
           {messages.map((mess, index) => (
             <ChatComp sender={mess.sender} message={mess.message} key={index} />
             ))}
+
+            <div className={`w-full ${loading?'block':'hidden'}`}>
+                <Skeleton animation='wave' />
+            </div>
             </div>
 
         <div className="flex mt-2 z-[9999]">
