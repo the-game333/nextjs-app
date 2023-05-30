@@ -29,6 +29,57 @@ const ChatBots: { name: string; models: string[] }[] = [
   }
 ];
 
+const marks = [
+  {
+    value: 0,
+    label: '-1'
+  },
+  {
+    value: 9.09,
+    label: '0'
+  },
+  {
+    value: 18.18,
+    label: '0.1'
+  },
+  {
+    value: 27.27,
+    label: '0.2'
+  },
+  {
+    value: 36.36,
+    label: '0.3'
+  },
+  {
+    value: 45.45,
+    label: '0.4'
+  },
+  {
+    value: 54.54,
+    label: '0.5'
+  },
+  {
+    value: 63.63,
+    label: '0.6'
+  },
+  {
+    value: 72.72,
+    label: '0.7'
+  },
+  {
+    value: 81.81,
+    label: '0.8'
+  },
+  {
+    value: 90.9,
+    label: '0.9'
+  },
+  {
+    value: 100,
+    label: '1'
+  }
+];
+
 const texts = () => {
   const [textBox, setTextBox] = useState('');
   const [chatBot, setChatBot] = useState(ChatBots[0].name);
@@ -36,7 +87,14 @@ const texts = () => {
   const [menuBtnActive, setMenuBtnActive] = useState(false);
   const [temperature, setTemperature] = useState(0.7);
   const [tokens, setTokens] = useState(1000);
-  const [loading, setLoading] = useState(false)
+  const [stopSequence, setStopSequence] = useState('');
+  const [loading, setLoading] = useState(false);
+  const [topk, setTopK] = useState(-1);
+  const [numOfGen, setNumOfGen] = useState(1)
+  const [p,setP] = useState(0.75)
+  const [frequencyPenalty, setFrequencyPenalty] = useState(0)
+  const [presencePenalty, setPresencePenalty] = useState(0)
+  const [suffix, setSuffix] = useState('')
   const [messages, setMessages] = useState<{ sender: string; message: string }[]>([]);
   const [currentModel, setCurrentModel] = useState(ChatBots[0].models[0]);
 
@@ -65,14 +123,14 @@ const texts = () => {
     return `${value}`;
   }
 
-  function TokenSlider(value:number){
+  function TokenSlider(value: number) {
     setTokens(value);
-    return `${value}`
+    return `${value}`;
   }
 
   const handleSendMessage = async () => {
     const newMessage = { sender: 'You', message: textBox };
-    setLoading(true)
+    setLoading(true);
     setMessages((prevMessages) => [...prevMessages, newMessage]);
 
     const data = {
@@ -112,23 +170,199 @@ const texts = () => {
     const body = await res.text();
     const serverMess = { sender: chatBot, message: body };
     setMessages((prevMessages) => [...prevMessages, serverMess]);
-    setLoading(false)
+    setLoading(false);
     console.log(serverMess);
+  };
+
+  const handleStopSequence = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setStopSequence(event.target.value);
+  };
+
+  function top_k(value: number) {
+    setTopK(value);
+    return `${value}`;
+  }
+
+  function numGenHandler(value:number){
+    setNumOfGen(value)
+    return `${value}`
+  }
+
+  function pHandler(value:number){
+    setP(value)
+    return `${value}`
+  }
+
+  function top_k_Label(value: number) {
+    return marks.findIndex((mark) => mark.value === value);
+  }
+
+  const suffixHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    setSuffix(event.target.value)
+  }
+
+  function presencePenaltyHandler(value:number){
+    setPresencePenalty(value)
+    return `${presencePenalty}`
+  }
+  function frequencyPenaltyHandler(value:number){
+    setFrequencyPenalty(value)
+    return `${frequencyPenalty}`
+  }
+
+  const AdvancedTab = (props: { Chatbot: string }) => {
+    if (props.Chatbot === 'Open AI') {
+      return (
+      <div>
+        <div className="mt-4">
+            <TextField id="outlined-basic" label="Suffix" variant="outlined" value={suffix} onChange={suffixHandler} />
+          </div>
+          <div className="mt-4 w-full">
+            <p>top_p</p>
+            <Slider
+              aria-label="Restricted values"
+              defaultValue={-1}
+              getAriaValueText={top_k}
+              valueLabelFormat={top_k_Label}
+              step={null}
+              valueLabelDisplay="auto"
+              marks={marks}
+            />
+          </div>
+          <div className="w-32 lg:w-full mt-0 lg:mt-4">
+            <p className="">Number of Generator</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={numGenHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+            />
+          </div>
+          <div className="w-32 lg:w-full mt-0 lg:mt-4">
+            <p className="">Presence Penalty</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={presencePenaltyHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+            />
+          </div>
+          <div className="w-32 lg:w-full mt-0 lg:mt-4">
+            <p className="">Frequency Penalty</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={frequencyPenaltyHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+            />
+          </div>
+      </div>);
+    } else if (props.Chatbot === 'Anthropic') {
+      return (
+        <div>
+          <div className="mt-4">
+            <TextField id="outlined-basic" label="Stop Sequence" variant="outlined" value={stopSequence} onChange={handleStopSequence} />
+          </div>
+
+          <div className="mt-4 w-full">
+            <p>top_k</p>
+            <Slider
+              aria-label="Restricted values"
+              defaultValue={-1}
+              getAriaValueText={top_k}
+              valueLabelFormat={top_k_Label}
+              step={null}
+              valueLabelDisplay="auto"
+              value={topk}
+              marks={marks}
+            />
+          </div>
+          <div className="mt-4 w-full">
+            <p>top_p</p>
+            <Slider
+              aria-label="Restricted values"
+              defaultValue={-1}
+              getAriaValueText={top_k}
+              valueLabelFormat={top_k_Label}
+              step={null}
+              valueLabelDisplay="auto"
+              marks={marks}
+            />
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <div className="w-32 lg:w-full mt-0 lg:mt-4">
+            <p className="">Number of Generator</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={numGenHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+            />
+          </div>
+
+          <div className="mt-4 w-full">
+            <p>k</p>
+            <Slider
+              aria-label="Restricted values"
+              defaultValue={-1}
+              getAriaValueText={top_k}
+              valueLabelFormat={top_k_Label}
+              step={null}
+              valueLabelDisplay="auto"
+              value={topk}
+              marks={marks}
+            />
+          </div>
+
+          <div className="w-32 lg:w-full mt-0 lg:mt-4">
+            <p className="">p</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={0.75}
+              getAriaValueText={pHandler}
+              valueLabelDisplay="auto"
+              marks
+              min={0.0}
+              max={1.0}
+            />
+          </div>
+        </div>
+      );
+    }
   };
 
   return (
     <div className="flex h-[80%] flex-col lg:flex-row">
-      
-      <div className=' flex-1 m-4 h-full  relative'>
+      <div className=" flex-1 m-4 h-full  relative">
         <div className="flex flex-col h-[38rem] overflow-y-auto bg-white p-2 rounded-xl ">
           {messages.map((mess, index) => (
             <ChatComp sender={mess.sender} message={mess.message} key={index} />
-            ))}
+          ))}
 
-            <div className={`w-full ${loading?'block':'hidden'}`}>
-                <Skeleton animation='wave' />
-            </div>
-            </div>
+          <div className={`w-full ${loading ? 'block' : 'hidden'}`}>
+            <Skeleton animation="wave" />
+          </div>
+        </div>
 
         <div className="flex mt-2 z-[9999]">
           <TextField
@@ -149,12 +383,16 @@ const texts = () => {
             Send
           </button>
 
-      <button onClick={handleMenuButton} className={`w-12 bg-dark-blue text-white rounded-r-xl block lg:hidden`}><MenuIcon /></button>
+          <button onClick={handleMenuButton} className={`w-12 bg-dark-blue text-white rounded-r-xl block lg:hidden`}>
+            <MenuIcon />
+          </button>
         </div>
       </div>
 
-      {/* Chat Bot Selector */}
-      <div className={`w-48 mx-0 my-4 lg:mx-4 bg-white rounded-xl p-4 fixed right-0 lg:static ${menuBtnActive ? 'block' : 'hidden lg:block'}`}>
+      {/* Advanced Menu */}
+      <div
+        className={`h-[38rem] overflow-y-auto w-56 mx-0 my-4 lg:mx-4 bg-white rounded-xl p-4 fixed right-0 lg:static ${menuBtnActive ? 'block' : 'hidden lg:block'}`}
+      >
         {/* Bot Selector */}
         <div className="mt-4">
           <InputLabel id="chatBot-select-label" className="">
@@ -199,10 +437,8 @@ const texts = () => {
           </Select>
         </div>
 
-        {/* Advanced Menu */}
-
         {/* Temperature Slider */}
-        <div className="w-32 lg:w-full mt-0 lg:mt-4">
+        <div className="w-full mt-0 lg:mt-4">
           <p className="">Temperature</p>
           <Slider
             aria-label="Temperature"
@@ -228,6 +464,8 @@ const texts = () => {
             max={4000}
           />
         </div>
+
+        <AdvancedTab Chatbot={chatBot} />
       </div>
     </div>
   );
