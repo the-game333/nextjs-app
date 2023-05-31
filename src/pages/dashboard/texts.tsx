@@ -467,7 +467,7 @@ const texts = () => {
             />
           </div>
 
-          <div className="w-full mt-0 lg:mt-4">
+          <div className="w-[95%] mt-0 lg:mt-4 ">
             <p className="">p</p>
             <Slider
               aria-label="numofgen"
