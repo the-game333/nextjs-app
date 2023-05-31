@@ -133,7 +133,7 @@ const texts = () => {
     setLoading(true);
     setMessages((prevMessages) => [...prevMessages, newMessage]);
 
-    const data = {
+    let data:any = {
       prompt: textBox,
       model: currentModel,
       temperature: temperature,
@@ -151,27 +151,52 @@ const texts = () => {
       case 'Open AI':
         url = 'http://localhost:2000/api/text/openai';
         console.log(url);
+        data.top_p = topk;
+        data.n = numOfGen;
+        data.presence_penalty = presencePenalty
+        data.frequency_penalty = frequencyPenalty
+        console.log(data)
         break;
       case 'Anthropic':
         url = 'http://localhost:2000/api/text/anthropic';
         console.log(url);
+        data.top_k = topk;
+        data.stop_sequence = stopSequence;
         break;
       case 'Cohere':
         url = 'http://localhost:2000/api/text/cohere';
         console.log(url);
+        data.num_generations = numOfGen
+        data.k = topk;
+        data.p = p;
+        data.presence_penalty = presencePenalty
+        data.frequency_penalty = frequencyPenalty
+        data.stop_sequences = stopSequence;
         break;
       default:
         console.log('Case not working');
         break;
     }
-    console.log(url);
-
     const res = await fetch(url, reqOptions);
-    const body = await res.text();
-    const serverMess = { sender: chatBot, message: body };
-    setMessages((prevMessages) => [...prevMessages, serverMess]);
-    setLoading(false);
-    console.log(serverMess);
+    const status = res.status
+    if(status == 200){
+      if(chatBot == 'Anthropic'){
+        const body = await res.text();
+        const serverMess = { sender: chatBot, message: body };
+        setMessages((prevMessages) => [...prevMessages, serverMess]);
+      }
+      else{
+        const body = await res.json();
+        const serverMess = { sender: chatBot, message: body[0] };
+        setMessages((prevMessages) => [...prevMessages, serverMess]);
+      }
+      setLoading(false);
+    }
+    else {
+      const serverMess = { sender: chatBot, message: 'There an error from server side. Please try again later.' };
+      setMessages((prevMessages) => [...prevMessages, serverMess]);
+      setLoading(false);
+    }
   };
 
   const handleStopSequence = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -210,146 +235,6 @@ const texts = () => {
     return `${frequencyPenalty}`
   }
 
-  const AdvancedTab = (props: { Chatbot: string }) => {
-    if (props.Chatbot === 'Open AI') {
-      return (
-      <div>
-        <div className="mt-4">
-            <TextField id="outlined-basic" label="Suffix" variant="outlined" value={suffix} onChange={suffixHandler} />
-          </div>
-          <div className="mt-4 w-full">
-            <p>top_p</p>
-            <Slider
-              aria-label="Restricted values"
-              defaultValue={-1}
-              getAriaValueText={top_k}
-              valueLabelFormat={top_k_Label}
-              step={null}
-              valueLabelDisplay="auto"
-              marks={marks}
-            />
-          </div>
-          <div className="w-32 lg:w-full mt-0 lg:mt-4">
-            <p className="">Number of Generator</p>
-            <Slider
-              aria-label="numofgen"
-              defaultValue={1}
-              getAriaValueText={numGenHandler}
-              valueLabelDisplay="auto"
-              step={1}
-              marks
-              min={1}
-              max={5}
-            />
-          </div>
-          <div className="w-32 lg:w-full mt-0 lg:mt-4">
-            <p className="">Presence Penalty</p>
-            <Slider
-              aria-label="numofgen"
-              defaultValue={1}
-              getAriaValueText={presencePenaltyHandler}
-              valueLabelDisplay="auto"
-              step={1}
-              marks
-              min={1}
-              max={5}
-            />
-          </div>
-          <div className="w-32 lg:w-full mt-0 lg:mt-4">
-            <p className="">Frequency Penalty</p>
-            <Slider
-              aria-label="numofgen"
-              defaultValue={1}
-              getAriaValueText={frequencyPenaltyHandler}
-              valueLabelDisplay="auto"
-              step={1}
-              marks
-              min={1}
-              max={5}
-            />
-          </div>
-      </div>);
-    } else if (props.Chatbot === 'Anthropic') {
-      return (
-        <div>
-          <div className="mt-4">
-            <TextField id="outlined-basic" label="Stop Sequence" variant="outlined" value={stopSequence} onChange={handleStopSequence} />
-          </div>
-
-          <div className="mt-4 w-full">
-            <p>top_k</p>
-            <Slider
-              aria-label="Restricted values"
-              defaultValue={-1}
-              getAriaValueText={top_k}
-              valueLabelFormat={top_k_Label}
-              step={null}
-              valueLabelDisplay="auto"
-              value={topk}
-              marks={marks}
-            />
-          </div>
-          <div className="mt-4 w-full">
-            <p>top_p</p>
-            <Slider
-              aria-label="Restricted values"
-              defaultValue={-1}
-              getAriaValueText={top_k}
-              valueLabelFormat={top_k_Label}
-              step={null}
-              valueLabelDisplay="auto"
-              marks={marks}
-            />
-          </div>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <div className="w-32 lg:w-full mt-0 lg:mt-4">
-            <p className="">Number of Generator</p>
-            <Slider
-              aria-label="numofgen"
-              defaultValue={1}
-              getAriaValueText={numGenHandler}
-              valueLabelDisplay="auto"
-              step={1}
-              marks
-              min={1}
-              max={5}
-            />
-          </div>
-
-          <div className="mt-4 w-full">
-            <p>k</p>
-            <Slider
-              aria-label="Restricted values"
-              defaultValue={-1}
-              getAriaValueText={top_k}
-              valueLabelFormat={top_k_Label}
-              step={null}
-              valueLabelDisplay="auto"
-              value={topk}
-              marks={marks}
-            />
-          </div>
-
-          <div className="w-32 lg:w-full mt-0 lg:mt-4">
-            <p className="">p</p>
-            <Slider
-              aria-label="numofgen"
-              defaultValue={0.75}
-              getAriaValueText={pHandler}
-              valueLabelDisplay="auto"
-              marks
-              min={0.0}
-              max={1.0}
-            />
-          </div>
-        </div>
-      );
-    }
-  };
 
   return (
     <div className="flex h-[80%] flex-col lg:flex-row">
@@ -450,9 +335,10 @@ const texts = () => {
             min={0.1}
             max={2}
           />
+
         </div>
         {/* Max Token Count */}
-        <div className="w-32 lg:w-full mt-0 lg:mt-4">
+        <div className="w-full mt-0 lg:mt-4">
           <p className="">Max Length</p>
           <Slider
             aria-label="Length"
@@ -465,7 +351,161 @@ const texts = () => {
           />
         </div>
 
-        <AdvancedTab Chatbot={chatBot} />
+        {/* <AdvancedTab Chatbot={chatBot} /> */}
+        {
+          chatBot === 'Open AI' ?<>
+              <div className="mt-4">
+            <TextField id="outlined-basic" label="Suffix" variant="outlined" value={suffix} onChange={suffixHandler} />
+          </div>
+          <div className="mt-4 w-full">
+            <p>top_p</p>
+            <Slider
+              aria-label="Restricted values"
+              defaultValue={-1}
+              getAriaValueText={top_k}
+              valueLabelFormat={top_k_Label}
+              step={null}
+              valueLabelDisplay="auto"
+              marks={marks}
+              />
+          </div>
+          <div className="w-full mt-0 lg:mt-4">
+            <p className="">Number of Generator</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={numGenHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+              />
+          </div>
+          <div className="w-full mt-0 lg:mt-4">
+            <p className="">Presence Penalty</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={presencePenaltyHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+              />
+          </div>
+          <div className="w-full mt-0 lg:mt-4">
+            <p className="">Frequency Penalty</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={frequencyPenaltyHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+              />
+          </div>
+        </>
+             : chatBot === 'Anthropic' ? <>
+             <div className="mt-4">
+               <TextField id="outlined-basic" label="Stop Sequence" variant="outlined" value={stopSequence} onChange={handleStopSequence} />
+             </div>
+   
+             <div className="mt-4 w-full">
+               <p>top_k</p>
+               <Slider
+                 aria-label="Restricted values"
+                 defaultValue={-1}
+                 getAriaValueText={top_k}
+                 valueLabelFormat={top_k_Label}
+                 step={null}
+                 valueLabelDisplay="auto"
+                 value={topk}
+                 marks={marks}
+               />
+             </div>
+             {/* <div className="mt-4 w-full">
+               <p>top_p</p>
+               <Slider
+                 aria-label="Restricted values"
+                 defaultValue={-1}
+                 getAriaValueText={top_k}
+                 valueLabelFormat={top_k_Label}
+                 step={null}
+                 valueLabelDisplay="auto"
+                 marks={marks}
+               />
+             </div> */}
+           </> : <><div className="w-full mt-0 lg:mt-4">
+            <p className="">Number of Generator</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={numGenHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+            />
+          </div>
+
+          <div className="mt-4 w-full">
+            <p>k</p>
+            <Slider
+              aria-label="Restricted values"
+              defaultValue={-1}
+              getAriaValueText={top_k}
+              valueLabelFormat={top_k_Label}
+              step={null}
+              valueLabelDisplay="auto"
+              value={topk}
+              marks={marks}
+            />
+          </div>
+
+          <div className="w-full mt-0 lg:mt-4">
+            <p className="">p</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={0.75}
+              getAriaValueText={pHandler}
+              valueLabelDisplay="auto"
+              marks
+              min={0.0}
+              max={1.0}
+            />
+            <div className="w-full mt-0 lg:mt-4">
+            <p className="">Presence Penalty</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={presencePenaltyHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+              />
+          </div>
+          <div className="w-full mt-0 lg:mt-4">
+            <p className="">Frequency Penalty</p>
+            <Slider
+              aria-label="numofgen"
+              defaultValue={1}
+              getAriaValueText={frequencyPenaltyHandler}
+              valueLabelDisplay="auto"
+              step={1}
+              marks
+              min={1}
+              max={5}
+              />
+          </div>
+          </div></>
+        }
       </div>
     </div>
   );
