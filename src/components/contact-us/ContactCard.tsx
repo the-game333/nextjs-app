@@ -285,18 +285,6 @@ const ContactCard = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Grid container spacing={gridSpacing}>
-                    <Grid item sm zeroMinWidth>
-                      <Typography align="left" variant="body2">
-                        By submitting this, you agree to the
-                        <Typography variant="subtitle1" component={Link} href="/privacy" color="primary" sx={{ mx: 0.5 }}>
-                          Privacy Policy
-                        </Typography>
-                        and
-                        <Typography variant="subtitle1" component={Link} href="/terms" color="primary" sx={{ ml: 0.5 }}>
-                          Terms
-                        </Typography>
-                      </Typography>
-                    </Grid>
                     <Grid item>
                       <AnimateButton>
                         <Button
