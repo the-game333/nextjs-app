@@ -20,13 +20,13 @@ import { useEffect } from 'react';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
   overflowY: 'clip',
-  backgroundColor: "black"
+  backgroundColor: 'black'
 }));
 
 const SecondWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 10,
-  background: "black",
+  background: 'black',
   [theme.breakpoints.down('md')]: {
     paddingTop: 60
   }
@@ -34,7 +34,7 @@ const SecondWrapper = styled('div')(({ theme }) => ({
 const ThirdWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 60,
-  background: "black",
+  background: 'black',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }
@@ -43,7 +43,7 @@ const FullyWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 100,
   [theme.breakpoints.down('md')]: {
-    paddingTop: 30,
+    paddingTop: 30
   }
 }));
 
@@ -53,19 +53,21 @@ const Landing: React.FC = () => {
   const { onChangeMenuType } = useConfig();
   useEffect(() => {
     onChangeMenuType('dark');
-  }, [])
+  }, []);
   return (
     <>
       <HeaderWrapper id="home">
         {/* <Banner /> */}
-        <AppBar background={"transparent"} />
-        <Box component={'img'} src='/assets/images/header/background.svg'
+        <AppBar background={'transparent'} />
+        <Box
+          component={'img'}
+          src="/assets/images/header/background.svg"
           sx={{
-            position: "absolute",
-            top: "40px",
-            maxWidth: "100%",
+            position: 'absolute',
+            top: '40px',
+            maxWidth: '100%',
             zIndex: 1,
-            width: "100%"
+            width: '100%'
           }}
         />
         <Header />
@@ -74,14 +76,16 @@ const Landing: React.FC = () => {
         <Howtowworks />
       </SecondWrapper>
       <ThirdWrapper>
-        <Box component={'img'} src='/assets/images/header/background.svg'
+        <Box
+          component={'img'}
+          src="/assets/images/header/background.svg"
           sx={{
-            position: "absolute",
-            top: "0",
-            maxWidth: "100%",
+            position: 'absolute',
+            top: '0',
+            maxWidth: '100%',
             zIndex: 1,
-            height: "700px",
-            width: "100%"
+            height: '700px',
+            width: '100%'
           }}
         />
         <Howtowworks2 />
@@ -102,7 +106,8 @@ const Landing: React.FC = () => {
         <Footer />
       </ThirdWrapper>
       {/* <Customization /> */}
-    </>)
+    </>
+  );
 };
 
 export default Landing;

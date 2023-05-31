@@ -103,7 +103,7 @@ const AppBar = ({ ...others }) => {
                 Pricing
               </Button> */}
 
-              <HtmlTooltip
+              {/* <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
                     <CardContent>
@@ -133,20 +133,17 @@ const AppBar = ({ ...others }) => {
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Customers
                 </Button>
-              </HtmlTooltip>
+              </HtmlTooltip> */}
               <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
                     <CardContent>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
-                          <TooltipButton text={'Open AIResource Library'} image={'solutions/ai-readiness-report'} />
-                          <TooltipButton text={'Blog'} image={'solutions/blog'} />
-                          <TooltipButton text={'Documentation'} image={'solutions/documentation'} />
-                          <TooltipButton text={'Events'} image={'solutions/events'} />
-                          <TooltipButton text={'Guides'} image={'solutions/guides'} />
-                          <TooltipButton text={'Open Datasets'} image={'solutions/open-datasets'} />
-                          <TooltipButton text={`AI Readiness Report ${new Date().getFullYear()}`} image={'solutions/resources'} />
+                          <TooltipButton text={'Generative AI'} image={'solutions/generative-ai'} />
+                          <TooltipButton text={'LLMs Fine Tune'} image={'solutions/llm'} />
+                          <TooltipButton text={'LangChain Apps'} image={'solutions/langchain'} />
+                          <TooltipButton text={'ChatGPT Plugins'} image={'solutions/plugins'} />
                         </Grid>
                       </Grid>
                     </CardContent>
@@ -155,7 +152,7 @@ const AppBar = ({ ...others }) => {
                 arrow
               >
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
-                  Solutions
+                  Products
                 </Button>
               </HtmlTooltip>
 
@@ -164,7 +161,7 @@ const AppBar = ({ ...others }) => {
                   Vision
                 </Button>
               </a>
-              <a href="/join-us">
+              <a href="/join">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Join Us
                 </Button>
@@ -174,7 +171,7 @@ const AppBar = ({ ...others }) => {
                 sx={{ color: 'black', height: '43px' }}
                 variant="contained"
                 component={Link}
-                href="/contact-us"
+                href="/contact"
                 //  target="_blank"
               >
                 Book Demo

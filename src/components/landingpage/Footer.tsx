@@ -58,55 +58,50 @@ const FooterPage = () => {
               <Logo />
             </Grid>
             <Grid item xs={6} sm={2.4} textAlign={'left'} display={'flex'} flexDirection={'column'} gap={'10px'}>
-              <Grid item>
+              {/* <Grid item>
                 <FooterLink href="/price" target="" underline="hover">
                   Pricing
                 </FooterLink>
-              </Grid>
+              </Grid> */}
               <Grid item>
-                <FooterLink href="/contact-us" target="" underline="hover">
+                <FooterLink href="/contact" target="" underline="hover">
                   Contact Us
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="privacy-policy" target="" underline="hover">
+                <FooterLink href="privacy" target="" underline="hover">
                   Privacy Policy
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="/terms" target="" underline="hover">
-                  Terms
-                </FooterLink>
-              </Grid>
-              <Grid item>
-                <FooterLink href="/contact-us" target="" underline="hover">
+                <FooterLink href="/join" target="" underline="hover">
                   Careers
                 </FooterLink>
               </Grid>
-              <Grid item>
+              {/* <Grid item>
                 <FooterLink href="#" target="" underline="hover">
                   Blogs
                 </FooterLink>
-              </Grid>
+              </Grid> */}
             </Grid>
             <Grid item xs={6} sm={2.4} textAlign={'left'} display={'flex'} flexDirection={'column'} gap={'10px'}>
               <Grid item>
-                <FooterLink href="/contact-us" target="" underline="hover">
+                <FooterLink href="/contact" target="" underline="hover">
                   Government AI
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="/contact-us" target="" underline="hover">
+                <FooterLink href="/contact" target="" underline="hover">
                   Enterprise AI
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="/contact-us" target="" underline="hover">
+                <FooterLink href="/contact" target="" underline="hover">
                   Consumer AI
                 </FooterLink>
               </Grid>
               <Grid item>
-                <FooterLink href="/contact-us" target="" underline="hover">
+                <FooterLink href="/contact" target="" underline="hover">
                   Education AI
                 </FooterLink>
               </Grid>

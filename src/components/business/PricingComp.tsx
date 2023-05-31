@@ -32,15 +32,15 @@ const PricingComp = () => {
         </div>
 
         <Button
-                color="inherit"
-                sx={{ color: 'black', height: '43px', width: '100%', marginTop: '4rem' }}
-                variant="contained"
-                component={Link}
-                href="/contact-us"
-                //  target="_blank"
-              >
-                Book Demo
-              </Button>
+          color="inherit"
+          sx={{ color: 'black', height: '43px', width: '100%', marginTop: '4rem' }}
+          variant="contained"
+          component={Link}
+          href="/contact"
+          //  target="_blank"
+        >
+          Book Demo
+        </Button>
       </div>
     </div>
   );
