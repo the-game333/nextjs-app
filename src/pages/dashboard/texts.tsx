@@ -204,8 +204,11 @@ const texts = () => {
   };
 
   function top_k(value: number) {
-    setTopK(value);
-    return `${value}`;
+    // console.log(value)
+    const index = marks.findIndex((mark) => mark.value === value)
+    console.log(marks[index].label)
+    setTopK(toNumber(marks[index].label));
+    return `${marks[index].label}`;
   }
 
   function numGenHandler(value:number){
@@ -218,8 +221,8 @@ const texts = () => {
     return `${value}`
   }
 
-  function top_k_Label(value: number) {
-    return marks.findIndex((mark) => mark.value === value);
+  function top_k_Label(value: number,index:number) {
+    return marks[value].label;
   }
 
   const suffixHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -363,7 +366,7 @@ const texts = () => {
               aria-label="Restricted values"
               defaultValue={-1}
               getAriaValueText={top_k}
-              valueLabelFormat={top_k_Label}
+              // valueLabelFormat={top_k_Label}
               step={null}
               valueLabelDisplay="auto"
               marks={marks}
