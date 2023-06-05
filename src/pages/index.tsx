@@ -16,6 +16,7 @@ import AppBar from 'ui-component/extended/AppBar';
 import { Box } from '@mui/material';
 import useConfig from 'hooks/useConfig';
 import { useEffect } from 'react';
+import Partnership from 'components/landingpage/Partnership';
 
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
@@ -87,6 +88,9 @@ const Landing: React.FC = () => {
         <Howtowworks2 />
       </ThirdWrapper>
       <FullyWrapper>
+        <Partnership />
+      </FullyWrapper>
+      <FullyWrapper>
         <FullyFeatured />
       </FullyWrapper>
       <FullyWrapper>
@@ -95,6 +99,7 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <LanguageCodeType />
       </FullyWrapper>
+      
 
       <ThirdWrapper>
         {/* <Subscribe /> */}

@@ -38,7 +38,7 @@ const GenerativeAI = {
       id: 'voice',
       title: <FormattedMessage id="voice" />,
       type: 'item',
-      url: '/widget/chart',
+      url: '/dashboard/voice',
       icon: icons.KeyboardVoice
     }
   ]
