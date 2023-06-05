@@ -71,9 +71,13 @@ const Landing: React.FC = () => {
         />
         <Header />
       </HeaderWrapper>
+      <FullyWrapper>
+        <Partnership />
+      </FullyWrapper>
       <SecondWrapper>
         <Howtowworks />
       </SecondWrapper>
+      
       <ThirdWrapper>
         <Box component={'img'} src='/assets/images/header/background.svg'
           sx={{
@@ -87,9 +91,6 @@ const Landing: React.FC = () => {
         />
         <Howtowworks2 />
       </ThirdWrapper>
-      <FullyWrapper>
-        <Partnership />
-      </FullyWrapper>
       <FullyWrapper>
         <FullyFeatured />
       </FullyWrapper>
