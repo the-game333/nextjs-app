@@ -139,7 +139,18 @@ const AppBar = ({ ...others }) => {
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
                     <CardContent>
                       <Grid container spacing={2}>
-                        <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                        <Grid item md={6} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography >INDUSTRIES</Typography>
+                          <TooltipButton text={'Open AIResource Library'} image={'solutions/ai-readiness-report'} />
+                          <TooltipButton text={'Blog'} image={'solutions/blog'} />
+                          <TooltipButton text={'Documentation'} image={'solutions/documentation'} />
+                          <TooltipButton text={'Events'} image={'solutions/events'} />
+                          <TooltipButton text={'Guides'} image={'solutions/guides'} />
+                          <TooltipButton text={'Open Datasets'} image={'solutions/open-datasets'} />
+                          <TooltipButton text={`AI Readiness Report ${new Date().getFullYear()}`} image={'solutions/resources'} />
+                        </Grid>
+                        <Grid item md={6} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>USE CASES</Typography>
                           <TooltipButton text={'Open AIResource Library'} image={'solutions/ai-readiness-report'} />
                           <TooltipButton text={'Blog'} image={'solutions/blog'} />
                           <TooltipButton text={'Documentation'} image={'solutions/documentation'} />
@@ -167,6 +178,11 @@ const AppBar = ({ ...others }) => {
               <a href="/join-us">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Join Us
+                </Button>
+              </a>
+              <a href="/partnerships">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Partnerships
                 </Button>
               </a>
               <Button
