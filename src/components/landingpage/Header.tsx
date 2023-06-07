@@ -46,7 +46,7 @@ const HeaderPage = () => {
       >
         <Grid item xs={12} md={12} sx={{ zIndex: 2 }}>
           <Grid container spacing={gridSpacing} sx={{ pr: 10, [theme.breakpoints.down('lg')]: { pr: 0, textAlign: 'center' } }}>
-            <Grid item xs={12} sm={12} md={12} display={'flex'} gap={2}  >
+            <Grid item xs={12} sm={12} md={12} display={'flex'} gap={2}>
               <Typography
                 variant="h5"
                 sx={{
@@ -88,7 +88,7 @@ const HeaderPage = () => {
                   Enterprise AI
                 </Typography>
 
-                <Typography
+                {/* <Typography
                   variant="h5"
                   className="face3"
                   sx={{
@@ -101,7 +101,7 @@ const HeaderPage = () => {
                   }}
                 >
                   Government AI
-                </Typography>
+                </Typography> */}
               </div>
               {/* </motion.div> */}
               <Typography

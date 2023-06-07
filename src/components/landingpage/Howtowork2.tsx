@@ -77,7 +77,7 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
+        {/* <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
@@ -132,7 +132,7 @@ const Howtowork2 = () => (
               </Grid>
             </Grid>
           </FadeInWhenVisible>
-        </Grid>
+        </Grid> */}
         <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>

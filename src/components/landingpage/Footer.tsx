@@ -85,11 +85,11 @@ const FooterPage = () => {
               </Grid> */}
             </Grid>
             <Grid item xs={6} sm={2.4} textAlign={'left'} display={'flex'} flexDirection={'column'} gap={'10px'}>
-              <Grid item>
+              {/* <Grid item>
                 <FooterLink href="/contact" target="" underline="hover">
                   Government AI
                 </FooterLink>
-              </Grid>
+              </Grid> */}
               <Grid item>
                 <FooterLink href="/contact" target="" underline="hover">
                   Enterprise AI

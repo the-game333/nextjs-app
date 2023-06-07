@@ -166,6 +166,11 @@ const AppBar = ({ ...others }) => {
                   Join Us
                 </Button>
               </a>
+              <a href="/blog">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Blogs
+                </Button>
+              </a>
               <Button
                 color="inherit"
                 sx={{ color: 'black', height: '43px' }}

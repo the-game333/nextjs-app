@@ -62,10 +62,10 @@ const sizes = [
     value: 'Generative-AI',
     label: 'Generative AI'
   },
-  {
-    value: 'Government-AI',
-    label: 'Government AI'
-  },
+  // {
+  //   value: 'Government-AI',
+  //   label: 'Government AI'
+  // },
   {
     value: 'Enterprise-AI',
     label: 'Enterprise AI'
