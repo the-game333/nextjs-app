@@ -156,6 +156,44 @@ const AppBar = ({ ...others }) => {
                 </Button>
               </HtmlTooltip>
 
+              <HtmlTooltip
+                title={
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
+                    <CardContent>
+                      <Grid container spacing={10}>
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>GENERATIVE AI</Typography>
+                          <TooltipButton text={'Open AI'} image={'partnerships/open-ai'} />
+                          <TooltipButton text={'Co:here'} image={'partnerships/cohere'} />
+                          <TooltipButton text={'Anthropic'} image={'partnerships/anthropic'} />
+                          <TooltipButton text={'Stability AI'} image={'partnerships/stability-ai'} />
+                        </Grid>
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>USE CASES</Typography>
+                          <TooltipButton text={'Customer Support'} image={'partnerships/customer-support'} />
+                          <TooltipButton text={'Data Analysis'} image={'partnerships/data-analysis'} />
+                          <TooltipButton text={'Data Transfomer'} image={'partnerships/data-transformer'} />
+                          <TooltipButton text={'Data Annotation'} image={'partnerships/data-annotation'} />
+                          <TooltipButton text={'Data Classification'} image={'partnerships/data-classification'} />
+                        </Grid>
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>INTEGRATIONS</Typography>
+                          <TooltipButton text={'Chrome Extension'} image={'partnerships/chrome'} />
+                          <TooltipButton text={'Google Sheets'} image={'partnerships/google-sheets'} />
+                          <TooltipButton text={'REST API'} image={'partnerships/api'} />
+                          <TooltipButton text={'Snowflake'} image={'partnerships/snowflake'} />
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                }
+                arrow
+              >
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
+                  Solutions
+                </Button>
+              </HtmlTooltip>
+
               <a href="/vision">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Vision
@@ -166,7 +204,7 @@ const AppBar = ({ ...others }) => {
                   Join Us
                 </Button>
               </a>
-              <a href="/blog">
+              <a href="https://blog.infrahive.io/" target={'_blank'}>
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Blogs
                 </Button>
