@@ -97,6 +97,38 @@ const voice = () => {
           setText('There had been some issue with the request. Kindly try again.');
           console.log(error);
         }
+      } else if(engineSelected === 'Deepgram AI'){
+        formData.append('file', selectedFile);
+        formData.append('name', selectedFile.name);
+        formData.append('model', model);
+        formData.append('detect_language', detectLanguage.toString())
+        formData.append('profanity_filter', profanityFilter.toString())
+        formData.append('punctuate', punctuate.toString())
+        formData.append('smart_format', smartFormat.toString())
+        formData.append('utterances', utterances.toString())
+        formData.append('utt_split', uttSplit.toString())
+        const url = 'http://localhost:2000/api/voice/deepgramai';
+        const body = {
+          method: 'POST',
+          body: formData
+        };
+        try {
+          const res = await fetch(url, body);
+          if(await res.status === 200){
+
+            const json = await res.text();
+            setText(json);
+            console.log(json);
+          }
+          else{
+            const error = await res.json();
+            console.log(error)
+            setText('There had been some issue with the server. Kindly try again.')
+          }
+        } catch (error) {
+          setText('There had been some issue with the request. Kindly try again.');
+          console.log(error);
+        }
       }
       setLoading(false);
     }
@@ -177,7 +209,7 @@ const voice = () => {
               <span className="opacity-80 text-base">{fileName}</span>
             </label>
             {/* Audio URL for Assembly */}
-            {engineSelected === 'Assembly AI' && (
+            {engineSelected === 'Assembly AI' || engineSelected === 'Deepgram AI' && (
               <>
                 <hr />
                 <div className="mt-4 flex justify-center">
