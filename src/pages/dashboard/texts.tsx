@@ -107,15 +107,17 @@ const texts = () => {
     setChatBotIndex(index);
     setChatBot(ChatBots[index].name);
     setCurrentModel(ChatBots[index].models[0]);
-    console.log(event.target.value);
+    // console.log(event.target.value);
   };
 
   const chatModelSelector = (event: SelectChangeEvent) => {
     setCurrentModel(event.target.value);
+    // console.log(event.target.value);
   };
 
   const handleMenuButton = () => {
     setMenuBtnActive(!menuBtnActive);
+
   };
 
   function TempSlider(value: number) {
@@ -150,22 +152,22 @@ const texts = () => {
     switch (chatBot) {
       case 'Open AI':
         url = 'http://localhost:2000/api/text/openai';
-        console.log(url);
+        // console.log(url);
         data.top_p = topk;
         data.n = numOfGen;
         data.presence_penalty = presencePenalty
         data.frequency_penalty = frequencyPenalty
-        console.log(data)
+        // console.log(data)
         break;
       case 'Anthropic':
         url = 'http://localhost:2000/api/text/anthropic';
-        console.log(url);
+        // console.log(url);
         data.top_k = topk;
         data.stop_sequence = stopSequence;
         break;
       case 'Cohere':
         url = 'http://localhost:2000/api/text/cohere';
-        console.log(url);
+        // console.log(url);
         data.num_generations = numOfGen
         data.k = topk;
         data.p = p;
@@ -174,7 +176,7 @@ const texts = () => {
         data.stop_sequences = stopSequence;
         break;
       default:
-        console.log('Case not working');
+        // console.log('Case not working');
         break;
     }
     const res = await fetch(url, reqOptions);
@@ -201,12 +203,12 @@ const texts = () => {
 
   const handleStopSequence = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setStopSequence(event.target.value);
+
   };
 
   function top_k(value: number) {
     // console.log(value)
     const index = marks.findIndex((mark) => mark.value === value)
-    console.log(marks[index].label)
     setTopK(toNumber(marks[index].label));
     return `${marks[index].label}`;
   }
@@ -227,6 +229,7 @@ const texts = () => {
 
   const suffixHandler = (event: ChangeEvent<HTMLTextAreaElement>) => {
     setSuffix(event.target.value)
+    
   }
 
   function presencePenaltyHandler(value:number){

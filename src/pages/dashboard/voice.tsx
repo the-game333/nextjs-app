@@ -1,22 +1,33 @@
 import { AudioFile } from '@mui/icons-material';
-import { MenuItem, Select, SelectChangeEvent, Tooltip } from '@mui/material';
+import { MenuItem, Select, SelectChangeEvent, Slider, Switch, Tooltip } from '@mui/material';
 import React, { ChangeEvent, useState } from 'react';
 import { FaClipboard } from 'react-icons/fa';
-
 
 const voice = () => {
   const EngineName: string[] = ['Open AI', 'Assembly AI', 'Eleven Labs', 'Deepgram AI'];
   const Models: { [key: string]: string[] } = {
     'Open AI': ['whisper-1'],
     'Assembly AI': ['whisper-1'],
-    'Eleven Labs': ['whisper-1'],
-    'Deepgram AI': ['general','meeting', 'phonecall','voicemail','finance','conversationalai','video','wisper'],
-  }
+    // 'Eleven Labs': ['whisper-1'],
+    'Deepgram AI': ['general', 'meeting', 'phonecall', 'voicemail', 'finance', 'conversationalai', 'video', 'wisper']
+  };
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [fileName, setFileName] = useState('');
   const [engineSelected, setSelectEngine] = useState(EngineName[0]);
-  const [model, setModel] = useState(Models[engineSelected][0])
+  const [model, setModel] = useState(Models[engineSelected][0]);
   const [text, setText] = useState('');
+  const [audioURL, setAudioURL] = useState('');
+  const [temperature, setTemperature] = useState(0.4);
+  const [entityDetection, setEntityDetection] = useState(false);
+  const [sentimentAnalysis, setSentimentAnalysis] = useState(false);
+  const [contentSafety, setContentSafety] = useState(false);
+  const [formatText, setFormatText] = useState(true);
+  const [detectLanguage, setDetectLanguage] = useState(true);
+  const [profanityFilter, setProfanityFilter] = useState(false);
+  const [punctuate, setPunctuate] = useState(true);
+  const [smartFormat, setSmartFormat] = useState(true);
+  const [utterances, setUtterances] = useState(false);
+  const [uttSplit, setUttSplit] = useState(0.8);
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
@@ -29,32 +40,107 @@ const voice = () => {
   const handleUpload = async () => {
     if (selectedFile) {
       const formData = new FormData();
-      formData.append('file', selectedFile);
-      formData.append('name', selectedFile.name)
-      console.log(formData.append);
-      console.log(selectedFile.name)
-      const url = "http://localhost:2000/api/voice/whisperai"
-      const body = {
-        method: 'POST',
-        body: formData,
-
+      if (engineSelected === 'Open AI') {
+        formData.append('file', selectedFile);
+        formData.append('name', selectedFile.name);
+        formData.append('model', model);
+        formData.append('temperature', temperature.toString(10));
+        console.log(formData.append);
+        console.log(selectedFile.name);
+        const url = 'http://localhost:2000/api/voice/whisperai';
+        const body = {
+          method: 'POST',
+          body: formData
+        };
+        const res = await fetch(url, body);
+        const json = await res.text();
+        setText(json);
+        console.log(json);
+      } else if (engineSelected === 'Assembly AI') {
+        formData.append('file', selectedFile);
+        formData.append('name', selectedFile.name);
+        formData.append('model', model);
+        formData.append('entity_detection', entityDetection.toString())
+        formData.append('sentiment_analysis', sentimentAnalysis.toString());
+        formData.append('content_safety', contentSafety.toString());
+        formData.append('format_text', formatText.toString());
+        const url = 'http://localhost:2000/api/voice/assemblyai';
+        const body = {
+          method: 'POST',
+          body: formData
+        };
+        try {
+          const res = await fetch(url, body);
+          const json = await res.text();
+          setText(json);
+          console.log(json);
+        } catch (error) {
+          setText('There had been some issue with the request. Kindly try again.');
+          console.log(error);
+        }
       }
-      const res = await fetch(url, body);
-      const json = await res.text()
-      setText(json);
-      console.log(json)
     }
-
   };
 
   const EngineSelector = (event: SelectChangeEvent) => {
     setSelectEngine(event.target.value);
-    setModel(Models[event.target.value][0])
+    setModel(Models[event.target.value][0]);
   };
 
   const ModelSelector = (event: SelectChangeEvent) => {
     setModel(event.target.value);
   };
+
+  function TempSlider(value: number) {
+    setTemperature(value);
+    return `${value}`;
+  }
+
+  const handleURL = (event: ChangeEvent<HTMLInputElement>) => {
+    setAudioURL(event.target.value);
+  };
+
+  const handleEntityDetection = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setEntityDetection(event.target.checked);
+    console.log(event.target.checked);
+  };
+
+  const handleSentimentAnalysis = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSentimentAnalysis(event.target.checked);
+    console.log(event.target.checked);
+  };
+  const handleContentSafety = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setContentSafety(event.target.checked);
+    console.log(event.target.checked);
+  };
+  const handleFormatText = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setFormatText(event.target.checked);
+    console.log(event.target.checked);
+  };
+  const handleDetectLanguage = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setDetectLanguage(event.target.checked);
+    console.log(event.target.checked);
+  };
+  const handleProfanityFilter = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setProfanityFilter(event.target.checked);
+    console.log(event.target.checked);
+  };
+  const handlePunctuate = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setPunctuate(event.target.checked);
+    console.log(event.target.checked);
+  };
+  const handleSmartFormat = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSmartFormat(event.target.checked);
+    console.log(event.target.checked);
+  };
+  const handleUtterances = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setUtterances(event.target.checked);
+    console.log(event.target.checked);
+  };
+  function HandleUttSplit(value: number) {
+    setUttSplit(value);
+    return `${value}`;
+  }
 
   return (
     <div className="relative">
@@ -65,8 +151,25 @@ const voice = () => {
             <AudioFile sx={{ fontSize: '32px' }} className="mx-auto" />
           </Tooltip>
           <input type="file" onChange={handleFileChange} className=" px-2 hidden" />
-          <span className="opacity-80">{fileName}</span>
+          <span className="opacity-80 text-base">{fileName}</span>
         </label>
+        {/* Audio URL for Assembly */}
+        {engineSelected === 'Assembly AI' && (
+          <>
+            <hr />
+            <div className="mt-4 flex justify-center">
+              <p className="my-auto">Audio URL</p>
+              <input
+                type="text"
+                placeholder="www.google.com/sampleaudio.mp3"
+                className="border-2 p-2 rounded-md m-2"
+                onChange={handleURL}
+                value={audioURL}
+              ></input>
+            </div>
+          </>
+        )}
+
         <button onClick={handleUpload} className="my-4 border py-2 px-3 rounded-lg bg-dark-blue text-white font-semibold">
           Upload
         </button>
@@ -87,7 +190,7 @@ const voice = () => {
               </button>
             </Tooltip>
           </div>
-          <p className='text-left mt-4'>{text}</p>
+          <p className="text-left mt-4">{text}</p>
         </div>
       </div>
 
@@ -125,6 +228,86 @@ const voice = () => {
             </Select>
           </label>
         </div>
+
+        {/* Open AI Options Conditional Rendering */}
+        {engineSelected === 'Open AI' && (
+          <>
+            {/* Temperature Slider */}
+            <div className="w-full mt-0 lg:mt-4">
+              <p className="">Temperature</p>
+              <Slider
+                aria-label="Temperature"
+                defaultValue={0.7}
+                getAriaValueText={TempSlider}
+                valueLabelDisplay="auto"
+                step={0.1}
+                marks
+                min={0.1}
+                max={2}
+              />
+            </div>
+          </>
+        )}
+
+        {/* Assembly AI Conditional Rendering */}
+        {engineSelected === 'Assembly AI' && (
+          <>
+            <div>
+              <label className="text-lg mx-4">Entity Detection</label>
+              <Switch checked={entityDetection} onChange={handleEntityDetection} />
+            </div>
+            <div>
+              <label className="text-lg mx-4">Sentiment Analysis</label>
+              <Switch checked={sentimentAnalysis} onChange={handleSentimentAnalysis} />
+            </div>
+            <div>
+              <label className="text-lg mx-4">Content Safety</label>
+              <Switch checked={contentSafety} onChange={handleContentSafety} />
+            </div>
+            <div>
+              <label className="text-lg mx-4">Format Text</label>
+              <Switch checked={formatText} onChange={handleFormatText} />
+            </div>
+          </>
+        )}
+
+        {engineSelected === 'Deepgram AI' && (
+          <>
+            <div>
+              <label className="text-lg mx-4">Detect Language</label>
+              <Switch checked={detectLanguage} onChange={handleDetectLanguage} />
+            </div>
+            <div>
+              <label className="text-lg mx-4">Profanity Filter</label>
+              <Switch checked={profanityFilter} onChange={handleProfanityFilter} />
+            </div>
+            <div>
+              <label className="text-lg mx-4">Punctuate</label>
+              <Switch checked={punctuate} onChange={handlePunctuate} />
+            </div>
+            <div>
+              <label className="text-lg mx-4">Smart Format</label>
+              <Switch checked={smartFormat} onChange={handleSmartFormat} />
+            </div>
+            <div>
+              <label className="text-lg mx-4">Utterances</label>
+              <Switch checked={utterances} onChange={handleUtterances} />
+            </div>
+            <div className="w-full mt-0 lg:mt-4">
+              <p className="">Utt Split</p>
+              <Slider
+                aria-label="Temperature"
+                defaultValue={0.8}
+                getAriaValueText={HandleUttSplit}
+                valueLabelDisplay="auto"
+                step={0.1}
+                marks
+                min={0.1}
+                max={2}
+              />
+            </div>
+          </>
+        )}
       </div>
     </div>
   );

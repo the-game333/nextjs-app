@@ -1,6 +1,6 @@
 // material-ui
 import { useTheme, styled } from '@mui/material/styles';
-import {  Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
+import {  Button, Card, CardContent, CardMedia, Grid, Typography } from '@mui/material';
 
 
 import { gridSpacing } from 'store/constant';
@@ -76,6 +76,10 @@ const UnderConstruction = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="body2">This site is on under construction!! Please check after some time</Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  {/* <Typography variant="body2">This site is on under construction!! Please check after some time</Typography> */}
+                  <button className='bg-black text-white py-4 px-12 rounded-md'>Request Access</button>
                 </Grid>
               </Grid>
             </PageContentWrapper>
