@@ -25,8 +25,10 @@ const Intro = () => {
             width: '140px'
           }}
           variant="contained"
+          href="https://calendly.com/infrahive/infrahive-demo"
+          target={'_blank'}
         >
-          Get Started
+          Request Access
         </Button>
       </div>
     </div>

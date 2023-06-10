@@ -117,24 +117,23 @@ import { gridSpacing } from 'store/constant';
 
 // =============================|| LANDING - LAYOUTS PAGE ||============================= //
 
-const FullyFeatured = () => {
+const InfraSpeed = () => {
   // const theme = useTheme();
 
   return (
     <Container>
       <Grid container spacing={gridSpacing} alignItems={'center'}>
-        <Grid item md={7} sm={12}>
-          <Box component={'img'} src="/assets/animation/fully_featured.gif" borderRadius={'20px'} width={'100%'} />
-        </Grid>
         <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
           <Grid item xs={12} textAlign={'left'}>
             <Typography variant="h1" fontSize={'3rem'}>
-              Full Stack AI Infrastructure, Production Ready APIs
+              <span className="text-xl">Introducing</span>
+              <br />
+              <span className="text-infra-yellow">InfraSpeed</span>
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
             <Typography variant="h2" fontWeight={'unset'}>
-              Build AI Apps on advanced LLMs and integrate with in your domain
+              Train & Fine-Tune AI Models <span className="text-infra-yellow">15x Faster</span>
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
@@ -143,10 +142,13 @@ const FullyFeatured = () => {
             </Button>
           </Grid>
         </Grid>
+        <Grid item md={7} sm={12}>
+          <Box component={'img'} src="/assets/images/infraspeed.png" borderRadius={'20px'} width={'100%'} />
+        </Grid>
       </Grid>
       <Divider sx={{ mt: 15 }} />
     </Container>
   );
 };
 
-export default FullyFeatured;
+export default InfraSpeed;

@@ -6,6 +6,7 @@ import Header from 'components/landingpage/Header';
 import Howtowworks from 'components/landingpage/Howtowork';
 import Howtowworks2 from 'components/landingpage/Howtowork2';
 import FullyFeatured from 'components/landingpage/FullyFeatured';
+import InfraSpeed from 'components/landingpage/InfraSpeed';
 import BulitCommunity from 'components/landingpage/BulitCommunity';
 import LanguageCodeType from 'components/landingpage/LanguageCodeType';
 import Notification from 'components/landingpage/Notification';
@@ -92,6 +93,9 @@ const Landing: React.FC = () => {
       </ThirdWrapper>
       <FullyWrapper>
         <FullyFeatured />
+      </FullyWrapper>
+      <FullyWrapper>
+        <InfraSpeed />
       </FullyWrapper>
       <FullyWrapper>
         <BulitCommunity />

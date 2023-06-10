@@ -36,10 +36,11 @@ const PricingComp = () => {
           sx={{ color: 'black', height: '43px', width: '100%', marginTop: '4rem' }}
           variant="contained"
           component={Link}
-          href="/contact"
+          target={'_blank'}
+          href="https://calendly.com/infrahive/infrahive-demo"
           //  target="_blank"
         >
-          Book Demo
+          Request Access
         </Button>
       </div>
     </div>

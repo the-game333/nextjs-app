@@ -206,18 +206,19 @@ const AppBar = ({ ...others }) => {
               </a>
               <a href="https://blog.infrahive.io/" target={'_blank'}>
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
-                  Blogs
+                  Blog
                 </Button>
               </a>
               <Button
                 color="inherit"
+                href="https://calendly.com/infrahive/infrahive-demo"
+                target={'_blank'}
                 sx={{ color: 'black', height: '43px' }}
                 variant="contained"
                 component={Link}
-                href="/contact"
                 //  target="_blank"
               >
-                Book Demo
+                Request Access
               </Button>
               {/* <Button
                 component={Link}
