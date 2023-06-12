@@ -25,6 +25,9 @@ import { ChatStateProps } from './chat';
 import { CalendarStateProps } from './calendar';
 import { MailStateProps } from './mail';
 import { UserStateProps } from './user';
+import { AgentStateProps } from './agent';
+import { AgentToolStateProps } from './agenttool';
+import { AgentMessageStateProps } from './agentmessage';
 
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
@@ -139,6 +142,9 @@ export interface DefaultRootStateProps {
   calendar: CalendarStateProps;
   mail: MailStateProps;
   user: UserStateProps;
+  agent: AgentStateProps;
+  agentTool: AgentToolStateProps;
+  agentMessage: AgentMessageStateProps;
 }
 
 export interface ColorProps {
