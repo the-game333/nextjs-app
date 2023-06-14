@@ -96,19 +96,19 @@ export default function ThemeCustomization({ children }: Props) {
       themeOption.divider = color.darkTextPrimary;
       themeOption.heading = color.darkTextTitle;
       break;
-    case 'light':
-    default:
-      themeOption.paper = color.paper;
-      themeOption.backgroundDefault = color.paper;
-      themeOption.background = color.primaryLight;
-      themeOption.darkTextPrimary = color.grey700;
-      themeOption.darkTextSecondary = color.grey500;
-      themeOption.textDark = color.grey900;
-      themeOption.menuSelected = color.secondaryDark;
-      themeOption.menuSelectedBack = color.secondaryLight;
-      themeOption.divider = color.grey200;
-      themeOption.heading = color.grey900;
-      break;
+    // case 'light':
+    // default:
+    //   themeOption.paper = color.paper;
+    //   themeOption.backgroundDefault = color.paper;
+    //   themeOption.background = color.primaryLight;
+    //   themeOption.darkTextPrimary = color.grey700;
+    //   themeOption.darkTextSecondary = color.grey500;
+    //   themeOption.textDark = color.grey900;
+    //   themeOption.menuSelected = color.secondaryDark;
+    //   themeOption.menuSelectedBack = color.secondaryLight;
+    //   themeOption.divider = color.grey200;
+    //   themeOption.heading = color.grey900;
+    //   break;
   }
 
   const themeOptions: ThemeOptions = useMemo(
