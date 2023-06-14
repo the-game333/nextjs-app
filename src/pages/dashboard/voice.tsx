@@ -1,14 +1,14 @@
 import { AudioFile } from '@mui/icons-material';
-import { MenuItem, Select, SelectChangeEvent, Slider, Switch, Tooltip } from '@mui/material';
+import { MenuItem, Select, SelectChangeEvent, Slider, Switch, ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
 import React, { ChangeEvent, useState } from 'react';
 import { FaClipboard } from 'react-icons/fa';
 
 const voice = () => {
-  const EngineName: string[] = ['Open AI', 'Assembly AI', 'Deepgram AI'];
+  const EngineName: string[] = ['Open AI', 'Assembly AI', 'Eleven Labs', 'Deepgram AI'];
   const Models: { [key: string]: string[] } = {
     'Open AI': ['whisper-1'],
     'Assembly AI': ['whisper-1'],
-    // 'Eleven Labs': ['whisper-1'],
+    'Eleven Labs': ['eleven_monolingual_v1'],
     'Deepgram AI': ['general', 'meeting', 'phonecall', 'voicemail', 'finance', 'conversationalai', 'video', 'wisper']
   };
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
@@ -29,6 +29,8 @@ const voice = () => {
   const [utterances, setUtterances] = useState(false);
   const [uttSplit, setUttSplit] = useState(0.8);
   const [loading, setLoading] = useState(false);
+  const [inputText, setInputText] = useState('');
+  const [mode, setMode] = useState('speechToText');
 
   const handleFileChange = (event: ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
@@ -55,18 +57,15 @@ const voice = () => {
           body: formData
         };
         const res = await fetch(url, body);
-        if(await res.status === 200){
-
+        if ((await res.status) === 200) {
           const json = await res.text();
           setText(json);
           console.log(json);
-        }
-        else{
+        } else {
           const error = await res.json();
-          console.log(error)
-          setText('There had been some issue with the server. Kindly try again.')
+          console.log(error);
+          setText('There had been some issue with the server. Kindly try again.');
         }
-        
       } else if (engineSelected === 'Assembly AI') {
         formData.append('file', selectedFile);
         formData.append('name', selectedFile.name);
@@ -82,31 +81,29 @@ const voice = () => {
         };
         try {
           const res = await fetch(url, body);
-          if(await res.status === 200){
-
+          if ((await res.status) === 200) {
             const json = await res.text();
             setText(json);
             console.log(json);
-          }
-          else{
+          } else {
             const error = await res.json();
-            console.log(error)
-            setText('There had been some issue with the server. Kindly try again.')
+            console.log(error);
+            setText('There had been some issue with the server. Kindly try again.');
           }
         } catch (error) {
           setText('There had been some issue with the request. Kindly try again.');
           console.log(error);
         }
-      } else if(engineSelected === 'Deepgram AI'){
+      } else if (engineSelected === 'Deepgram AI') {
         formData.append('file', selectedFile);
         formData.append('name', selectedFile.name);
         formData.append('model', model);
-        formData.append('detect_language', detectLanguage.toString())
-        formData.append('profanity_filter', profanityFilter.toString())
-        formData.append('punctuate', punctuate.toString())
-        formData.append('smart_format', smartFormat.toString())
-        formData.append('utterances', utterances.toString())
-        formData.append('utt_split', uttSplit.toString())
+        formData.append('detect_language', detectLanguage.toString());
+        formData.append('profanity_filter', profanityFilter.toString());
+        formData.append('punctuate', punctuate.toString());
+        formData.append('smart_format', smartFormat.toString());
+        formData.append('utterances', utterances.toString());
+        formData.append('utt_split', uttSplit.toString());
         const url = 'http://localhost:2000/api/voice/deepgramai';
         const body = {
           method: 'POST',
@@ -114,24 +111,50 @@ const voice = () => {
         };
         try {
           const res = await fetch(url, body);
-          if(await res.status === 200){
-
+          if ((await res.status) === 200) {
             const json = await res.text();
             setText(json);
             console.log(json);
-          }
-          else{
+          } else {
             const error = await res.json();
-            console.log(error)
-            setText('There had been some issue with the server. Kindly try again.')
+            console.log(error);
+            setText('There had been some issue with the server. Kindly try again.');
           }
         } catch (error) {
           setText('There had been some issue with the request. Kindly try again.');
           console.log(error);
         }
-      }
+      } 
       setLoading(false);
     }
+  };
+
+  const handleTextToSpeech = async () => {
+    const formData = new FormData();
+    const url = 'http://localhost:2000/api/voice/elevenlabsai';
+    formData.append('text', inputText);
+    formData.append('model_id', 'eleven_monolingual_v1');
+    formData.append('voice_settings', JSON.stringify({
+      stability: 0.5,
+      similarity_boost: 0.5
+    }));
+    // formData.append('model_id', 'eleven_monolingual_v1');
+    // formData.append('model_id', 'eleven_monolingual_v1');
+    const body = {
+      method: 'POST',
+      body: formData
+    };
+    const res = await fetch(url, body);
+    if(res.status === 200){
+      const json = await res.json();
+      console.log(json)
+    }
+    console.log(res)
+  };
+
+  const handleMode = (event: React.MouseEvent<HTMLElement>, newAlignment: string) => {
+    setMode(newAlignment);
+    console.log(newAlignment);
   };
 
   const EngineSelector = (event: SelectChangeEvent) => {
@@ -193,182 +216,211 @@ const voice = () => {
     setUttSplit(value);
     return `${value}`;
   }
+  const handleInputText = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setInputText(event.target.value);
+  };
 
   return (
-    <div className="relative">
-      <div className=" bg-white rounded-lg text-center p-4">
-        {/* Input Div */}
-        <div className="grid grid-cols-2">
-          <div className="my-auto">
-            <label className="grid grid-cols-1 gap-2 text-xl ">
-              Upload Audio File
-              <Tooltip title="Upload mp3 file to transcribe it.">
-                <AudioFile sx={{ fontSize: '32px' }} className="mx-auto" />
-              </Tooltip>
-              <input type="file" onChange={handleFileChange} className=" px-2 hidden" />
-              <span className="opacity-80 text-base">{fileName}</span>
-            </label>
-            {/* Audio URL for Assembly */}
-            {engineSelected === 'Assembly AI' || engineSelected === 'Deepgram AI' && (
-              <>
-                <hr />
-                <div className="mt-4 flex justify-center">
-                  <p className="my-auto">Audio URL</p>
-                  <input
-                    type="text"
-                    placeholder="www.google.com/sampleaudio.mp3"
-                    className="border-2 p-2 rounded-md m-2"
-                    onChange={handleURL}
-                    value={audioURL}
-                  ></input>
-                </div>
-              </>
-            )}
-
-            <button onClick={handleUpload} className="my-4 border py-2 px-3 rounded-lg bg-dark-blue text-white font-semibold">
-              Upload
-            </button>
-          </div>
-
-          {/* Additional Configuration */}
-          <div className=" bg-white rounded-lg top-0 overflow-y-auto p-2 text-left">
-            <h3 className="text-2xl font-bold m-2">Configuration</h3>
-            <hr className="opacity-80" />
-
-            {/* Engine Selector */}
-            <div className="m-4">
-              <label>
-                <span className="mr-4 text-xl"> Engine </span>
-                <Select labelId="chatBot-select-label" id="chatBot-select" value={engineSelected} onChange={EngineSelector} autoWidth>
-                  {/* Options of the selector  */}
-                  {EngineName.map((engine, index) => (
-                    <MenuItem key={index} value={engine}>
-                      {engine}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </label>
-            </div>
-
-            {/* Model Selector */}
-            <div className="m-4">
-              <label>
-                <span className="mr-5 text-xl"> Model </span>
-                <Select labelId="chatBot-select-label" id="chatBot-select" value={model} onChange={ModelSelector} autoWidth>
-                  {/* Options of the selector  */}
-                  {Models[engineSelected].map((model, index) => (
-                    <MenuItem key={index} value={model}>
-                      {model}
-                    </MenuItem>
-                  ))}
-                </Select>
-              </label>
-            </div>
-
-            {/* Open AI Options Conditional Rendering */}
-            {engineSelected === 'Open AI' && (
-              <>
-                {/* Temperature Slider */}
-                <div className="w-52 mt-0 lg:mt-4 ml-4 ">
-                  <p className="">Temperature</p>
-                  <Slider
-                    aria-label="Temperature"
-                    defaultValue={0.7}
-                    getAriaValueText={TempSlider}
-                    valueLabelDisplay="auto"
-                    step={0.1}
-                    marks
-                    min={0.1}
-                    max={2}
-                  />
-                </div>
-              </>
-            )}
-
-            {/* Assembly AI Conditional Rendering */}
-            {engineSelected === 'Assembly AI' && (
-              <>
-                <div>
-                  <label className="text-lg mx-4">Entity Detection</label>
-                  <Switch checked={entityDetection} onChange={handleEntityDetection} />
-                </div>
-                <div>
-                  <label className="text-lg mx-4">Sentiment Analysis</label>
-                  <Switch checked={sentimentAnalysis} onChange={handleSentimentAnalysis} />
-                </div>
-                <div>
-                  <label className="text-lg mx-4">Content Safety</label>
-                  <Switch checked={contentSafety} onChange={handleContentSafety} />
-                </div>
-                <div>
-                  <label className="text-lg mx-4">Format Text</label>
-                  <Switch checked={formatText} onChange={handleFormatText} />
-                </div>
-              </>
-            )}
-
-            {engineSelected === 'Deepgram AI' && (
-              <>
-                <div>
-                  <label className="text-lg mx-4">Detect Language</label>
-                  <Switch checked={detectLanguage} onChange={handleDetectLanguage} />
-                </div>
-                <div>
-                  <label className="text-lg mx-4">Profanity Filter</label>
-                  <Switch checked={profanityFilter} onChange={handleProfanityFilter} />
-                </div>
-                <div>
-                  <label className="text-lg mx-4">Punctuate</label>
-                  <Switch checked={punctuate} onChange={handlePunctuate} />
-                </div>
-                <div>
-                  <label className="text-lg mx-4">Smart Format</label>
-                  <Switch checked={smartFormat} onChange={handleSmartFormat} />
-                </div>
-                <div>
-                  <label className="text-lg mx-4">Utterances</label>
-                  <Switch checked={utterances} onChange={handleUtterances} />
-                </div>
-                <div className="w-52 ml-4 mt-0 lg:mt-4">
-                  <p className="">Utt Split</p>
-                  <Slider
-                    aria-label="Temperature"
-                    defaultValue={0.8}
-                    getAriaValueText={HandleUttSplit}
-                    valueLabelDisplay="auto"
-                    step={0.1}
-                    marks
-                    min={0.1}
-                    max={2}
-                  />
-                </div>
-              </>
-            )}
-          </div>
-        </div>
-
-        <hr />
-
-        <div className='max-w-4xl mx-auto mt-8'>
-          <div className="flex justify-between ">
-            <p className="my-4 text-3xl font-semibold">Transcribbed Text</p>
-            <hr className="my-4"/>
-            <Tooltip title="Copy to clipboard">
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(text);
-                }}
-                className=""
-              >
-                <FaClipboard style={{ height: '24px', marginTop: 'auto', marginBottom: 'auto' }} />
-              </button>
-            </Tooltip>
-          </div>
-          <p className="text-left mt-4">{loading ? "Beep... Boop.... Beep..." : text && text}</p>
-        </div>
+    <div className="bg-white rounded-lg p-4">
+      {/* Mode Selector */}
+      <div>
+        <ToggleButtonGroup color="primary" value={mode} exclusive onChange={handleMode} aria-label="Platform">
+          <ToggleButton value="speechToText">Speech To Text</ToggleButton>
+          <ToggleButton value="textToSpeech">Text To Speech</ToggleButton>
+        </ToggleButtonGroup>
       </div>
+      <div className="  text-center">
+        {/* Input Div */}
+        {mode === 'speechToText' && (
+          <>
+            <div className="grid grid-cols-2">
+              <div className="my-auto">
+                <label className="grid grid-cols-1 gap-2 text-xl ">
+                  Upload Audio File
+                  <Tooltip title="Upload mp3 file to transcribe it.">
+                    <AudioFile sx={{ fontSize: '32px' }} className="mx-auto" />
+                  </Tooltip>
+                  <input type="file" onChange={handleFileChange} className=" px-2 hidden" />
+                  <span className="opacity-80 text-base">{fileName}</span>
+                </label>
+                {/* Audio URL for Assembly */}
+                {engineSelected === 'Assembly AI' ||
+                  (engineSelected === 'Deepgram AI' && (
+                    <>
+                      <hr />
+                      <div className="mt-4 flex justify-center">
+                        <p className="my-auto">Audio URL</p>
+                        <input
+                          type="text"
+                          placeholder="www.google.com/sampleaudio.mp3"
+                          className="border-2 p-2 rounded-md m-2"
+                          onChange={handleURL}
+                          value={audioURL}
+                        ></input>
+                      </div>
+                    </>
+                  ))}
 
-      {/* SideBar */}
+                <button onClick={handleUpload} className="my-4 border py-2 px-3 rounded-lg bg-dark-blue text-white font-semibold">
+                  Upload
+                </button>
+              </div>
+
+              {/* Additional Configuration */}
+              <div className=" bg-white rounded-lg top-0 overflow-y-auto p-2 text-left">
+                <h3 className="text-2xl font-bold m-2">Configuration</h3>
+                <hr className="opacity-80" />
+
+                {/* Engine Selector */}
+                <div className="m-4">
+                  <label>
+                    <span className="mr-4 text-xl"> Engine </span>
+                    <Select labelId="chatBot-select-label" id="chatBot-select" value={engineSelected} onChange={EngineSelector} autoWidth>
+                      {/* Options of the selector  */}
+                      {EngineName.map((engine, index) => (
+                        <MenuItem key={index} value={engine}>
+                          {engine}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </label>
+                </div>
+
+                {/* Model Selector */}
+                <div className="m-4">
+                  <label>
+                    <span className="mr-5 text-xl"> Model </span>
+                    <Select labelId="chatBot-select-label" id="chatBot-select" value={model} onChange={ModelSelector} autoWidth>
+                      {/* Options of the selector  */}
+                      {Models[engineSelected].map((model, index) => (
+                        <MenuItem key={index} value={model}>
+                          {model}
+                        </MenuItem>
+                      ))}
+                    </Select>
+                  </label>
+                </div>
+
+                {/* Open AI Options Conditional Rendering */}
+                {engineSelected === 'Open AI' && (
+                  <>
+                    {/* Temperature Slider */}
+                    <div className="w-52 mt-0 lg:mt-4 ml-4 ">
+                      <p className="">Temperature</p>
+                      <Slider
+                        aria-label="Temperature"
+                        defaultValue={0.7}
+                        getAriaValueText={TempSlider}
+                        valueLabelDisplay="auto"
+                        step={0.1}
+                        marks
+                        min={0.1}
+                        max={2}
+                      />
+                    </div>
+                  </>
+                )}
+
+                {/* Assembly AI Conditional Rendering */}
+                {engineSelected === 'Assembly AI' && (
+                  <>
+                    <div>
+                      <label className="text-lg mx-4">Entity Detection</label>
+                      <Switch checked={entityDetection} onChange={handleEntityDetection} />
+                    </div>
+                    <div>
+                      <label className="text-lg mx-4">Sentiment Analysis</label>
+                      <Switch checked={sentimentAnalysis} onChange={handleSentimentAnalysis} />
+                    </div>
+                    <div>
+                      <label className="text-lg mx-4">Content Safety</label>
+                      <Switch checked={contentSafety} onChange={handleContentSafety} />
+                    </div>
+                    <div>
+                      <label className="text-lg mx-4">Format Text</label>
+                      <Switch checked={formatText} onChange={handleFormatText} />
+                    </div>
+                  </>
+                )}
+
+                {engineSelected === 'Deepgram AI' && (
+                  <>
+                    <div>
+                      <label className="text-lg mx-4">Detect Language</label>
+                      <Switch checked={detectLanguage} onChange={handleDetectLanguage} />
+                    </div>
+                    <div>
+                      <label className="text-lg mx-4">Profanity Filter</label>
+                      <Switch checked={profanityFilter} onChange={handleProfanityFilter} />
+                    </div>
+                    <div>
+                      <label className="text-lg mx-4">Punctuate</label>
+                      <Switch checked={punctuate} onChange={handlePunctuate} />
+                    </div>
+                    <div>
+                      <label className="text-lg mx-4">Smart Format</label>
+                      <Switch checked={smartFormat} onChange={handleSmartFormat} />
+                    </div>
+                    <div>
+                      <label className="text-lg mx-4">Utterances</label>
+                      <Switch checked={utterances} onChange={handleUtterances} />
+                    </div>
+                    <div className="w-52 ml-4 mt-0 lg:mt-4">
+                      <p className="">Utt Split</p>
+                      <Slider
+                        aria-label="Temperature"
+                        defaultValue={0.8}
+                        getAriaValueText={HandleUttSplit}
+                        valueLabelDisplay="auto"
+                        step={0.1}
+                        marks
+                        min={0.1}
+                        max={2}
+                      />
+                    </div>
+                  </>
+                )}
+              </div>
+            </div>
+            <hr />
+            <div className="max-w-4xl mx-auto mt-8">
+              <div className="flex justify-between ">
+                <p className="my-4 text-3xl font-semibold">Transcribbed Text</p>
+                <hr className="my-4" />
+                <Tooltip title="Copy to clipboard">
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(text);
+                    }}
+                    className=""
+                  >
+                    <FaClipboard style={{ height: '24px', marginTop: 'auto', marginBottom: 'auto' }} />
+                  </button>
+                </Tooltip>
+              </div>
+              <p className="text-left mt-4">{loading ? 'Beep... Boop.... Beep...' : text && text}</p>
+            </div>{' '}
+          </>
+        )}
+
+        {/* Text To Speech */}
+        {mode === 'textToSpeech' && (
+          <>
+            <div className="grid grid-cols-2">
+              {/* Text Field */}
+              <div className="flex flex-col mt-8">
+                <textarea value={inputText} placeholder="Enter your text" onChange={handleInputText} className="p-4 border-2" />
+                <button onClick={handleTextToSpeech} className="my-4 border py-2 px-3 rounded-lg bg-dark-blue text-white font-semibold">
+                  Upload
+                </button>
+              </div>
+
+              {/* Config Bar */}
+              <div></div>
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };
