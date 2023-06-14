@@ -175,6 +175,11 @@ const AppBar = ({ ...others }) => {
                   Vision
                 </Button>
               </a>
+              <a href="/apps">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Pre-Built Apps
+                </Button>
+              </a>
               <a href="/join-us">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Join Us
