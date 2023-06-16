@@ -46,64 +46,69 @@ const HeaderPage = () => {
       >
         <Grid item xs={12} md={12} sx={{ zIndex: 2 }}>
           <Grid container spacing={gridSpacing} sx={{ pr: 10, [theme.breakpoints.down('lg')]: { pr: 0, textAlign: 'center' } }}>
-            <Grid item xs={12} sm={12} md={12} display={'flex'} gap={2}>
-              <Typography
-                variant="h5"
-                sx={{
-                  fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
-                  fontWeight: 700,
-                  lineHeight: 1.4,
-                  textAlign: "left",
-                }}
-              >
-                Build
-              </Typography>
-              <div className="cubespinner" style={{minWidth: "33%"}} >
-                <Typography
-                  variant="h5"
-                  className="face1"
-                  sx={{
-                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
-                    fontWeight: 700,
-                    lineHeight: 1.4,
-                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Generative AI
-                </Typography>
-                <Typography
-                  variant="h5"
-                  className="face2"
-                  sx={{
-                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
-                    fontWeight: 700,
-                    lineHeight: 1.4,
-                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Enterprise AI
-                </Typography>
 
-                {/* <Typography
+            <Grid container sx={{ marginLeft: '2rem', ml: { xs: 10, sm: 14, md: 10 }}}>
+              <Grid item xs={12} md={2} >
+                <Typography
                   variant="h5"
-                  className="face3"
                   sx={{
-                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
+                    fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
-                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
+                    textAlign: 'left'
                   }}
                 >
-                  Government AI
-                </Typography> */}
-              </div>
+                  Build
+                </Typography>
+              </Grid>
+              <Grid item xs={12} md={5}  >
+                <div className="cubespinner" style={{minWidth: "100%"}}>
+                  <Typography
+                    variant="h5"
+                    className="face1"
+                    sx={{
+                      fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
+                      fontWeight: 700,
+                      lineHeight: 1.4,
+                      background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}
+                  >
+                    Generative AI
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    className="face2"
+                    sx={{
+                      fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
+                      fontWeight: 700,
+                      lineHeight: 1.4,
+                      background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}
+                  >
+                    Enterprise AI
+                  </Typography>
+<!--                   <Typography
+                    variant="h5"
+                    className="face3"
+                    sx={{
+                      fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
+                      fontWeight: 700,
+                      lineHeight: 1.4,
+                      background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}
+                  >
+                    Government AI
+                  </Typography> -->
+                </div>
+              </Grid>
               {/* </motion.div> */}
+              <Grid item xs={12} md={5} >
               <Typography
                 variant="h5"
                 sx={{
