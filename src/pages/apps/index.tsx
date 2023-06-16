@@ -24,7 +24,7 @@ const Data: {
   color: 'bg-yellow-500' | 'bg-blue-500' | 'bg-orange-400' | 'bg-green-400';
 }[] = [
   {
-    logo: 'https://airops-production.s3.amazonaws.com/hzyc6uxnfflt18rkkrw10uswqmmn?response-content-disposition=inline%3B%20filename%3D%22recipes-images-52.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-52.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T004211Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7436b0bf1c292425864c66ae2a7bf31d52472aabe662049c0acc0037a77b0d59',
+    logo: 'https://airops-production.s3.amazonaws.com/hzyc6uxnfflt18rkkrw10uswqmmn?response-content-disposition=inline%3B%20filename%3D%22recipes-images-52.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-52.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=b20a816e35814ed5854db96e90aa5c3f1084340a86316b80190006651a096fca',
     heading: 'Sentiment Analyze',
     desc: 'Assess the sentiment of any text as positive or negative.',
     url: '/app/sentiment',
@@ -32,7 +32,7 @@ const Data: {
     color: 'bg-orange-400'
   },
   {
-    logo: 'https://airops-production.s3.amazonaws.com/c9yv54o2k78i0s2efp0apunapp4s?response-content-disposition=inline%3B%20filename%3D%22recipes-images-1125.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-1125.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T004211Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=d1bbd70e3b924556a4a1fff75f24c4205e3f7972b3e813e55e182c3a60b527a4',
+    logo: 'https://airops-production.s3.amazonaws.com/c9yv54o2k78i0s2efp0apunapp4s?response-content-disposition=inline%3B%20filename%3D%22recipes-images-1125.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-1125.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=592cb50a3b2898426966aaed522134cdaa3fa808161b8f9c2e5b7fcd1835fc05',
     heading: 'Text Summarize',
     desc: 'Summarize any text, exactly how you need it.',
     url: '/app/text',
@@ -40,7 +40,7 @@ const Data: {
     color: 'bg-green-400'
   },
   {
-    logo: 'https://airops-production.s3.amazonaws.com/pi6646if0jq3j0no4r2px4th6we4?response-content-disposition=inline%3B%20filename%3D%22recipes-images-55.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-55.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T004712Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=102da3a131d5680854e71dfbe3e9ecca51a5fa50dbee71facdce5b05cb0af106',
+    logo: 'https://airops-production.s3.amazonaws.com/pi6646if0jq3j0no4r2px4th6we4?response-content-disposition=inline%3B%20filename%3D%22recipes-images-55.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-55.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=68d3a45dfab20df2236bd9b1ec97286be255d0f9ff986bb807428d4a9f646c91',
     heading: 'Entity Extract',
     desc: 'Detect, extract, and count relevant keywords and phrases from text data',
     url: '/app/entity-extract',
@@ -48,7 +48,7 @@ const Data: {
     color: 'bg-blue-500'
   },
   {
-    logo: 'https://airops-production.s3.amazonaws.com/tp3wnbi2udzsuw73gv2w5d38gkga?response-content-disposition=inline%3B%20filename%3D%22recipes-images-72.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-72.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T004712Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=60b4c7d092990736b4084bbb4f0b5469543fc429244bd7077f1bbbfef8c1a3dc',
+    logo: 'https://airops-production.s3.amazonaws.com/tp3wnbi2udzsuw73gv2w5d38gkga?response-content-disposition=inline%3B%20filename%3D%22recipes-images-72.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-72.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=96f5c9c1241586162291532416f98c10f165b71e6133128ecd582d892a6ac29c',
     heading: 'Data Transformer',
     desc: 'A general purpose interface to apply a function to a set of points.',
     url: '/app/data-transformer',
@@ -56,7 +56,7 @@ const Data: {
     color: 'bg-blue-500'
   },
   {
-    logo: 'https://airops-production.s3.amazonaws.com/3qov99ire5h78yghsueq83zymdx1?response-content-disposition=inline%3B%20filename%3D%22recipes-images-2621.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-2621.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T004712Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=4e4d838c3e76f7d4da400127f56bfa1b42052aebf31c6dbd6534fe4d0fa3c9b3',
+    logo: 'https://airops-production.s3.amazonaws.com/3qov99ire5h78yghsueq83zymdx1?response-content-disposition=inline%3B%20filename%3D%22recipes-images-2621.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-2621.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=93fc9840a8b44c112d0e0b470e0fb2008a0387dbdbd5b0f76ec3d54b9e4b5374',
     heading: 'Video Summarize',
     desc: 'Summarize any video or audio file from a Google Drive URL',
     url: '/app/video-summerizer',
@@ -64,7 +64,7 @@ const Data: {
     color: 'bg-orange-400'
   },
   {
-    logo: 'https://airops-production.s3.amazonaws.com/leagu3xwdnh64hgbnsb4fwl95ckz?response-content-disposition=inline%3B%20filename%3D%22recipes-images-15.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-15.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T004712Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=5424ac6eea843735ed9a60fc92b87022d8271fec1e4cd30399dd3edd5c686544',
+    logo: 'https://airops-production.s3.amazonaws.com/leagu3xwdnh64hgbnsb4fwl95ckz?response-content-disposition=inline%3B%20filename%3D%22recipes-images-15.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-15.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=cdd2680badf56b8533b79bad7434877903a47b14c055f9eae3832ccfbe485b2f',
     heading: 'SQL Write with Pasted Schema',
     desc: 'Write SQL from natural language by pasting in your schema with the request.',
     url: '/app/sql-writer',
@@ -72,7 +72,7 @@ const Data: {
     color: 'bg-blue-500'
   },
   {
-    logo: 'https://airops-production.s3.amazonaws.com/survf9zghks25imkwv700419ekg7?response-content-disposition=inline%3B%20filename%3D%22recipes-images-684.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-684.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T005214Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=fdaf6a144b3ca3d9d353112523e1caab3a6054e88efdeb50e64b929feb1efde8',
+    logo: 'https://airops-production.s3.amazonaws.com/fer2xkaun8dkyba3n2mj6mep36t9?response-content-disposition=inline%3B%20filename%3D%22recipes-images-54.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-54.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=7574645019a1f25c15453f1e6243973833858da153cb60b14a18e69cbc32be63',
     heading: 'Text Classification',
     desc: 'Craft any type of content.',
     url: '/app/text-classification',
@@ -80,7 +80,7 @@ const Data: {
     color: 'bg-yellow-500'
   },
   {
-    logo: 'https://airops-production.s3.amazonaws.com/e6t3r84fllx01l6n0uoboncsca3e?response-content-disposition=inline%3B%20filename%3D%22recipes-images-56.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-56.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230614%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230614T005214Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=8e4768f1e1ed21966b69e94e92d2ba563ec9830c12628d3ae278bb1998b8655f',
+    logo: 'https://airops-production.s3.amazonaws.com/e6t3r84fllx01l6n0uoboncsca3e?response-content-disposition=inline%3B%20filename%3D%22recipes-images-56.png%22%3B%20filename%2A%3DUTF-8%27%27recipes-images-56.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA4IU6TYBBXOSEJ2XP%2F20230616%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230616T131330Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=ad98f9432190ae56e36ffba4722fa3a568a4215b4b7e49749390d688fff4709f',
     heading: 'Language Translate',
     desc: 'Translate text from any language to any language.',
     url: '/app/language-translate',
@@ -139,7 +139,7 @@ const index = () => {
             ))}
           </div>
 
-          <div className="flex border rounded-full border-slate-500">
+          {/* <div className="flex border rounded-full border-slate-500">
             <input
               placeholder="Search"
               value={searchText}
@@ -147,7 +147,7 @@ const index = () => {
               className="bg-transparent px-2 rounded-l-full text-slate-500"
             />
             <Search className="text-slate-500" />
-          </div>
+          </div> */}
         </div>
 
         {/* Apps */}

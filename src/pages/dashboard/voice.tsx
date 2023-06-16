@@ -134,17 +134,34 @@ const voice = () => {
     const url = 'http://localhost:2000/api/voice/elevenlabsai';
     formData.append('text', inputText);
     formData.append('model_id', 'eleven_monolingual_v1');
-    formData.append('voice_settings', JSON.stringify({
-      stability: 0.5,
-      similarity_boost: 0.5
-    }));
+    const voice_settings =       {
+        stability: 0,
+        similarity_boost: 0
+      }
+
+    formData.append('voice_settings', JSON.stringify(voice_settings));
     // formData.append('model_id', 'eleven_monolingual_v1');
     // formData.append('model_id', 'eleven_monolingual_v1');
-    const body = {
+    const tempBody = {
+      text: inputText,
+      model_id: "eleven_monolingual_v1",
+      voice_settings: {
+        stability: 0,
+        similarity_boost: 0
+      }
+    }
+    const data = {
       method: 'POST',
-      body: formData
+      // body: JSON.stringify(tempBody),
+      'body': JSON.stringify(tempBody)
     };
-    const res = await fetch(url, body);
+    console.log(data)
+    // console.log(formData.values());
+    // for (const value of formData.values()) {
+    //   console.log(value);
+    // }
+    
+    const res = await fetch(url, data);
     if(res.status === 200){
       const json = await res.json();
       console.log(json)
@@ -406,9 +423,9 @@ const voice = () => {
         {/* Text To Speech */}
         {mode === 'textToSpeech' && (
           <>
-            <div className="grid grid-cols-2">
+            <div className="flex">
               {/* Text Field */}
-              <div className="flex flex-col mt-8">
+              <div className="flex flex-col mt-8 flex-grow">
                 <textarea value={inputText} placeholder="Enter your text" onChange={handleInputText} className="p-4 border-2" />
                 <button onClick={handleTextToSpeech} className="my-4 border py-2 px-3 rounded-lg bg-dark-blue text-white font-semibold">
                   Upload
