@@ -1,5 +1,5 @@
-import { Button,Link } from '@mui/material'
-import React from 'react'
+import { Button, Link } from '@mui/material';
+import React from 'react';
 
 const Intro = () => {
   return (
@@ -8,28 +8,31 @@ const Intro = () => {
       <p className="text-xl mt-8">Train AI on your own data to create on-brand content at scale.</p>
       <div className="flex justify-center mt-12 gap-2 text-md">
         <Button
-                color="inherit"
-                sx={{ color: 'black', height: '55px', width: '140px' }}
-                variant="contained"
-                component={Link}
-                href="/contact-us"
-                 target="_blank"
-              >
-                Request demo
-              </Button>
-              <Button
-                    sx={{
-                      color: '#FFFFFF',
-                      fontWeight: 'bold',
-                      background: 'rgb(234, 179, 8)',width: '140px'
-                    }}
-                    variant="contained"
-                  >
-                    Get Started
-                  </Button>
+          color="inherit"
+          sx={{ color: 'black', height: '55px', width: '140px' }}
+          variant="contained"
+          component={Link}
+          href="/contact"
+          target="_blank"
+        >
+          Request demo
+        </Button>
+        <Button
+          sx={{
+            color: '#FFFFFF',
+            fontWeight: 'bold',
+            background: 'rgb(234, 179, 8)',
+            width: '140px'
+          }}
+          variant="contained"
+          href="https://calendly.com/infrahive/infrahive-demo"
+          target={'_blank'}
+        >
+          Request Access
+        </Button>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Intro
+export default Intro;

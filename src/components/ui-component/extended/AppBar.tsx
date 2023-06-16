@@ -103,7 +103,7 @@ const AppBar = ({ ...others }) => {
                 Pricing
               </Button> */}
 
-              <HtmlTooltip
+              {/* <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
                     <CardContent>
@@ -133,7 +133,7 @@ const AppBar = ({ ...others }) => {
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Customers
                 </Button>
-              </HtmlTooltip>
+              </HtmlTooltip> */}
               <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
@@ -141,10 +141,10 @@ const AppBar = ({ ...others }) => {
                       <Grid container spacing={2}>
                         <Grid item md={6} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography >INDUSTRIES</Typography>
-                          <TooltipButton text={'Open AIResource Library'} image={'solutions/ai-readiness-report'} />
-                          <TooltipButton text={'Blog'} image={'solutions/blog'} />
-                          <TooltipButton text={'Documentation'} image={'solutions/documentation'} />
-                          <TooltipButton text={'Events'} image={'solutions/events'} />
+                         <TooltipButton text={'Generative AI'} image={'solutions/generative-ai'} />
+                          <TooltipButton text={'LLMs Fine Tune'} image={'solutions/llm'} />
+                          <TooltipButton text={'LangChain Apps'} image={'solutions/langchain'} />
+                          <TooltipButton text={'ChatGPT Plugins'} image={'solutions/plugins'} />
                           <TooltipButton text={'Guides'} image={'solutions/guides'} />
                           <TooltipButton text={'Open Datasets'} image={'solutions/open-datasets'} />
                           <TooltipButton text={`AI Readiness Report ${new Date().getFullYear()}`} image={'solutions/resources'} />
@@ -166,6 +166,44 @@ const AppBar = ({ ...others }) => {
                 arrow
               >
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Products
+                </Button>
+              </HtmlTooltip>
+
+              <HtmlTooltip
+                title={
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
+                    <CardContent>
+                      <Grid container spacing={10}>
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>GENERATIVE AI</Typography>
+                          <TooltipButton text={'Open AI'} image={'partnerships/open-ai'} />
+                          <TooltipButton text={'Co:here'} image={'partnerships/cohere'} />
+                          <TooltipButton text={'Anthropic'} image={'partnerships/anthropic'} />
+                          <TooltipButton text={'Stability AI'} image={'partnerships/stability-ai'} />
+                        </Grid>
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>USE CASES</Typography>
+                          <TooltipButton text={'Customer Support'} image={'partnerships/customer-support'} />
+                          <TooltipButton text={'Data Analysis'} image={'partnerships/data-analysis'} />
+                          <TooltipButton text={'Data Transfomer'} image={'partnerships/data-transformer'} />
+                          <TooltipButton text={'Data Annotation'} image={'partnerships/data-annotation'} />
+                          <TooltipButton text={'Data Classification'} image={'partnerships/data-classification'} />
+                        </Grid>
+                        <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>INTEGRATIONS</Typography>
+                          <TooltipButton text={'Chrome Extension'} image={'partnerships/chrome'} />
+                          <TooltipButton text={'Google Sheets'} image={'partnerships/google-sheets'} />
+                          <TooltipButton text={'REST API'} image={'partnerships/api'} />
+                          <TooltipButton text={'Snowflake'} image={'partnerships/snowflake'} />
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                }
+                arrow
+              >
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
                   Solutions
                 </Button>
               </HtmlTooltip>
@@ -188,17 +226,23 @@ const AppBar = ({ ...others }) => {
               <a href="/partnerships">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Partnerships
+                    </Button>
+              </a>
+              <a href="https://blog.infrahive.io/" target={'_blank'}>
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Blog
                 </Button>
               </a>
               <Button
                 color="inherit"
+                href="https://calendly.com/infrahive/infrahive-demo"
+                target={'_blank'}
                 sx={{ color: 'black', height: '43px' }}
                 variant="contained"
                 component={Link}
-                href="/contact-us"
                 //  target="_blank"
               >
-                Book Demo
+                Request Access
               </Button>
               {/* <Button
                 component={Link}

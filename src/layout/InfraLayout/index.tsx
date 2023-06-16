@@ -10,16 +10,18 @@ import useConfig from 'hooks/useConfig';
 
 const InfraLayout: FC = ({ children }) => {
   const { onChangeMenuType } = useConfig();
+
   useEffect(() => {
     onChangeMenuType('light');
-  }, [])
-  return (<>
-    <AppBar />
-    <Container>
-      {children}
-    </Container>
-    <Footer />
-  </>)
+  }, []);
+
+  return (
+    <>
+      <AppBar />
+      <Container>{children}</Container>
+      <Footer />
+    </>
+  );
 };
 
 export default InfraLayout;

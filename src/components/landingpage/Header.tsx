@@ -46,6 +46,7 @@ const HeaderPage = () => {
       >
         <Grid item xs={12} md={12} sx={{ zIndex: 2 }}>
           <Grid container spacing={gridSpacing} sx={{ pr: 10, [theme.breakpoints.down('lg')]: { pr: 0, textAlign: 'center' } }}>
+
             <Grid container sx={{ marginLeft: '2rem', ml: { xs: 10, sm: 14, md: 10 }}}>
               <Grid item xs={12} md={2} >
                 <Typography
@@ -90,8 +91,7 @@ const HeaderPage = () => {
                   >
                     Enterprise AI
                   </Typography>
-
-                  <Typography
+<!--                   <Typography
                     variant="h5"
                     className="face3"
                     sx={{
@@ -104,25 +104,23 @@ const HeaderPage = () => {
                     }}
                   >
                     Government AI
-                  </Typography>
+                  </Typography> -->
                 </div>
               </Grid>
               {/* </motion.div> */}
               <Grid item xs={12} md={5} >
-                <Typography
-                  variant="h5"
-                  sx={{
-                    fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
-                    fontWeight: 700,
-                    lineHeight: 1.4,
-                    textAlign: 'left',
-                    width: 'full',
-                    mt: {sm:'2rem', md:'0rem'}
-                  }}
-                >
-                  With Your Data
-                </Typography>
-              </Grid>
+              <Typography
+                variant="h5"
+                sx={{
+                  fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
+                  fontWeight: 700,
+                  lineHeight: 1.4,
+                  textAlign:'left',
+                  width:"full"
+                }}
+              >
+                With Your Data
+              </Typography>
             </Grid>
             <Grid item xs={12} textAlign={'center'}>
               <motion.div

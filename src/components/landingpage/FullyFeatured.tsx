@@ -138,8 +138,8 @@ const FullyFeatured = () => {
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
-            <Button variant="outlined" color="inherit" size="large">
-              Get Started
+            <Button variant="outlined" href="https://calendly.com/infrahive/infrahive-demo" target={'_blank'} color="inherit" size="large">
+              Request Access
             </Button>
           </Grid>
         </Grid>

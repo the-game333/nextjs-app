@@ -39,6 +39,8 @@ const Notification = () => (
             <Button
               variant="contained"
               color="inherit"
+              href="https://calendly.com/infrahive/infrahive-demo"
+              target={'_blank'}
               sx={{
                 width: '60%',
                 margin: 'auto',
@@ -50,7 +52,7 @@ const Notification = () => (
               }}
               size="medium"
             >
-              Book Demo Now
+              Request Access
             </Button>
           </CardBox>
         </Grid>

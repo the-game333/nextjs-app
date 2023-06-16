@@ -278,11 +278,11 @@ const pages = {
       target: true
     },
     {
-      id: 'contact-us',
-      title: <FormattedMessage id="contact-us" />,
+      id: 'contact',
+      title: <FormattedMessage id="contact" />,
       type: 'item',
       icon: icons.IconPhoneCall,
-      url: '/pages/contact-us',
+      url: '/pages/contact',
       target: true
     },
     {
@@ -294,11 +294,11 @@ const pages = {
       target: true
     },
     {
-      id: 'privacy-policy',
-      title: <FormattedMessage id="privacy-policy" />,
+      id: 'privacy',
+      title: <FormattedMessage id="privacy" />,
       type: 'item',
       icon: icons.IconShieldLock,
-      url: '/pages/privacy-policy',
+      url: '/pages/privacy',
       target: true
     }
   ]

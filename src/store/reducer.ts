@@ -17,6 +17,9 @@ import kanbanReducer from './slices/kanban';
 import menuReducer from './slices/menu';
 
 import authReducer from './slices/auth';
+import agentMessageReducer from './slices/agentmessage';
+import agentReducer from './slices/agent';
+import agentToolReducer from './slices/agenttool';
 
 // ==============================|| COMBINE REDUCER ||============================== //
 
@@ -39,7 +42,10 @@ const reducer = combineReducers({
   mail: mailReducer,
   user: userReducer,
   menu: menuReducer,
-  auth: authReducer
+  auth: authReducer,
+  agent: agentReducer,
+  agenttool: agentToolReducer,
+  agentmessage: agentMessageReducer,
 });
 
 export default reducer;

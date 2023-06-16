@@ -62,10 +62,10 @@ const sizes = [
     value: 'Generative-AI',
     label: 'Generative AI'
   },
-  {
-    value: 'Government-AI',
-    label: 'Government AI'
-  },
+  // {
+  //   value: 'Government-AI',
+  //   label: 'Government AI'
+  // },
   {
     value: 'Enterprise-AI',
     label: 'Enterprise AI'
@@ -82,9 +82,9 @@ const sizes = [
 
 interface MessageSentProps {
   message: string;
-  type: AlertColor,
-  open: boolean,
-  loading: boolean
+  type: AlertColor;
+  open: boolean;
+  loading: boolean;
 }
 
 // ===========================|| CONTACT CARD - FORMS ||=========================== //
@@ -285,18 +285,6 @@ const ContactCard = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Grid container spacing={gridSpacing}>
-                    <Grid item sm zeroMinWidth>
-                      <Typography align="left" variant="body2">
-                        By submitting this, you agree to the
-                        <Typography variant="subtitle1" component={Link} href="/privacy-policy" color="primary" sx={{ mx: 0.5 }}>
-                          Privacy Policy
-                        </Typography>
-                        and
-                        <Typography variant="subtitle1" component={Link} href="/terms" color="primary" sx={{ ml: 0.5 }}>
-                          Terms
-                        </Typography>
-                      </Typography>
-                    </Grid>
                     <Grid item>
                       <AnimateButton>
                         <Button

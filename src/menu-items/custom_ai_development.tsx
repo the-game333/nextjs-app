@@ -42,13 +42,13 @@ const custom_ai_development = {
       icon: icons.IconBuildingSkyscraper
     },
 
-    {
-      id: 'government_ai',
-      title: <FormattedMessage id="government_ai" />,
-      url: '/dashboard/governmentai',
-      type: 'item',
-      icon: icons.IconForms
-    }
+    // {
+    //   id: 'government_ai',
+    //   title: <FormattedMessage id="government_ai" />,
+    //   url: '/dashboard/governmentai',
+    //   type: 'item',
+    //   icon: icons.IconForms
+    // }
   ]
 };
 

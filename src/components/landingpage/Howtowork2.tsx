@@ -38,8 +38,7 @@ const Howtowork2 = () => (
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="body2">
-                  With technologies like chatGPT, GPT-4, Dall-E, and more embedded onto our infrastructure, you can easily harness the power
-                  of generative AI to create innovative and dynamic AI applications.
+                  Powerful generative AI technologies, including ChatGPT, GPT-4, Dall-E, and more, for creating innovative AI applications.
                 </Typography>
                 <List>
                   <ListItem disablePadding>
@@ -62,6 +61,7 @@ const Howtowork2 = () => (
                   </ListItem>
                 </List>
                 <Button
+                  href="/contact"
                   sx={{
                     color: '#000000',
                     fontWeight: 'bold',
@@ -77,7 +77,7 @@ const Howtowork2 = () => (
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
+        {/* <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
@@ -132,7 +132,7 @@ const Howtowork2 = () => (
               </Grid>
             </Grid>
           </FadeInWhenVisible>
-        </Grid>
+        </Grid> */}
         <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
@@ -149,10 +149,7 @@ const Howtowork2 = () => (
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="body2">
-                  With InfraHive, businesses can automate processes, enhance customer experiences, and gain valuable insights from their
-                  data. Whether it's implementing AI-powered chatbots, analyzing vast amounts of data, or automating repetitive tasks,
-                  InfraHive empowers enterprises to drive innovation, improve operational efficiency, and stay ahead in a rapidly evolving
-                  market{' '}
+                  Empower businesses to automate processes, enhance customer experiences, and drive innovation with AI-powered solutions.{' '}
                 </Typography>
                 <List>
                   <ListItem disablePadding>
@@ -183,6 +180,7 @@ const Howtowork2 = () => (
                     bottom: '1px'
                   }}
                   variant="contained"
+                  href="/contact"
                 >
                   Talk to Business AI Expert
                 </Button>
@@ -206,9 +204,7 @@ const Howtowork2 = () => (
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="body2">
-                  InfraHive brings the power of AI to everyday users, allowing them to benefit from advanced technologies without the
-                  complexities. With our platform, consumers can experience AI-driven applications that enhance their daily lives, by
-                  leveraging technologies like chatGPT, GPT-4, AutoGPTs, and more.
+                  Enjoy the benefits of AI-driven applications in your daily life with our user-friendly platform.
                   {/* this is coming soon style  */}
                   {/* <div style={{ color: 'yellow' }}>Coming soon...</div> */}
                 </Typography>
@@ -235,14 +231,16 @@ const Howtowork2 = () => (
                     bottom: '1px'
                   }}
                   variant="contained"
+                  href="https://calendly.com/infrahive/infrahive-demo"
+                  target={'_blank'}
                 >
-                  Get Started Now
+                  Request Access
                 </Button>
               </Grid>
             </Grid>
           </FadeInWhenVisible>
         </Grid>
-        <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
+        {/* <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
               <Grid item xs={12} md={12} sx={{ padding: '2 !important', textAlign: 'left' }}>
@@ -291,12 +289,12 @@ const Howtowork2 = () => (
                   }}
                   variant="contained"
                 >
-                  Get Started Now
+                  Request Access
                 </Button>
               </Grid>
             </Grid>
           </FadeInWhenVisible>
-        </Grid>
+        </Grid> */}
         <Grid item md={4} sm={6} sx={{ position: 'relative', height: '450px' }}>
           <FadeInWhenVisible>
             <Grid container spacing={2}>
@@ -313,11 +311,15 @@ const Howtowork2 = () => (
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
                 <Typography variant="body2">
-                  With our infrastructure, developers can access a wide range of AI technologies like chatGPT, GPT-4, AutoGPTs, and more, as
-                  reliable and scalable APIs. InfraHive simplifies the integration process, allowing developers to seamlessly embed powerful
-                  AI capabilities into their applications.
+                  Integrate & Customise AI technologies easily with our scalable APIs and accessbile architecture.
                 </Typography>
                 <List>
+                  <ListItem disablePadding>
+                    <ListItemIcon>
+                      <LabelIcon />
+                    </ListItemIcon>
+                    <ListItemText primary="InfraSpeed: Train AI Models 15x faster" />
+                  </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
                       <LabelIcon />
@@ -330,12 +332,6 @@ const Howtowork2 = () => (
                     </ListItemIcon>
                     <ListItemText primary="Train AI Model with Custom Data" />
                   </ListItem>
-                  <ListItem disablePadding>
-                    <ListItemIcon>
-                      <LabelIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Deploy Apps with Custom Domains" />
-                  </ListItem>
                 </List>
                 <Button
                   sx={{
@@ -346,8 +342,10 @@ const Howtowork2 = () => (
                     bottom: '1px'
                   }}
                   variant="contained"
+                  href="https://calendly.com/infrahive/infrahive-demo"
+                  target={'_blank'}
                 >
-                  Get Started Now
+                  Request Access
                 </Button>
               </Grid>
             </Grid>
