@@ -43,7 +43,7 @@ const ai_developement = {
       title: <FormattedMessage id="auto_gpt_app" />,
       type: 'item',
       // icon: icons.IconRobot,
-      //     url: '/dashboard/under-construction'
+      // url: '/dashboard/under-construction'
       url: '/dashboard/autogpt_agents',
       icon: icons.IconRobot
     },

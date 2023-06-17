@@ -90,8 +90,8 @@ const HeaderPage = () => {
                   >
                     Enterprise AI
                   </Typography>
-                  {/* <Typography
-                    variant="h5"
+                  {/* <Typography */}
+                  {/* variant="h5"
                     className="face3"
                     sx={{
                       fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
@@ -102,8 +102,8 @@ const HeaderPage = () => {
                       WebkitTextFillColor: 'transparent'
                     }}
                   >
-                    Government AI
-                  </Typography> */}
+                    Government AI */}
+                  {/* </Typography>  */}
                 </div>
               </Grid>
               {/* </motion.div> */}
@@ -217,7 +217,7 @@ const HeaderPage = () => {
                     container
                     alignItems="center"
                     spacing={2}
-                    sx={{ [theme.breakpoints.down('lg')]: { display: 'inline-flex', width: 'auto' } }}
+                    sx={{ [theme.breakpoints.down('lg')]: { display: 'inline-flex', width: 'auto' }, marginTop: '2rem' }}
                   >
                     <Box component={'img'} src="/assets/animation/Main Comp.gif" width={'100%'} />
                   </Grid>
