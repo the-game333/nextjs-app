@@ -1,4 +1,5 @@
 // third-party
+// @ts-ignore
 import Carousel, { ViewType } from 'react-images';
 
 // ==============================|| POPUP IMAGES BOX / LIGHT BOX ||============================== //

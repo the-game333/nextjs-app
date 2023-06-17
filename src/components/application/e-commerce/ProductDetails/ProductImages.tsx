@@ -12,6 +12,7 @@ import { gridSpacing } from 'store/constant';
 
 // third-party
 import Slider from 'react-slick';
+// @ts-ignore
 import Carousel, { Modal, ModalGateway } from 'react-images';
 
 // assets

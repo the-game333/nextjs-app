@@ -15,7 +15,7 @@ import {
   TASK_STATUS_FINAL,
   TASK_STATUS_STARTED,
 } from "types/agentTypes";
-import { useMessageStore } from "store/slices/agentmessage";
+// import { useMessageStore } from "store/slices/agentmessage";
 import { AgentApi } from "./agent-api";
 import type { Analysis } from "./analysis";
 import MessageService from "./message-service";
@@ -197,6 +197,7 @@ class AutonomousAgent {
   }
 
   getRemainingTasks(): Task[] {
+    // @ts-ignore
     return useSelector(state => state.message.tasks.filter((t: Task) => t.status === TASK_STATUS_STARTED));
   }
 

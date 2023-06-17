@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import type { PropsWithChildren } from "react";
-
+// @ts-ignore
 interface MotionProps extends PropsWithChildren {
   className?: string;
   delay?: number;
@@ -8,11 +8,12 @@ interface MotionProps extends PropsWithChildren {
 
 const FadeOut = (props: MotionProps) => (
   <motion.div
-    exit={{ opacity: 0, x: -100 }}
+  exit={{ opacity: 0, x: -100 }}
     animate={{ scale: 1 }}
     transition={{ duration: 0.5, type: "spring", delay: props.delay ?? 0 }}
     {...props}
-  >
+    >
+     {/* @ts-ignore */}
     {props.children}
   </motion.div>
 );

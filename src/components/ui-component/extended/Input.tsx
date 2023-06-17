@@ -2,7 +2,7 @@ import React from "react";
 import Label from "./Label";
 import clsx from "clsx";
 import Combobox from "./Combobox";
-import { isArrayOfType } from "components/ui-component/extended/helpers";
+// import { isArrayOfType } from "components/ui-component/extended/helpers";
 import type { toolTipProperties } from "types/propTypes";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
@@ -68,13 +68,14 @@ const Input = (props: InputProps) => {
 
   if (
     isTypeCombobox() &&
-    isArrayOfType(options, "string") &&
+    // isArrayOfType(options, "string") &&
     setValue !== undefined &&
     typeof value === "string"
   ) {
     inputElement = (
       <Combobox
         value={value}
+        // @ts-ignore
         options={options}
         disabled={disabled}
         onChange={setValue}

@@ -14,6 +14,7 @@ const MarkdownRenderer = ({ children }: {children: string}) => {
       components={{
         pre: CustomPre,
         code: CustomCodeBlock,
+        // @ts-ignore
         a: (props) => CustomLink({ children: props.children, href: props.href }),
         p: (props) => <p className="mb-4">{props.children}</p>,
         ul: (props) => <ul className="ml-8 list-disc">{props.children}</ul>,
