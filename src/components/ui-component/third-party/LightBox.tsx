@@ -1,6 +1,6 @@
 // third-party
 // @ts-ignore
-import Carousel, { ViewType } from 'react-images';
+// import Carousel, { ViewType } from 'react-images';
 
 // ==============================|| POPUP IMAGES BOX / LIGHT BOX ||============================== //
 
@@ -16,14 +16,14 @@ interface LightBoxProps {
 
 const LightBox = ({ currentImage, photos }: LightBoxProps) => (
   <>
-    <Carousel
+    {/* <Carousel
       currentIndex={currentImage}
       views={photos.map((x) => ({
         ...x,
         srcset: x.srcSet,
         caption: x.title
       }))}
-    />
+    /> */}
   </>
 );
 

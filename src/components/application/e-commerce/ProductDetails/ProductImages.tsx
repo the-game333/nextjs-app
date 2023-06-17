@@ -13,7 +13,7 @@ import { gridSpacing } from 'store/constant';
 // third-party
 import Slider from 'react-slick';
 // @ts-ignore
-import Carousel, { Modal, ModalGateway } from 'react-images';
+// import Carousel, { Modal, ModalGateway } from 'react-images';
 
 // assets
 const prod1 = '/assets/images/e-commerce/prod-1.jpg';
@@ -93,13 +93,13 @@ const ProductImages = ({ product }: { product: Products }) => {
           </Slider>
         </Grid>
       </Grid>
-      <ModalGateway>
+      {/* <ModalGateway>
         {modal ? (
           <Modal onClose={() => setModal(!modal)}>
             <Carousel views={images} />
           </Modal>
         ) : null}
-      </ModalGateway>
+      </ModalGateway> */}
     </>
   );
 };
