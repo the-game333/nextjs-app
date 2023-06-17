@@ -32,10 +32,10 @@ const Apps = () => {
   return (
     <div>
       <AppBar />
-      <div className="mx-auto my-20 max-w-5xl text-white">
+      <div className="mx-auto my-20 max-w-6xl text-white px-8">
         <div className="my-4 flex gap-8">
-          <img src={PageData.logo} alt={PageData.name} className={`${PageData.color} h-20 p-2`} />
-          <h1 className="my-auto text-5xl font-semibold">{PageData.name}</h1>
+          <img src={PageData.logo} alt={PageData.name} className={`${PageData.color} h-24 p-4`} />
+          <h1 className="my-auto text-6xl font-semibold">{PageData.name}</h1>
         </div>
 
         <div className="mt-8">
@@ -47,10 +47,10 @@ const Apps = () => {
         </div>
 
         {PageData.features[0].desc != '' && (
-          <ul className="mt-8">
+          <ul className="mt-8 list-disc">
             <p className="text-lg font-semibold">Key Features</p>
             {PageData.features.map((feat, index) => (
-              <li className="text-lg">
+              <li className="text-lg ml-4">
                 <span className="font-semibold">{feat.heading && `${feat.heading} : `}</span> {feat.desc}
               </li>
             ))}
