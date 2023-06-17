@@ -1,17 +1,31 @@
 import { Search } from '@mui/icons-material';
 import FooterPage from 'components/landingpage/Footer';
 import React, { useState } from 'react';
+import { Button, Link } from '@mui/material';
 import AppBar from 'ui-component/extended/AppBar';
 
 const AppCard = (props: { logo: string; heading: string; desc: string; url: string; color: string }) => {
   return (
-    <a href={props.url}>
-      <div className="p-4 border border-slate-500 rounded-md min-h-[12rem] bg-black text-white">
-        <img src={props.logo} alt={props.heading} className={`h-12 ${props.color} p-2`} />
-        <p className="text-md font-semibold mt-4">{props.heading}</p>
-        <p className="text-slate-400 text-sm ">{props.desc}</p>
-      </div>
-    </a>
+    // <a href={props.url}>
+    <div className="min-h-[12rem] rounded-md border border-slate-500 bg-black p-4 text-white">
+      <img src={props.logo} alt={props.heading} className={`h-12 ${props.color} p-2`} />
+      <p className="text-md mt-4 font-semibold">{props.heading}</p>
+      <p className="text-sm text-slate-400 ">{props.desc}</p>
+      <Button
+        className="mt-4"
+        sx={{
+          color: '#000000',
+          fontWeight: 'bold',
+          background: '#ffffff'
+        }}
+        variant="contained"
+        href="https://calendly.com/infrahive/infrahive-demo"
+        target={'_blank'}
+      >
+        Request Access
+      </Button>
+    </div>
+    // </a>
   );
 };
 
@@ -126,11 +140,11 @@ const index = () => {
   return (
     <div>
       <AppBar />
-      <div className="max-w-5xl mx-auto mt-24 px-4">
-        <h1 className="text-center text-2xl font-semibold my-4">Explore Apps</h1>
+      <div className="mx-auto mt-24 max-w-5xl px-4">
+        <h1 className="my-4 text-center text-2xl font-semibold">Explore Apps</h1>
         <hr className="opacity-40" />
         {/* Categories */}
-        <div className="flex justify-between my-4">
+        <div className="my-4 flex justify-between">
           <div className="flex gap-4">
             {CategoriesBar.map((cat, index) => (
               <button onClick={() => setCategory(cat.value)}>
@@ -151,13 +165,27 @@ const index = () => {
         </div>
 
         {/* Apps */}
-        <div className="grid grid-cols-3 gap-4 my-12">
+        <div className="my-12 grid grid-cols-3 gap-4">
           {Data.map((app, index) =>
             category === 'all' ? (
-              <AppCard logo={app.logo} desc={app.desc} heading={app.heading} url={app.url} key={index} color={app.color} />
+              <AppCard
+                logo={app.logo}
+                desc={app.desc}
+                heading={app.heading}
+                url={'https://calendly.com/infrahive/infrahive-demo'}
+                key={index}
+                color={app.color}
+              />
             ) : (
               category === app.category && (
-                <AppCard logo={app.logo} desc={app.desc} heading={app.heading} url={app.url} key={index} color={app.color} />
+                <AppCard
+                  logo={app.logo}
+                  desc={app.desc}
+                  heading={app.heading}
+                  url={'https://calendly.com/infrahive/infrahive-demo'}
+                  key={index}
+                  color={app.color}
+                />
               )
             )
           )}
