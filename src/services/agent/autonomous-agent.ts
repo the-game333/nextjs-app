@@ -15,7 +15,7 @@ import {
   TASK_STATUS_FINAL,
   TASK_STATUS_STARTED,
 } from "types/agentTypes";
-import { useMessageStore } from "store/slices/agentmessage";
+// import { useMessageStore } from "store/slices/agentmessage";
 import { AgentApi } from "./agent-api";
 import type { Analysis } from "./analysis";
 import MessageService from "./message-service";
@@ -197,7 +197,7 @@ class AutonomousAgent {
   }
 
   getRemainingTasks(): Task[] {
-    return useSelector(state => state.message.tasks.filter((t: Task) => t.status === TASK_STATUS_STARTED));
+    return useSelector(state => state.agentmessage.tasks.filter((t: Task) => t.status === TASK_STATUS_STARTED));
   }
 
   private conditionalPause() {

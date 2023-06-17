@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import type { PropsWithChildren } from "react";
 
-interface MotionProps extends PropsWithChildren {
+interface MotionProps extends PropsWithChildren<{ myProp: string }> {
   className?: string;
   delay?: number;
 }

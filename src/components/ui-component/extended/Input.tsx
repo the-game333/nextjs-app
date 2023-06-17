@@ -2,7 +2,7 @@ import React from "react";
 import Label from "./Label";
 import clsx from "clsx";
 import Combobox from "./Combobox";
-import { isArrayOfType } from "components/ui-component/extended/helpers";
+import { isArrayOfType } from "utils/agent/helpers";
 import type { toolTipProperties } from "types/propTypes";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 
