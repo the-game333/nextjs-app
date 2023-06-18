@@ -81,7 +81,7 @@ const CustomCodeBlock = ({ inline, className, children }: CustomCodeBlockProps) 
   return <code className={`hljs ${language}`}>{children}</code>;
 };
 
-const CustomLink = ({ children, href }: {children: ReactNode, href: string}) => {
+const CustomLink = ({ children, href }: {children: ReactNode, href?: string}) => {
   return (
     <a
       className="link overflow-hidden"
