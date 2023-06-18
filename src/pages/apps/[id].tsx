@@ -3,6 +3,7 @@ import { useRouter } from 'next/router';
 import React from 'react';
 import AppBar from 'ui-component/extended/AppBar';
 import AppsData from 'data/AppsData';
+import { Button } from '@mui/material';
 
 const Apps = () => {
   const router = useRouter();
@@ -32,10 +33,26 @@ const Apps = () => {
   return (
     <div>
       <AppBar />
-      <div className="mx-auto my-20 max-w-6xl text-white px-8">
-        <div className="my-4 flex gap-8">
-          <img src={PageData.logo} alt={PageData.name} className={`${PageData.color} h-24 p-4`} />
-          <h1 className="my-auto text-6xl font-semibold">{PageData.name}</h1>
+      <div className="mx-auto my-20 max-w-6xl px-8 text-white">
+        <div className="my-4 flex justify-between">
+          <div className="flex gap-8">
+            <img src={PageData.logo} alt={PageData.name} className={`${PageData.color} h-24 p-4`} />
+            <h1 className="my-auto text-6xl font-semibold">{PageData.name}</h1>
+          </div>
+          <Button
+            className="mt-4 my-auto"
+            sx={{
+              color: '#000000',
+              fontWeight: 'bold',
+              background: '#ffffff',
+              height: '3rem'
+            }}
+            variant="contained"
+            href="https://calendly.com/infrahive/infrahive-demo"
+            target={'_blank'}
+          >
+            Request Access
+          </Button>
         </div>
 
         <div className="mt-8">
@@ -50,7 +67,7 @@ const Apps = () => {
           <ul className="mt-8 list-disc">
             <p className="text-lg font-semibold">Key Features</p>
             {PageData.features.map((feat, index) => (
-              <li className="text-lg ml-4">
+              <li className="ml-4 text-lg">
                 <span className="font-semibold">{feat.heading && `${feat.heading} : `}</span> {feat.desc}
               </li>
             ))}

@@ -6,26 +6,13 @@ import AppBar from 'ui-component/extended/AppBar';
 
 const AppCard = (props: { logo: string; heading: string; desc: string; url: string; color: string }) => {
   return (
-    // <a href={props.url}>
+    <a href={props.url}>
     <div className="min-h-[12rem] rounded-md border border-slate-500 bg-black p-4 text-white">
       <img src={props.logo} alt={props.heading} className={`h-12 ${props.color} p-2`} />
       <p className="text-md mt-4 font-semibold">{props.heading}</p>
       <p className="text-sm text-slate-400 ">{props.desc}</p>
-      <Button
-        className="mt-4"
-        sx={{
-          color: '#000000',
-          fontWeight: 'bold',
-          background: '#ffffff'
-        }}
-        variant="contained"
-        href="https://calendly.com/infrahive/infrahive-demo"
-        target={'_blank'}
-      >
-        Request Access
-      </Button>
     </div>
-    // </a>
+     </a>
   );
 };
 
@@ -172,7 +159,8 @@ const index = () => {
                 logo={app.logo}
                 desc={app.desc}
                 heading={app.heading}
-                url={'https://calendly.com/infrahive/infrahive-demo'}
+                // url={'https://calendly.com/infrahive/infrahive-demo'}
+                url={app.url}
                 key={index}
                 color={app.color}
               />
