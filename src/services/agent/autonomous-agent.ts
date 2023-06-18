@@ -1,9 +1,9 @@
-import axios from "axios";
+import axios from 'axios';
 import { useSelector } from 'store';
-import type { ModelSettings } from "utils/agent/types";
-import { DEFAULT_MAX_LOOPS_FREE } from "utils/agent/constants";
-import { v1, v4 } from "uuid";
-import type { AgentMode, AgentPlaybackControl, Message, Task } from "types/agentTypes";
+import type { ModelSettings } from 'utils/agent/types';
+import { DEFAULT_MAX_LOOPS_FREE } from 'utils/agent/constants';
+import { v1, v4 } from 'uuid';
+import type { AgentMode, AgentPlaybackControl, Message, Task } from 'types/agentTypes';
 import {
   AGENT_PAUSE,
   AGENT_PLAY,
@@ -13,12 +13,12 @@ import {
   TASK_STATUS_COMPLETED,
   TASK_STATUS_EXECUTING,
   TASK_STATUS_FINAL,
-  TASK_STATUS_STARTED,
-} from "types/agentTypes";
+  TASK_STATUS_STARTED
+} from 'types/agentTypes';
 // import { useMessageStore } from "store/slices/agentmessage";
-import { AgentApi } from "./agent-api";
-import type { Analysis } from "./analysis";
-import MessageService from "./message-service";
+import { AgentApi } from './agent-api';
+import type { Analysis } from './analysis';
+import MessageService from './message-service';
 
 const errors = require('constant/errors.json');
 
@@ -66,7 +66,7 @@ class AutonomousAgent {
     this.$api = new AgentApi(
       {
         goal,
-        modelSettings,
+        modelSettings
       },
       this.onApiError
     );
@@ -97,7 +97,7 @@ class AutonomousAgent {
           taskId: v1().toString(),
           value,
           status: TASK_STATUS_STARTED,
-          type: MESSAGE_TYPE_TASK,
+          type: MESSAGE_TYPE_TASK
         };
         this.messageService.sendMessage(task);
       }
@@ -142,8 +142,8 @@ class AutonomousAgent {
     // Default to reasoning
     let analysis: Analysis = {
       reasoning: "I'll just think about it...",
-      action: "reason",
-      arg: "",
+      action: 'reason',
+      arg: ''
     };
 
     // Analyze how to execute a task: Reason, web search, other tools...
@@ -154,10 +154,10 @@ class AutonomousAgent {
     this.messageService.sendMessage({
       ...currentTask,
       info: result,
-      status: TASK_STATUS_COMPLETED,
+      status: TASK_STATUS_COMPLETED
     });
 
-    this.completedTasks.push(currentTask.value || "");
+    this.completedTasks.push(currentTask.value || '');
 
     // Wait before adding tasks
     await new Promise((r) => setTimeout(r, TIMEOUT_LONG));
@@ -169,7 +169,7 @@ class AutonomousAgent {
         {
           current: currentTask.value,
           remaining: this.getRemainingTasks().map((task) => task.value),
-          completed: this.completedTasks,
+          completed: this.completedTasks
         },
         result
       );
@@ -179,7 +179,7 @@ class AutonomousAgent {
           taskId: v1().toString(),
           value,
           status: TASK_STATUS_STARTED,
-          type: MESSAGE_TYPE_TASK,
+          type: MESSAGE_TYPE_TASK
         };
         this.messageService.sendMessage(task);
       }
@@ -189,7 +189,9 @@ class AutonomousAgent {
       }
     } catch (e) {
       console.log(e);
-      this.messageService.sendErrorMessage("ERROR adding additional task(s). It might have been against our model's policies to run them. Continuing.");
+      this.messageService.sendErrorMessage(
+        "ERROR adding additional task(s). It might have been against our model's policies to run them. Continuing."
+      );
 
       this.messageService.sendMessage({ ...currentTask, status: TASK_STATUS_FINAL });
     }
@@ -197,7 +199,8 @@ class AutonomousAgent {
   }
 
   getRemainingTasks(): Task[] {
-    return useSelector(state => state.agentmessage.tasks.filter((t: Task) => t.status === TASK_STATUS_STARTED));
+    // @ts-ignore
+    return useSelector((state) => state.message.tasks.filter((t: Task) => t.status === TASK_STATUS_STARTED));
   }
 
   private conditionalPause() {
@@ -238,7 +241,7 @@ class AutonomousAgent {
     this.shutdown();
 
     if (axios.isAxiosError(e) && e.response?.status === 429) {
-      this.messageService.sendErrorMessage("Rate limit exceeded! Please slow down...😅");
+      this.messageService.sendErrorMessage('Rate limit exceeded! Please slow down...😅');
     }
 
     throw e;
@@ -246,12 +249,12 @@ class AutonomousAgent {
 }
 
 const getMessageFromError = (e: unknown) => {
-  let message: string = "ERROR_RETRIEVE_INITIAL_TASKS";
+  let message: string = 'ERROR_RETRIEVE_INITIAL_TASKS';
 
   if (axios.isAxiosError(e)) {
-    if (e.response?.status === 429) message = "ERROR_API_KEY_QUOTA";
-    if (e.response?.status === 404) message = "ERROR_OPENAI_API_KEY_NO_GPT4";
-    else message = "ERROR_ACCESSING_OPENAI_API_KEY";
+    if (e.response?.status === 429) message = 'ERROR_API_KEY_QUOTA';
+    if (e.response?.status === 404) message = 'ERROR_OPENAI_API_KEY_NO_GPT4';
+    else message = 'ERROR_ACCESSING_OPENAI_API_KEY';
   }
 
   return errors[message];

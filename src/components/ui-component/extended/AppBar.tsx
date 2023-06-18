@@ -215,7 +215,7 @@ const AppBar = ({ ...others }) => {
                   Pre-Built Apps
                 </Button>
               </a>
-              <a href="/join-us">
+              <a href="/join">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Join Us
                 </Button>
@@ -231,13 +231,16 @@ const AppBar = ({ ...others }) => {
                 </Button>
               </a>
               <Button
-                color="inherit"
+                className="my-auto mt-4"
+                sx={{
+                  color: '#000000',
+                  fontWeight: 'bold',
+                  background: '#ffffff',
+                  height: '3rem'
+                }}
+                variant="contained"
                 href="https://calendly.com/infrahive/infrahive-demo"
                 target={'_blank'}
-                sx={{ color: 'black', height: '43px' }}
-                variant="contained"
-                component={Link}
-                //  target="_blank"
               >
                 Request Access
               </Button>
