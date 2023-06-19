@@ -85,6 +85,7 @@ const ProductImages = ({ product }: { product: Products }) => {
                   size={matchDownLG ? 'lg' : 'md'}
                   color="primary"
                   src={item}
+                  alt="Product Image"
                   variant="rounded"
                   sx={{ m: '0 auto', cursor: 'pointer' }}
                 />

@@ -118,7 +118,7 @@ const ForgotPassword = () => {
                 </Grid>
               </Grid>
               <Grid item xs={12} sx={{ textAlign: 'center' }}>
-                <Image src={imgMain} alt="Berry Dashboard" layout="intrinsic" width={'300px'} height={'340px'} />
+                <Image src={imgMain} alt="InfraHive Dashboard" layout="intrinsic" width={'300px'} height={'340px'} />
               </Grid>
             </Grid>
           </BackgroundPattern2>

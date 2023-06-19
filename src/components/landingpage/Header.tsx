@@ -219,7 +219,7 @@ const HeaderPage = () => {
                     spacing={2}
                     sx={{ [theme.breakpoints.down('lg')]: { display: 'inline-flex', width: 'auto' }, marginTop: '2rem' }}
                   >
-                    <Box component={'img'} src="/assets/animation/Main Comp.gif" width={'100%'} />
+                    <Box component={'img'} src="/assets/animation/Main Comp.gif" alt="InfraHive - Animation GIF" width={'100%'} />
                   </Grid>
                 </motion.div>
               </Grid>

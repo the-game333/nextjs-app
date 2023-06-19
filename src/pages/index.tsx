@@ -71,6 +71,7 @@ const Landing: React.FC = () => {
             zIndex: 1,
             width: '100%'
           }}
+          alt="InfraHive - Background"
         />
         <Header />
       </HeaderWrapper>
@@ -80,7 +81,7 @@ const Landing: React.FC = () => {
       <SecondWrapper>
         <Howtowworks />
       </SecondWrapper>
-      
+
       <ThirdWrapper>
         <Box
           component={'img'}
@@ -93,6 +94,7 @@ const Landing: React.FC = () => {
             height: '700px',
             width: '100%'
           }}
+          alt="InfraHive - Background"
         />
         <Howtowworks2 />
       </ThirdWrapper>
@@ -108,7 +110,6 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <LanguageCodeType />
       </FullyWrapper>
-      
 
       <ThirdWrapper>
         {/* <Subscribe /> */}
