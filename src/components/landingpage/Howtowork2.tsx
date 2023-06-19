@@ -30,6 +30,7 @@ const Howtowork2 = () => (
                   component={'img'}
                   src="/assets/images/howtowork/generative_ai.png"
                   width={'5rem'}
+                  alt="InfraHive - Generative AI"
                   sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
@@ -141,6 +142,7 @@ const Howtowork2 = () => (
                   component={'img'}
                   src="/assets/images/howtowork/enterprise_ai.png"
                   width={'5rem'}
+                  alt="InfraHive - Enterprise AI"
                   sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
@@ -196,6 +198,7 @@ const Howtowork2 = () => (
                   component={'img'}
                   src="/assets/images/howtowork/consumer_ai.jpg"
                   width={'5rem'}
+                  alt="InfraHive - Consumer AI"
                   sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
@@ -303,6 +306,7 @@ const Howtowork2 = () => (
                   component={'img'}
                   src="/assets/images/howtowork/developer_ai.png"
                   width={'5rem'}
+                  alt="InfraHive - Developer AI"
                   sx={{ marginLeft: '0%', borderRadius: '30px' }}
                 />
               </Grid>
