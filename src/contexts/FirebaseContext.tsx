@@ -117,6 +117,20 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
     // });
   }
 
+  // const api = async (email: String, password: String) => {
+  //   const { data } = await Login(email, password);
+  //   snackbar("You are logged successfully in Our Site.");
+  //   dispatchF(rLogin(data));
+  //   // dispatch({
+  //   //   type: LOGIN,
+  //   //   payload: {
+  //   //     isLoggedIn: true,
+  //   //     user: data.user,
+  //   //     // accessToken: data.accessToken
+  //   //   }
+  //   // });
+  // }
+
   return (
     <FirebaseContext.Provider
       value={{

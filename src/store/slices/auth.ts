@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useRouter } from "next/router";
+import Router from 'next/router'
+
 const initialUser = {
     _id: "",
     email: "",
@@ -23,7 +24,12 @@ const auth = createSlice({
             state.accessToken = accessToken;
             state.isLoggedIn = true;
             state.isInitialized = true;
-            window.location.href = '/dashboard';
+            console.log("user", user)
+            if(user.initialScreening){
+                Router.push('/dashboard')
+            } else {
+                Router.push('/initial-screening')
+            }
         },
 
         Logout(state, action) {
@@ -32,7 +38,11 @@ const auth = createSlice({
             state.isLoggedIn = false;
             state.isInitialized = true;
             state = { ...state };
-            window.location.href = "/";
+            Router.push("/")
+        },
+        UpdateAuthUser: (state, action) =>  {
+            state.user = {...state.user, ...action.payload};
+            Router.push("/dashboard")
         },
     },
 });
@@ -42,4 +52,5 @@ export default auth.reducer;
 export const {
     rLogin,
     Logout,
+    UpdateAuthUser
 } = auth.actions;
