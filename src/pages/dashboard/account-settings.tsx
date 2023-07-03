@@ -1,11 +1,7 @@
-import React from 'react';
+import EditProfile from 'components/users/account-profile/edit-profile/EditProfile';
 
-const accountSettings = () => {
-  return (
-    <div className="bg-white rounded-lg p-4">
-      
-    </div>
-  );
+const AccountSettings = () => {
+  return <EditProfile />;
 };
-accountSettings.Layout = 'authGuard';
-export default accountSettings;
+AccountSettings.Layout = 'authGuard';
+export default AccountSettings;

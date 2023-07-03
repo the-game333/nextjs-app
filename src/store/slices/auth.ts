@@ -5,6 +5,13 @@ const initialUser = {
     _id: "",
     email: "",
     username: "",
+    fname: "",
+    lname: "",
+    phoneNumber: "",
+    initialScreening: "",
+    profession: "",
+    goal: "",
+    permission: ""
 };
 
 const initialState = {
@@ -24,14 +31,12 @@ const auth = createSlice({
             state.accessToken = accessToken;
             state.isLoggedIn = true;
             state.isInitialized = true;
-            console.log("user", user)
-            if(user.initialScreening){
+            if (user.initialScreening) {
                 Router.push('/dashboard')
             } else {
                 Router.push('/initial-screening')
             }
         },
-
         Logout(state, action) {
             state.accessToken = "";
             state.user = initialUser;
@@ -40,9 +45,8 @@ const auth = createSlice({
             state = { ...state };
             Router.push("/")
         },
-        UpdateAuthUser: (state, action) =>  {
-            state.user = {...state.user, ...action.payload};
-            Router.push("/dashboard")
+        UpdateAuthUser: (state, action) => {
+            state.user = { ...state.user, ...action.payload };
         },
     },
 });
