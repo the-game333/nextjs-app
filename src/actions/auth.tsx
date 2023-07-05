@@ -12,4 +12,9 @@ const Login = async (email: String, password: String) => {
     const data = await Axios.post('api/auth/login', { email, password });
     return data;
 }
-export { JoinWaitList, Register, Login };
+
+const InitailScreening = async (userdata: any) => {
+    const data = await Axios.post('api/auth/initial_screening', userdata);
+    return data;
+}
+export { JoinWaitList, Register, Login, InitailScreening };

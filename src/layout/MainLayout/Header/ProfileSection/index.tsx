@@ -36,6 +36,7 @@ import useAuth from 'hooks/useAuth';
 // assets
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
 import useConfig from 'hooks/useConfig';
+import Link from 'next/link';
 
 const User1 = '/assets/images/users/user-round.svg';
 
@@ -252,18 +253,21 @@ const ProfileSection = () => {
                             }
                           }}
                         >
-                          <ListItemButton
-                            sx={{ borderRadius: `${borderRadius}px` }}
-                            selected={selectedIndex === 0}
-                            onClick={(event: React.MouseEvent<HTMLDivElement>) =>
-                              handleListItemClick(event, 0, '/user/account-profile/profile1')
-                            }
-                          >
-                            <ListItemIcon>
-                              <IconSettings stroke={1.5} size="20px" />
-                            </ListItemIcon>
-                            <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
-                          </ListItemButton>
+                          <Link href={"/dashboard/account-settings"}>
+                            <ListItemButton
+                              sx={{ borderRadius: `${borderRadius}px` }}
+                              selected={selectedIndex === 0}
+                              onClick={(event: React.MouseEvent<HTMLDivElement>) =>
+                                handleListItemClick(event, 0, '/user/account-profile/profile1')
+                              }
+                            >
+                              <ListItemIcon>
+                                <IconSettings stroke={1.5} size="20px" />
+                              </ListItemIcon>
+                              <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
+                            </ListItemButton>
+                          </Link>
+
                           <ListItemButton
                             sx={{ borderRadius: `${borderRadius}px` }}
                             selected={selectedIndex === 1}
