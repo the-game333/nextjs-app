@@ -1,13 +1,19 @@
 import FooterPage from 'components/landingpage/Footer';
 import { useRouter } from 'next/router';
-import React from 'react';
+import React, { ChangeEvent, useEffect, useState } from 'react';
 import AppBar from 'ui-component/extended/AppBar';
 import AppsData from 'data/AppsData';
-import { Button } from '@mui/material';
+import { Box, Button, CircularProgress, TextField } from '@mui/material';
+import useConfig from 'hooks/useConfig';
+import { AppsInputData } from 'data/AppsInputData';
+import { PromptApi } from 'actions/prompts';
 
 const Apps = () => {
   const router = useRouter();
   const path = router.query.id;
+  const [prompt, setPrompt] = useState<any>({});
+  const [result, setResult] = useState<any>('');
+  const [loading, setLoading] = useState<any>(false);
   // console.log(params.id)
   const PageData: {
     name: string;
@@ -29,7 +35,24 @@ const Apps = () => {
     }[];
     // @ts-ignore
   } = AppsData[path];
-  console.log(PageData);
+  const inputData = AppsInputData[path];
+  const { onChangeMenuType } = useConfig();
+  useEffect(() => {
+    onChangeMenuType('dark');
+  }, []);
+
+  const handleSubmit = async () => {
+    setLoading(true);
+    const res = await PromptApi({ ...prompt, api: inputData.api });
+    if (res?.data) setResult(res.data);
+    setLoading(false);
+  };
+
+  const handlePromptChange = (e: ChangeEvent<HTMLTextAreaElement | HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setPrompt((prev: any) => ({ ...prev, [name]: value }));
+  };
+
   return (
     <div>
       <AppBar />
@@ -39,8 +62,8 @@ const Apps = () => {
             <img src={PageData.logo} alt={PageData.name} className={`${PageData.color} h-24 p-4`} />
             <h1 className="my-auto text-6xl font-semibold">{PageData.name}</h1>
           </div>
-          <Button
-            className="mt-4 my-auto"
+          {/* <Button
+            className="my-auto mt-4"
             sx={{
               color: '#000000',
               fontWeight: 'bold',
@@ -52,7 +75,7 @@ const Apps = () => {
             target={'_blank'}
           >
             Request Access
-          </Button>
+          </Button> */}
         </div>
 
         <div className="mt-8">
@@ -88,6 +111,52 @@ const Apps = () => {
             </div>
           </div>
         )}
+
+        {PageData.name && <h2 className="my-5 text-3xl font-semibold">Test {PageData.name}</h2>}
+        <Box display={'flex'} gap={'1rem'}>
+          <Box width={'50%'}>
+            {inputData?.values.map((data: { name: string; placeHolder: string }, index: number) => (
+              <TextField
+                onChange={handlePromptChange}
+                size="medium"
+                sx={{ width: '100%', margin: '0 0 1rem' }}
+                label={data.placeHolder}
+                value={prompt[data.name]}
+                name={data.name}
+                key={index}
+                disabled={loading}
+                minRows={4 / inputData?.values.length}
+                multiline
+              />
+            ))}
+          </Box>
+          <Box width={'50%'} position={'relative'}>
+            <TextField size="medium" sx={{ width: '100%', margin: '0 0 1rem' }} minRows={4} multiline label="Output" value={result} />
+            {loading && (
+              <Box
+                display={'flex'}
+                position={'absolute'}
+                justifyContent={'center'}
+                top={'20%'}
+                left={'50%'}
+                sx={{ transform: 'translate(-50%, -50%)' }}
+                minHeight={'10rem'}
+                alignItems={'center'}
+              >
+                <CircularProgress />
+              </Box>
+            )}
+          </Box>
+        </Box>
+
+        {loading && (
+          <Box display={'flex'} justifyContent={'center'} width={'100%'} height={'5rem'} alignItems={'center'}>
+            <CircularProgress />
+          </Box>
+        )}
+        <Button type="button" onClick={handleSubmit} variant="outlined">
+          Submit
+        </Button>
       </div>
       <FooterPage />
     </div>
