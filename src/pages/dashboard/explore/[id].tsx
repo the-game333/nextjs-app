@@ -65,6 +65,19 @@ const Explore = () => {
                 <img src={pageData.logo} alt={pageData.name} className={`${pageData.color} h-24 p-4`} />
                 <h1 className="my-auto text-6xl font-semibold">{pageData.name}</h1>
               </div>
+              <Button
+                className="my-auto mt-4"
+                sx={{
+                  // color: '#000000',
+                  fontWeight: 'bold',
+                  background: '#ffffff',
+                  height: '3rem'
+                }}
+                variant="outlined"
+                onClick={() => router.push(`/apps/${path}`)}
+              >
+                Share
+              </Button>
             </div>
             <div className="mt-8">
               {pageData.desc.map((text, index) => (
@@ -103,26 +116,45 @@ const Explore = () => {
           </>
         )}
 
-        {inputData?.values.map((data: { name: string; placeHolder: string }, index: number) => (
-          <TextField
-            onChange={handlePromptChange}
-            size="medium"
-            sx={{ width: '100%', margin: '0 0 1rem' }}
-            label={data.placeHolder}
-            value={prompt[data.name]}
-            name={data.name}
-            key={index}
-            disabled={loading}
-          />
-        ))}
-        {loading && (
-          <Box display={'flex'} justifyContent={'center'} width={'100%'} height={'5rem'} alignItems={'center'}>
-            <CircularProgress />
+        <Box display={'flex'} gap={'1rem'}>
+          <Box width={'50%'}>
+            {inputData?.values.map((data: { name: string; placeHolder: string }, index: number) => (
+              <TextField
+                onChange={handlePromptChange}
+                size="medium"
+                sx={{ width: '100%', margin: '0 0 1rem' }}
+                label={data.placeHolder}
+                value={prompt[data.name]}
+                name={data.name}
+                key={index}
+                disabled={loading}
+                minRows={4 / inputData?.values.length}
+                multiline
+              />
+            ))}
           </Box>
-        )}
-        {result && !loading ? (
+          <Box width={'50%'} position={'relative'}>
+            <TextField size="medium" sx={{ width: '100%', margin: '0 0 1rem' }} minRows={4} multiline label="Output" value={result} />
+            {loading && (
+              <Box
+                display={'flex'}
+                position={'absolute'}
+                justifyContent={'center'}
+                top={'20%'}
+                left={'50%'}
+                sx={{ transform: 'translate(-50%, -50%)' }}
+                minHeight={'10rem'}
+                alignItems={'center'}
+              >
+                <CircularProgress />
+              </Box>
+            )}
+          </Box>
+        </Box>
+
+        {/* {result && !loading ? (
           <TextField size="medium" sx={{ width: '100%', margin: '0 0 1rem' }} minRows={4} multiline label="Output" value={result} />
-        ) : null}
+        ) : null} */}
         <Button type="button" onClick={handleSubmit} variant="outlined">
           Submit
         </Button>

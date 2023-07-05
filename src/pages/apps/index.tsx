@@ -1,8 +1,9 @@
 import { Search } from '@mui/icons-material';
 import FooterPage from 'components/landingpage/Footer';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Link } from '@mui/material';
 import AppBar from 'ui-component/extended/AppBar';
+import useConfig from 'hooks/useConfig';
 
 const AppCard = (props: { logo: string; heading: string; desc: string; url: string; color: string }) => {
   return (
@@ -124,6 +125,10 @@ const index = () => {
   const handleSearch = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchText(event.target.value);
   };
+  const { onChangeMenuType } = useConfig();
+  useEffect(() => {
+    onChangeMenuType('dark');
+  }, []);
   return (
     <div>
       <AppBar />
