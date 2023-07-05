@@ -14,17 +14,18 @@ export default function Document() {
         <meta name="keywords" content="infrahive ai-infrastructure ai infrastructure full-stack-infrastructure ai-innovation innovation" />
         <meta property="og:locale" content="en_US" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://infrahive.ai" />
-        <meta property="og:site_name" content="infrahive.ai" />
+        <meta property="og:url" content="https://infrahive.io" />
+        <meta property="og:site_name" content="infrahive.io" />
         <meta property="og:title" content="InfraHive - Empowering Innovation with AI Infrastructure!" />
         <meta
           property="og:description"
           content="At InfraHive, we're committed to empowering innovation through our state-of-the-art AI infrastructure. Our platform provides businesses and individuals with everything they need to build powerful AI apps with ease. From API integration to full-stack infrastructure, we've got you covered. Experience the future of AI with InfraHive and take your capabilities to the next level."
         />
+        <meta name="google-site-verification" content="XMyZqetUUFSvUNHuNsRv5DpfXNnOy1I7QixDO4qS3UI" />
         {/* TODO: Social Media Images */}
         <meta property="og:image" content="" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://infrahive.ai" />
+        <meta property="twitter:url" content="https://infrahive.io" />
         <meta property="twitter:title" content="InfraHive - Empowering Innovation with AI Infrastructure!" />
         <meta
           property="twitter:description"
@@ -37,6 +38,7 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap"
           rel="stylesheet"
         />
+
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-RR7ES8TW6Q" />
         <Script id="google-analytics">
           {`window.dataLayer = window.dataLayer || [];
