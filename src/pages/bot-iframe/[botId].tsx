@@ -53,11 +53,7 @@ const ChatGPT = () => {
     setLoading(false);
     moveScroll('');
   };
-
-  const back =async () => {
-    router.push('/app/docu_analysis');
-  }
-
+  
   const StyledTableRow = styled(TableRow)(() => ({
     '&:nth-of-type(odd)': {
       backgroundColor: theme.palette.action.hover
@@ -69,24 +65,21 @@ const ChatGPT = () => {
   }));
   useEffect(() => {
     if (router.isReady) {
-      setPrompt(String(router.query['filename']));
+      setPrompt(String(router.query['botId']));
     }
   }, []);
   return (
     <Grid container spacing={gridSpacing}>
-      {loading ? (
-            <div className="spinner">
-              <img src='/assets/animation/Book.gif' />
-            </div>
-          ) : null}
-      <Grid item xs={12} lg={12} md={12}>      
-      <Button sx={{m: '3px'}} onClick={() => back()} startIcon={<ReplyIcon />} color='secondary'>
-        Back
-      </Button>
-        <Paper sx={{ width: '100%', p: theme.breakpoints.down('sm') ? 0 : 5, height: '75vh', position: 'relative' }}>          
-          <TableContainer component={Paper} id="chat-box" sx={{ height: '65vh' }}>
+    {loading ? (
+          <div className="spinner">
+            <img src='/assets/animation/Book.gif' />
+          </div>
+        ) : null}
+      <Grid item xs={12} lg={12} md={12}>
+        <Paper sx={{ width: '100%', p: theme.breakpoints.down('sm') ? 0 : 5, height: '100vh', position: 'relative' }}>
+          <TableContainer component={Paper} id="chat-box" sx={{ height: '90vh' }}>
             <Table aria-label="customized table">
-              <TableBody sx={{ width: '100%', height: '65vh', overflow: 'auto', display: 'contents' }}>
+              <TableBody sx={{ width: '100%', height: '90vh', overflow: 'auto', display: 'contents' }}>
                 {totalMessage.map((item: any, i: any) => {
                   if (item.type === 'me') {
                     return (
@@ -153,5 +146,5 @@ const ChatGPT = () => {
     </Grid>
   );
 };
-ChatGPT.Layout = 'authGuard';
+
 export default ChatGPT;

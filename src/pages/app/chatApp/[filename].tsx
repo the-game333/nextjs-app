@@ -15,12 +15,12 @@ import { gridSpacing } from 'store/constant';
 import { useRouter } from 'next/router';
 import styled from '@emotion/styled';
 // action imports
-import { getChatText } from 'actions/application';
+import { getChatText } from 'actions/chatapplication';
 import { moveScroll } from 'utils/scroll';
 import { useSelector } from 'store';
 // ==============================|| ChatGPT part ||============================== //
 
-const ChatGPT = () => {
+const ChatApp = () => {
   const theme = useTheme();
   const router = useRouter();
   const [prompt, setPrompt] = useState<String>('');
@@ -55,7 +55,7 @@ const ChatGPT = () => {
   };
 
   const back =async () => {
-    router.push('/app/docu_analysis');
+    router.push('/app/cust_support');
   }
 
   const StyledTableRow = styled(TableRow)(() => ({
@@ -153,5 +153,5 @@ const ChatGPT = () => {
     </Grid>
   );
 };
-ChatGPT.Layout = 'authGuard';
-export default ChatGPT;
+ChatApp.Layout = 'authGuard';
+export default ChatApp;
