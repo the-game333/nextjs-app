@@ -52,7 +52,7 @@ const application = {
       title: <FormattedMessage id="customer_support" />,
       type: 'item',
       icon: icons.SupportAgent,
-      url: '/dashboard/under-construction'
+      url: '/app/cust_support'
     },
     {
       id: 'data_analysis',

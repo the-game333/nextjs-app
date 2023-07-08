@@ -179,6 +179,13 @@
   dependencies:
     regenerator-runtime "^0.13.11"
 
+"@babel/runtime@^7.21.0":
+  version "7.22.5"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.22.5.tgz#8564dd588182ce0047d55d7a75e93921107b57ec"
+  integrity sha512-ecjvYlnAaZ/KVneE/OdKYBYfgXV3Ptu6zQWmgEF7vwKhQnvVS6bjMD2XYgj+SNvQ1GfK/pjgokfPkC/2CO8CuA==
+  dependencies:
+    regenerator-runtime "^0.13.11"
+
 "@babel/template@^7.20.7":
   version "7.21.9"
   resolved "https://registry.npmjs.org/@babel/template/-/template-7.21.9.tgz"
@@ -1624,6 +1631,11 @@
     redux-thunk "^2.4.1"
     reselect "^4.1.5"
 
+"@remix-run/router@1.6.3":
+  version "1.6.3"
+  resolved "https://registry.yarnpkg.com/@remix-run/router/-/router-1.6.3.tgz#8205baf6e17ef93be35bf62c37d2d594e9be0dad"
+  integrity sha512-EXJysQ7J3veRECd0kZFQwYYd5sJMcq2O/m60zu1W2l3oVQ9xtub8jTOtYRE0+M2iomyG/W3Ps7+vp2kna0C27Q==
+
 "@rushstack/eslint-patch@^1.1.3":
   version "1.1.3"
   resolved "https://registry.npmjs.org/@rushstack/eslint-patch/-/eslint-patch-1.1.3.tgz"
@@ -2591,10 +2603,12 @@ damerau-levenshtein@^1.0.7:
   resolved "https://registry.npmjs.org/damerau-levenshtein/-/damerau-levenshtein-1.0.8.tgz"
   integrity sha512-sdQSFB7+llfUcQHUQO3+B8ERRj0Oa4w9POWMI/puGtuf7gFywGmkaLCElnudfTiKZV+NvHqL0ifzdrI8Ro7ESA==
 
-date-fns@^2.28.0:
-  version "2.28.0"
-  resolved "https://registry.npmjs.org/date-fns/-/date-fns-2.28.0.tgz"
-  integrity sha512-8d35hViGYx/QH0icHYCeLmsLmMUheMmTyV9Fcm6gvNwdw31yXXH+O85sOBJ+OLnLQMKZowvpKb6FgMIQjcpvQw==
+date-fns@^2.30.0:
+  version "2.30.0"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.30.0.tgz#f367e644839ff57894ec6ac480de40cae4b0f4d0"
+  integrity sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==
+  dependencies:
+    "@babel/runtime" "^7.21.0"
 
 debug@^2.6.9:
   version "2.6.9"
@@ -5575,6 +5589,21 @@ react-remove-scroll@^2.5.6:
     use-callback-ref "^1.3.0"
     use-sidecar "^1.1.2"
 
+react-router-dom@^6.13.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/react-router-dom/-/react-router-dom-6.13.0.tgz#6651f456bb2af42ef14f6880123b1f575539e81f"
+  integrity sha512-6Nqoqd7fgwxxVGdbiMHTpDHCYPq62d7Wk1Of7B82vH7ZPwwsRaIa22zRZKPPg413R5REVNiyuQPKDG1bubcOFA==
+  dependencies:
+    "@remix-run/router" "1.6.3"
+    react-router "6.13.0"
+
+react-router@6.13.0:
+  version "6.13.0"
+  resolved "https://registry.yarnpkg.com/react-router/-/react-router-6.13.0.tgz#7e4427a271dae0cafbdb88c56ccbd9b1434ee93f"
+  integrity sha512-Si6KnfEnJw7gUQkNa70dlpI1bul46FuSxX5t5WwlUBxE25DAz2BjVkwaK8Y2s242bQrZPXCpmwLPtIO5pv4tXg==
+  dependencies:
+    "@remix-run/router" "1.6.3"
+
 react-slick@^0.28.1:
   version "0.28.1"
   resolved "https://registry.npmjs.org/react-slick/-/react-slick-0.28.1.tgz"
@@ -5721,10 +5750,15 @@ refractor@^3.6.0:
     parse-entities "^2.0.0"
     prismjs "~1.27.0"
 
-regenerator-runtime@^0.13.11, regenerator-runtime@^0.13.4:
+regenerator-runtime@^0.13.11:
   version "0.13.11"
-  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz"
+  resolved "https://registry.yarnpkg.com/regenerator-runtime/-/regenerator-runtime-0.13.11.tgz#f6dca3e7ceec20590d07ada785636a90cdca17f9"
   integrity sha512-kY1AZVr2Ra+t+piVaJ4gxaFaReZVH40AKNo7UCX6W+dEwBo/2oZJzqfuN1qLq1oL45o56cPaTXELwrTh8Fpggg==
+
+regenerator-runtime@^0.13.4:
+  version "0.13.9"
+  resolved "https://registry.npmjs.org/regenerator-runtime/-/regenerator-runtime-0.13.9.tgz"
+  integrity sha512-p3VT+cOEgxFsRRA9X4lkI1E+k2/CtnKtU4gcxyaCUreilL/vqI6CdZ3wxVUx3UOUg+gnUOQQcRI7BmSI656MYA==
 
 regexp.prototype.flags@^1.2.0, regexp.prototype.flags@^1.4.1, regexp.prototype.flags@^1.4.3:
   version "1.4.3"
