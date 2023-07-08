@@ -36,6 +36,7 @@ import useAuth from 'hooks/useAuth';
 // assets
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
 import useConfig from 'hooks/useConfig';
+import Link from 'next/link';
 
 const User1 = '/assets/images/users/user-round.svg';
 
@@ -171,7 +172,7 @@ const ProfileSection = () => {
                         </Stack>
                         <Typography variant="subtitle2">Project Admin</Typography>
                       </Stack>
-                      <OutlinedInput
+                      {/* <OutlinedInput
                         sx={{ width: '100%', pr: 1, pl: 2, my: 2 }}
                         id="input-search-profile"
                         value={value}
@@ -187,7 +188,7 @@ const ProfileSection = () => {
                           'aria-label': 'weight'
                         }}
                       />
-                      <Divider />
+                      <Divider /> */}
                     </Box>
                     <PerfectScrollbar style={{ height: '100%', maxHeight: 'calc(100vh - 250px)', overflowX: 'hidden' }}>
                       <Box sx={{ p: 2, pt: 0 }}>
@@ -252,18 +253,21 @@ const ProfileSection = () => {
                             }
                           }}
                         >
-                          <ListItemButton
-                            sx={{ borderRadius: `${borderRadius}px` }}
-                            selected={selectedIndex === 0}
-                            onClick={(event: React.MouseEvent<HTMLDivElement>) =>
-                              handleListItemClick(event, 0, '/user/account-profile/profile1')
-                            }
-                          >
-                            <ListItemIcon>
-                              <IconSettings stroke={1.5} size="20px" />
-                            </ListItemIcon>
-                            <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
-                          </ListItemButton>
+                          <Link href={"/dashboard/account-settings"}>
+                            <ListItemButton
+                              sx={{ borderRadius: `${borderRadius}px` }}
+                              selected={selectedIndex === 0}
+                              onClick={(event: React.MouseEvent<HTMLDivElement>) =>
+                                handleListItemClick(event, 0, '/user/account-profile/profile1')
+                              }
+                            >
+                              <ListItemIcon>
+                                <IconSettings stroke={1.5} size="20px" />
+                              </ListItemIcon>
+                              <ListItemText primary={<Typography variant="body2">Account Settings</Typography>} />
+                            </ListItemButton>
+                          </Link>
+
                           <ListItemButton
                             sx={{ borderRadius: `${borderRadius}px` }}
                             selected={selectedIndex === 1}

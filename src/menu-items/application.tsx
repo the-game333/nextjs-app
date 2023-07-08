@@ -58,58 +58,66 @@ const application = {
       id: 'data_analysis',
       title: <FormattedMessage id="data_analysis" />,
       type: 'item',
-      icon: icons.BarChart
+      icon: icons.BarChart,
+      url: '/dashboard/under-construction'
     },
     {
       id: 'document_analysis',
       title: <FormattedMessage id="document_analysis" />,
       type: 'item',
       icon: icons.Article,
-      url: '/app/docu_analysis'
+      url: '/app/docu_analysis',
     },
     {
       id: 'data_annotation',
       title: <FormattedMessage id="data_annotation" />,
       type: 'item',
-      icon: icons.PostAdd
+      icon: icons.PostAdd,
+      url: '/dashboard/under-construction'
     },
     {
       id: 'data_extractor',
       title: <FormattedMessage id="data_extractor" />,
       type: 'item',
-      icon: icons.AltRoute
+      icon: icons.AltRoute,
+      url: '/dashboard/under-construction'
     },
     {
       id: 'data_summarize',
       title: <FormattedMessage id="data_summarize" />,
       type: 'item',
-      icon: icons.Summarize
+      icon: icons.Summarize,
+      url: '/dashboard/under-construction'
     },
     {
       id: 'image_classification',
       title: <FormattedMessage id="image_classification" />,
       type: 'item',
-      icon: icons.Pets
+      icon: icons.Pets,
+      url: '/dashboard/under-construction'
     },
 
     {
       id: 'name_entity_recognition',
       title: <FormattedMessage id="name_entity_recognition" />,
       type: 'item',
-      icon: icons.IconUserCheck
+      icon: icons.IconUserCheck,
+      url: '/dashboard/under-construction'
     },
 
     {
       id: 'structure_data_converter',
       title: <FormattedMessage id="structure_data_converter" />,
       type: 'item',
-      icon: icons.Mediation
+      icon: icons.Mediation,
+      url: '/dashboard/under-construction'
     },
     {
       id: 'text_classification',
       title: <FormattedMessage id="text_classification" />,
       type: 'item',
-      icon: icons.ManageSearch
+      icon: icons.ManageSearch,
+      url: '/dashboard/under-construction'
     }
   ]
 };

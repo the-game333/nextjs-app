@@ -17,6 +17,7 @@ import AppBar from 'ui-component/extended/AppBar';
 import { Box } from '@mui/material';
 import useConfig from 'hooks/useConfig';
 import { useEffect } from 'react';
+import Partnership from 'components/landingpage/Partnership';
 
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
@@ -70,12 +71,17 @@ const Landing: React.FC = () => {
             zIndex: 1,
             width: '100%'
           }}
+          alt="InfraHive - Background"
         />
         <Header />
       </HeaderWrapper>
+      <FullyWrapper>
+        <Partnership />
+      </FullyWrapper>
       <SecondWrapper>
         <Howtowworks />
       </SecondWrapper>
+
       <ThirdWrapper>
         <Box
           component={'img'}
@@ -88,6 +94,7 @@ const Landing: React.FC = () => {
             height: '700px',
             width: '100%'
           }}
+          alt="InfraHive - Background"
         />
         <Howtowworks2 />
       </ThirdWrapper>

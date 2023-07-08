@@ -143,7 +143,7 @@ const InfraSpeed = () => {
           </Grid>
         </Grid>
         <Grid item md={7} sm={12}>
-          <Box component={'img'} src="/assets/images/infraspeed.png" borderRadius={'20px'} width={'100%'} />
+          <Box component={'img'} alt="InfraHive - InfraSpeed" src="/assets/images/infraspeed.png" borderRadius={'20px'} width={'100%'} />
         </Grid>
       </Grid>
       <Divider sx={{ mt: 15 }} />

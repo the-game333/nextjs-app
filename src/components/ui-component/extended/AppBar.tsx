@@ -140,11 +140,22 @@ const AppBar = ({ ...others }) => {
                     <CardContent>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>INDUSTRIES</Typography>
                           <TooltipButton text={'Generative AI'} image={'solutions/generative-ai'} />
                           <TooltipButton text={'LLMs Fine Tune'} image={'solutions/llm'} />
                           <TooltipButton text={'LangChain Apps'} image={'solutions/langchain'} />
                           <TooltipButton text={'ChatGPT Plugins'} image={'solutions/plugins'} />
                         </Grid>
+                        {/* <Grid item md={6} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <Typography>USE CASES</Typography>
+                          <TooltipButton text={'Open AIResource Library'} image={'solutions/ai-readiness-report'} />
+                          <TooltipButton text={'Blog'} image={'solutions/blog'} />
+                          <TooltipButton text={'Documentation'} image={'solutions/documentation'} />
+                          <TooltipButton text={'Events'} image={'solutions/events'} />
+                          <TooltipButton text={'Guides'} image={'solutions/guides'} />
+                          <TooltipButton text={'Open Datasets'} image={'solutions/open-datasets'} />
+                          <TooltipButton text={`AI Readiness Report ${new Date().getFullYear()}`} image={'solutions/resources'} />
+                        </Grid> */}
                       </Grid>
                     </CardContent>
                   </Card>
@@ -199,24 +210,37 @@ const AppBar = ({ ...others }) => {
                   Vision
                 </Button>
               </a>
+              <a href="/apps">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Pre-Built Apps
+                </Button>
+              </a>
               <a href="/join">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Join Us
                 </Button>
               </a>
+              {/* <a href="/partnerships">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                  Partnerships
+                </Button>
+              </a> */}
               <a href="https://blog.infrahive.io/" target={'_blank'}>
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Blog
                 </Button>
               </a>
               <Button
-                color="inherit"
+                className="my-auto mt-4"
+                sx={{
+                  color: '#000000',
+                  fontWeight: 'bold',
+                  background: '#ffffff',
+                  height: '3rem'
+                }}
+                variant="contained"
                 href="https://calendly.com/infrahive/infrahive-demo"
                 target={'_blank'}
-                sx={{ color: 'black', height: '43px' }}
-                variant="contained"
-                component={Link}
-                //  target="_blank"
               >
                 Request Access
               </Button>

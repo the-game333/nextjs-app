@@ -30,7 +30,7 @@ const HowtowworksPage = () => {
                 <SubCard>
                   <Grid container justifyContent="center" spacing={2}>
                     <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
-                      <Box component={'img'} src={'/assets/images/cards/create-app.png'} width={'100%'} />
+                      <Box component={'img'} alt="Create App - InfraHive" src={'/assets/images/cards/create-app.png'} width={'100%'} />
                     </Grid>
                     <Grid item xs={12} textAlign={'left'}>
                       <Typography variant="h3">Create AI App with One-Click</Typography>
@@ -47,7 +47,7 @@ const HowtowworksPage = () => {
                 <SubCard>
                   <Grid container justifyContent="center" spacing={2}>
                     <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
-                      <Box component={'img'} src={'/assets/images/cards/connect-data.png'} width={'100%'} />
+                      <Box component={'img'} alt="Connect Data - InfraHive" src={'/assets/images/cards/connect-data.png'} width={'100%'} />
                     </Grid>
                     <Grid item xs={12} textAlign={'left'}>
                       <Typography variant="h3">Connect Data</Typography>
@@ -66,7 +66,7 @@ const HowtowworksPage = () => {
                 <SubCard>
                   <Grid container justifyContent="center" spacing={2}>
                     <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
-                      <Box component={'img'} src={'/assets/images/cards/deploy-app.png'} width={'100%'} />
+                      <Box component={'img'} alt="Deploy App - InfraHive" src={'/assets/images/cards/deploy-app.png'} width={'100%'} />
                     </Grid>
                     <Grid item xs={12} textAlign={'left'}>
                       <Typography variant="h3">Deploy App</Typography>

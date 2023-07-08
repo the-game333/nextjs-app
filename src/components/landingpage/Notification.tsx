@@ -60,7 +60,7 @@ const Notification = () => (
       <img
         src="/assets/images/header/background.svg"
         loading="lazy"
-        alt=""
+        alt="InfraHive - Background"
         aria-hidden="true"
         style={{ color: '#1414149e', position: 'absolute', width: '100%', top: '0px', height: '100%' }}
       ></img>

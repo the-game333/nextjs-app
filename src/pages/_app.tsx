@@ -1,10 +1,10 @@
 import '../styles/globals.css';
 
 // FontAwesome CSS imports
-import { config } from '@fortawesome/fontawesome-svg-core'
-import '@fortawesome/fontawesome-svg-core/styles.css'
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css';
 // You change this configuration value to false so that the Font Awesome core SVG library will not try and insert <style> elements into the <head> of the page. Next.js blocks this from happening anyway so you might as well not even try.
-config.autoAddCss = false
+config.autoAddCss = false;
 
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
@@ -64,6 +64,7 @@ function MyApp({ Component, pageProps }: AppProps & { Component: { Layout: Layou
         <title>InfraHive - Empowering Innovation with AI Infrastructure!</title>
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="google-site-verification" content="UZCBen_9acSNbhCD18KTr1GcKS70gGTy5JyzKa8LqVs" />
       </Head>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persister}>
@@ -72,12 +73,12 @@ function MyApp({ Component, pageProps }: AppProps & { Component: { Layout: Layou
               <RTLLayout>
                 <Locales>
                   {/* <NavigationScroll> */}
-                    <AuthProvider>
-                      <Layout>
-                        <Component {...pageProps} />
-                        <Snackbar />
-                      </Layout>
-                    </AuthProvider>
+                  <AuthProvider>
+                    <Layout>
+                      <Component {...pageProps} />
+                      <Snackbar />
+                    </Layout>
+                  </AuthProvider>
                   {/* </NavigationScroll> */}
                 </Locales>
               </RTLLayout>

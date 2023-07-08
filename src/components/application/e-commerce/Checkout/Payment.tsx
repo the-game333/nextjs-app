@@ -253,7 +253,7 @@ const Payment = ({ checkout, onBack, onNext, handleShippingCharge }: PaymentProp
                           <TableCell component="th" scope="row">
                             <Grid container alignItems="center" spacing={2}>
                               <Grid item>
-                                <Avatar size="md" variant="rounded" src={row.image ? `${prodImage}/${row.image}` : ''} />
+                                <Avatar alt="Cart Images" size="md" variant="rounded" src={row.image ? `${prodImage}/${row.image}` : ''} />
                               </Grid>
                               <Grid item>
                                 <Stack spacing={0}>

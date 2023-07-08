@@ -20,6 +20,7 @@ const Logo = () => {
         width: '150px',
         cursor: 'pointer'
       }}
+      alt={'InfraHive - Logo'}
     />
   );
 };

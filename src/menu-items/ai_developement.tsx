@@ -42,6 +42,8 @@ const ai_developement = {
       id: 'auto_gpt_app',
       title: <FormattedMessage id="auto_gpt_app" />,
       type: 'item',
+      // icon: icons.IconRobot,
+      // url: '/dashboard/under-construction'
       url: '/dashboard/autogpt_agents',
       icon: icons.IconRobot
     },
@@ -49,19 +51,22 @@ const ai_developement = {
       id: 'chatgpt_plugins',
       title: <FormattedMessage id="chatgpt_plugins" />,
       type: 'item',
-      icon: icons.IconPuzzle
+      icon: icons.IconPuzzle,
+      url: '/dashboard/under-construction'
     },
     {
       id: 'lang_chain_app',
       title: <FormattedMessage id="lang_chain_app" />,
       type: 'item',
-      icon: icons.IconDna
+      icon: icons.IconDna,
+      url: '/dashboard/under-construction'
     },
     {
       id: 'train_fine_tune',
       title: <FormattedMessage id="train_fine_tune" />,
       type: 'item',
-      icon: icons.IconFile3d
+      icon: icons.IconFile3d,
+      url: '/dashboard/under-construction'
     }
   ]
 };

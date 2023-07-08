@@ -46,105 +46,109 @@ const HeaderPage = () => {
       >
         <Grid item xs={12} md={12} sx={{ zIndex: 2 }}>
           <Grid container spacing={gridSpacing} sx={{ pr: 10, [theme.breakpoints.down('lg')]: { pr: 0, textAlign: 'center' } }}>
-            <Grid item xs={12} sm={12} md={12} display={'flex'} gap={2}>
-              <Typography
-                variant="h5"
-                sx={{
-                  fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
-                  fontWeight: 700,
-                  lineHeight: 1.4,
-                  textAlign: "left",
-                }}
-              >
-                Build
-              </Typography>
-              <div className="cubespinner" style={{minWidth: "33%"}} >
+            <Grid container sx={{ marginLeft: '2rem', ml: { xs: 10, sm: 14, md: 10 } }}>
+              <Grid item xs={12} md={2}>
                 <Typography
                   variant="h5"
-                  className="face1"
                   sx={{
-                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
+                    fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
-                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
+                    textAlign: 'left'
                   }}
                 >
-                  Generative AI
+                  Build
                 </Typography>
-                <Typography
-                  variant="h5"
-                  className="face2"
-                  sx={{
-                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
-                    fontWeight: 700,
-                    lineHeight: 1.4,
-                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Enterprise AI
-                </Typography>
-
-                {/* <Typography
-                  variant="h5"
-                  className="face3"
-                  sx={{
-                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
-                    fontWeight: 700,
-                    lineHeight: 1.4,
-                    background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  Government AI
-                </Typography> */}
-              </div>
+              </Grid>
+              <Grid item xs={12} md={5}>
+                <div className="cubespinner" style={{ minWidth: '100%' }}>
+                  <Typography
+                    variant="h5"
+                    className="face1"
+                    sx={{
+                      fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
+                      fontWeight: 700,
+                      lineHeight: 1.4,
+                      background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}
+                  >
+                    Generative AI
+                  </Typography>
+                  <Typography
+                    variant="h5"
+                    className="face2"
+                    sx={{
+                      fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
+                      fontWeight: 700,
+                      lineHeight: 1.4,
+                      background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}
+                  >
+                    Enterprise AI
+                  </Typography>
+                  {/* <Typography */}
+                  {/* variant="h5"
+                    className="face3"
+                    sx={{
+                      fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
+                      fontWeight: 700,
+                      lineHeight: 1.4,
+                      background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                      WebkitBackgroundClip: 'text',
+                      WebkitTextFillColor: 'transparent'
+                    }}
+                  >
+                    Government AI */}
+                  {/* </Typography>  */}
+                </div>
+              </Grid>
               {/* </motion.div> */}
-              <Typography
-                variant="h5"
-                sx={{
-                  fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
-                  fontWeight: 700,
-                  lineHeight: 1.4,
-                  textAlign:'left',
-                  width:"full"
-                }}
-              >
-                With Your Data
-              </Typography>
-            </Grid>
-            <Grid item xs={12} textAlign={'center'}>
-              <motion.div
-                initial={{ opacity: 0, translateY: 550 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 30,
-                  delay: 0.2
-                }}
-              >
+              <Grid item xs={12} md={5}>
                 <Typography
-                  variant="h4"
-                  component="div"
-                  color="inherit"
+                  variant="h5"
                   sx={{
-                    fontSize: { xs: '1rem', md: '1.125rem' },
-                    fontWeight: 400,
-                    lineHeight: 1.4
+                    fontSize: { xs: '1.5rem', sm: '2.5rem', md: '3.5rem' },
+                    fontWeight: 700,
+                    lineHeight: 1.4,
+                    textAlign: 'left',
+                    width: 'full'
                   }}
                 >
-                  Build powerful AI apps with ease using InfraHive's state-of-the-art infrastructure and cutting-edge AI technologies.
+                  With Your Data
                 </Typography>
-              </motion.div>
-            </Grid>
-            <br />
-            <br />
-            {/* <Grid item xs={12} sx={{ my: 3.25 }} textAlign={'center'}>
+              </Grid>
+              <Grid item xs={12} textAlign={'center'}>
+                <motion.div
+                  initial={{ opacity: 0, translateY: 550 }}
+                  animate={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 150,
+                    damping: 30,
+                    delay: 0.2
+                  }}
+                >
+                  <Typography
+                    variant="h4"
+                    component="div"
+                    color="inherit"
+                    sx={{
+                      fontSize: { xs: '1rem', md: '1.125rem' },
+                      fontWeight: 400,
+                      lineHeight: 1.4
+                    }}
+                  >
+                    Build powerful AI apps with ease using InfraHive's state-of-the-art infrastructure and cutting-edge AI technologies.
+                  </Typography>
+                </motion.div>
+              </Grid>
+              <br />
+              <br />
+              {/* <Grid item xs={12} sx={{ my: 3.25 }} textAlign={'center'}>
               <motion.div
                 initial={{ opacity: 0, translateY: 550 }}
                 animate={{ opacity: 1, translateY: 0 }}
@@ -198,26 +202,27 @@ const HeaderPage = () => {
                 
               </motion.div>
             </Grid> */}
-            <Grid item xs={12}>
-              <motion.div
-                initial={{ opacity: 0, translateY: 550 }}
-                animate={{ opacity: 1, translateY: 0 }}
-                transition={{
-                  type: 'spring',
-                  stiffness: 150,
-                  damping: 30,
-                  delay: 0.6
-                }}
-              >
-                <Grid
-                  container
-                  alignItems="center"
-                  spacing={2}
-                  sx={{ [theme.breakpoints.down('lg')]: { display: 'inline-flex', width: 'auto' } }}
+              <Grid item xs={12}>
+                <motion.div
+                  initial={{ opacity: 0, translateY: 550 }}
+                  animate={{ opacity: 1, translateY: 0 }}
+                  transition={{
+                    type: 'spring',
+                    stiffness: 150,
+                    damping: 30,
+                    delay: 0.6
+                  }}
                 >
-                  <Box component={'img'} src="/assets/animation/Main Comp.gif" width={'100%'} />
-                </Grid>
-              </motion.div>
+                  <Grid
+                    container
+                    alignItems="center"
+                    spacing={2}
+                    sx={{ [theme.breakpoints.down('lg')]: { display: 'inline-flex', width: 'auto' }, marginTop: '2rem' }}
+                  >
+                    <Box component={'img'} src="/assets/animation/Main Comp.gif" alt="InfraHive - Animation GIF" width={'100%'} />
+                  </Grid>
+                </motion.div>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
