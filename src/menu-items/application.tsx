@@ -2,7 +2,7 @@
 import { FormattedMessage } from 'react-intl';
 
 // assets
-import { IconUserCheck, IconBasket, IconMessages, IconLayoutKanban, IconMail, IconCalendar, IconNfc } from '@tabler/icons';
+import { IconUserCheck, IconBasket, IconMessages, IconLayoutKanban, IconMail, IconCalendar, IconNfc, IconSql } from '@tabler/icons';
 import {
   Source,
   Article,
@@ -14,8 +14,17 @@ import {
   SupportAgent,
   QuestionAnswer,
   Mediation,
-  ManageSearch
+  ManageSearch,
+  FormatColorText,
+  InsertEmoticon,
+  Colorize,
+  InsertDriveFileOutlined,
+  OndemandVideo,
+  FontDownload,
+  Language
 } from '@mui/icons-material';
+
+// import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
 
 // constant
 const icons = {
@@ -36,7 +45,15 @@ const icons = {
   AltRoute,
   Summarize,
   Pets,
-  ManageSearch
+  ManageSearch,
+  FormatColorText,
+  InsertEmoticon,
+  Colorize,
+  InsertDriveFileOutlined,
+  OndemandVideo,
+  IconSql,
+  FontDownload,
+  Language
 };
 
 // ==============================|| APPLICATION MENU ITEMS ||============================== //
@@ -62,63 +79,119 @@ const application = {
       url: '/dashboard/under-construction'
     },
     {
-      id: 'document_analysis',
-      title: <FormattedMessage id="document_analysis" />,
+      id: 'sentiment_analyze',
+      title: <FormattedMessage id="sentiment_analyze" />,
       type: 'item',
-      icon: icons.Article,
-      url: '/app/docu_analysis',
+      icon: icons.InsertEmoticon,
+      url: '/dashboard/explore/sentiment-analyze'
     },
     {
-      id: 'data_annotation',
-      title: <FormattedMessage id="data_annotation" />,
+      id: 'text_summarize',
+      title: <FormattedMessage id="text_summarize" />,
       type: 'item',
-      icon: icons.PostAdd,
-      url: '/dashboard/under-construction'
+      icon: icons.FormatColorText,
+      url: '/dashboard/explore/text-summarize'
     },
     {
-      id: 'data_extractor',
-      title: <FormattedMessage id="data_extractor" />,
+      id: 'entity_extract',
+      title: <FormattedMessage id="entity_extract" />,
       type: 'item',
-      icon: icons.AltRoute,
-      url: '/dashboard/under-construction'
+      icon: icons.Colorize,
+      url: '/dashboard/explore/entity-extract'
     },
     {
-      id: 'data_summarize',
-      title: <FormattedMessage id="data_summarize" />,
+      id: 'data_transformer',
+      title: <FormattedMessage id="data_transformer" />,
       type: 'item',
-      icon: icons.Summarize,
-      url: '/dashboard/under-construction'
+      icon: icons.InsertDriveFileOutlined,
+      url: '/dashboard/explore/data-transformer'
     },
     {
-      id: 'image_classification',
-      title: <FormattedMessage id="image_classification" />,
+      id: 'video_summarize',
+      title: <FormattedMessage id="video_summarize" />,
       type: 'item',
-      icon: icons.Pets,
-      url: '/dashboard/under-construction'
+      icon: icons.OndemandVideo,
+      url: '/dashboard/explore/video-summerize'
     },
-
     {
-      id: 'name_entity_recognition',
-      title: <FormattedMessage id="name_entity_recognition" />,
+      id: 'sql_write',
+      title: <FormattedMessage id="sql_write" />,
       type: 'item',
-      icon: icons.IconUserCheck,
-      url: '/dashboard/under-construction'
-    },
-
-    {
-      id: 'structure_data_converter',
-      title: <FormattedMessage id="structure_data_converter" />,
-      type: 'item',
-      icon: icons.Mediation,
-      url: '/dashboard/under-construction'
+      icon: icons.IconSql,
+      url: '/dashboard/explore/sql-write'
     },
     {
       id: 'text_classification',
       title: <FormattedMessage id="text_classification" />,
       type: 'item',
-      icon: icons.ManageSearch,
-      url: '/dashboard/under-construction'
-    }
+      icon: icons.FontDownload,
+      url: '/dashboard/explore/text-classification'
+    },
+    {
+      id: 'language_translate',
+      title: <FormattedMessage id="language_translate" />,
+      type: 'item',
+      icon: icons.Language,
+      url: '/dashboard/explore/language_translate'
+    },
+    // {
+    //   id: 'document_analysis',
+    //   title: <FormattedMessage id="document_analysis" />,
+    //   type: 'item',
+    //   icon: icons.Article,
+    //   url: '/app/docu_analysis',
+    // },
+    // {
+    //   id: 'data_annotation',
+    //   title: <FormattedMessage id="data_annotation" />,
+    //   type: 'item',
+    //   icon: icons.PostAdd,
+    //   url: '/dashboard/under-construction'
+    // },
+    // {
+    //   id: 'data_extractor',
+    //   title: <FormattedMessage id="data_extractor" />,
+    //   type: 'item',
+    //   icon: icons.AltRoute,
+    //   url: '/dashboard/under-construction'
+    // },
+    // {
+    //   id: 'data_summarize',
+    //   title: <FormattedMessage id="data_summarize" />,
+    //   type: 'item',
+    //   icon: icons.Summarize,
+    //   url: '/dashboard/under-construction'
+    // },
+    // {
+    //   id: 'image_classification',
+    //   title: <FormattedMessage id="image_classification" />,
+    //   type: 'item',
+    //   icon: icons.Pets,
+    //   url: '/dashboard/under-construction'
+    // },
+
+    // {
+    //   id: 'name_entity_recognition',
+    //   title: <FormattedMessage id="name_entity_recognition" />,
+    //   type: 'item',
+    //   icon: icons.IconUserCheck,
+    //   url: '/dashboard/under-construction'
+    // },
+
+    // {
+    //   id: 'structure_data_converter',
+    //   title: <FormattedMessage id="structure_data_converter" />,
+    //   type: 'item',
+    //   icon: icons.Mediation,
+    //   url: '/dashboard/under-construction'
+    // },
+    // {
+    //   id: 'text_classification',
+    //   title: <FormattedMessage id="text_classification" />,
+    //   type: 'item',
+    //   icon: icons.ManageSearch,
+    //   url: '/dashboard/under-construction'
+    // }
   ]
 };
 

@@ -45,14 +45,22 @@ const dashboard: DashboardMenuProps = {
     //   icon: icons.IconDashboard,
     //   breadcrumbs: false
     // },
-    {
-      id: 'default',
-      title: <FormattedMessage id="My Apps" />,
-      type: 'item',
-      url: '/dashboard/default',
-      icon: icons.IconDashboard,
-      breadcrumbs: false
-    },
+    // {
+    //   id: 'default',
+    //   title: <FormattedMessage id="My Apps" />,
+    //   type: 'item',
+    //   url: '/dashboard/default',
+    //   icon: icons.IconDashboard,
+    //   breadcrumbs: false
+    // },
+    // {
+    //   id: 'explore',
+    //   title: <FormattedMessage id="Explore" />,
+    //   type: 'item',
+    //   url: '/dashboard/explore',
+    //   icon: icons.Explore,
+    //   breadcrumbs: false
+    // },
     {
       id: 'explore',
       title: <FormattedMessage id="Explore" />,
@@ -61,14 +69,14 @@ const dashboard: DashboardMenuProps = {
       icon: icons.Explore,
       breadcrumbs: false
     },
-    {
-      id: 'analytics',
-      title: <FormattedMessage id="Data" />,
-      type: 'item',
-      url: '/dashboard/data',
-      icon: icons.Storage,
-      breadcrumbs: false
-    }
+    // {
+    //   id: 'analytics',
+    //   title: <FormattedMessage id="Data" />,
+    //   type: 'item',
+    //   url: '/dashboard/data',
+    //   icon: icons.Storage,
+    //   breadcrumbs: false
+    // }
   ]
 };
 
