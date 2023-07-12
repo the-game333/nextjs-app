@@ -17,11 +17,11 @@ import { useSelector } from 'store';
  */
 
 const GuestGuard = ({ children }: GuardProps) => {
-  const { isLoggedIn } = useSelector(state => state.auth);
+  const { isLoggedIn } = useSelector((state) => state.auth);
   const router = useRouter();
   const { onChangeMenuType } = useConfig();
   useEffect(() => {
-    onChangeMenuType('dark');
+    onChangeMenuType('light');
     if (isLoggedIn) {
       router.push(DASHBOARD_PATH);
     }

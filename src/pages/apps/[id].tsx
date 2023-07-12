@@ -38,7 +38,7 @@ const Apps = () => {
   const inputData = AppsInputData[path];
   const { onChangeMenuType } = useConfig();
   useEffect(() => {
-    onChangeMenuType('dark');
+    onChangeMenuType('light');
   }, []);
 
   const handleSubmit = async () => {

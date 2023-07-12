@@ -39,7 +39,7 @@ const FirebaseContext = createContext<FirebaseContextType | null>(null);
 export const FirebaseProvider = ({ children }: { children: React.ReactElement }) => {
   // const [state, dispatch] = useReducer(accountReducer, initialState);
   const dispatchF = useDispatch();
-  const state = useSelector(state => state.auth);
+  const state = useSelector((state) => state.auth);
 
   console.log(state);
   const router = useRouter();
@@ -51,7 +51,7 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
   //     type: LOGOUT
   //   });
   // }
-  // } 
+  // }
   // firebase.auth().onAuthStateChanged((user) => {
   //   if (user) {
   // dispatch({
@@ -75,7 +75,7 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
   // }, [dispatch]);
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
-  // 
+  //
   const firebaseEmailPasswordSignIn = (email: string, password: string) => firebase.auth().signInWithEmailAndPassword(email, password);
 
   const firebaseGoogleSignIn = () => {
@@ -84,6 +84,11 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
     return firebase.auth().signInWithPopup(provider);
   };
 
+  const firebaseGithubSignIn = () => {
+    const provider = new firebase.auth();
+
+    return firebase.auth().signInWithPopup(provider);
+  };
   const firebaseRegister = async (email: string, password: string) => firebase.auth().createUserWithEmailAndPassword(email, password);
 
   const logout = () => firebase.auth().signOut();
@@ -92,7 +97,7 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
     await firebase.auth().sendPasswordResetEmail(email);
   };
 
-  const updateProfile = () => { };
+  const updateProfile = () => {};
   if (state.isInitialized !== undefined && !state.isInitialized) {
     return <Loader />;
   }
@@ -102,10 +107,10 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
     snackbar(data.data);
     router.push('login');
     return data;
-  }
+  };
   const apiLogin = async (email: String, password: String) => {
     const { data } = await Login(email, password);
-    snackbar("You are logged successfully in Our Site.");
+    snackbar('You are logged successfully in Our Site.');
     dispatchF(rLogin(data));
     // dispatch({
     //   type: LOGIN,
@@ -115,7 +120,7 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
     //     // accessToken: data.accessToken
     //   }
     // });
-  }
+  };
 
   // const api = async (email: String, password: String) => {
   //   const { data } = await Login(email, password);
@@ -137,7 +142,7 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
         ...state,
         firebaseRegister,
         firebaseEmailPasswordSignIn,
-        login: () => { },
+        login: () => {},
         firebaseGoogleSignIn,
         logout,
         resetPassword,
