@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'Link';
 
 // material-ui
@@ -35,8 +35,11 @@ import AnimateButton from 'ui-component/extended/AnimateButton';
 // assets
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
+import { signIn, useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 const Google = '/assets/images/icons/social-google.svg';
+const Github = '/assets/images/icons/github.svg';
 
 // ============================|| FIREBASE - LOGIN ||============================ //
 
@@ -46,11 +49,21 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
   const { borderRadius } = useConfig();
   const [checked, setChecked] = React.useState(true);
+  const { data: session } = useSession();
+  const router = useRouter();
 
   const { firebaseEmailPasswordSignIn, firebaseGoogleSignIn, apiLogin } = useAuth();
   const googleHandler = async () => {
     try {
-      await firebaseGoogleSignIn();
+      await signIn('google');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const githubHandler = async () => {
+    try {
+      await signIn('github');
     } catch (err) {
       console.error(err);
     }
@@ -64,6 +77,12 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
   const handleMouseDownPassword = (event: React.SyntheticEvent) => {
     event.preventDefault();
   };
+
+  useEffect(() => {
+    if (session) {
+      router.push('/dashboard');
+    }
+  }, [session]);
 
   return (
     <>
@@ -86,6 +105,27 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
                 <Image src={Google} alt="Berry Dashboard" layout="intrinsic" width={'16'} height={'16'} />
               </Box>
               Sign in with Google
+            </Button>
+          </AnimateButton>
+        </Grid>
+        <Grid item xs={12}>
+          <AnimateButton>
+            <Button
+              disableElevation
+              fullWidth
+              onClick={githubHandler}
+              size="large"
+              variant="outlined"
+              sx={{
+                color: 'grey.700',
+                backgroundColor: theme.palette.mode === 'dark' ? theme.palette.dark.main : theme.palette.grey[50],
+                borderColor: theme.palette.mode === 'dark' ? theme.palette.dark.light + 20 : theme.palette.grey[100]
+              }}
+            >
+              <Box sx={{ mr: { xs: 1, sm: 2 }, width: 20, height: 20, marginRight: matchDownSM ? 8 : 16 }}>
+                <Image src={Github} alt="Berry Dashboard" layout="intrinsic" width={'16'} height={'16'} />
+              </Box>
+              Sign in with Github
             </Button>
           </AnimateButton>
         </Grid>
@@ -130,7 +170,7 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
       <Formik
         initialValues={{
           email: '',
-          password: '',
+          password: ''
           // submit: null
         }}
         validationSchema={Yup.object().shape({

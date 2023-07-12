@@ -32,11 +32,13 @@ import GuestGuard from 'layout/GuestGuard';
 import MinimalLayout from 'layout/MinimalLayout';
 import InfraLayout from 'layout/InfraLayout';
 import { LayoutType } from 'types';
+import { SessionProvider } from 'next-auth/react';
+
 const Noop: React.FC = ({ children }) => {
   return <> {children} </>;
 };
 
-function MyApp({ Component, pageProps }: AppProps & { Component: { Layout: LayoutType } }) {
+function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & { Component: { Layout: LayoutType } }) {
   let Layout;
   switch (Component.Layout) {
     case 'authGuard':
@@ -68,22 +70,24 @@ function MyApp({ Component, pageProps }: AppProps & { Component: { Layout: Layou
       </Head>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persister}>
-          <ConfigProvider>
-            <ThemeCustomization>
-              <RTLLayout>
-                <Locales>
-                  {/* <NavigationScroll> */}
-                  <AuthProvider>
-                    <Layout>
-                      <Component {...pageProps} />
-                      <Snackbar />
-                    </Layout>
-                  </AuthProvider>
-                  {/* </NavigationScroll> */}
-                </Locales>
-              </RTLLayout>
-            </ThemeCustomization>
-          </ConfigProvider>
+          <SessionProvider session={session}>
+            <ConfigProvider>
+              <ThemeCustomization>
+                <RTLLayout>
+                  <Locales>
+                    {/* <NavigationScroll> */}
+                    <AuthProvider>
+                      <Layout>
+                        <Component {...pageProps} />
+                        <Snackbar />
+                      </Layout>
+                    </AuthProvider>
+                    {/* </NavigationScroll> */}
+                  </Locales>
+                </RTLLayout>
+              </ThemeCustomization>
+            </ConfigProvider>
+          </SessionProvider>
         </PersistGate>
       </Provider>
     </>

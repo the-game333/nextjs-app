@@ -61,6 +61,7 @@
     "lodash": "^4.17.21",
     "material-ui-popup-state": "^2.0.0",
     "next": "12.1.0",
+    "next-auth": "^4.22.1",
     "next-transpile-modules": "^9.0.0",
     "react": "17.0.2",
     "react-apexcharts": "^1.4.0",

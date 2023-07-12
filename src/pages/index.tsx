@@ -54,7 +54,7 @@ const FullyWrapper = styled('div')(({ theme }) => ({
 const Landing: React.FC = () => {
   const { onChangeMenuType } = useConfig();
   useEffect(() => {
-    onChangeMenuType('dark');
+    onChangeMenuType('light');
   }, []);
   return (
     <>

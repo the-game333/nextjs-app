@@ -37,6 +37,7 @@ import useAuth from 'hooks/useAuth';
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
 import useConfig from 'hooks/useConfig';
 import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 
 const User1 = '/assets/images/users/user-round.svg';
 
@@ -59,7 +60,7 @@ const ProfileSection = () => {
   const anchorRef = useRef<any>(null);
   const handleLogout = async () => {
     try {
-      await logout();
+      await signOut();
     } catch (err) {
       console.error(err);
     }
@@ -253,7 +254,7 @@ const ProfileSection = () => {
                             }
                           }}
                         >
-                          <Link href={"/dashboard/account-settings"}>
+                          <Link href={'/dashboard/account-settings'}>
                             <ListItemButton
                               sx={{ borderRadius: `${borderRadius}px` }}
                               selected={selectedIndex === 0}

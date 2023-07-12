@@ -127,7 +127,7 @@ const index = () => {
   };
   const { onChangeMenuType } = useConfig();
   useEffect(() => {
-    onChangeMenuType('dark');
+    onChangeMenuType('light');
   }, []);
   return (
     <div>
