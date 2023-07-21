@@ -6,6 +6,10 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 // You change this configuration value to false so that the Font Awesome core SVG library will not try and insert <style> elements into the <head> of the page. Next.js blocks this from happening anyway so you might as well not even try.
 config.autoAddCss = false;
 
+// google tag manager
+import { useEffect } from 'react';
+import TagManager from 'react-gtm-module';
+
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 import { Provider } from 'react-redux';
@@ -59,6 +63,10 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & {
     default:
       Layout = Noop;
   }
+
+  useEffect(() => {
+    TagManager.initialize({ gtmId: 'G-RR7ES8TW6Q' });
+  }, []);
 
   return (
     <>
