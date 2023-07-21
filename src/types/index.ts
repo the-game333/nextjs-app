@@ -66,6 +66,7 @@ export type OverrideIcon =
     })
   | React.ComponentClass<any>
   | FunctionComponent<any>
+  // @ts-ignore
   | TablerIcon;
 
 export interface EnhancedTableHeadProps extends TableCellProps {
@@ -170,7 +171,7 @@ export type KeyedObject = {
 export interface InitialLoginContextProps {
   isLoggedIn: boolean;
   isInitialized?: boolean;
-  accessToken:String;
+  accessToken: String;
   user?: UserProfile | null | undefined;
 }
 
@@ -189,7 +190,7 @@ export interface FormInputProps {
 
 export type HandleFunction = (i: string, s: string) => Promise<void>;
 
-export type LayoutType = 'authGuard' | 'guestGuard' | 'minimalLayout' | 'infraLayout' |'dashboardLayout';
+export type LayoutType = 'authGuard' | 'guestGuard' | 'minimalLayout' | 'infraLayout' | 'dashboardLayout';
 /** ---- Common Functions types ---- */
 
 export type StringBoolFunc = (s: string) => boolean;

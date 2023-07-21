@@ -35,6 +35,7 @@ const Apps = () => {
     }[];
     // @ts-ignore
   } = AppsData[path];
+  // @ts-ignore
   const inputData = AppsInputData[path];
   const { onChangeMenuType } = useConfig();
   useEffect(() => {

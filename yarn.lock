@@ -3141,6 +3141,11 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-gtm-module@^2.0.1":
+  "integrity" "sha512-T/DN9gAbCYk5wJ1nxf4pSwmXz4d1iVjM++OoG+mwMfz9STMAotGjSb65gJHOS5bPvl6vLSsJnuC+y/43OQrltg=="
+  "resolved" "https://registry.npmjs.org/@types/react-gtm-module/-/react-gtm-module-2.0.1.tgz"
+  "version" "2.0.1"
+
 "@types/react-images@^1.1.0":
   "integrity" "sha512-pWhCHswxMVTvMEM2DWZ8L6NuJm52U2aLCxe+O3ab6YC7+6C8OHx6COT5M1j41XvuXCDvTu6n+fGy3XhWSiMKFw=="
   "resolved" "https://registry.npmjs.org/@types/react-images/-/react-images-1.1.0.tgz"

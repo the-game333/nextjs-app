@@ -37,6 +37,7 @@ const Explore = () => {
       desc: string;
     }[];
   }>();
+  // @ts-ignore
   const inputData = AppsInputData[path];
 
   const handleSubmit = async () => {
@@ -47,6 +48,7 @@ const Explore = () => {
   };
 
   useEffect(() => {
+    // @ts-ignore
     if (router.isReady && path) setPageData(AppsData[path]);
   }, [path]);
 

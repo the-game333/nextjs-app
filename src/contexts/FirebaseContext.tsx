@@ -85,7 +85,7 @@ export const FirebaseProvider = ({ children }: { children: React.ReactElement })
   };
 
   const firebaseGithubSignIn = () => {
-    const provider = new firebase.auth();
+    const provider = new (firebase.auth() as any)();
 
     return firebase.auth().signInWithPopup(provider);
   };
