@@ -37,6 +37,7 @@ import MinimalLayout from 'layout/MinimalLayout';
 import InfraLayout from 'layout/InfraLayout';
 import { LayoutType } from 'types';
 import { SessionProvider } from 'next-auth/react';
+import Script from 'next/script';
 
 const Noop: React.FC = ({ children }) => {
   return <> {children} </>;
@@ -76,6 +77,13 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="UZCBen_9acSNbhCD18KTr1GcKS70gGTy5JyzKa8LqVs" />
       </Head>
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-RR7ES8TW6Q" />
+      <Script id="google-analytics">
+        {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-RR7ES8TW6Q');`}
+      </Script>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persister}>
           <SessionProvider session={session}>
