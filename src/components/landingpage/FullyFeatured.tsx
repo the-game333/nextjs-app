@@ -123,7 +123,7 @@ const FullyFeatured = () => {
   return (
     <Container>
       <Grid container spacing={gridSpacing} alignItems={'center'}>
-        <Grid item md={7} sm={12}>
+        <Grid item md={7} sm={12} mt={10}>
           <Box
             component={'img'}
             alt="InfraHive - Animation Fully Featured"
@@ -134,17 +134,17 @@ const FullyFeatured = () => {
         </Grid>
         <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h1" fontSize={'3rem'}>
+            <Typography variant="h1" fontSize={'3rem'} sx={{color : "rgb(215, 220, 236)"}}>
               Full Stack AI Infrastructure, Production Ready APIs
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h2" fontWeight={'unset'}>
+            <Typography variant="h2" fontWeight={'unset'} sx={{color : "rgb(215, 220, 236)"}}>
               Build AI Apps on advanced LLMs and integrate with in your domain
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
-            <Button variant="outlined" href="https://calendly.com/infrahive/infrahive-demo" target={'_blank'} color="inherit" size="large">
+            <Button variant="outlined" href="https://calendly.com/infrahive/infrahive-demo" target={'_blank'} sx={{color : "rgb(215, 220, 236)"}} color="inherit" size="large">
               Request Access
             </Button>
           </Grid>

@@ -24,13 +24,13 @@ const BulitCommunityPage = () => {
       <Grid container spacing={gridSpacing} alignItems={'center'}>
         <Grid item md={4} sm={6} display={'flex'} flexDirection={'column'} gap={'20px'}>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h1" fontSize={'3rem'}>
+            <Typography variant="h1" fontSize={'3rem'} sx={{color : "rgb(215, 220, 236)"}}>
               Simplify <br />
               AI Development with <span style={{ color: 'rgb(253, 224, 71)' }}> InfraHive</span>
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h4" fontWeight={'unset'}>
+            <Typography variant="h4" fontWeight={'unset'} sx={{color : "rgb(215, 220, 236)"}}>
               At InfraHive, we're committed to empowering innovation through our state-of-the-art AI infrastructure. Our platform provides
               businesses and individuals with everything they need to build powerful AI apps with ease. From API integration to full-stack
               infrastructure, we've got you covered.

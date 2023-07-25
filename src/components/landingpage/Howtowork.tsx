@@ -17,7 +17,7 @@ const HowtowworksPage = () => {
         <Grid item xs={12} lg={5} md={10} margin={'auto'}>
           <Grid container textAlign={'center'} spacing={2} sx={{ mb: 2 }}>
             <Grid item xs={12}>
-              <Typography variant="h1" component="div">
+              <Typography variant="h1" component="div" sx={{ color: 'rgb(189, 200, 240)' , marginTop : "100px" }}>
                 How it works?
               </Typography>
             </Grid>

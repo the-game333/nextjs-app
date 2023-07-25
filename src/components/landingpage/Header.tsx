@@ -54,7 +54,8 @@ const HeaderPage = () => {
                     fontSize: { xs: '2.5rem', sm: '3.5rem', md: '3.5rem' },
                     fontWeight: 700,
                     lineHeight: 1.4,
-                    textAlign: 'left'
+                    textAlign: 'left',
+                    color : "rgb(215, 220, 236);"
                   }}
                 >
                   Build
@@ -115,7 +116,8 @@ const HeaderPage = () => {
                     fontWeight: 700,
                     lineHeight: 1.4,
                     textAlign: 'left',
-                    width: 'full'
+                    width: 'full',
+                    color : "rgb(215, 220, 236);"
                   }}
                 >
                   With Your Data
@@ -139,7 +141,8 @@ const HeaderPage = () => {
                     sx={{
                       fontSize: { xs: '1rem', md: '1.125rem' },
                       fontWeight: 400,
-                      lineHeight: 1.4
+                      lineHeight: 1.4,
+                    color : "rgb(215, 220, 236);"
                     }}
                   >
                     Build powerful AI apps with ease using InfraHive's state-of-the-art infrastructure and cutting-edge AI technologies.

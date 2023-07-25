@@ -162,7 +162,7 @@ const AppBar = ({ ...others }) => {
                 }
                 arrow
               >
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } , color : "rgb(189, 200, 240);"}} component={Link} target="_blank">
                   Products
                 </Button>
               </HtmlTooltip>
@@ -200,23 +200,23 @@ const AppBar = ({ ...others }) => {
                 }
                 arrow
               >
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }}>
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);"}}>
                   Solutions
                 </Button>
               </HtmlTooltip>
 
               <a href="/vision">
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
                   Vision
                 </Button>
               </a>
               <a href="/apps">
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
                   Pre-Built Apps
                 </Button>
               </a>
               <a href="/join">
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
                   Join Us
                 </Button>
               </a>
@@ -226,7 +226,7 @@ const AppBar = ({ ...others }) => {
                 </Button>
               </a> */}
               <a href="https://blog.infrahive.io/" target={'_blank'}>
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
                   Blog
                 </Button>
               </a>

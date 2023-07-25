@@ -17,7 +17,7 @@ const Howtowork2 = () => (
   <Container>
     <Grid container spacing={gridSpacing} minHeight={'650px'} py={5} px={5}>
       <Grid item textAlign={'center'} xs={12} lg={12} md={12} zIndex={2}>
-        <Typography variant="h1" component="div">
+        <Typography variant="h1" component="div" sx={{ color: 'rgb(189, 200, 240)' }}>
           We've built it so you don't have to
         </Typography>
       </Grid>
@@ -35,28 +35,30 @@ const Howtowork2 = () => (
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="h3">Generative AI</Typography>
+                <Typography sx={{ color: 'rgb(189, 200, 240)' }} variant="h3">
+                  Generative AI
+                </Typography>
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ color: 'rgb(189, 200, 240)' }}>
                   Powerful generative AI technologies, including ChatGPT, GPT-4, Dall-E, and more, for creating innovative AI applications.
                 </Typography>
                 <List>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
-                    <ListItemText primary="Text Completion" />
+                    <ListItemText primary="Text Completion"/>
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Image Generation" />
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Voice Creation" />
                   </ListItem>
@@ -147,28 +149,30 @@ const Howtowork2 = () => (
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="h3">Enterprise AI</Typography>
+                <Typography variant="h3" sx={{ color: 'rgb(189, 200, 240)' }}>
+                  Enterprise AI
+                </Typography>
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ color: 'rgb(189, 200, 240)' }}>
                   Empower businesses to automate processes, enhance customer experiences, and drive innovation with AI-powered solutions.{' '}
                 </Typography>
                 <List>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Power Existing Business with AI" />
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Custom AI Development" />
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Data Protection" />
                   </ListItem>
@@ -203,10 +207,12 @@ const Howtowork2 = () => (
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="h3">Consumer AI</Typography>
+                <Typography variant="h3" sx={{ color: 'rgb(189, 200, 240)' }}>
+                  Consumer AI
+                </Typography>
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ color: 'rgb(189, 200, 240)' }}>
                   Enjoy the benefits of AI-driven applications in your daily life with our user-friendly platform.
                   {/* this is coming soon style  */}
                   {/* <div style={{ color: 'yellow' }}>Coming soon...</div> */}
@@ -214,13 +220,13 @@ const Howtowork2 = () => (
                 <List>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Create ChatGPT for X" />
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Harness Power Generative AI in your app" />
                   </ListItem>
@@ -311,28 +317,30 @@ const Howtowork2 = () => (
                 />
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="h3">Developer AI</Typography>
+                <Typography variant="h3" sx={{ color: 'rgb(189, 200, 240)' }}>
+                  Developer AI
+                </Typography>
               </Grid>
               <Grid item xs={12} textAlign={'left'}>
-                <Typography variant="body2">
+                <Typography variant="body2" sx={{ color: 'rgb(189, 200, 240)' }}>
                   Integrate & Customise AI technologies easily with our scalable APIs and accessbile architecture.
                 </Typography>
                 <List>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="InfraSpeed: Train AI Models 15x faster" />
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Production-Ready APIs" />
                   </ListItem>
                   <ListItem disablePadding>
                     <ListItemIcon>
-                      <LabelIcon />
+                      <LabelIcon sx={{ color: 'rgb(189, 200, 240)' }} />
                     </ListItemIcon>
                     <ListItemText primary="Train AI Model with Custom Data" />
                   </ListItem>

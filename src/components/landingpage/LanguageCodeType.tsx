@@ -201,7 +201,7 @@ fmt.Println(resp)`
           sm={11}
           sx={{ backgroundColor: 'black', borderRadius: '20px', paddingLeft: '10px !important', paddingRight: '10px !important' }}
         >
-          <Grid container gap={'5px'}>
+          <Grid container gap={'5px'} sx={{color : "rgb(215, 220, 236)"}}>
             <Button
               variant={selectedLanguge === 0 ? 'contained' : 'outlined'}
               color={selectedLanguge === 0 ? 'primary' : 'inherit'}
@@ -304,15 +304,15 @@ fmt.Println(resp)`
         </Grid>
         <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h1" fontSize={'3rem'}>
+            <Typography variant="h1" fontSize={'3rem'} sx={{color : "rgb(215, 220, 236)"}}>
               An <span style={{ color: 'rgb(253, 224, 71)' }}> Infrastructure</span> that{' '}
               <span style={{ color: 'rgb(253, 224, 71)' }}> speaks</span> with your{' '}
               <span style={{ color: 'rgb(253, 224, 71)' }}> developers</span> in their{' '}
               <span style={{ color: 'rgb(253, 224, 71)' }}> language</span>
             </Typography>
           </Grid>
-          <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h2" fontWeight={'unset'}>
+          <Grid item xs={12} textAlign={'left'} >
+            <Typography variant="h2" fontWeight={'unset'} sx={{color : "rgb(215, 220, 236)"}}>
               Full control over the infrastructure with server-side SDK's for your preferred programming language
             </Typography>
           </Grid>

@@ -125,19 +125,19 @@ const InfraSpeed = () => {
       <Grid container spacing={gridSpacing} alignItems={'center'}>
         <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h1" fontSize={'3rem'}>
+            <Typography variant="h1" fontSize={'3rem'} sx={{color : "rgb(215, 220, 236)"}}>
               <span className="text-xl">Introducing</span>
               <br />
               <span className="text-infra-yellow">InfraSpeed</span>
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h2" fontWeight={'unset'}>
+            <Typography variant="h2" fontWeight={'unset'} sx={{color : "rgb(215, 220, 236)"}}>
               Train & Fine-Tune AI Models <span className="text-infra-yellow">15x Faster</span>
             </Typography>
           </Grid>
           <Grid item xs={12} textAlign={'left'}>
-            <Button variant="outlined" href="https://calendly.com/infrahive/infrahive-demo" target={'_blank'} color="inherit" size="large">
+            <Button sx={{color : "rgb(215, 220, 236)"}} variant="outlined" href="https://calendly.com/infrahive/infrahive-demo" target={'_blank'} color="inherit" size="large">
               Request Access
             </Button>
           </Grid>

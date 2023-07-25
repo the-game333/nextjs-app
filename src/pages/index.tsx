@@ -43,7 +43,8 @@ const ThirdWrapper = styled('div')(({ theme }) => ({
 }));
 const FullyWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
-  paddingTop: 100,
+  // paddingTop: 100,
+  backgroundColor: 'rgb(0, 0, 0)',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }

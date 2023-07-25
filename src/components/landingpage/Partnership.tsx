@@ -2,7 +2,7 @@ import React from 'react';
 
 const Partnership = () => {
   return (
-    <div className="mx-auto mb-24 md:max-w-5xl lg:max-w-6xl">
+    <div className="mx-auto md:max-w-5xl lg:max-w-6xl bg-black ">
       <hr className="mb-16 opacity-20" />
       <p className="mx-4 my-8 text-lg text-white opacity-60">
         InfraHive works with <span className="underline">Generative AI Companies</span>
