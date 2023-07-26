@@ -4,7 +4,7 @@ import AppBar from 'ui-component/extended/AppBar';
 
 const index = () => {
   return (
-    <div>
+    <div className='bg-black'>
       <AppBar />
       <div className="max-w-2xl mx-auto py-24 text-white">
         <h1 className="text-5xl text-infra-yellow mx-8">join us</h1>

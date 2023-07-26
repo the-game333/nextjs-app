@@ -85,7 +85,7 @@ const AppBar = ({ ...others }) => {
       <MuiAppBar
         position="sticky"
         sx={{
-          background: others.background + ' !important'
+          background:`${others.background} !important`
         }}
       >
         <Container>
@@ -136,7 +136,7 @@ const AppBar = ({ ...others }) => {
               </HtmlTooltip> */}
               <HtmlTooltip
                 title={
-                  <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(189, 200, 240)' }}>
                     <CardContent>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
@@ -162,14 +162,19 @@ const AppBar = ({ ...others }) => {
                 }
                 arrow
               >
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } , color : "rgb(189, 200, 240);"}} component={Link} target="_blank">
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  component={Link}
+                  target="_blank"
+                >
                   Products
                 </Button>
               </HtmlTooltip>
 
               <HtmlTooltip
                 title={
-                  <Card sx={{ boxShadow: '0px 1px 4px 0px black' }}>
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(189, 200, 240)' }}>
                     <CardContent>
                       <Grid container spacing={10}>
                         <Grid item md={3} display={'flex'} flexDirection={'column'} gap={'20px'}>
@@ -200,23 +205,38 @@ const AppBar = ({ ...others }) => {
                 }
                 arrow
               >
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);"}}>
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}>
                   Solutions
                 </Button>
               </HtmlTooltip>
 
               <a href="/vision">
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  component={Link}
+                  target="_blank"
+                >
                   Vision
                 </Button>
               </a>
               <a href="/apps">
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  component={Link}
+                  target="_blank"
+                >
                   Pre-Built Apps
                 </Button>
               </a>
               <a href="/join">
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  component={Link}
+                  target="_blank"
+                >
                   Join Us
                 </Button>
               </a>
@@ -226,7 +246,12 @@ const AppBar = ({ ...others }) => {
                 </Button>
               </a> */}
               <a href="https://blog.infrahive.io/" target={'_blank'}>
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }  , color : "rgb(189, 200, 240);" }} component={Link} target="_blank">
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  component={Link}
+                  target="_blank"
+                >
                   Blog
                 </Button>
               </a>

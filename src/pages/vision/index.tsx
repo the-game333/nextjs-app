@@ -4,7 +4,7 @@ import AppBar from 'ui-component/extended/AppBar';
 
 const Card = (props: { heading: string; desc: string; key: number }) => {
   return (
-    <div key={props.key} className="p-6 bg-black text-white  rounded-lg">
+    <div key={props.key} className="rounded-lg bg-black p-6  text-white">
       <h2 className="text-5xl text-infra-yellow">{props.heading}</h2>
       <p className="text-xl leading-relaxed">{props.desc}</p>
     </div>
@@ -31,13 +31,12 @@ const index = () => {
     }
   ];
   return (
-    <div>
+    <div className="bg-black">
       <AppBar />
-      {/* Vision */}
-      <div className=" py-24 mx-4">
-        <div className="max-w-2xl lg:max-w-3xl mx-auto">
+      <div className=" mx-4 py-24">
+        <div className="mx-auto max-w-2xl lg:max-w-3xl">
           <h1 className="text-5xl text-infra-yellow">vision</h1>
-          <p className="text-xl leading-relaxed">
+          <p className="text-xl leading-relaxed text-[#BDC8F0]">
             We envision a future where accessing and utilizing cutting-edge AI technologies is seamless and accessible to all. We strive to
             empower innovation, simplify complex processes, and unlock the transformative potential of AI across industries.
           </p>
@@ -45,8 +44,8 @@ const index = () => {
       </div>
 
       {/* Cards */}
-      <div className=" py-24 mx-4">
-        <div className="grid grid-cols-1 lg:grid-cols-2 max-w-xl lg:max-w-5xl mx-auto gap-6">
+      <div className=" mx-4 py-24">
+        <div className="mx-auto grid max-w-xl grid-cols-1 gap-6 lg:max-w-5xl lg:grid-cols-2">
           {CardData.map((card, index) => (
             <Card heading={card.heading} desc={card.desc} key={index} />
           ))}
