@@ -32,7 +32,7 @@ const index = () => {
   ];
   return (
     <div className="bg-black">
-      <AppBar />
+      <AppBar background={'transparent'} />
       <div className=" mx-4 py-24">
         <div className="mx-auto max-w-2xl lg:max-w-3xl">
           <h1 className="text-5xl text-infra-yellow">vision</h1>

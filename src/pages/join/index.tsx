@@ -5,7 +5,7 @@ import AppBar from 'ui-component/extended/AppBar';
 const index = () => {
   return (
     <div className='bg-black'>
-      <AppBar />
+      <AppBar background={'transparent'} />
       <div className="max-w-2xl mx-auto py-24 text-white">
         <h1 className="text-5xl text-infra-yellow mx-8">join us</h1>
         <p className="text-xl leading-relaxed mt-12 mx-8">

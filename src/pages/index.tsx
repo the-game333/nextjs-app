@@ -18,11 +18,12 @@ import { Box } from '@mui/material';
 import useConfig from 'hooks/useConfig';
 import { useEffect } from 'react';
 import Partnership from 'components/landingpage/Partnership';
-
+import NewHeader from 'components/landingpage/NewHeader';
+import Patter from '../../public/Pattern.png';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
   overflowY: 'clip',
-  backgroundColor: 'black'
+  backgroundColor: '#0E0C15',
 }));
 
 const SecondWrapper = styled('div')(({ theme }) => ({
@@ -62,7 +63,7 @@ const Landing: React.FC = () => {
       <HeaderWrapper id="home">
         {/* <Banner /> */}
         <AppBar background={'transparent'} />
-        <Box
+        {/* <Box
           component={'img'}
           src="/assets/images/header/background.svg"
           sx={{
@@ -73,8 +74,9 @@ const Landing: React.FC = () => {
             width: '100%'
           }}
           alt="InfraHive - Background"
-        />
-        <Header />
+        /> */}
+        {/* <Header /> */}
+        <NewHeader />
       </HeaderWrapper>
       <FullyWrapper>
         <Partnership />
@@ -112,11 +114,10 @@ const Landing: React.FC = () => {
         <LanguageCodeType />
       </FullyWrapper>
 
-      <ThirdWrapper>
-        {/* <Subscribe /> */}
+      {/* <ThirdWrapper>
         <Notification />
         <Footer />
-      </ThirdWrapper>
+      </ThirdWrapper> */}
       {/* <Customization /> */}
     </>
   );

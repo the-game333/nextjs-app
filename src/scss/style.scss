@@ -6,6 +6,7 @@
 @import '~slick-carousel/slick/slick.css';
 @import '~slick-carousel/slick/slick-theme.css';
 
+
 // ==============================|| LIGHT BOX ||============================== //
 .slick-arrow:before {
   color: $grey500;
@@ -316,4 +317,24 @@
   100% {
     transform: rotateX(360deg);
   }
+}
+
+@keyframes slide-up {
+  0% {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+
+  50%  {
+    opacity: 0.5;
+    transform: translateY(50%);
+}
+
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+.animate-slide-up {
+  animation: spincube 2s infinite 0.5s forwards; ;
 }
