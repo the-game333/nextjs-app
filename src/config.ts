@@ -40,7 +40,7 @@ export const DASHBOARD_PATH = '/dashboard';
 export const HOME_PATH = '/';
 
 const config: ConfigProps = {
-  fontFamily: `'Roboto', sans-serif`,
+  fontFamily: `'Sansita', 'Poppins', sans-serif`,
   borderRadius: 8,
   outlinedFilled: true,
   navType: 'light', // light, dark

@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Bee from '../../../public/bee.png';
 import Image from 'next/image';
-import { Typography } from '@mui/material';
-
-const labels = ['AI-powered Apps'];
-
+import { Typography, createStyles } from '@mui/material';
+import Pattern from '../../../public/Pattern.png';
 export default function NewHeader() {
+  const labels = ['Generative AI', 'Enterprise AI'];
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % labels.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <div className="relative mb-10" id="home">
+    <div className="relative mb-20" id="home">
+      <div className="absolute top-0 h-full">
+        <Image src={Pattern} />
+      </div>
       <div aria-hidden="true" className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
         <div className="from-primary h-56 bg-gradient-to-br to-purple-400 blur-[106px] dark:from-blue-700"></div>
         <div className="h-32 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
@@ -60,37 +72,72 @@ export default function NewHeader() {
               </span>
             </span>
           </h1>
-          <h1 className="  text-4xl font-bold text-gray-900 dark:text-white md:text-5xl xl:text-6xl">
-            Supercharge{' '}
-            {/* <h1 className='cubespinner'>
+          <p
+            style={{
+              height: '50%',
+              width: '25%',
+              top: '30%',
+              left: '30%',
+              transform: 'translateX(50%)',
+              position: 'absolute',
+              borderRadius: '582px',
+              background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+              filter: 'blur(100px)'
+            }}
+          ></p>
+          <div className=" heading inline-flex p-2 text-5xl font-bold text-gray-900 dark:text-white">
+            <h1> Supercharge </h1>
+            {/* <div className="cubespinner">
               {labels.map((label, index) => (
-                <span
+                <h5
                   key={index}
-                  className=" text-[#FEDE00] "
+                  className={`face${index + 1} cubespinner ${currentIndex === index ? 'visible' : 'hidden'}`}
                   style={{
-                    fontWeight: 700,
-                    lineHeight: 1.4,
-                    // background: 'linear-gradient(90.13deg,rgb(254, 249, 195) .11%,rgb(253, 224, 71) 25.06%,rgb(234, 179, 8) )',
+                    background: 'linear-gradient(90.13deg, rgb(254, 249, 195) .11%, rgb(253, 224, 71) 25.06%, rgb(234, 179, 8))',
+                    WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent'
                   }}
                 >
                   {label}
-                </span>
+                </h5>
               ))}
-              </h1> */}
-           
-            <span
+            </div> */}
+            <div className="animated">
+              <h5 style={{ color: '#FEDE00' }}>AI Powered Apps</h5>
+              <h5
+                style={{
+                  color: '#00FE75'
+                }}
+              >
+                Generative AI
+              </h5>
+              <h5
+                style={{
+                  color: '#E35961'
+                }}
+              >
+                LLM Platforms
+              </h5>
+              <h5
+                style={{
+                  color: '#4B82D8'
+                }}
+              >
+                Teams & More
+              </h5>
+            </div>
+            {/* <span
               className=" animate-slide-up text-[#FEDE00] 
             "
             >
               AI-Powered Apps
-            </span>
-          </h1>
+            </span> */}
+          </div>
           <p className="mx-14 mt-8 leading-[1.5rem] text-gray-700 dark:text-gray-300">
             Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps, LLM-powered
             Workflows, Tools and more, at Unmatched speed.
           </p>
-          <div className="mt-16 flex flex-wrap justify-center gap-x-6 gap-y-4">
+          <div className="relative mt-16 flex flex-wrap justify-center gap-x-6 gap-y-4">
             <a
               href="#"
               className="before:bg-primary relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
@@ -118,8 +165,10 @@ export default function NewHeader() {
             </a>
           </div>
         </div>
+        <div className="absolute bottom-0">
+          <Image src={Pattern} />
+        </div>
       </div>
-      {/* </Container> */}
     </div>
   );
 }

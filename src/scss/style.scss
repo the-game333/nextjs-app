@@ -6,7 +6,6 @@
 @import '~slick-carousel/slick/slick.css';
 @import '~slick-carousel/slick/slick-theme.css';
 
-
 // ==============================|| LIGHT BOX ||============================== //
 .slick-arrow:before {
   color: $grey500;
@@ -26,9 +25,8 @@
 // ==============================|| PERFECT SCROLLBAR ||============================== //
 .scrollbar-container {
   .ps__rail-y {
-
-    &:hover>.ps__thumb-y,
-    &:focus>.ps__thumb-y,
+    &:hover > .ps__thumb-y,
+    &:focus > .ps__thumb-y,
     &.ps--clicking .ps__thumb-y {
       background-color: $grey500;
       width: 5px;
@@ -44,8 +42,8 @@
 }
 
 .scrollbar-container.ps,
-.scrollbar-container>.ps {
-  &.ps--active-y>.ps__rail-y {
+.scrollbar-container > .ps {
+  &.ps--active-y > .ps__rail-y {
     width: 5px;
     background-color: transparent !important;
     z-index: 999;
@@ -57,8 +55,8 @@
     }
   }
 
-  &.ps--scrolling-y>.ps__rail-y,
-  &.ps--scrolling-x>.ps__rail-x {
+  &.ps--scrolling-y > .ps__rail-y,
+  &.ps--scrolling-x > .ps__rail-x {
     opacity: 0.4;
     background-color: transparent;
   }
@@ -87,7 +85,6 @@
 }
 
 @keyframes bounce {
-
   0%,
   20%,
   53%,
@@ -118,7 +115,6 @@
 }
 
 @keyframes slideY {
-
   0%,
   50%,
   100% {
@@ -135,7 +131,6 @@
 }
 
 @keyframes slideX {
-
   0%,
   50%,
   100% {
@@ -217,66 +212,63 @@
   animation-name: spincube;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
-  animation-duration: 12s;
-  transform-style: preserve-3d;
-  transform-origin: 30px 30px 0;
-  width: 36%;
-  height: 3rem;
+  animation-duration: 5s;
+  // transform-style: preserve-3d;
+  // transform-origin: 30px 30px 0;
+  // width: 36%;
+  // height: 3rem;
 
-  @screen sm {
-    transform-origin: 36px 36px 0;
-    height: 3rem;
-  }
-  @screen  md{
-    
-  }
-  @screen lg {
-    transform-origin: 45px 45px 0;
-    height: auto;
-  }
+  // @screen sm {
+  //   transform-origin: 36px 36px 0;
+  //   height: 3rem;
+  // }
+  // @screen md {
+  // }
+  // @screen lg {
+  //   transform-origin: 45px 45px 0;
+  //   height: auto;
+  // }
 }
 
 .cubespinner h5 {
-  position: absolute;
-  height: 60px;
-  text-align: center;
-  max-width: max-content;
+  // position: absolute;
+  // height: 60px;
+  // text-align: center;
+  // max-width: max-content;
 
-  
+  // @screen sm {
+  //   height: 72px;
+  // }
 
-  @screen sm {
-    height: 72px;
-  }
-
-  @screen lg {
-    height: 90px;
-  }
+  // @screen lg {
+  //   height: 90px;
+  // }
 }
 
 .cubespinner .face1 {
-  transform: translateZ(30px);
+  // transform: translateZ(30px);
   -webkit-backface-visibility: hidden;
 
-  @screen sm {
-    transform: translateZ(36px);
-  }
+  // @screen sm {
+  //   transform: translateZ(36px);
+  // }
 
-  @screen lg {
-    transform: translateZ(45px);
-  }
+  // @screen lg {
+  //   transform: translateZ(45px);
+  // }
 }
 
 .cubespinner .face2 {
-  transform: rotateX(120deg) translateZ(30px);
+  // transform: rotateX(120deg) translateZ(30px);
   -webkit-backface-visibility: hidden;
 
-  @screen sm {
-    transform: rotateX(120deg) translateZ(36px);
-  }
+  // @screen sm {
+  //   transform: rotateX(120deg) translateZ(36px);
+  // }
 
-  @screen lg {
-    transform: rotateX(120deg) translateZ(45px);
-  }
+  // @screen lg {
+  //   transform: rotateX(120deg) translateZ(45px);
+  // }
 }
 
 // .cubespinner .face3 {
@@ -293,48 +285,74 @@
 // }
 
 @keyframes spincube {
-
-  from,
-  to {
-    transform: rotateX(0deg);
-  }
-
-  0%,
-  30% {
-    transform: rotateX(0deg);
-  }
-
-  // 33%,
-  // 58% {
-  //   transform: rotateX(120deg);
-  // }
-
-  51%,
-  80% {
-    transform: rotateX(240deg);
-  }
-
   100% {
-    transform: rotateX(360deg);
+    transform: translateY(0rem);
   }
-}
-
-@keyframes slide-up {
+  75% {
+    transform: translateY(8rem);
+  }
+  50% {
+    transform: translateY(8rem);
+  }
+  25% {
+    transform: translateY(8rem);
+  }
   0% {
-      opacity: 0;
-      transform: translateY(100%);
+    transform: translateY(8rem);
   }
-
-  50%  {
-    opacity: 0.5;
-    transform: translateY(50%);
 }
 
+.heading {
+  // padding: 8px;
+  // border: 1px solid #009090;
+  overflow: hidden;
+  // display: flex;
+  // max-height: 1.25rem;
+}
+h2 {
+  padding: 0;
+  margin: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+.heading .animated {
+  // color: #008080;
+  max-height: 2rem;
+  animation-name: spincube;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+}
+@keyframes spincube {
   100% {
-      opacity: 1;
-      transform: translateY(0);
+    transform: translateY(0rem);
   }
-}
-.animate-slide-up {
-  animation: spincube 2s infinite 0.5s forwards; ;
+
+  95% {
+    transform: translateY(-10.25rem);
+  }
+  80% {
+    transform: translateY(-10.75rem);
+  }
+  65% {
+    transform: translateY(-6.75rem);
+  }
+  60% {
+    transform: translateY(-7.25rem);
+  }
+  45% {
+    transform: translateY(-3.75rem);
+  }
+  40% {
+    transform: translateY(-4rem);
+  }
+  25% {
+    transform: translateY(-0.5rem);
+  }
+  20% {
+    transform: translateY(-1rem);
+  }
+  0% {
+    transform: translateY(0rem);
+  }
 }

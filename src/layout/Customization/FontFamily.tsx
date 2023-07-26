@@ -22,7 +22,7 @@ const FontFamily = () => {
       break;
     case `'Roboto', sans-serif`:
     default:
-      initialFont = 'Roboto';
+      initialFont = `'Sansita', 'Roboto'`;
       break;
   }
 
