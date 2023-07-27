@@ -1,19 +1,108 @@
 import React from 'react';
-
+import Robot from '../../../public/assets/images/Robot.png';
+import ChatGPT from '../../../public/assets/images/ChatGPT.png';
+import Image from 'next/image';
 const Partnership = () => {
   return (
-    <div className="mx-auto md:max-w-5xl lg:max-w-6xl bg-black ">
-      <hr className="mb-16 opacity-20" />
-      <p className="mx-4 my-8 text-lg text-white opacity-60">
-        InfraHive works with <span className="underline">Generative AI Companies</span>
-      </p>
-      <div className="mx-4 mt-12 grid  grid-cols-2 items-center gap-2 opacity-60 md:grid-cols-4">
-        <img src="/assets/images/logos/openai.png" alt="Open AI Logo" className="mr-8 h-8 md:h-12" />
-        <span className="my-auto text-3xl font-bold text-white md:-ml-6 md:text-4xl">ANTHROP\C</span>
-        <img src="/assets/images/logos/cohere.svg" className="h-8 md:h-10 " alt="Cohere Logo" />
-        <p className="my-auto text-center text-3xl font-bold text-white md:text-4xl">stability.ai</p>
+    <div className="mx-auto md:max-w-5xl lg:max-w-6xl pt-20">
+      <div className="text-gray-600 dark:text-gray-300" id="testimonials">
+        <div className="mb-20 space-y-4 px-6 md:px-0">
+          <h2 className="text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">
+            The Product{' '}
+            <span className="relative">
+              Philosophy{' '}
+              <span className="absolute left-0 top-14">
+                <svg
+                  className="lg:w-55 mx-auto w-40 sm:w-40 md:w-60 xl:w-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="249"
+                  height="17"
+                  viewBox="0 0 249 17"
+                  fill="none"
+                >
+                  <path
+                    d="M1.5 16.0001C26.4689 5.1524 193.217 -2.00002 248 3.50006"
+                    stroke="url(#paint0_linear_47_101)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_47_101"
+                      x1="10.3914"
+                      y1="14.1023"
+                      x2="242.344"
+                      y2="14.1023"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FEC200" />
+                      <stop offset="0.340447" stop-color="#BEF393" />
+                      <stop offset="0.646993" stop-color="#7A46B6" />
+                      <stop offset="1" stop-color="#EF6DF5" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>{' '}
+            </span>
+          </h2>
+        </div>
+        <div className="gap-6 space-y-8 md:columns-2 lg:columns-4">
+          <div className="relative aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+            <div className="flex gap-4">
+              <div>
+                <h6 className="text-2xl font-medium text-gray-700 dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
+                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+              </div>
+            </div>
+            <p className="relative mt-8 leading-6 text-[#C2C2C2]">
+              We prioritize human-centric AI development to enhance abilities, streamline processes, and improve user experiences.
+            </p>
+            <div className="absolute bottom-0 left-20 right-0 opacity-10">
+              <Image src={Robot} />
+            </div>
+          </div>
+          <div className="aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+            <div className="flex gap-4">
+              <div>
+                <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Uncompromising Data Security & Privacy</h6>
+                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+              </div>
+            </div>
+            <p className="mt-8 leading-6 text-[#C2C2C2]">
+              {' '}
+              Our AI solutions prioritize ethics, responsibility, and societal benefit. Designed towards fairness, transparency, and privacy
+              protection in every aspect of deployment.
+            </p>
+          </div>
+          <div className="aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+            <div className="flex gap-4">
+              <div>
+                <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Where Solutions Transend Boundaries</h6>
+                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
+              </div>
+            </div>
+            <p className="mt-8 leading-6 text-[#C2C2C2]">
+              Pursuing innovation, embracing challenges with audacious ideas to improve experiences, products and possibilities.
+            </p>
+          </div>
+          <div className="relative aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+            <div className="flex gap-4">
+              <div>
+                <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Architecting Tomorrow with AI Core</h6>
+                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
+              </div>
+            </div>
+            <p className="mt-8 leading-6 text-[#C2C2C2]">
+              Making AI the cornerstone of progress for all sectors. A bold vision to build foundations with innovative solutions
+              anticipating challenges and forge new paths to success.
+            </p>
+            <div className="absolute bottom-0 left-20 right-0 opacity-10">
+              <Image src={ChatGPT} />
+            </div>
+          </div>
+        </div>
       </div>
-      <hr className="mt-16 opacity-20" />
     </div>
   );
 };

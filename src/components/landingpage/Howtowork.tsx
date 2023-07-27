@@ -1,89 +1,165 @@
-// material-ui
-import { useTheme } from '@mui/material/styles';
-import { Box, Container, Divider, Grid, Typography } from '@mui/material';
+import Image from 'next/image';
+import React from 'react';
+import Mobile from '../../../public/assets/images/Mobile.png';
+import Logs from '../../../public/assets/images/Logs.png';
+import Code from '../../../public/assets/images/Code.png';
+import Image1 from '../../../public/assets/images/Image1.png';
+import Image2 from '../../../public/assets/images/Image2.png';
+import Image3 from '../../../public/assets/images/Image3.png';
+import Image4 from '../../../public/assets/images/Image4.png';
+import Image5 from '../../../public/assets/images/Image5.png';
 
-// project imports
-import FadeInWhenVisible from './Animation';
-import SubCard from 'ui-component/cards/SubCard';
-import { gridSpacing } from 'store/constant';
-
-// =============================|| LANDING - FEATURE PAGE ||============================= //
-
-const HowtowworksPage = () => {
-  const theme = useTheme();
+export default function Howtowork() {
   return (
-    <Container>
-      <Grid container spacing={gridSpacing}>
-        <Grid item xs={12} lg={5} md={10} margin={'auto'}>
-          <Grid container textAlign={'center'} spacing={2} sx={{ mb: 2 }}>
-            <Grid item xs={12}>
-              <Typography variant="h1" component="div" sx={{ color: 'rgb(189, 200, 240)' , marginTop : "100px" }}>
-                How it works?
-              </Typography>
-            </Grid>
-          </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container justifyContent="center" spacing={gridSpacing} sx={{ textAlign: 'center' }}>
-            <Grid item md={4} sm={6}>
-              <FadeInWhenVisible>
-                <SubCard>
-                  <Grid container justifyContent="center" spacing={2}>
-                    <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
-                      <Box component={'img'} alt="Create App - InfraHive" src={'/assets/images/cards/create-app.png'} width={'100%'} />
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="h3">Create AI App with One-Click</Typography>
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="body2">Select Use Case, Choose AI Model</Typography>
-                    </Grid>
-                  </Grid>
-                </SubCard>
-              </FadeInWhenVisible>
-            </Grid>
-            <Grid item md={4} sm={6}>
-              <FadeInWhenVisible>
-                <SubCard>
-                  <Grid container justifyContent="center" spacing={2}>
-                    <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
-                      <Box component={'img'} alt="Connect Data - InfraHive" src={'/assets/images/cards/connect-data.png'} width={'100%'} />
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="h3">Connect Data</Typography>
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="body2">
-                        Train AI Model with your Data with supported formats as PDFs, CSVs, TEXTs, URLs, Google Drive, DropBox, etc.
-                      </Typography>
-                    </Grid>
-                  </Grid>
-                </SubCard>
-              </FadeInWhenVisible>
-            </Grid>
-            <Grid item md={4} sm={6}>
-              <FadeInWhenVisible>
-                <SubCard>
-                  <Grid container justifyContent="center" spacing={2}>
-                    <Grid item xs={12} md={12} sx={{ padding: '0 !important' }}>
-                      <Box component={'img'} alt="Deploy App - InfraHive" src={'/assets/images/cards/deploy-app.png'} width={'100%'} />
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="h3">Deploy App</Typography>
-                    </Grid>
-                    <Grid item xs={12} textAlign={'left'}>
-                      <Typography variant="body2">Deploy App or Integrate in your App with Production-Ready APIS</Typography>
-                    </Grid>
-                  </Grid>
-                </SubCard>
-              </FadeInWhenVisible>
-            </Grid>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Divider sx={{ mt: 15 }} />
-    </Container>
+    <div className="mx-auto pt-32 md:max-w-5xl lg:max-w-6xl">
+      <div className="text-gray-600 dark:text-gray-300" id="testimonials">
+        <div className="space-y-4 px-6 pb-10 md:px-0">
+          <h2 className="text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">
+            Easy-to-use LLMOps{' '}
+            <span className="relative">
+              platform{' '}
+              <span className="absolute left-0 top-14">
+                <svg
+                  className="lg:w-55 mx-auto w-40 sm:w-40 md:w-60 xl:w-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="249"
+                  height="17"
+                  viewBox="0 0 249 17"
+                  fill="none"
+                >
+                  <path
+                    d="M1.5 16.0001C26.4689 5.1524 193.217 -2.00002 248 3.50006"
+                    stroke="url(#paint0_linear_47_101)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_47_101"
+                      x1="10.3914"
+                      y1="14.1023"
+                      x2="242.344"
+                      y2="14.1023"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FEC200" />
+                      <stop offset="0.340447" stop-color="#BEF393" />
+                      <stop offset="0.646993" stop-color="#7A46B6" />
+                      <stop offset="1" stop-color="#EF6DF5" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>{' '}
+            </span>
+          </h2>
+        </div>
+        <div className="relative ml-auto">
+          <div className="mx-auto text-center lg:w-2/3">
+            <p className="font- text-base leading-7 text-gray-700 dark:text-gray-300">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum.
+              Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!
+            </p>
+          </div>
+        </div>
+      </div>
+      <div className="grid grid-cols-5 gap-8 space-y-8 pt-10 md:columns-1">
+        <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="flex gap-4">
+            <div>
+              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">
+                Create & Craft AI-driven apps in mere <span className="text-[#FEC200]">minutes</span>
+              </h6>
+              {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+            </div>
+          </div>
+          <p className="mt-8 leading-7  text-[#C2C2C2]">
+            {' '}
+            Whether it's for your team's internal operations or an external launch, you have the power to effortlessly deploy your
+            application in just 5 minutes.
+          </p>
+          <div>
+            <Image src={Mobile} height={250} width={350} />
+          </div>
+        </div>
+        <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="flex gap-4">
+            <div>
+              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">
+                Leverage your data to enhance AI capabilities
+              </h6>
+              {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+            </div>
+          </div>
+          <p className="mt-8 leading-7 text-[#C2C2C2]">
+            {' '}
+            By utilizing documents, webpages, or Notion content as the foundation for AI, you can effortlessly streamline text
+            preprocessing, vectorization, and segmentation. Say No to the need for extensive embedding technique learning, and save valuable
+            weeks of development time with this innovation. Get ready to take your AI endeavors to new heights!
+          </p>
+          <div className="relative h-4 ">
+            <p className="mt-8 leading-7 text-[#C2C2C2]">Building Index...</p>
+            <div className="absolute h-full w-full rounded-full bg-gray-200"></div>
+            <div className="absolute h-full w-2/4 rounded-full bg-yellow-500"></div>
+          </div>
+          <div className="mt-20 grid grid-cols-5 items-center gap-4">
+            <div>
+              <Image src={Image1} />
+            </div>
+            <div>
+              <Image src={Image2} />
+            </div>
+            <div>
+              <Image src={Image3} />
+            </div>
+            <div>
+              <Image src={Image4} />
+            </div>
+            <div>
+              <Image src={Image5} />
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+      <div className="grid grid-cols-5 gap-8 space-y-8 pt-10 md:columns-1">
+        <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="flex gap-4">
+            <div>
+              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">Streamlined set of APIs</h6>
+              {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+            </div>
+          </div>
+          <p className="mt-8 leading-7  text-[#C2C2C2] text-base">
+            {' '}
+            Take integration to the next level..! Our API design follows the innovative back-end as a service concept, allowing you to
+            access just one API interface to effortlessly integrate plugins and maintain long-lasting connections. Say goodbye to complexity
+            and hello to seamless integration!
+          </p>
+          <div className="pt-5">
+            <Image src={Code} className="rounded-xl" height={250} width={350} />
+          </div>
+        </div>
+        <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="flex gap-4">
+            <div>
+              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">Continuous improvement and operation</h6>
+              {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+            </div>
+          </div>
+          <p className="mt-8 leading-7 text-[#C2C2C2] text-base">
+            {' '}
+            Embracing and unlock the potential of AI applications. Continuously refine and optimize its capabilities through active
+            engagement with the technology by visually inspecting logs and annotating data to enhance their performance.
+          </p>
+          <div className="mt-20 grid grid-cols-5 items-center gap-4">
+            <div className='max-w-[618px] h-[100px]'>
+              <Image src={Logs} />
+            </div>
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default HowtowworksPage;
+}

@@ -18,18 +18,17 @@ import { Box } from '@mui/material';
 import useConfig from 'hooks/useConfig';
 import { useEffect } from 'react';
 import Partnership from 'components/landingpage/Partnership';
-import NewHeader from 'components/landingpage/NewHeader';
-import Patter from '../../public/Pattern.png';
+// import NewHeader from 'components/landingpage/NewHeader';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
   overflowY: 'clip',
-  backgroundColor: '#0E0C15',
+  backgroundColor: '#0E0C15'
 }));
 
 const SecondWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
-  paddingTop: 10,
-  background: 'black',
+  paddingTop: 30,
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('md')]: {
     paddingTop: 60
   }
@@ -37,7 +36,7 @@ const SecondWrapper = styled('div')(({ theme }) => ({
 const ThirdWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 60,
-  background: 'black',
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }
@@ -45,7 +44,7 @@ const ThirdWrapper = styled('div')(({ theme }) => ({
 const FullyWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   // paddingTop: 100,
-  backgroundColor: 'rgb(0, 0, 0)',
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }
@@ -75,8 +74,8 @@ const Landing: React.FC = () => {
           }}
           alt="InfraHive - Background"
         /> */}
-        {/* <Header /> */}
-        <NewHeader />
+        <Header />
+        {/* <NewHeader /> */}
       </HeaderWrapper>
       <FullyWrapper>
         <Partnership />
@@ -114,10 +113,10 @@ const Landing: React.FC = () => {
         <LanguageCodeType />
       </FullyWrapper>
 
-      {/* <ThirdWrapper>
-        <Notification />
+      <ThirdWrapper>
+        {/* <Notification /> */}
         <Footer />
-      </ThirdWrapper> */}
+      </ThirdWrapper>
       {/* <Customization /> */}
     </>
   );
