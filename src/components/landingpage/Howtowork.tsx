@@ -64,7 +64,7 @@ export default function Howtowork() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 space-y-8 pt-10 md:columns-1 md:grid-cols-5">
+      <div className="grid grid-cols-1 gap-8  pt-10 md:columns-1 md:grid-cols-5">
         <div className="aspect-auto rounded-3xl  border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
@@ -105,26 +105,26 @@ export default function Howtowork() {
           </div>
           <div className="mt-20 grid grid-cols-5 items-center gap-4">
             <div>
-              <Image src={Image1} height={64} width={64}/>
+              <Image src={Image1} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image2}  height={64} width={64} />
+              <Image src={Image2} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image3}  height={64} width={64} />
+              <Image src={Image3} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image4}  height={64} width={64}/>
+              <Image src={Image4} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image5}  height={64} width={64}/>
+              <Image src={Image5} height={64} width={64} />
             </div>
           </div>
           <div></div>
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-8 space-y-8 pb-20 pt-10 md:columns-1 md:grid-cols-5">
+      <div className="grid grid-cols-1 gap-8  pb-20 pt-10 md:columns-1 md:grid-cols-5">
         <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>

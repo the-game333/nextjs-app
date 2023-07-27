@@ -4,7 +4,7 @@ import ChatGPT from '../../../public/assets/images/ChatGPT.png';
 import Image from 'next/image';
 const Partnership = () => {
   return (
-    <div className="mx-auto md:max-w-5xl lg:max-w-6xl pt-20">
+    <div className="mx-auto pt-20 md:max-w-5xl lg:max-w-6xl">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="mb-20 space-y-4 px-6 md:px-0">
           <h2 className="text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">
@@ -48,7 +48,7 @@ const Partnership = () => {
           </h2>
         </div>
         <div className="gap-6 space-y-8 md:columns-2 lg:columns-4">
-          <div className="relative aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="relative aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex gap-4">
               <div>
                 <h6 className="text-2xl font-medium text-gray-700 dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
@@ -62,20 +62,20 @@ const Partnership = () => {
               <Image src={Robot} />
             </div>
           </div>
-          <div className="aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex gap-4">
               <div>
                 <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Uncompromising Data Security & Privacy</h6>
                 {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
               </div>
             </div>
-            <p className="mt-8 leading-6 text-[#C2C2C2]">
+            <p className="mt-8  leading-6 text-[#C2C2C2]">
               {' '}
               Our AI solutions prioritize ethics, responsibility, and societal benefit. Designed towards fairness, transparency, and privacy
               protection in every aspect of deployment.
             </p>
           </div>
-          <div className="aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex gap-4">
               <div>
                 <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Where Solutions Transend Boundaries</h6>
@@ -86,7 +86,7 @@ const Partnership = () => {
               Pursuing innovation, embracing challenges with audacious ideas to improve experiences, products and possibilities.
             </p>
           </div>
-          <div className="relative aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="relative aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex gap-4">
               <div>
                 <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Architecting Tomorrow with AI Core</h6>
