@@ -48,57 +48,65 @@ const Partnership = () => {
           </h2>
         </div>
         <div className="gap-6 space-y-8 md:columns-2 lg:columns-4">
-          <div className="relative aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
-            <div className="flex gap-4">
-              <div>
-                <h6 className="text-2xl font-medium text-gray-700 dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
-                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+          <div className="h-[20.5rem]  w-full rounded-3xl  bg-gradient-to-b from-yellow-500 via-gray-900 to-gray-900 p-0.5">
+            <div className=" relative  h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none ">
+              <div className="flex gap-4">
+                <div>
+                  <h6 className="text-2xl font-medium text-gray-700 dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
+                  {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+                </div>
               </div>
-            </div>
-            <p className="relative mt-8 leading-6 text-[#C2C2C2]">
-              We prioritize human-centric AI development to enhance abilities, streamline processes, and improve user experiences.
-            </p>
-            <div className="absolute bottom-0 left-20 right-0 opacity-10">
-              <Image src={Robot} />
+              <p className="relative mt-8 leading-6 text-[#C2C2C2]">
+                We prioritize human-centric AI development to enhance abilities, streamline processes, and improve user experiences.
+              </p>
+              <div className="absolute bottom-0 left-20 right-0 opacity-10">
+                <Image src={Robot} />
+              </div>
             </div>
           </div>
-          <div className="aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
-            <div className="flex gap-4">
-              <div>
-                <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Uncompromising Data Security & Privacy</h6>
-                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+          <div className="h-[20.5rem]  w-full rounded-3xl  bg-gradient-to-b from-teal-500 via-gray-900 to-gray-900 p-0.5">
+            <div className="aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15]  p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none ">
+              <div className="flex gap-4">
+                <div>
+                  <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Uncompromising Data Security & Privacy</h6>
+                  {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
+                </div>
               </div>
+              <p className="mt-8  leading-6 text-[#C2C2C2]">
+                {' '}
+                Our AI solutions prioritize ethics, responsibility, and societal benefit. Designed towards fairness, transparency, and
+                privacy protection in every aspect of deployment.
+              </p>
             </div>
-            <p className="mt-8  leading-6 text-[#C2C2C2]">
-              {' '}
-              Our AI solutions prioritize ethics, responsibility, and societal benefit. Designed towards fairness, transparency, and privacy
-              protection in every aspect of deployment.
-            </p>
           </div>
-          <div className="aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
-            <div className="flex gap-4">
-              <div>
-                <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Where Solutions Transend Boundaries</h6>
-                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
+          <div className="h-[20.5rem]  w-full rounded-3xl  bg-gradient-to-b from-purple-700 via-gray-900 to-gray-900 p-0.5">
+            <div className="aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+              <div className="flex gap-4">
+                <div>
+                  <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Where Solutions Transend Boundaries</h6>
+                  {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
+                </div>
               </div>
+              <p className="mt-8 leading-6 text-[#C2C2C2]">
+                Pursuing innovation, embracing challenges with audacious ideas to improve experiences, products and possibilities.
+              </p>
             </div>
-            <p className="mt-8 leading-6 text-[#C2C2C2]">
-              Pursuing innovation, embracing challenges with audacious ideas to improve experiences, products and possibilities.
-            </p>
           </div>
-          <div className="relative aspect-auto h-[21.25rem] rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
-            <div className="flex gap-4">
-              <div>
-                <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Architecting Tomorrow with AI Core</h6>
-                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
+          <div className="h-[20.5rem]  w-full rounded-3xl  bg-gradient-to-b from-yellow-500 via-gray-900 to-gray-900 p-0.5">
+            <div className="relative aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+              <div className="flex gap-4">
+                <div>
+                  <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Architecting Tomorrow with AI Core</h6>
+                  {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
+                </div>
               </div>
-            </div>
-            <p className="mt-8 leading-6 text-[#C2C2C2]">
-              Making AI the cornerstone of progress for all sectors. A bold vision to build foundations with innovative solutions
-              anticipating challenges and forge new paths to success.
-            </p>
-            <div className="absolute bottom-0 left-20 right-0 opacity-10">
-              <Image src={ChatGPT} />
+              <p className="mt-8 leading-6 text-[#C2C2C2]">
+                Making AI the cornerstone of progress for all sectors. A bold vision to build foundations with innovative solutions
+                anticipating challenges and forge new paths to success.
+              </p>
+              <div className="absolute bottom-0 left-20 right-0 opacity-10">
+                <Image src={ChatGPT} />
+              </div>
             </div>
           </div>
         </div>
