@@ -105,19 +105,19 @@ export default function Howtowork() {
           </div>
           <div className="mt-20 grid grid-cols-5 items-center gap-4">
             <div>
-              <Image src={Image1} />
+              <Image src={Image1} height={64} width={64}/>
             </div>
             <div>
-              <Image src={Image2} />
+              <Image src={Image2}  height={64} width={64} />
             </div>
             <div>
-              <Image src={Image3} />
+              <Image src={Image3}  height={64} width={64} />
             </div>
             <div>
-              <Image src={Image4} />
+              <Image src={Image4}  height={64} width={64}/>
             </div>
             <div>
-              <Image src={Image5} />
+              <Image src={Image5}  height={64} width={64}/>
             </div>
           </div>
           <div></div>
