@@ -63,8 +63,9 @@ export default function Howtowork() {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-5 gap-8 space-y-8 pt-10 md:columns-1">
-        <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+
+      <div className="grid grid-cols-1 gap-8 space-y-8 pt-10 md:columns-1 md:grid-cols-5">
+        <div className="aspect-auto rounded-3xl  border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
               <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">
@@ -82,7 +83,7 @@ export default function Howtowork() {
             <Image src={Mobile} height={250} width={350} />
           </div>
         </div>
-        <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+        <div className="aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
           <div className="flex gap-4">
             <div>
               <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">
@@ -122,15 +123,16 @@ export default function Howtowork() {
           <div></div>
         </div>
       </div>
-      <div className="grid grid-cols-5 gap-8 space-y-8 pt-10 md:columns-1">
-        <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+
+      <div className="grid grid-cols-1 gap-8 space-y-8 pb-20 pt-10 md:columns-1 md:grid-cols-5">
+        <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
               <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">Streamlined set of APIs</h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
-          <p className="mt-8 leading-7  text-[#C2C2C2] text-base">
+          <p className="mt-8 text-base  leading-7 text-[#C2C2C2]">
             {' '}
             Take integration to the next level..! Our API design follows the innovative back-end as a service concept, allowing you to
             access just one API interface to effortlessly integrate plugins and maintain long-lasting connections. Say goodbye to complexity
@@ -140,21 +142,21 @@ export default function Howtowork() {
             <Image src={Code} className="rounded-xl" height={250} width={350} />
           </div>
         </div>
-        <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+        <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
           <div className="flex gap-4">
             <div>
               <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">Continuous improvement and operation</h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
-          <p className="mt-8 leading-7 text-[#C2C2C2] text-base">
+          <p className="mt-8 text-base leading-7 text-[#C2C2C2]">
             {' '}
             Embracing and unlock the potential of AI applications. Continuously refine and optimize its capabilities through active
             engagement with the technology by visually inspecting logs and annotating data to enhance their performance.
           </p>
-          <div className="mt-20 grid grid-cols-5 items-center gap-4">
-            <div className='max-w-[618px] h-[100px]'>
-              <Image src={Logs} />
+          <div className="mt-20">
+            <div className="h-[100px] max-w-[618px]">
+              <Image src={Logs} className="rounded-xl" />
             </div>
           </div>
           <div></div>

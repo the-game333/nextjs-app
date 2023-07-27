@@ -85,19 +85,6 @@ const Landing: React.FC = () => {
       </SecondWrapper>
 
       <ThirdWrapper>
-        <Box
-          component={'img'}
-          src="/assets/images/header/background.svg"
-          sx={{
-            position: 'absolute',
-            top: '0',
-            maxWidth: '100%',
-            zIndex: 1,
-            height: '700px',
-            width: '100%'
-          }}
-          alt="InfraHive - Background"
-        />
         <Howtowworks2 />
       </ThirdWrapper>
       <FullyWrapper>
