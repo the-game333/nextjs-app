@@ -76,7 +76,7 @@ export default function Howtowork2() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center mt-6 sm:mt-10">
+        <div className="mt-6 flex justify-center sm:mt-10">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex justify-center rounded-full bg-white p-6">
               <Image src={Cohere} width={176} height={48} />
@@ -89,29 +89,80 @@ export default function Howtowork2() {
             </div>
           </div>
         </div>
-
-        <div className="gap-6 space-y-8 pt-20 md:columns-2 lg:columns-2">
-          <div className="aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
-            <div className="flex gap-4">
-              <div>
-                <h6 className="text-2xl font-medium text-gray-700 dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
-                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
-              </div>
+        <div id="main" className="mt-20 grid grid-cols-1 justify-evenly gap-5 md:grid-cols-2 ">
+          <div className="relative rounded-3xl border border-[#ffffff1a] p-8">
+            <div className="absolute right-5 top-7 flex gap-3">
+              <p>In service</p>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="20" viewBox="0 0 38 20" fill="none">
+                  <rect width="38" height="20" rx="10" fill="#FEC200" />
+                  <rect x="21" y="3" width="14" height="14" rx="7" fill="white" />
+                </svg>
+              </span>
             </div>
-            <p className="relative mt-8 leading-6 text-[#C2C2C2]">
-              We prioritize human-centric AI development to enhance abilities, streamline processes, and improve user experiences.
-            </p>
+            <div className="gap-4">
+              <h6 className="text-3xl font-medium text-gray-700 dark:text-white">Backend service API</h6>
+              <p className="relative mt-5 text-xl leading-6 text-[#C2C2C2]">Easily integrate into your application</p>
+            </div>
+            <div className="mt-6 gap-4">
+              <h6 className="text-xl font-medium text-gray-700 dark:text-white">API TOKEN:</h6>
+              <p className="relative mt-3 break-all text-xl leading-6  text-[#00A3FE]">https://api.infrahive.io/v1</p>
+            </div>
+            <div className="mt-2">
+              <button className="mt-5 rounded-lg border p-3 ">API Reference</button>
+            </div>
+            <p
+              style={{
+                height: '50%',
+                width: '25%',
+                top: '30%',
+                left: '50%',
+                transform: 'translateX(50%)',
+                position: 'absolute',
+                borderRadius: '582px',
+                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                filter: 'blur(100px)'
+              }}
+            ></p>
           </div>
-          <div className="aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
-            <div className="flex gap-4">
-              <div>
-                <h6 className="text-2xl font-medium text-gray-700 dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
-                {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
-              </div>
+          <div className="relative rounded-3xl border border-[#ffffff1a] p-8">
+            <div className="absolute right-5 top-7 flex gap-3">
+              <p>In service</p>
+              <span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="20" viewBox="0 0 38 20" fill="none">
+                  <rect width="38" height="20" rx="10" fill="#FEC200" />
+                  <rect x="21" y="3" width="14" height="14" rx="7" fill="white" />
+                </svg>
+              </span>
             </div>
-            <p className="relative mt-8 leading-6 text-[#C2C2C2]">
-              We prioritize human-centric AI development to enhance abilities, streamline processes, and improve user experiences.
-            </p>
+            <div className="gap-4">
+              <h6 className="text-3xl font-medium text-gray-700 dark:text-white">Test-app</h6>
+              <p className="relative mt-5 text-xl leading-6 text-[#C2C2C2]">Ready to use AI WebApp</p>
+            </div>
+            <div className="mt-6 gap-4">
+              <h6 className="text-xl font-medium text-gray-700 dark:text-white">public url:</h6>
+              <p className="relative mt-3 break-all text-xl leading-6 text-[#00A3FE]">https://api.infrahive.io/v1</p>
+            </div>
+            <div className="mt-2 flex-col gap-3 md:flex-row md:justify-start">
+              <button className="mt-5 rounded-lg border p-3">API Reference</button>
+              <button className="mt-5 rounded-lg border p-3">API Reference</button>
+              <button className="mt-5 rounded-lg border p-3">API Reference</button>
+              <button className="mt-5 rounded-lg border p-3">API Reference</button>
+
+            </div>
+            <p
+              style={{
+                height: '50%',
+                width: '25%',
+                top: '30%',
+                left: '40%',
+                transform: 'translateX(50%)',
+                position: 'absolute',
+                borderRadius: '582px',
+                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                filter: 'blur(100px)'
+              }}
+            ></p>
           </div>
         </div>
       </div>

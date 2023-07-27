@@ -85,7 +85,7 @@ export default function Header() {
               filter: 'blur(100px)'
             }}
           ></p>
-          <div className=" heading inline-flex p-2 text-5xl font-bold text-gray-900 dark:text-white">
+          <div className=" heading inline-flex break-all p-2 text-5xl font-bold text-gray-900  dark:text-white">
             <h1> Supercharge </h1>
             {/* <div className="cubespinner">
               {labels.map((label, index) => (
