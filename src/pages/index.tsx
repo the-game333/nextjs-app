@@ -24,13 +24,13 @@ import PowerOfDataSet from 'components/landingpage/PowerOfDataSet';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
   overflowY: 'clip',
-  backgroundColor: '#15131D'
+  backgroundColor: '#0E0C15'
 }));
 
 const SecondWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 30,
-  backgroundColor: '#15131D',
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('md')]: {
     paddingTop: 60
   }
@@ -38,7 +38,7 @@ const SecondWrapper = styled('div')(({ theme }) => ({
 const ThirdWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 60,
-  backgroundColor: '#15131D',
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }
@@ -47,7 +47,7 @@ const ThirdWrapper = styled('div')(({ theme }) => ({
 const FourthWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 60,
-  backgroundColor: '#15131D',
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('lg')]: {
     paddingTop: 30
   }
@@ -55,7 +55,7 @@ const FourthWrapper = styled('div')(({ theme }) => ({
 const FullyWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   // paddingTop: 100,
-  backgroundColor: '#15131D',
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }
@@ -63,7 +63,7 @@ const FullyWrapper = styled('div')(({ theme }) => ({
 const LastWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   // paddingTop: 100,
-  backgroundColor: '#15131D',
+  backgroundColor: '#0E0C15',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }

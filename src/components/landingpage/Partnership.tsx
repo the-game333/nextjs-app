@@ -4,7 +4,7 @@ import ChatGPT from '../../../public/assets/images/ChatGPT.png';
 import Image from 'next/image';
 const Partnership = () => {
   return (
-    <div className="mx-auto pt-20 md:max-w-5xl lg:max-w-6xl">
+    <div className="mx-auto px-3 md:max-w-5xl md:px-5 md:pb-20 md:pt-20 lg:max-w-6xl xl:px-0">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="mb-20 space-y-4 px-6 md:px-0">
           <h2 className="text-center text-4xl  font-bold text-gray-800 dark:text-white md:text-5xl">
@@ -65,7 +65,7 @@ const Partnership = () => {
             </div>
           </div>
           <div className="h-[20.5rem]  w-full rounded-3xl  bg-gradient-to-b from-teal-500 via-gray-900 to-gray-900 p-0.5">
-            <div className="aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15]  p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none ">
+            <div className="relative aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15]  p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none ">
               <div className="flex gap-4">
                 <div>
                   <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Uncompromising Data Security & Privacy</h6>
@@ -76,13 +76,39 @@ const Partnership = () => {
                 {' '}
                 Our AI solutions prioritize ethics, responsibility, and societal benefit. Designed towards fairness, transparency, and
                 privacy protection in every aspect of deployment.
+                <p
+                  style={{
+                    height: '30%',
+                    width: '50%',
+                    top: '60%',
+                    left: '20%',
+                    transform: 'translateX(50%)',
+                    position: 'absolute',
+                    borderRadius: '582px',
+                    background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                    filter: 'blur(80px)'
+                  }}
+                ></p>
               </p>
             </div>
           </div>
           <div className="h-[20.5rem]  w-full rounded-3xl  bg-gradient-to-b from-purple-700 via-gray-900 to-gray-900 p-0.5">
+            <p
+              style={{
+                height: '30%',
+                width: '10%',
+                top: '30%',
+                left: '55%',
+                transform: 'translateX(50%)',
+                position: 'absolute',
+                borderRadius: '582px',
+                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                filter: 'blur(100px)'
+              }}
+            ></p>
             <div className="aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
               <div className="flex gap-4">
-                <div>
+                <div className="relative">
                   <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Where Solutions Transend Boundaries</h6>
                   {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
                 </div>

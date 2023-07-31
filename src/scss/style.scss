@@ -146,6 +146,18 @@
   }
 }
 
+.hello {
+  background: linear-gradient(rgb(14, 12, 21), rgb(14, 12, 21)) padding-box, linear-gradient(45deg, #00fed0, #fec200) border-box;
+  border: 1px solid transparent;
+  border-radius: 50px;
+}
+
+.hello:hover {
+  background: linear-gradient(rgb(14, 12, 21), rgb(14, 12, 21)) padding-box, linear-gradient(45deg, #fec200, #00fed0) border-box;
+  border: 1px solid transparent;
+  border-radius: 50px;
+}
+
 // ============= | dashboard text animation | =============
 .text-cube {
   position: relative;

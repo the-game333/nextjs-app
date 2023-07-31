@@ -13,12 +13,12 @@ import Eclipse from '../../../public/assets/images/Eclipse.svg';
 
 export default function Howtowork() {
   return (
-    <div className="mx-auto pt-32 md:max-w-5xl lg:max-w-6xl">
+    <div className="mx-auto md:max-w-5xl lg:max-w-6xl xl:px-0 md:px-5 px-3">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="space-y-4 px-6 pb-10 md:px-0">
           <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
             Easy-to-use LLMOps{' '}
-            <span className="relative">
+            <span className="relative ">
               platform{' '}
               <span className="absolute left-0 top-14">
                 <svg
@@ -58,7 +58,7 @@ export default function Howtowork() {
         </div>
         <div className="relative ml-auto">
           <div className="mx-auto text-center lg:w-2/3">
-            <p className="font- text-base leading-7 text-gray-700 dark:text-gray-300">
+            <p className="px-3 text-sm leading-7 text-gray-700 dark:text-gray-300 md:px-0 md:text-base">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum.
               Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!
             </p>
@@ -76,17 +76,17 @@ export default function Howtowork() {
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
-          <p className="mt-8 leading-7  text-[#C2C2C2]">
+          <p className="mt-5 leading-6 text-[#C2C2C2] md:mt-8  md:leading-7">
             {' '}
             Whether it's for your team's internal operations or an external launch, you have the power to effortlessly deploy your
             application in just 5 minutes.
           </p>
 
-          <div className="relative flex justify-center">
-            <Image src={Mobile} height={250} width={300} />
+          <div className="relative mt-10 flex justify-center md:mt-5">
             <span className="-z-1 absolute -top-[100px]">
               <Image src={Eclipse} />
             </span>
+            <Image src={Mobile} height={250} width={300} />
           </div>
         </div>
         <div className="aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
@@ -98,7 +98,7 @@ export default function Howtowork() {
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
-          <p className="mt-8 leading-7 text-[#C2C2C2]">
+          <p className="mt-8  leading-6 text-[#C2C2C2] md:leading-7">
             {' '}
             By utilizing documents, webpages, or Notion content as the foundation for AI, you can effortlessly streamline text
             preprocessing, vectorization, and segmentation. Say No to the need for extensive embedding technique learning, and save valuable
@@ -130,25 +130,35 @@ export default function Howtowork() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 gap-8  pb-20 pt-10 md:columns-1 md:grid-cols-5">
-        <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
+      <div className="grid grid-cols-1 gap-y-8 pb-20 pt-10 md:columns-1 md:grid-cols-5 md:gap-x-8">
+        <div className="aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
               <h6 className="text-3xl font-medium leading-10 text-gray-700 dark:text-white md:text-4xl">Streamlined set of APIs</h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
-          <p className="mt-8 text-base  leading-7 text-[#C2C2C2]">
+          <p className="mt-8 text-sm leading-6  text-[#C2C2C2] md:text-base md:leading-7">
             {' '}
             Take integration to the next level..! Our API design follows the innovative back-end as a service concept, allowing you to
             access just one API interface to effortlessly integrate plugins and maintain long-lasting connections. Say goodbye to complexity
             and hello to seamless integration!
           </p>
           <div className="relative pt-5">
+            <p
+              style={{
+                height: '50%',
+                width: '50%',
+                top: '80%',
+                left: '10%',
+                transform: 'translateX(50%)',
+                position: 'absolute',
+                borderRadius: '582px',
+                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                filter: 'blur(80px)'
+              }}
+            ></p>
             <Image src={Code} className="rounded-xl" height={250} width={350} />
-            <span className="absolute">
-              <Image src={Eclipse} />
-            </span>
           </div>
         </div>
         <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
@@ -160,12 +170,12 @@ export default function Howtowork() {
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
-          <p className="mt-8 text-base leading-7 text-[#C2C2C2]">
+          <p className="mt-8 text-sm leading-6 text-[#C2C2C2] md:text-base md:leading-7">
             {' '}
             Embracing and unlock the potential of AI applications. Continuously refine and optimize its capabilities through active
             engagement with the technology by visually inspecting logs and annotating data to enhance their performance.
           </p>
-          <div className="mt-20">
+          <div className="mt-10 md:mt-20">
             <div className="h-[100px] max-w-[618px]">
               {/* <Image src={Logs} className="rounded-xl" /> */}
               <Image src={Logs2} className="rounded-xl" />

@@ -16,7 +16,7 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="relative mb-20" id="home">
+    <div className="relative mb-10 md:mb-20" id="home">
       <div className="absolute top-0">
         <Image src={Pattern} height={500} />
       </div>
@@ -28,7 +28,7 @@ export default function Header() {
         <div className="mx-auto text-center lg:w-2/3">
           <h1 className="before:bg- relative mb-3 flex flex-col  justify-center gap-1 text-4xl font-bold text-gray-900 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-full before:content-[''] dark:text-white sm:flex-row sm:gap-2 md:text-5xl xl:gap-5 xl:text-6xl">
             With
-            <span>
+            <span className="mt-5 md:mt-0">
               InfraH
               <span className="relative">
                 <span className="-left-x-1/2 absolute -top-6 w-7 -translate-x-1/2">

@@ -11,13 +11,13 @@ import Pattern from '../../../public/Pattern.png';
 
 export default function Howtowork2() {
   return (
-    <div className="mx-auto pb-10 pt-32 md:max-w-5xl lg:max-w-6xl">
+    <div className="mx-auto px-3 pb-5 pt-10 md:max-w-5xl md:px-5 md:pb-10 md:pt-32 lg:max-w-6xl xl:px-0">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="space-y-4 px-6 pb-10 md:px-0">
           <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
-            Diverse LLM{' '}
-            <span className="relative">
-              support{' '}
+            Diverse{' '}
+            <span className="relative whitespace-nowrap">
+              LLM support
               <span className="absolute left-0 top-14">
                 <svg
                   className="lg:w-55 mx-auto w-40 sm:w-40 md:w-60 xl:w-full"
@@ -54,9 +54,9 @@ export default function Howtowork2() {
             </span>
           </h2>
         </div>
-        <div className="relative ml-auto pb-20">
-          <div className="mx-auto text-center lg:w-2/3">
-            <button className="border-white-500 rounded-full border-2 px-6 py-3 text-[#FFF] duration-300">
+        <div className="relative ml-auto pb-10 md:pb-20">
+          <div className="mx-auto px-5 text-center md:px-1 lg:w-2/3">
+            <button className="border-white-500 hello rounded-full border-2 px-6 py-3 text-[#FFF] duration-300">
               Unleash the Potent Fusion of Diverse AI Models on a Unified Platform
             </button>
           </div>
@@ -92,7 +92,7 @@ export default function Howtowork2() {
         </div>
         <div id="main" className="mt-20 grid grid-cols-1 justify-evenly gap-5 md:grid-cols-2 ">
           <div className="relative rounded-3xl border border-[#ffffff1a] p-8">
-            <div className="absolute right-5 top-7 flex gap-3">
+            <div className="absolute right-2 top-4 flex gap-3 md:right-5 md:top-7">
               <p>In service</p>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="20" viewBox="0 0 38 20" fill="none">
@@ -110,7 +110,7 @@ export default function Howtowork2() {
               <p className="relative mt-3 break-all text-lg leading-6 text-[#00A3FE]  md:text-xl">https://api.infrahive.io/v1</p>
             </div>
             <div className="mt-2">
-              <button className="mt-5 rounded-lg border p-3 w-full sm:w-max">API Reference</button>
+              <button className="mt-5 w-full rounded-lg border p-3 sm:w-max">API Reference</button>
             </div>
             <p
               style={{
@@ -127,7 +127,7 @@ export default function Howtowork2() {
             ></p>
           </div>
           <div className="relative rounded-3xl border border-[#ffffff1a] p-8">
-            <div className="absolute right-5 top-7 flex gap-3">
+            <div className="absolute right-2 top-4 flex gap-3 md:right-5 md:top-7">
               <p>In service</p>
               <span>
                 <svg xmlns="http://www.w3.org/2000/svg" width="38" height="20" viewBox="0 0 38 20" fill="none">
@@ -144,7 +144,7 @@ export default function Howtowork2() {
               <h6 className="text-2xl  font-medium text-gray-700 dark:text-white md:text-3xl">public url:</h6>
               <p className="relative mt-3 break-all text-lg leading-6 text-[#00A3FE] md:text-xl">https://api.infrahive.io/v1</p>
             </div>
-            <div className="mt-2 flex-col flex  gap-3 md:flex-row md:justify-start">
+            <div className="mt-2 flex flex-col  gap-3 md:flex-row md:justify-start">
               <button className="mt-5 rounded-lg border p-3">Preview</button>
               <button className="mt-5 rounded-lg border p-3">Share</button>
               <button className="mt-5 rounded-lg border p-3">Embedded</button>
