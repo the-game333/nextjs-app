@@ -8,7 +8,7 @@ import Hero from '../../../public/assets/images/Hero.svg';
 import Image from 'next/image';
 export default function LanguageCodeType() {
   return (
-    <div className="mx-auto pt-0 md:max-w-5xl md:pt-20 lg:max-w-6xl xl:px-0 md:px-5">
+    <div className="mx-auto pt-0 md:max-w-5xl md:px-5 md:pt-20 lg:max-w-6xl xl:px-0">
       <div className="relative grid grid-cols-1 gap-8 px-3 pb-0 pt-0 md:columns-1 md:grid-cols-2 md:pb-40 md:pt-10">
         <div className="aspect-auto rounded-3xl  border-gray-100  shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
           <div className="gap-4">
@@ -39,7 +39,7 @@ export default function LanguageCodeType() {
             filter: 'blur(80px)'
           }}
         ></p>
-        <span className="absolute left-1/3 top-80 md:block hidden">
+        <span className="absolute left-1/3 top-80 hidden lg:block">
           <Image src={Hero} width={154} height={250} />
         </span>
         <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
@@ -52,7 +52,7 @@ export default function LanguageCodeType() {
               <div className="flex justify-center rounded-full bg-white p-2 px-6">
                 <Image src={Notions} width={71} height={26} />
               </div>
-              <div className="mt-2 flex items-center justify-between sm:mt-0 sm:w-full">
+              <div className="mt-2 flex items-center justify-between sm:mt-0 w-full sm:w-auto gap-2">
                 <button className="h-7 w-24 rounded-md border border-none bg-[#00B05C] text-white">Synchronized</button>
                 <div>3 days ago</div>
               </div>
@@ -61,7 +61,7 @@ export default function LanguageCodeType() {
               <div className="flex justify-center rounded-full bg-white p-2 px-6">
                 <Image src={Slack} width={71} height={26} />
               </div>
-              <div className="mt-2 flex items-center justify-between sm:mt-0 sm:w-full">
+              <div className="mt-2 flex items-center justify-between sm:mt-0 w-full sm:w-auto gap-2">
                 <button className="h-7 w-24 rounded-md border border-none bg-[#00B05C] text-white">Synchronized</button>
                 <div>1 day ago</div>
               </div>

@@ -57,7 +57,7 @@ export default function PowerOfDataSet() {
             <div className="relative aspect-auto rounded-3xl border-gray-100   shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
               <p className="w-max rounded-xl border border-none bg-[#fec2004d] p-2 px-3 text-xl text-white md:text-2xl">Step: 1</p>
               <p className="mt-5 text-xl  text-white md:text-4xl">Create your own dataset from data cleaning and processing.</p>
-              <span className="absolute right-20 top-40 hidden md:block">
+              <span className="absolute right-20 top-40 hidden lg:block">
                 <Image src={Accent} width={168} height={91} />
               </span>
             </div>
@@ -134,7 +134,7 @@ export default function PowerOfDataSet() {
                 filter: 'blur(100px)'
               }}
             ></p>
-            <span className="absolute left-1/3 top-2/3 hidden rotate-12 md:block">
+            <span className="absolute left-1/3 top-2/3 hidden rotate-12 lg:block">
               <Image src={Accent} />
             </span>
             <div className="aspect-auto rounded-3xl bg-transparent p-8">
@@ -146,7 +146,7 @@ export default function PowerOfDataSet() {
         </div>
       </div>
       <div className="relative mt-0 py-5 md:mt-20 md:py-40">
-        <div className="absolute left-2/4 top-2/4 hidden -translate-x-2/4 -translate-y-2/4 md:block">
+        <div className="absolute left-2/4 top-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <Image src={Circles} />
         </div>
         <div className="space-y-4 px-6 pb-10 md:px-0">
