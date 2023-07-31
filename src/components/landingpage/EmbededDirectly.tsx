@@ -58,14 +58,14 @@ export default function Howtowork3() {
     //   </div>
     // </div>
 
-    <div className="m-auto pb-10 md:max-w-5xl md:pb-20 lg:max-w-6xl " style={{ maxWidth: '1380px' }}>
+    <div className="m-auto pb-10 md:max-w-5xl md:pb-20 lg:max-w-6xl" style={{ maxWidth: '1380px' }}>
       <div className="text-gray-600 dark:text-gray-300">
         <div className="mt-10 grid grid-cols-1 gap-4 md:mt-20 md:grid-cols-2">
           <div className="relative col-start-1 col-end-7 rounded-3xl border border-[#ffffff1a] bg-[#15131D] p-10">
             <div className="absolute top-0">
               <Image src={Pattern} height={500} />
             </div>
-            <div className="space-y-4 px-8 pb-5 md:pb-10 md:px-0">
+            <div className="space-y-4 px-8 pb-5 md:px-0 md:pb-10">
               <h2 className="mt-0 text-center text-2xl font-bold text-gray-800 dark:text-white md:mt-20 md:text-5xl">
                 Embed app directly in two forms
               </h2>
