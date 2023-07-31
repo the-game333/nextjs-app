@@ -1,158 +1,63 @@
-// material-ui
-// import { useTheme, styled } from '@mui/material/styles';
-import { Box, Button, Container, Divider, Grid, Typography } from '@mui/material';
-
-// project imports
-import { gridSpacing } from 'store/constant';
-
-// // styles
-// const LayoutImageWrapper = styled(Box)(({ theme }) => ({
-//   width: '100%',
-//   position: 'relative',
-//   margin: '-70px 0px',
-//   [theme.breakpoints.down('lg')]: {
-//     margin: '-30px 0px'
-//   }
-// }));
-
-// const LayoutImage = styled('img')({
-//   position: 'relative',
-//   top: 0,
-//   left: 0,
-//   width: '100%',
-//   height: '100%',
-//   animation: '5s wings ease-in-out infinite'
-// });
-
-// const LayoutContent = styled(Grid)(({ theme }) => ({
-//   maxWidth: 400,
-//   position: 'relative',
-//   '&:after': {
-//     content: '""',
-//     position: 'absolute',
-//     background: theme.palette.mode === 'dark' ? theme.palette.dark.dark : '#FFFFFF',
-//     border: `6px solid${theme.palette.secondary.main}`,
-//     width: 25,
-//     height: 25,
-//     borderRadius: '50%',
-//     top: 13,
-//     left: -20
-//   },
-//   '&:before': {
-//     content: '""',
-//     position: 'absolute',
-//     background: theme.palette.mode === 'dark' ? theme.palette.dark.main : '#9E9E9E',
-//     width: 1,
-//     height: 390,
-//     top: 13,
-//     left: -8
-//   },
-//   [theme.breakpoints.down('md')]: {
-//     '&:before': {
-//       height: 290
-//     }
-//   },
-//   [theme.breakpoints.down('lg')]: {
-//     '&:after': {
-//       left: -12
-//     },
-//     '&:before': {
-//       left: 0,
-//       height: 290
-//     }
-//   }
-// }));
-
-// const LayoutRightContent = styled(Grid)(({ theme }) => ({
-//   maxWidth: 400,
-//   textAlign: 'right',
-//   marginLeft: 'auto',
-//   position: 'relative',
-//   paddingRight: 24,
-//   '&:after': {
-//     content: '""',
-//     position: 'absolute',
-//     background: theme.palette.mode === 'dark' ? theme.palette.dark.dark : '#FFFFFF',
-//     border: `6px solid${theme.palette.secondary.main}`,
-//     width: 25,
-//     height: 25,
-//     borderRadius: '50%',
-//     top: 13,
-//     right: -12
-//   },
-//   '&:before': {
-//     content: '""',
-//     position: 'absolute',
-//     background: theme.palette.mode === 'dark' ? theme.palette.dark.main : '#9E9E9E',
-//     width: 1,
-//     height: 300,
-//     top: 13,
-//     right: -1
-//   },
-//   [theme.breakpoints.down('md')]: {
-//     '&:before': {
-//       height: '400%'
-//     }
-//   },
-//   [theme.breakpoints.down('lg')]: {
-//     '&:after': {
-//       right: -4
-//     },
-//     '&:before': {
-//       right: 7
-//     }
-//   },
-//   [theme.breakpoints.down('md')]: {
-//     '&:after': {
-//       right: 'auto',
-//       left: -12
-//     },
-//     '&:before': {
-//       right: 'auto',
-//       left: 0,
-//       height: 160
-//     }
-//   }
-// }));
-
-// =============================|| LANDING - LAYOUTS PAGE ||============================= //
-
-const FullyFeatured = () => {
-  // const theme = useTheme();
-
+import React from 'react';
+import Main from '../../../public/assets/images/Main.png';
+import Image from 'next/image';
+export default function FullyFeatured() {
   return (
-    <Container>
-      <Grid container spacing={gridSpacing} alignItems={'center'}>
-        <Grid item md={7} sm={12} mt={10}>
-          <Box
-            component={'img'}
-            alt="InfraHive - Animation Fully Featured"
-            src="/assets/animation/fully_featured.gif"
-            borderRadius={'20px'}
-            width={'100%'}
-          />
-        </Grid>
-        <Grid item md={5} sm={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
-          <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h1" fontSize={'3rem'} sx={{color : "rgb(215, 220, 236)"}}>
-              Full Stack AI Infrastructure, Production Ready APIs
-            </Typography>
-          </Grid>
-          <Grid item xs={12} textAlign={'left'}>
-            <Typography variant="h2" fontWeight={'unset'} sx={{color : "rgb(215, 220, 236)"}}>
-              Build AI Apps on advanced LLMs and integrate with in your domain
-            </Typography>
-          </Grid>
-          <Grid item xs={12} textAlign={'left'}>
-            <Button variant="outlined" href="https://calendly.com/infrahive/infrahive-demo" target={'_blank'} sx={{color : "rgb(215, 220, 236)"}} color="inherit" size="large">
-              Request Access
-            </Button>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Divider sx={{ mt: 15 }} />
-    </Container>
+    <div className="mx-auto pt-10 md:max-w-5xl lg:max-w-6xl">
+      <div className="text-gray-600 dark:text-gray-300" id="testimonials">
+        <div className="space-y-4 px-6 pb-10 md:px-0">
+          <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
+            Introducing{' '}
+            <span className="relative ">
+              Prompt Engineering <p className="mt-5">Refine your AI Model</p>
+              <span className="absolute left-0 top-14">
+                <svg
+                  className="w-full"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="249"
+                  height="17"
+                  viewBox="0 0 249 17"
+                  fill="none"
+                >
+                  <path
+                    d="M1.5 16.0001C26.4689 5.1524 193.217 -2.00002 248 3.50006"
+                    stroke="url(#paint0_linear_47_101)"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <defs>
+                    <linearGradient
+                      id="paint0_linear_47_101"
+                      x1="10.3914"
+                      y1="14.1023"
+                      x2="242.344"
+                      y2="14.1023"
+                      gradientUnits="userSpaceOnUse"
+                    >
+                      <stop stop-color="#FEC200" />
+                      <stop offset="0.340447" stop-color="#BEF393" />
+                      <stop offset="0.646993" stop-color="#7A46B6" />
+                      <stop offset="1" stop-color="#EF6DF5" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>{' '}
+            </span>
+          </h2>
+        </div>
+        <div className="relative ml-auto">
+          <div className="mx-auto text-center lg:w-2/3">
+            <p className="mt-10 pb-10 text-base leading-7 text-gray-700 dark:text-gray-300">
+              Take control & Customize your AI model's responses, enhance it's accuracy, and ensure it's performance. Refine and optimize
+              your model to deliver better results, faster.
+            </p>
+          </div>
+        </div>
+        <div className="mt-10 flex justify-center pb-60">
+          <Image src={Main} height={430} width={779} className="rounded-xl" />
+        </div>
+      </div>
+    </div>
   );
-};
-
-export default FullyFeatured;
+}

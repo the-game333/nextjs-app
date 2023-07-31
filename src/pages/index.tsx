@@ -18,17 +18,19 @@ import { Box } from '@mui/material';
 import useConfig from 'hooks/useConfig';
 import { useEffect } from 'react';
 import Partnership from 'components/landingpage/Partnership';
+import Howtowork3 from 'components/landingpage/Howtowork3';
+import PowerOfDataSet from 'components/landingpage/PowerOfDataSet';
 // import NewHeader from 'components/landingpage/NewHeader';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
   overflowY: 'clip',
-  backgroundColor: '#0E0C15'
+  backgroundColor: '#15131D'
 }));
 
 const SecondWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 30,
-  backgroundColor: '#0E0C15',
+  backgroundColor: '#15131D',
   [theme.breakpoints.down('md')]: {
     paddingTop: 60
   }
@@ -36,20 +38,36 @@ const SecondWrapper = styled('div')(({ theme }) => ({
 const ThirdWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 60,
-  backgroundColor: '#0E0C15',
+  backgroundColor: '#15131D',
   [theme.breakpoints.down('md')]: {
+    paddingTop: 30
+  }
+}));
+
+const FourthWrapper = styled('div')(({ theme }) => ({
+  position: 'relative',
+  paddingTop: 60,
+  backgroundColor: '#15131D',
+  [theme.breakpoints.down('lg')]: {
     paddingTop: 30
   }
 }));
 const FullyWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   // paddingTop: 100,
-  backgroundColor: '#0E0C15',
+  backgroundColor: '#15131D',
   [theme.breakpoints.down('md')]: {
     paddingTop: 30
   }
 }));
-
+const LastWrapper = styled('div')(({ theme }) => ({
+  position: 'relative',
+  // paddingTop: 100,
+  backgroundColor: '#15131D',
+  [theme.breakpoints.down('md')]: {
+    paddingTop: 30
+  }
+}));
 // =============================|| LANDING MAIN ||============================= //
 
 const Landing: React.FC = () => {
@@ -87,6 +105,9 @@ const Landing: React.FC = () => {
       <ThirdWrapper>
         <Howtowworks2 />
       </ThirdWrapper>
+      <FourthWrapper>
+        <Howtowork3 />
+      </FourthWrapper>
       <FullyWrapper>
         <FullyFeatured />
       </FullyWrapper>
@@ -99,7 +120,9 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <LanguageCodeType />
       </FullyWrapper>
-
+      <LastWrapper>
+        <PowerOfDataSet />
+      </LastWrapper>
       <ThirdWrapper>
         {/* <Notification /> */}
         <Footer />

@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import Mobile from '../../../public/assets/images/Mobile.png';
 import Logs from '../../../public/assets/images/Logs.png';
+import Logs2 from '../../../public/assets/images/Logs2.png';
 import Code from '../../../public/assets/images/Code.png';
 import Image1 from '../../../public/assets/images/Image1.png';
 import Image2 from '../../../public/assets/images/Image2.png';
@@ -14,7 +15,7 @@ export default function Howtowork() {
     <div className="mx-auto pt-32 md:max-w-5xl lg:max-w-6xl">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="space-y-4 px-6 pb-10 md:px-0">
-          <h2 className="text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">
+          <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
             Easy-to-use LLMOps{' '}
             <span className="relative">
               platform{' '}
@@ -68,7 +69,7 @@ export default function Howtowork() {
         <div className="aspect-auto rounded-3xl  border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">
+              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">
                 Create & Craft AI-driven apps in mere <span className="text-[#FEC200]">minutes</span>
               </h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
@@ -86,7 +87,7 @@ export default function Howtowork() {
         <div className="aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">
+              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">
                 Leverage your data to enhance AI capabilities
               </h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
@@ -128,7 +129,7 @@ export default function Howtowork() {
         <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">Streamlined set of APIs</h6>
+              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">Streamlined set of APIs</h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
@@ -145,7 +146,7 @@ export default function Howtowork() {
         <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white">Continuous improvement and operation</h6>
+              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">Continuous improvement and operation</h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
@@ -156,10 +157,10 @@ export default function Howtowork() {
           </p>
           <div className="mt-20">
             <div className="h-[100px] max-w-[618px]">
-              <Image src={Logs} className="rounded-xl" />
+              {/* <Image src={Logs} className="rounded-xl" /> */}
+              <Image src={Logs2} className="rounded-xl" />
             </div>
           </div>
-          <div></div>
         </div>
       </div>
     </div>

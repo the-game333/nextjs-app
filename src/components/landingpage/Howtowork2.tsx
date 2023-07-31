@@ -7,13 +7,14 @@ import Claude from '../../../public/assets/images/Claude.svg';
 import Cohere from '../../../public/assets/images/Cohere.svg';
 import HugFace from '../../../public/assets/images/HugFace.svg';
 import LangChain from '../../../public/assets/images/LangChain.svg';
+import Pattern from '../../../public/Pattern.png';
 
 export default function Howtowork2() {
   return (
     <div className="mx-auto pb-10 pt-32 md:max-w-5xl lg:max-w-6xl">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="space-y-4 px-6 pb-10 md:px-0">
-          <h2 className="text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">
+          <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
             Diverse LLM{' '}
             <span className="relative">
               support{' '}
@@ -101,15 +102,15 @@ export default function Howtowork2() {
               </span>
             </div>
             <div className="gap-4">
-              <h6 className="text-3xl font-medium text-gray-700 dark:text-white">Backend service API</h6>
-              <p className="relative mt-5 text-xl leading-6 text-[#C2C2C2]">Easily integrate into your application</p>
+              <h6 className="text-2xl font-medium text-gray-700 dark:text-white md:text-3xl">Backend service API</h6>
+              <p className="relative mt-5 text-lg leading-6 text-[#C2C2C2] md:text-xl">Easily integrate into your application</p>
             </div>
             <div className="mt-6 gap-4">
-              <h6 className="text-xl font-medium text-gray-700 dark:text-white">API TOKEN:</h6>
-              <p className="relative mt-3 break-all text-xl leading-6  text-[#00A3FE]">https://api.infrahive.io/v1</p>
+              <h6 className="text-2xl font-medium text-gray-700 dark:text-white md:text-3xl">API TOKEN:</h6>
+              <p className="relative mt-3 break-all text-lg leading-6 text-[#00A3FE]  md:text-xl">https://api.infrahive.io/v1</p>
             </div>
             <div className="mt-2">
-              <button className="mt-5 rounded-lg border p-3 ">API Reference</button>
+              <button className="mt-5 rounded-lg border p-3 w-full sm:w-max">API Reference</button>
             </div>
             <p
               style={{
@@ -136,19 +137,18 @@ export default function Howtowork2() {
               </span>
             </div>
             <div className="gap-4">
-              <h6 className="text-3xl font-medium text-gray-700 dark:text-white">Test-app</h6>
-              <p className="relative mt-5 text-xl leading-6 text-[#C2C2C2]">Ready to use AI WebApp</p>
+              <h6 className="text-2xl font-medium text-gray-700 dark:text-white md:text-3xl">Test-app</h6>
+              <p className="relative mt-5 text-lg leading-6 text-[#C2C2C2] md:text-xl">Ready to use AI WebApp</p>
             </div>
             <div className="mt-6 gap-4">
-              <h6 className="text-xl font-medium text-gray-700 dark:text-white">public url:</h6>
-              <p className="relative mt-3 break-all text-xl leading-6 text-[#00A3FE]">https://api.infrahive.io/v1</p>
+              <h6 className="text-2xl  font-medium text-gray-700 dark:text-white md:text-3xl">public url:</h6>
+              <p className="relative mt-3 break-all text-lg leading-6 text-[#00A3FE] md:text-xl">https://api.infrahive.io/v1</p>
             </div>
-            <div className="mt-2 flex-col gap-3 md:flex-row md:justify-start">
-              <button className="mt-5 rounded-lg border p-3">API Reference</button>
-              <button className="mt-5 rounded-lg border p-3">API Reference</button>
-              <button className="mt-5 rounded-lg border p-3">API Reference</button>
-              <button className="mt-5 rounded-lg border p-3">API Reference</button>
-
+            <div className="mt-2 flex-col flex  gap-3 md:flex-row md:justify-start">
+              <button className="mt-5 rounded-lg border p-3">Preview</button>
+              <button className="mt-5 rounded-lg border p-3">Share</button>
+              <button className="mt-5 rounded-lg border p-3">Embedded</button>
+              <button className="mt-5 rounded-lg border  p-3">Settings</button>
             </div>
             <p
               style={{
@@ -165,6 +165,22 @@ export default function Howtowork2() {
             ></p>
           </div>
         </div>
+        {/* <div className="mt-20 grid grid-cols-6 gap-4">
+          <div className="relative col-start-1 col-end-7 rounded-3xl border border-[#ffffff1a] bg-[#ffffff1a]">
+            <div className="absolute top-0">
+              <Image src={Pattern} height={500} />
+            </div>
+            <div className="space-y-4 px-6 pb-10 md:px-0">
+              <h2 className="mt-20 text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">
+                Embed app directly in two forms
+              </h2>
+            </div>
+            <div className="grid h-64 grid-flow-col grid-rows-1 gap-4">
+              <div className="w-26 h-12 bg-green-700">1</div>
+              <div className="w-26 h-12 bg-green-500">2</div>
+            </div>
+          </div>
+        </div> */}
       </div>
     </div>
   );

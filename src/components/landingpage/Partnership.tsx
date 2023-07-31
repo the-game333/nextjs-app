@@ -7,7 +7,7 @@ const Partnership = () => {
     <div className="mx-auto pt-20 md:max-w-5xl lg:max-w-6xl">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="mb-20 space-y-4 px-6 md:px-0">
-          <h2 className="text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">
+          <h2 className="text-center text-4xl  font-bold text-gray-800 dark:text-white md:text-5xl">
             The Product{' '}
             <span className="relative">
               Philosophy{' '}

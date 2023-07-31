@@ -26,7 +26,7 @@ export default function Header() {
       </div>
       <div className="relative ml-auto w-full pt-36">
         <div className="mx-auto text-center lg:w-2/3">
-          <h1 className="before:bg- relative mb-3 flex justify-center gap-1 text-4xl font-bold text-gray-900 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-full before:content-[''] dark:text-white sm:gap-2 md:text-5xl xl:gap-5 xl:text-6xl">
+          <h1 className="before:bg- relative mb-3 flex flex-col  justify-center gap-1 text-4xl font-bold text-gray-900 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-full before:content-[''] dark:text-white sm:flex-row sm:gap-2 md:text-5xl xl:gap-5 xl:text-6xl">
             With
             <span>
               InfraH
@@ -85,24 +85,9 @@ export default function Header() {
               filter: 'blur(100px)'
             }}
           ></p>
-          <div className=" heading inline-flex break-all p-2 text-5xl font-bold text-gray-900  dark:text-white">
+          <div className=" heading flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
             <h1> Supercharge </h1>
-            {/* <div className="cubespinner">
-              {labels.map((label, index) => (
-                <h5
-                  key={index}
-                  className={`face${index + 1} cubespinner ${currentIndex === index ? 'visible' : 'hidden'}`}
-                  style={{
-                    background: 'linear-gradient(90.13deg, rgb(254, 249, 195) .11%, rgb(253, 224, 71) 25.06%, rgb(234, 179, 8))',
-                    WebkitBackgroundClip: 'text',
-                    WebkitTextFillColor: 'transparent'
-                  }}
-                >
-                  {label}
-                </h5>
-              ))}
-            </div> */}
-            <div className="animated">
+            <div className="animated max-h-[2rem]  ">
               <h5 style={{ color: '#FEDE00' }}>AI Powered Apps</h5>
               <h5
                 style={{
