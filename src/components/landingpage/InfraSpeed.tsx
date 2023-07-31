@@ -71,6 +71,19 @@ export default function InfraSpeed() {
               <Image src={ChatAggent} />
             </div>
             <p className="text-2xl">Chat Agents</p>
+            <p
+              style={{
+                height: '30%',
+                width: '10%',
+                top: '20%',
+                left: '52%',
+                transform: 'translateX(50%)',
+                position: 'absolute',
+                borderRadius: '582px',
+                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                filter: 'blur(80px)'
+              }}
+            ></p>
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
@@ -90,6 +103,19 @@ export default function InfraSpeed() {
               <Image src={Batch} />
             </div>
             <p className="text-2xl">Batch Operations</p>
+            <p
+              style={{
+                height: '20%',
+                width: '15%',
+                top: '60%',
+                left: '30%',
+                transform: 'translateX(50%)',
+                position: 'absolute',
+                borderRadius: '582px',
+                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                filter: 'blur(100px)'
+              }}
+            ></p>
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
@@ -104,7 +130,7 @@ export default function InfraSpeed() {
             <p className="text-2xl">Tools</p>
           </div>
         </div>
-        <div className="mt-20 flex justify-center">
+        <div className="mt-20 flex justify-center pb-10">
           <button className="bg rounded-full border px-7 py-2">View More</button>
         </div>
       </div>

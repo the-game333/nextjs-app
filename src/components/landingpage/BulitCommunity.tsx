@@ -2,11 +2,14 @@ import React from 'react';
 import Cover from '../../../public/assets/images/Conver.svg';
 import FollowUp from '../../../public/assets/images/FollowUp.svg';
 import Text from '../../../public/assets/images/Text.svg';
+import Eclipse from '../../../public/assets/images/Eclipse.svg';
+
 import Image from 'next/image';
+import zIndex from '@mui/material/styles/zIndex';
 export default function BulitCommunity() {
   return (
     <div className="mx-auto  pt-20 md:max-w-5xl lg:max-w-6xl">
-      <div className="text-gray-600 dark:text-gray-300" id="testimonials">
+      <div className=" text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="space-y-4 px-6 pb-10 md:px-0">
           <h2 className="text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">Next Tier Chat Experience</h2>
         </div>
@@ -17,7 +20,20 @@ export default function BulitCommunity() {
             </p>
           </div>
         </div>
-        <div className="grid grid-cols-1 gap-8  pt-10 md:columns-1 md:grid-cols-3">
+        <p
+          style={{
+            height: '30%',
+            width: '10%',
+            top: '25%',
+            left: '5%',
+            transform: 'translateX(50%)',
+            position: 'absolute',
+            borderRadius: '582px',
+            background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+            filter: 'blur(120px)'
+          }}
+        ></p>
+        <div className="grid grid-cols-1 gap-8  pt-10 md:columns-1 md:grid-cols-3 pb-20">
           <div className="aspect-auto rounded-3xl  border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex justify-center">
               <Image src={Cover} height={80} width={80} />

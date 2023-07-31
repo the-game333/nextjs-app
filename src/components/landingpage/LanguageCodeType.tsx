@@ -3,12 +3,13 @@ import Notions from '../../../public/assets/images/Nations.svg';
 import Slack from '../../../public/assets/images/Slack.svg';
 import Drive from '../../../public/assets/images/Drive.svg';
 import GitHub from '../../../public/assets/images/GitHub.svg';
+import Hero from '../../../public/assets/images/Hero.svg';
 
 import Image from 'next/image';
 export default function LanguageCodeType() {
   return (
     <div className="mx-auto pt-20 md:max-w-5xl lg:max-w-6xl">
-      <div className="grid grid-cols-1 gap-8  pt-10 md:columns-1 md:grid-cols-2">
+      <div className="relative grid grid-cols-1 gap-8  pb-40 pt-10 md:columns-1 md:grid-cols-2">
         <div className="aspect-auto rounded-3xl  border-gray-100  shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
           <div className="gap-4">
             <h6 className="text-5xl font-medium leading-10 text-gray-700 dark:text-white">Transform your data, the smart way</h6>
@@ -23,6 +24,22 @@ export default function LanguageCodeType() {
             highly effective embeddings.
           </p>
         </div>
+        <p
+          style={{
+            height: '30%',
+            width: '10%',
+            top: '5%',
+            left: '40%',
+            transform: 'translateX(50%)',
+            position: 'absolute',
+            borderRadius: '582px',
+            background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+            filter: 'blur(80px)'
+          }}
+        ></p>
+        <span className="absolute left-1/3 top-80">
+          <Image src={Hero} width={154} height={250} />
+        </span>
         <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
           <div>
             <div>

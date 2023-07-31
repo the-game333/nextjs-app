@@ -3,6 +3,7 @@ import React from 'react';
 import Alpha from '../../../public/assets/images/Alpha.png';
 import Pattern from '../../../public/Pattern.png';
 import Robot2 from '../../../public/assets/images/Robot2.png';
+import Eclipse from '../../../public/assets/images/Eclipse.svg';
 
 export default function Howtowork3() {
   return (
@@ -72,7 +73,10 @@ export default function Howtowork3() {
             <div className="sm-auto grid grid-rows-1 justify-center gap-12 pt-10 lg:grid-flow-col">
               <div className="relative rounded-3xl border border-[#ffffff1a] ">
                 <h2 className="rounded-xl bg-[#0E0C15] p-6 text-center text-lg text-white md:text-2xl">As full website</h2>
-                <div className="flex justify-center py-12">
+                <div className="relative flex justify-center py-12">
+                  <span className="absolute left-[168px]">
+                    <Image src={Eclipse} />
+                  </span>
                   <Image src={Alpha} width={110} height={110} />
                 </div>
                 <div className="m-3 rounded-xl bg-[#0E0C15]">
@@ -86,7 +90,10 @@ export default function Howtowork3() {
               </div>
               <div className="relative rounded-3xl border border-[#ffffff1a] ">
                 <h2 className="rounded-xl bg-[#0E0C15] p-6 text-center text-lg text-white md:text-2xl">As chatbot</h2>
-                <div className="flex justify-center py-12">
+                <div className="relative flex justify-center py-12">
+                  <span className=" absolute left-[168px]">
+                    <Image src={Eclipse} />
+                  </span>
                   <Image src={Robot2} width={110} height={110} />
                 </div>
                 <div className="m-3 rounded-xl bg-[#0E0C15] ">

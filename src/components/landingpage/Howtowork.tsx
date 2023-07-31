@@ -9,6 +9,7 @@ import Image2 from '../../../public/assets/images/Image2.png';
 import Image3 from '../../../public/assets/images/Image3.png';
 import Image4 from '../../../public/assets/images/Image4.png';
 import Image5 from '../../../public/assets/images/Image5.png';
+import Eclipse from '../../../public/assets/images/Eclipse.svg';
 
 export default function Howtowork() {
   return (
@@ -69,7 +70,7 @@ export default function Howtowork() {
         <div className="aspect-auto rounded-3xl  border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">
+              <h6 className="text-3xl font-medium leading-10 text-gray-700 dark:text-white md:text-4xl">
                 Create & Craft AI-driven apps in mere <span className="text-[#FEC200]">minutes</span>
               </h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
@@ -80,14 +81,18 @@ export default function Howtowork() {
             Whether it's for your team's internal operations or an external launch, you have the power to effortlessly deploy your
             application in just 5 minutes.
           </p>
-          <div>
-            <Image src={Mobile} height={250} width={350} />
+
+          <div className="relative flex justify-center">
+            <Image src={Mobile} height={250} width={300} />
+            <span className="-z-1 absolute -top-[100px]">
+              <Image src={Eclipse} />
+            </span>
           </div>
         </div>
         <div className="aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">
+              <h6 className="text-3xl font-medium leading-10 text-gray-700 dark:text-white md:text-4xl">
                 Leverage your data to enhance AI capabilities
               </h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
@@ -129,7 +134,7 @@ export default function Howtowork() {
         <div className="col-span-2 aspect-auto  rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">Streamlined set of APIs</h6>
+              <h6 className="text-3xl font-medium leading-10 text-gray-700 dark:text-white md:text-4xl">Streamlined set of APIs</h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
@@ -139,14 +144,19 @@ export default function Howtowork() {
             access just one API interface to effortlessly integrate plugins and maintain long-lasting connections. Say goodbye to complexity
             and hello to seamless integration!
           </p>
-          <div className="pt-5">
+          <div className="relative pt-5">
             <Image src={Code} className="rounded-xl" height={250} width={350} />
+            <span className="absolute">
+              <Image src={Eclipse} />
+            </span>
           </div>
         </div>
         <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-[#ffffff1a] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
           <div className="flex gap-4">
             <div>
-              <h6 className="text-3xl md:text-4xl font-medium leading-10 text-gray-700 dark:text-white">Continuous improvement and operation</h6>
+              <h6 className="text-3xl font-medium leading-10 text-gray-700 dark:text-white md:text-4xl">
+                Continuous improvement and operation
+              </h6>
               {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
             </div>
           </div>
