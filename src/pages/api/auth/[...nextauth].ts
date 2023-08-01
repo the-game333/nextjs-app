@@ -12,8 +12,9 @@ export const authOptions = {
         GitHubProvider({
             clientId: "a364b8e6113ce8cbe484",
             clientSecret: "5ff0ed0a8acebc3293a8b8efa0de8d84976712e8"
-        })
+        }),
         // ...add more providers here
     ],
+    secret : "secret"
 }
 export default NextAuth(authOptions)

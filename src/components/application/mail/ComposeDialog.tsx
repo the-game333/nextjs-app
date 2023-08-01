@@ -36,6 +36,9 @@ import { IconArrowsDiagonal2 } from '@tabler/icons';
 // animation
 const Transition = forwardRef((props: SlideProps, ref) => <Slide direction="up" ref={ref} {...props} />);
 
+const TypedLink = Link as React.ElementType;
+
+
 // ==============================|| MAIL COMPOSE DIALOG ||============================== //
 
 const ComposeDialog = () => {
@@ -99,7 +102,7 @@ const ComposeDialog = () => {
                 <Grid container justifyContent="flex-end" spacing={0}>
                   <Grid item>
                     <MuiLink
-                      component={Link}
+                      component={TypedLink}
                       href="#"
                       color={theme.palette.mode === 'dark' ? 'primary' : 'secondary'}
                       onClick={handleCcBccChange}

@@ -35,7 +35,7 @@ const CardStyle3 = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = React.useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent) => {
     setAnchorEl(event.currentTarget);
   };

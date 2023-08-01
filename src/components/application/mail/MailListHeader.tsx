@@ -27,7 +27,7 @@ const MailListHeader = ({
 }: MailListHeaderProps) => {
   const matchDownSM = useMediaQuery((theme: Theme) => theme.breakpoints.down('md'));
 
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClickSort = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget);
   };

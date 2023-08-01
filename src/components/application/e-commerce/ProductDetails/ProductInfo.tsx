@@ -62,6 +62,9 @@ const validationSchema = yup.object({
 
 // ==============================|| COLORS OPTION ||============================== //
 
+const TypedLink = Link as React.ElementType;
+
+
 const Colors = ({ checked, colorsData }: { checked?: boolean; colorsData: ColorsOptionsProps[] }) => {
   const theme = useTheme();
   return (
@@ -280,7 +283,7 @@ const ProductInfo = ({ product }: { product: Products }) => {
                               *
                             </Typography>
                           </Typography>
-                          <Typography variant="caption" color="primary" component={Link} href="#">
+                          <Typography variant="caption" color="primary" component={TypedLink} href="#">
                             Size Chart?
                           </Typography>
                         </Stack>

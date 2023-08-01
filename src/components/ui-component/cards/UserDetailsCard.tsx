@@ -22,7 +22,7 @@ const UserDetailsCard = ({ about, avatar, contact, email, location, name, role }
   const theme = useTheme();
   const avatarProfile = avatar && `${avatarImage}/${avatar}`;
 
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

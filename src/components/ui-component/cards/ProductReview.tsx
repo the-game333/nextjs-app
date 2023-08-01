@@ -30,7 +30,7 @@ interface ReviewProps {
 }
 
 const ProductReview = ({ avatar, date, name, status, rating, review }: ReviewProps) => {
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent<SVGSVGElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

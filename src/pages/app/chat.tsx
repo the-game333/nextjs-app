@@ -82,7 +82,7 @@ const ChatMainPage = () => {
   const dispatch = useDispatch();
 
   // handle right sidebar dropdown menu
-  const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = React.useState<Element | (() => Element) | null | undefined>(null);
   const handleClickSort = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

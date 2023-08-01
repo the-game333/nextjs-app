@@ -11,21 +11,23 @@ const perks: string[] = [
   'For teams of more than 5 users'
 ];
 
+const TypedLink = Link as React.ElementType;
+
 const PricingComp = () => {
   return (
-    <div className="h-full pt-38 text-center text-white ">
-      <h2 className="text-3xl lg:text-4xl font-semibold mt-24 lg:ml-4">Try for free and see how AI can work for you</h2>
+    <div className="pt-38 h-full text-center text-white ">
+      <h2 className="mt-24 text-3xl font-semibold lg:ml-4 lg:text-4xl">Try for free and see how AI can work for you</h2>
 
       {/* Pricing Card */}
-      <div className="p-6 text-left max-w-xl mx-4 md:mx-auto bg-grey rounded-xl mt-20">
+      <div className="mx-4 mt-20 max-w-xl rounded-xl bg-grey p-6 text-left md:mx-auto">
         <img src="https://uploads-ssl.webflow.com/5f23b456c81e6bebb921e9cb/6315e2a30cc3cf2cba3aabe8_plan3.svg" height={48} />
         <p className="text-2xl ">Enterprise</p>
-        <p className="opacity-75 text-lg -mt-1">For content teams looking for personalized, on-brand storytelling.</p>
+        <p className="-mt-1 text-lg opacity-75">For content teams looking for personalized, on-brand storytelling.</p>
         <p className="text-4xl font-semibold">Custom</p>
         <div className="">
           {perks.map((perk, index) => (
-            <div key={index} className="flex gap-6 -mt-2 text-lg">
-              <img src="./checkMark.svg" className="h-6 my-auto" />
+            <div key={index} className="-mt-2 flex gap-6 text-lg">
+              <img src="./checkMark.svg" className="my-auto h-6" />
               <p>{perk}</p>
             </div>
           ))}
@@ -35,7 +37,7 @@ const PricingComp = () => {
           color="inherit"
           sx={{ color: 'black', height: '43px', width: '100%', marginTop: '4rem' }}
           variant="contained"
-          component={Link}
+          component={TypedLink}
           target={'_blank'}
           href="https://calendly.com/infrahive/infrahive-demo"
           //  target="_blank"

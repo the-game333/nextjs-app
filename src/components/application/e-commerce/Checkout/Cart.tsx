@@ -89,6 +89,8 @@ interface CartProps {
   updateQuantity: (id: string | number | undefined, quantity: number) => void;
 }
 
+const TypedLink = Link as React.ElementType;
+
 const Cart = ({ checkout, onNext, removeProduct, updateQuantity }: CartProps) => {
   const theme = useTheme();
   const matchDownMD = useMediaQuery(theme.breakpoints.down('lg'));
@@ -218,7 +220,7 @@ const Cart = ({ checkout, onNext, removeProduct, updateQuantity }: CartProps) =>
       <Grid item xs={12}>
         <Grid direction={matchDownMD ? 'column-reverse' : 'row'} container spacing={3} alignItems={matchDownMD ? '' : 'center'}>
           <Grid item xs={12} md={7} lg={8}>
-            <Button component={Link} href="/app/e-commerce/products" variant="text" startIcon={<KeyboardBackspaceIcon />}>
+            <Button component={TypedLink} href="/app/e-commerce/products" variant="text" startIcon={<KeyboardBackspaceIcon />}>
               Continue Shopping
             </Button>
           </Grid>

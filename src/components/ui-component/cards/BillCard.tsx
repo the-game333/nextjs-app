@@ -16,6 +16,8 @@ interface BillCardProps extends GenericCardProps {
   bg: string;
 }
 
+const TypedLink = Link as React.ElementType;
+
 const BillCard = ({ primary, secondary, link, color, bg }: BillCardProps) => {
   const theme = useTheme();
   return (
@@ -37,7 +39,7 @@ const BillCard = ({ primary, secondary, link, color, bg }: BillCardProps) => {
               variant="text"
               disableElevation
               disableRipple
-              component={Link}
+              component={TypedLink}
               href="#"
               sx={{
                 color,
