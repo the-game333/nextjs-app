@@ -21,6 +21,9 @@ const chance = new Chance();
 
 const Transition = forwardRef((props: ZoomProps, ref) => <Zoom ref={ref} {...props} />);
 
+const TypedLink = Link as React.ElementType;
+
+
 // ==============================|| CHECKOUT CART - DISCOUNT COUPON CODE ||============================== //
 
 const OrderComplete = ({ open }: { open: boolean }) => {
@@ -87,12 +90,12 @@ const OrderComplete = ({ open }: { open: boolean }) => {
                 justifyContent="space-between"
               >
                 <Grid item>
-                  <Button component={Link} href="/app/e-commerce/products" variant="text" startIcon={<KeyboardBackspaceIcon />}>
+                  <Button component={TypedLink} href="/app/e-commerce/products" variant="text" startIcon={<KeyboardBackspaceIcon />}>
                     Continue Shopping
                   </Button>
                 </Grid>
                 <Grid item>
-                  <Button component={Link} href="/app/e-commerce/products" variant="contained" fullWidth>
+                  <Button component={TypedLink} href="/app/e-commerce/products" variant="contained" fullWidth>
                     Download Invoice
                   </Button>
                 </Grid>

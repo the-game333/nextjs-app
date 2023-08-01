@@ -130,10 +130,10 @@ const index = () => {
     onChangeMenuType('light');
   }, []);
   return (
-    <div>
-      <AppBar />
+    <div className='bg-black'>
+      <AppBar background={'transparent'} />
       <div className="mx-auto mt-24 max-w-5xl px-4">
-        <h1 className="my-4 text-center text-2xl font-semibold">Explore Apps</h1>
+        <h1 className="my-4 text-center text-2xl font-semibold  text-[#BDC8F0]">Explore Apps</h1>
         <hr className="opacity-40" />
         {/* Categories */}
         <div className="my-4 flex justify-between">

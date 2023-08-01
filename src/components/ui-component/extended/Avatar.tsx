@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import React, { ReactNode } from 'react';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -13,7 +13,7 @@ interface AvatarProp extends AvatarProps {
   src?: string;
   className?: string;
   color?: string;
-  component?: OverridableComponent<any> /** Any component can override */;
+  component?: OverridableComponent<any>;
   target?: LinkTarget;
   href?: string;
   sx?: AvatarProps['sx'];

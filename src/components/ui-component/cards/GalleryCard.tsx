@@ -20,7 +20,7 @@ const backImage = '/assets/images/profile';
 const GalleryCard = ({ dateTime, image, title }: GenericCardProps) => {
   const theme = useTheme();
   const backProfile = `${backImage}/${image}`;
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

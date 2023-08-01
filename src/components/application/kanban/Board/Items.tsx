@@ -66,7 +66,7 @@ const Items = ({ item, index }: Props) => {
     dispatch(selectItem(id));
   };
 
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

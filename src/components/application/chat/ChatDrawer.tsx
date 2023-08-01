@@ -37,7 +37,7 @@ const ChatDrawer = ({ handleDrawerOpen, openChatDrawer, setUser }: ChatDrawerPro
   const matchDownLG = useMediaQuery(theme.breakpoints.down('lg'));
 
   // show menu to set current user status
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>();
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>();
   const handleClickRightMenu = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

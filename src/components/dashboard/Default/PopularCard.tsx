@@ -25,7 +25,7 @@ interface PopularCardProps {
 const PopularCard = ({ isLoading }: PopularCardProps) => {
   const theme = useTheme();
 
-  const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = React.useState<Element | (() => Element) | null | undefined>(null);
 
   const handleClick = (event: React.SyntheticEvent) => {
     setAnchorEl(event.currentTarget);

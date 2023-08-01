@@ -232,7 +232,7 @@ const ProductList = () => {
   const [rows, setRows] = React.useState<Products[]>([]);
   const { products } = useSelector((state) => state.product);
 
-  const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = React.useState<Element | (() => Element) | null | undefined>(null);
 
   const handleMenuClick = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);

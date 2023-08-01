@@ -45,7 +45,7 @@ const MailDetails = ({ handleUserDetails, data, handleStarredChange, handleImpor
   const { fontFamily } = useConfig();
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
 
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClickSort = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

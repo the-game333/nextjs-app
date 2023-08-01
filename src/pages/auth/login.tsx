@@ -107,12 +107,7 @@ const Login = () => {
               </Grid>
               <Grid item xs={12}>
                 <Grid item container direction="column" alignItems="flex-end" xs={12}>
-                  <Typography
-                    component={Link}
-                    href="/auth/register"
-                    variant="subtitle1"
-                    sx={{ textDecoration: 'none' }}
-                  >
+                  <Typography component={Link} href="/auth/register" variant="subtitle1" sx={{ textDecoration: 'none' }}>
                     Don&apos;t have an account?
                   </Typography>
                 </Grid>

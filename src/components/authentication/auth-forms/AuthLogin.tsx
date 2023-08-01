@@ -84,6 +84,9 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
     }
   }, [session]);
 
+  const TypedLink = Link as React.ElementType;
+
+
   return (
     <>
       <Grid container direction="column" justifyContent="center" spacing={2}>
@@ -266,7 +269,7 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
               />
               <Typography
                 variant="subtitle1"
-                component={Link}
+                component={TypedLink}
                 href={loginProp ? `/pages/authentication/auth${loginProp}/forgot-password` : '/pages/authentication/auth3/forgot-password'}
                 color="secondary"
                 sx={{ textDecoration: 'none' }}

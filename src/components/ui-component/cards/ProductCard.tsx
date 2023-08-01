@@ -49,6 +49,8 @@ const ProductCard = ({ id, color, name, image, description, offerPrice, salePric
     setLoading(false);
   }, []);
 
+  const TypedLink = Link as React.ElementType;
+
   return (
     <>
       {isLoading ? (
@@ -68,14 +70,14 @@ const ProductCard = ({ id, color, name, image, description, offerPrice, salePric
             sx={{ height: 220 }}
             image={prodProfile}
             title="Contemplative Reptile"
-            component={Link}
+            component={TypedLink}
             href={`/app/e-commerce/product-details/${id}`}
           />
           <CardContent sx={{ p: 2 }}>
             <Grid container spacing={2}>
               <Grid item xs={12}>
                 <Typography
-                  component={Link}
+                  component={TypedLink}
                   href={`/app/e-commerce/product-details/${id}`}
                   variant="subtitle1"
                   sx={{ textDecoration: 'none' }}

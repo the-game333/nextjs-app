@@ -18,7 +18,7 @@ import clsx from 'clsx';
 
 const Anchor = styled('a')({});
 
-const Link = React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(
+const Link =  React.forwardRef<HTMLAnchorElement, LinkProps>(function Link(
   { activeClassName = 'active', as: linkAs, className: classNameProps, href, noLinkStyle, role, ...other },
   ref
 ) {

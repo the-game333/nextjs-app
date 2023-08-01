@@ -26,7 +26,7 @@ interface AnalyticsChartCardProps extends GenericCardProps {
 }
 
 const AnalyticsChartCard = ({ title, chartData, dropData, listData }: AnalyticsChartCardProps) => {
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
 
   let dropHtml;
   if (dropData) {

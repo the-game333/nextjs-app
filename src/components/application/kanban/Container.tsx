@@ -44,6 +44,8 @@ function KanbanPage({ children }: Props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
+  const TypedLink = Link as React.ElementType;
+
   useEffect(() => {
     dispatch(getItems());
     dispatch(getColumns());
@@ -89,14 +91,14 @@ function KanbanPage({ children }: Props) {
             >
               <Tab
                 sx={{ textTransform: 'none' }}
-                component={Link}
+                component={TypedLink}
                 href="/app/kanban/board"
                 label={value === 0 ? 'Board' : 'View as Board'}
                 {...a11yProps(0)}
               />
               <Tab
                 sx={{ textTransform: 'none' }}
-                component={Link}
+                component={TypedLink}
                 href="/app/kanban/backlogs"
                 label={value === 1 ? 'Backlogs' : 'View as Backlog'}
                 {...a11yProps(1)}

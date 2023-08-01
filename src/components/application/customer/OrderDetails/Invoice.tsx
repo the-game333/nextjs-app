@@ -26,6 +26,8 @@ const rows = [
   createData('Admin Template', 'lorem ipsum dolor sit amat, connecter adieu siccing eliot', '5', '$150.00', '$750.00')
 ];
 
+const TypedLink = Link as React.ElementType;
+
 const Invoice = () => {
   const theme = useTheme();
   const componentRef: React.Ref<HTMLDivElement> = useRef(null);
@@ -46,7 +48,7 @@ const Invoice = () => {
                   <Typography variant="body2">Missouri. (123)-65202</Typography>
                 </Grid>
                 <Grid item xs={12}>
-                  <Typography component={Link} href="#" variant="body2" color="primary">
+                  <Typography component={TypedLink} href="#" variant="body2" color="primary">
                     demo@company.com
                   </Typography>
                 </Grid>
@@ -77,7 +79,7 @@ const Invoice = () => {
                           <Typography variant="body2">(+61) 9999 567 891</Typography>
                         </Grid>
                         <Grid item xs={12}>
-                          <Typography component={Link} href="#" variant="body2" color="primary">
+                          <Typography component={TypedLink} href="#" variant="body2" color="primary">
                             demo@company.com
                           </Typography>
                         </Grid>
@@ -108,7 +110,7 @@ const Invoice = () => {
                           <Typography variant="body2">Order Id :</Typography>
                         </Grid>
                         <Grid item xs={8}>
-                          <Typography variant="body2" component={Link} href="#">
+                          <Typography variant="body2" component={TypedLink} href="#">
                             #146859
                           </Typography>
                         </Grid>

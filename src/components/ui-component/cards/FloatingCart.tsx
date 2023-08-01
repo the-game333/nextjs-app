@@ -25,9 +25,11 @@ const FloatingCart = () => {
   const cart = useSelector((state) => state.cart);
   const totalQuantity = sum(cart.checkout.products.map((item: CartProductStateProps) => item.quantity));
 
+  const TypedLink = Link as React.ElementType;
+
   return (
     <Fab
-      component={Link}
+      component={TypedLink}
       href="/app/e-commerce/checkout"
       size="large"
       sx={{

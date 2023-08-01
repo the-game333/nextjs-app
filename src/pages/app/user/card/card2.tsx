@@ -25,7 +25,7 @@ const CardStyle2 = () => {
   const dispatch = useDispatch();
   const [users, setUsers] = React.useState<UserSimpleCardProps[]>([]);
   const { simpleCards } = useSelector((state) => state.user);
-  const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = React.useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent) => {
     setAnchorEl(event.currentTarget);
   };

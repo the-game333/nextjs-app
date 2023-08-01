@@ -17,7 +17,7 @@ import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 
 const ListStylePage1 = () => {
   const theme = useTheme();
-  const [anchorEl, setAnchorEl] = React.useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = React.useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent) => {
     setAnchorEl(event.currentTarget);
   };

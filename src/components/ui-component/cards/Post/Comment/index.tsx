@@ -101,7 +101,7 @@ const Comment = ({ comment, handleCommentLikes, handleReplayLikes, postId, reply
   const theme = useTheme();
   const matchesXS = useMediaQuery(theme.breakpoints.down('md'));
 
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent) => {
     setAnchorEl(event.currentTarget);
   };

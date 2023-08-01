@@ -30,7 +30,7 @@ const Reply = ({ commentId, handleReplayLikes, onReply, postId, reply }: ReplyPr
   const theme = useTheme();
   const { id } = reply;
 
-  const [anchorEl, setAnchorEl] = useState<Element | ((element: Element) => Element) | null | undefined>(null);
+  const [anchorEl, setAnchorEl] = useState<Element | (() => Element) | null | undefined>(null);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement> | undefined) => {
     setAnchorEl(event?.currentTarget);
   };

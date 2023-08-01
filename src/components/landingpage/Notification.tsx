@@ -17,7 +17,7 @@ const Notification = () => (
   <Container>
     <Grid container spacing={gridSpacing} gap={'20px'} sx={{ position: 'relative' }}>
       <Grid item textAlign={'center'} xs={12} lg={12} md={12} zIndex={2}>
-        <Typography variant="h1" component="div">
+        <Typography variant="h1" component="div" sx={{color : "rgb(215, 220, 236)"}}>
           Unleash the Power of AI with InfraHive
         </Typography>
       </Grid>

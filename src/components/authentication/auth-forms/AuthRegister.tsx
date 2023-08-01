@@ -73,6 +73,8 @@ const FirebaseRegister = ({ ...others }) => {
     setLevel(strengthColor(temp));
   };
 
+  const TypedLink = Link as React.ElementType;
+
   return (
     <>
       <Grid container direction="column" justifyContent="center" spacing={2}>
@@ -132,7 +134,7 @@ const FirebaseRegister = ({ ...others }) => {
           fname: '',
           lname: '',
           email: '',
-          password: '',
+          password: ''
           // submit: null
         }}
         validationSchema={Yup.object().shape({
@@ -157,7 +159,6 @@ const FirebaseRegister = ({ ...others }) => {
             //   }
             // );
             await apiRegister(values);
-
           } catch (err: any) {
             console.error(err);
             if (scriptedRef.current) {
@@ -279,7 +280,7 @@ const FirebaseRegister = ({ ...others }) => {
                   label={
                     <Typography variant="subtitle1">
                       Agree with &nbsp;
-                      <Typography variant="subtitle1" component={Link} href="/">
+                      <Typography variant="subtitle1" component={TypedLink} href="/">
                         Terms & Condition.
                       </Typography>
                     </Typography>
