@@ -106,6 +106,7 @@ const MenuAccordion = (props: any) => {
         />
       </AccordionSummary>
       <AccordionDetails className="max-h-[300px]">
+        //@ts-nocheck
         <ScrollBar style={{ maxHeight: '300px' }}>
           {props.data.map((i: any) => {
             return (
@@ -116,6 +117,7 @@ const MenuAccordion = (props: any) => {
           })}
         </ScrollBar>
       </AccordionDetails>
+      
     </Accordion>
   );
 };
@@ -337,10 +339,10 @@ const AppBar = ({ ...others }) => {
                   height: '3rem'
                 }}
                 variant="contained"
-                href="https://calendly.com/infrahive/infrahive-demo"
+                href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
                 target={'_blank'}
               >
-                Request Access
+                Contact Now
               </Button>
             </Stack>
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>

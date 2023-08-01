@@ -123,7 +123,7 @@ export default function Header() {
           </p>
           <div className="relative mt-16 flex flex-wrap justify-center gap-x-6 gap-y-4">
             <a
-              href="#"
+              href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
               className="before:bg-primary relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
             >
               <span className="relative flex items-center gap-2 rounded-full bg-white px-6 py-4 text-base font-semibold text-black">

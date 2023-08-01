@@ -25,10 +25,10 @@ const Intro = () => {
             width: '140px'
           }}
           variant="contained"
-          href="https://calendly.com/infrahive/infrahive-demo"
+          href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
           target={'_blank'}
         >
-          Request Access
+          Contact Now
         </Button>
       </div>
     </div>

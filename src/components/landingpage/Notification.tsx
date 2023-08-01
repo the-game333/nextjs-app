@@ -17,7 +17,7 @@ const Notification = () => (
   <Container>
     <Grid container spacing={gridSpacing} gap={'20px'} sx={{ position: 'relative' }}>
       <Grid item textAlign={'center'} xs={12} lg={12} md={12} zIndex={2}>
-        <Typography variant="h1" component="div" sx={{color : "rgb(215, 220, 236)"}}>
+        <Typography variant="h1" component="div" sx={{ color: 'rgb(215, 220, 236)' }}>
           Unleash the Power of AI with InfraHive
         </Typography>
       </Grid>
@@ -39,7 +39,7 @@ const Notification = () => (
             <Button
               variant="contained"
               color="inherit"
-              href="https://calendly.com/infrahive/infrahive-demo"
+              href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
               target={'_blank'}
               sx={{
                 width: '60%',
@@ -52,7 +52,7 @@ const Notification = () => (
               }}
               size="medium"
             >
-              Request Access
+              Contact Now
             </Button>
           </CardBox>
         </Grid>

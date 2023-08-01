@@ -131,7 +131,7 @@ export default function InfraSpeed() {
           </div>
         </div>
         <div className="mt-10 md:mt-20 flex justify-center pb-5 md:pb-10">
-          <button className="bg rounded-full border px-7 py-2">View More</button>
+          <a href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4" className="bg rounded-full border px-7 py-2">View More</a>
         </div>
       </div>
     </div>

@@ -216,11 +216,18 @@ export default function PowerOfDataSet() {
               Sign up & Start Building with InfraHive now and soar to new heights of AI-powered success.
             </p>
           </div>
+          <a href="https://inrahive.io">
           <div className="mt-10 flex justify-center">
             <button className="rounded-full border bg-white p-3 px-5 font-bold">Sign Up Now</button>
           </div>
+          </a>
         </div>
       </div>
     </div>
   );
 }
+
+
+
+
+
