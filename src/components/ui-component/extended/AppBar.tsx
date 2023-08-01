@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
+import { useTheme, withStyles } from '@mui/material/styles';
 import {
   AppBar as MuiAppBar,
   Box,
@@ -32,7 +32,12 @@ import TooltipButton from 'components/customers/tooltip';
 // assets
 import { IconBook, IconCreditCard, IconDashboard, IconHome2 } from '@tabler/icons';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import AppShortcutIcon from '@mui/icons-material/AppShortcut';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import EditNoteIcon from '@mui/icons-material/EditNote';
 // elevation scroll
 interface ElevationScrollProps {
   children: ReactElement;
@@ -70,6 +75,12 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {
 );
 // ==============================|| MINIMAL LAYOUT APP BAR ||============================== //
 
+const boxSX = {
+  '&:hover': {
+    color: 'black'
+  }
+};
+
 const AppBar = ({ ...others }) => {
   const [drawerToggle, setDrawerToggle] = React.useState<boolean>(false);
   /** Method called on multiple components with different event types */
@@ -85,7 +96,7 @@ const AppBar = ({ ...others }) => {
       <MuiAppBar
         position="sticky"
         sx={{
-          background:`${others.background} !important`
+          background: `${others.background} !important`
         }}
       >
         <Container>
@@ -137,7 +148,7 @@ const AppBar = ({ ...others }) => {
               <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(189, 200, 240)' }}>
-                    <CardContent>
+                    <CardContent sx={{ color: 'rgb(189, 200, 240)' }}>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>INDUSTRIES</Typography>
@@ -309,47 +320,124 @@ const AppBar = ({ ...others }) => {
               </Button> */}
             </Stack>
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
-              <IconButton color="inherit" onClick={drawerToggler(true)} size="large">
+              <IconButton sx={{ color: 'white' }} onClick={drawerToggler(true)} size="large">
                 <MenuIcon />
               </IconButton>
               <Drawer anchor="top" open={drawerToggle} onClose={drawerToggler(false)}>
                 {drawerToggle && (
-                  <Box sx={{ width: 'auto' }} role="presentation" onClick={drawerToggler(false)} onKeyDown={drawerToggler(false)}>
+                  <Box
+                    sx={{ width: 'auto', backgroundColor: 'black', color: 'white !important' }}
+                    role="presentation"
+                    onClick={drawerToggler(false)}
+                    onKeyDown={drawerToggler(false)}
+                  >
                     <List>
                       <Link style={{ textDecoration: 'none' }} href="#" target="_blank">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconHome2 />
+                            <ProductionQuantityLimitsIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Home" />
+                          <ListItemText
+                            secondary="Products"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white',
+                                '&:hover': {
+                                  color: 'black'
+                                }
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
                       <Link style={{ textDecoration: 'none' }} href="/login" target="_blank">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconDashboard />
+                            <EmojiObjectsIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Dashboard" />
+                          <ListItemText
+                            secondary="Solutions"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white',
+                                '&:hover': {
+                                  color: 'black'
+                                }
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
-                      <Link style={{ textDecoration: 'none' }} href="https://codedthemes.gitbook.io/berry" target="_blank">
+                      <Link style={{ textDecoration: 'none' }} href="/vision" target="_blank">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconBook />
+                            <RemoveRedEyeIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Documentation" />
+                          <ListItemText
+                            secondary="Vision"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white',
+                                '&:hover': {
+                                  color: 'black'
+                                }
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
-                      <Link
-                        style={{ textDecoration: 'none' }}
-                        href="https://material-ui.com/store/items/berry-react-material-admin/"
-                        target="_blank"
-                      >
+                      <Link style={{ textDecoration: 'none' }} href="/apps" target="_blank">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconCreditCard />
+                            <AppShortcutIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Purchase Now" />
+                          <ListItemText
+                            secondary="Pre-Built Apps"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white',
+                                '&:hover': {
+                                  color: 'black'
+                                }
+                              }
+                            }}
+                          />
+                        </ListItemButton>
+                      </Link>
+                      <Link style={{ textDecoration: 'none' }} href="/join" target="_blank">
+                        <ListItemButton component="a">
+                          <ListItemIcon>
+                            <Diversity3Icon />
+                          </ListItemIcon>
+                          <ListItemText
+                            secondary="Join Us"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white',
+                                '&:hover': {
+                                  color: 'black'
+                                }
+                              }
+                            }}
+                          />
+                        </ListItemButton>
+                      </Link>
+                      <Link style={{ textDecoration: 'none' }} href="https://blog.infrahive.io/" target="_blank">
+                        <ListItemButton component="a">
+                          <ListItemIcon>
+                            <EditNoteIcon />
+                          </ListItemIcon>
+                          <ListItemText
+                            secondary="Blog"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white',
+                                '&:hover': {
+                                  color: 'black'
+                                }
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
                     </List>
