@@ -179,3 +179,12 @@ div::-webkit-scrollbar-button {
 .animation-hide {
   animation: hide 1s cubic-bezier(0.4, 0, 0.2, 1) 0s 1 forwards;
 }
+
+.MuiAccordion-root:hover {
+  background-color: black; 
+}
+
+.MuiListItemButton-root:hover {
+  background-color: black; 
+}
+
