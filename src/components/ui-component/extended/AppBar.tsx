@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 
 // material-ui
-import { useTheme } from '@mui/material/styles';
+import { useTheme, withStyles } from '@mui/material/styles';
 import {
   AppBar as MuiAppBar,
   Box,
@@ -20,7 +20,10 @@ import {
   useScrollTrigger,
   Grid,
   Card,
-  CardContent
+  CardContent,
+  AccordionDetails,
+  AccordionSummary,
+  Accordion
 } from '@mui/material';
 import Tooltip, { TooltipProps, tooltipClasses } from '@mui/material/Tooltip';
 import { styled } from '@mui/material/styles';
@@ -32,7 +35,14 @@ import TooltipButton from 'components/customers/tooltip';
 // assets
 import { IconBook, IconCreditCard, IconDashboard, IconHome2 } from '@tabler/icons';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import AppShortcutIcon from '@mui/icons-material/AppShortcut';
+import Diversity3Icon from '@mui/icons-material/Diversity3';
+import EditNoteIcon from '@mui/icons-material/EditNote';
+import ScrollBar from 'react-perfect-scrollbar';
+import Image from 'next/image';
 // elevation scroll
 interface ElevationScrollProps {
   children: ReactElement;
@@ -70,6 +80,69 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {
 );
 // ==============================|| MINIMAL LAYOUT APP BAR ||============================== //
 
+const MenuAccordion = (props: any) => {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleAccordionChange = () => {
+    setExpanded(!expanded);
+  };
+  return (
+    <Accordion
+      expanded={expanded}
+      sx={{ backgroundColor: 'transparent',  marginTop: 0, paddingTop: 0 , border: 'none',
+      boxShadow: 'none',
+      '&:before': {
+        display: 'none',
+      },}}
+      onClick={handleAccordionChange}
+    >
+      <AccordionSummary sx={{ color: 'white' }}>
+        <ListItemText
+          secondary={
+            <>
+              {props.icon} &nbsp; {props.title}
+            </>
+          }
+        />
+      </AccordionSummary>
+      <AccordionDetails className="max-h-[300px]">
+        <ScrollBar style={{ maxHeight: '300px' }}>
+          {props.data.map((i: any) => {
+            return (
+              <Button className="flex w-[100%] justify-start">
+                <TooltipButton text={i.text} image={i.image} />
+              </Button>
+            );
+          })}
+        </ScrollBar>
+      </AccordionDetails>
+    </Accordion>
+  );
+};
+
+const fdata = [
+  { text: 'Generative AI', image: 'solutions/generative-ai' },
+  { text: 'LangChain Apps', image: 'solutions/langchain' },
+  { text: 'LLMs Fine Tune', image: 'solutions/llm' },
+  { text: 'ChatGPT Plugins', image: 'solutions/plugins' }
+];
+
+const Sdata = [
+  { text: 'Open AI', image: 'partnerships/open-ai' },
+  { text: 'Co:here', image: 'partnerships/cohere' },
+  { text: 'Anthropic', image: 'partnerships/anthropic' },
+  { text: 'Stability AI', image: 'partnerships/stability-ai' },
+  { text: 'Customer Support', image: 'partnerships/customer-support' },
+  { text: 'Data Analysis', image: 'partnerships/data-analysis' },
+  { text: 'Data Transformer', image: 'partnerships/data-transformer' },
+  { text: 'Data Annotation', image: 'partnerships/data-annotation' },
+  { text: 'Data Classification', image: 'partnerships/data-classification' },
+  { text: 'Chrome Extension', image: 'partnerships/chrome' },
+  { text: 'Google Sheets', image: 'partnerships/google-sheets' },
+  { text: 'REST API', image: 'partnerships/api' },
+  { text: 'Snowflake', image: 'partnerships/snowflake' }
+];
+
 const AppBar = ({ ...others }) => {
   const [drawerToggle, setDrawerToggle] = React.useState<boolean>(false);
   /** Method called on multiple components with different event types */
@@ -85,7 +158,7 @@ const AppBar = ({ ...others }) => {
       <MuiAppBar
         position="sticky"
         sx={{
-          background:`${others.background} !important`
+          background: `${others.background} !important`
         }}
       >
         <Container>
@@ -137,7 +210,7 @@ const AppBar = ({ ...others }) => {
               <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(189, 200, 240)' }}>
-                    <CardContent>
+                    <CardContent sx={{ color: 'rgb(189, 200, 240)' }}>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>INDUSTRIES</Typography>
@@ -269,87 +342,79 @@ const AppBar = ({ ...others }) => {
               >
                 Request Access
               </Button>
-              {/* <Button
-                component={Link}
-                href="https://github.com/novuhq/novu"
-                // disableElevation
-                variant="outlined"
-                sx={{
-                  borderColor: "white", color: "white", '&:hover': {
-                    borderColor: "white"
-                  }
-                }}
-              >
-                <Stack direction={'row'} gap={"10px"} alignItems={'center'}>
-                  <GitHubIcon sx={{
-                    fontSize: "1.8rem"
-                  }} />
-                  <Typography variant='subtitle1' textTransform={'uppercase'}>
-                    star us
-                  </Typography>
-                  <Divider orientation="vertical" sx={{ opacity: 1, height: "20px", margin: "auto" }} flexItem />
-                  <Typography variant='subtitle1' textTransform={'uppercase'}>
-                    20.1K
-                  </Typography>
-                </Stack>
-              </Button> */}
-              {/* <Button color="inherit" component={Link} href="/auth/login">
-                Login
-              </Button> */}
-              {/* // waitlist below */}
-              {/* <Button
-                color="inherit"
-                sx={{ color: 'black', height: '43px' }}
-                variant="contained"
-                component={Link}
-                href="/waitlist"
-                //  target="_blank"
-              >
-                Join Waitlist
-              </Button> */}
             </Stack>
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
-              <IconButton color="inherit" onClick={drawerToggler(true)} size="large">
+              <IconButton sx={{ color: 'white' }} onClick={drawerToggler(true)} size="large">
                 <MenuIcon />
               </IconButton>
               <Drawer anchor="top" open={drawerToggle} onClose={drawerToggler(false)}>
                 {drawerToggle && (
-                  <Box sx={{ width: 'auto' }} role="presentation" onClick={drawerToggler(false)} onKeyDown={drawerToggler(false)}>
+                  <Box sx={{ width: 'auto', backgroundColor: 'black', color: 'white !important' }} role="presentation">
                     <List>
-                      <Link style={{ textDecoration: 'none' }} href="#" target="_blank">
+                      {/* <div className="mb-4 w-full text-center md:mb-0 md:w-1/2 md:text-left lg:w-1/3">
+                        <Image width={255} height={80} src="/Footer/InfraHiveLogo.svg" alt="InfraHiveLogo" />
+                      </div> */}
+
+                      <MenuAccordion title="Product" icon={<ProductionQuantityLimitsIcon />} data={fdata}></MenuAccordion>
+                      <MenuAccordion title="Solutions" icon={<EmojiObjectsIcon />} data={Sdata}></MenuAccordion>
+                      <Link style={{ textDecoration: 'none' }} href="/vision">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconHome2 />
+                            <RemoveRedEyeIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Home" />
+                          <ListItemText
+                            secondary="Vision"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white'
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
-                      <Link style={{ textDecoration: 'none' }} href="/login" target="_blank">
+                      <Link style={{ textDecoration: 'none' }} href="/apps">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconDashboard />
+                            <AppShortcutIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Dashboard" />
+                          <ListItemText
+                            secondary="Pre-Built Apps"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white'
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
-                      <Link style={{ textDecoration: 'none' }} href="https://codedthemes.gitbook.io/berry" target="_blank">
+                      <Link style={{ textDecoration: 'none' }} href="/join">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconBook />
+                            <Diversity3Icon />
                           </ListItemIcon>
-                          <ListItemText primary="Documentation" />
+                          <ListItemText
+                            secondary="Join Us"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white'
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
-                      <Link
-                        style={{ textDecoration: 'none' }}
-                        href="https://material-ui.com/store/items/berry-react-material-admin/"
-                        target="_blank"
-                      >
+                      <Link style={{ textDecoration: 'none' }} href="https://blog.infrahive.io/">
                         <ListItemButton component="a">
                           <ListItemIcon>
-                            <IconCreditCard />
+                            <EditNoteIcon />
                           </ListItemIcon>
-                          <ListItemText primary="Purchase Now" />
+                          <ListItemText
+                            secondary="Blog"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white'
+                              }
+                            }}
+                          />
                         </ListItemButton>
                       </Link>
                     </List>

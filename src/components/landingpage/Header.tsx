@@ -85,39 +85,38 @@ export default function Header() {
               filter: 'blur(100px)'
             }}
           ></p>
-          <div className=" heading flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
-            <h1> Supercharge </h1>
-            <div className="animated max-h-[2rem]  ">
-              <h5 style={{ color: '#FEDE00' }}>AI Powered Apps</h5>
-              <h5
-                style={{
-                  color: '#00FE75'
-                }}
-              >
-                Generative AI
-              </h5>
-              <h5
-                style={{
-                  color: '#E35961'
-                }}
-              >
-                LLM Platforms
-              </h5>
-              <h5
-                style={{
-                  color: '#4B82D8'
-                }}
-              >
-                Teams & More
-              </h5>
+          <div className="md:flex justify-center flex-row">
+            <div className="flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
+              <h1> Supercharge </h1>
             </div>
-            {/* <span
-              className=" animate-slide-up text-[#FEDE00] 
-            "
-            >
-              AI-Powered Apps
-            </span> */}
+            <div className=" heading flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
+              <div className="animated max-h-[2rem]  ">
+                <h5 style={{ color: '#FEDE00' }}>AI Powered </h5>
+                <h5
+                  style={{
+                    color: '#00FE75'
+                  }}
+                >
+                  Generative AI
+                </h5>
+                <h5
+                  style={{
+                    color: '#E35961'
+                  }}
+                >
+                  LLM Platforms
+                </h5>
+                <h5
+                  style={{
+                    color: '#4B82D8'
+                  }}
+                >
+                  Teams & More
+                </h5>
+              </div>
+            </div>
           </div>
+
           <p className="mx-14 mt-8 leading-[1.5rem] text-gray-700 dark:text-gray-300">
             Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps, LLM-powered
             Workflows, Tools and more, at Unmatched speed.
