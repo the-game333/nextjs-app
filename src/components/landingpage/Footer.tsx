@@ -9,8 +9,8 @@ const FooterLinks = [
 ];
 
 const SocialMedia = [
-  { path: '/Footer/Twitter.svg', alt: 'Twitter', link: 'https://twitter.com/infrahive' },
-  { path: '/Footer/linkedin.svg', alt: 'LinkedIn', link: 'https://linkedin.com/company/infrahive' },
+  { path: '/footer/Twitter.svg', alt: 'Twitter', link: 'https://twitter.com/infrahive' },
+  { path: '/footer/linkedin.svg', alt: 'LinkedIn', link: 'https://linkedin.com/company/infrahive' },
 ];
 
 const Footer = () => {
@@ -18,7 +18,7 @@ const Footer = () => {
     <>
       <div className="mx-auto flex w-full flex-wrap items-center justify-between px-12 py-4">
         <div className="mb-4 w-full text-center md:mb-0 md:w-1/2 md:text-left lg:w-1/3">
-          <Image width={255} height={80} src="/Footer/InfraHiveLogo.svg" alt="InfraHiveLogo" />
+          <Image width={255} height={80} src="/footer/InfraHiveLogo.svg" alt="InfraHiveLogo" />
         </div>
         <div className="flex w-full flex-wrap justify-center gap-4 md:w-1/2 md:justify-end md:gap-8 lg:w-2/3 lg:gap-12 xl:gap-16">
           {FooterLinks.map((item) => (
