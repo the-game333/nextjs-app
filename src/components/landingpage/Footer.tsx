@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
         <div className="flex w-full flex-wrap justify-center gap-4 md:w-1/2 md:justify-end md:gap-8 lg:w-2/3 lg:gap-12 xl:gap-16">
           {FooterLinks.map((item) => (
-            <a key={item.name} href={item.path} className="font-medium">
+            <a key={item.name} href={item.path} className="font-medium text-white">
               {item.name}
             </a>
           ))}

@@ -61,7 +61,6 @@ function ElevationScroll({ children, window }: ElevationScrollProps) {
     elevation: trigger ? 2 : 0,
     style: {
       backgroundColor: theme.palette.background.default,
-      borderBottom: trigger ? 'none' : '1px solid',
       borderColor: trigger ? '' : darkBorder,
       color: theme.palette.text.dark
     }
@@ -89,11 +88,16 @@ const MenuAccordion = (props: any) => {
   return (
     <Accordion
       expanded={expanded}
-      sx={{ backgroundColor: 'transparent',  marginTop: 0, paddingTop: 0 , border: 'none',
-      boxShadow: 'none',
-      '&:before': {
-        display: 'none',
-      },}}
+      sx={{
+        backgroundColor: 'transparent',
+        marginTop: 0,
+        paddingTop: 0,
+        border: 'none',
+        boxShadow: 'none',
+        '&:before': {
+          display: 'none'
+        }
+      }}
       onClick={handleAccordionChange}
     >
       <AccordionSummary sx={{ color: 'white' }}>
@@ -106,18 +110,16 @@ const MenuAccordion = (props: any) => {
         />
       </AccordionSummary>
       <AccordionDetails className="max-h-[300px]">
-        //@ts-nocheck
         <ScrollBar style={{ maxHeight: '300px' }}>
           {props.data.map((i: any) => {
             return (
-              <Button className="flex w-[100%] justify-start">
+              <Button className="justify -start flex  w-[100%]">
                 <TooltipButton text={i.text} image={i.image} />
               </Button>
             );
           })}
         </ScrollBar>
       </AccordionDetails>
-      
     </Accordion>
   );
 };
@@ -211,8 +213,8 @@ const AppBar = ({ ...others }) => {
               </HtmlTooltip> */}
               <HtmlTooltip
                 title={
-                  <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(189, 200, 240)' }}>
-                    <CardContent sx={{ color: 'rgb(189, 200, 240)' }}>
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(255, 255, 255)' }}>
+                    <CardContent sx={{ color: 'rgb(255, 255, 255)' }}>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>INDUSTRIES</Typography>
@@ -239,7 +241,7 @@ const AppBar = ({ ...others }) => {
               >
                 <Button
                   color="inherit"
-                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
                   component={Link}
                   target="_blank"
                 >
@@ -280,7 +282,7 @@ const AppBar = ({ ...others }) => {
                 }
                 arrow
               >
-                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}>
+                <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}>
                   Solutions
                 </Button>
               </HtmlTooltip>
@@ -288,7 +290,7 @@ const AppBar = ({ ...others }) => {
               <a href="/vision">
                 <Button
                   color="inherit"
-                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
                   component={Link}
                   target="_blank"
                 >
@@ -298,7 +300,7 @@ const AppBar = ({ ...others }) => {
               <a href="/apps">
                 <Button
                   color="inherit"
-                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
                   component={Link}
                   target="_blank"
                 >
@@ -308,7 +310,7 @@ const AppBar = ({ ...others }) => {
               <a href="/join">
                 <Button
                   color="inherit"
-                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
                   component={Link}
                   target="_blank"
                 >
@@ -323,7 +325,7 @@ const AppBar = ({ ...others }) => {
               <a href="https://blog.infrahive.io/" target={'_blank'}>
                 <Button
                   color="inherit"
-                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(189, 200, 240);' }}
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
                   component={Link}
                   target="_blank"
                 >
