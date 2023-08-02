@@ -4,11 +4,11 @@ import AppBar from 'ui-component/extended/AppBar';
 
 const index = () => {
   return (
-    <div className='bg-black'>
+    <div className="bg-[#0E0C15]">
       <AppBar background={'transparent'} />
-      <div className="max-w-2xl mx-auto py-24 text-white">
-        <h1 className="text-5xl text-infra-yellow mx-8">join us</h1>
-        <p className="text-xl leading-relaxed mt-12 mx-8">
+      <div className="mx-auto max-w-2xl py-24 text-white">
+        <h1 className="mx-8 text-5xl text-infra-yellow">join us</h1>
+        <p className="mx-8 mt-12 text-xl leading-relaxed">
           As a member of our dynamic team, you'll have the chance to shape the future of AI infrastructure and make a tangible impact on
           industries worldwide. With our cutting-edge technologies, collaborative environment, and emphasis on creativity, we provide the
           perfect platform for you to unleash your potential.

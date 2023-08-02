@@ -190,23 +190,23 @@ export default function PowerOfDataSet() {
             </span>
           </h2>
         </div>
-        <div>
-          <span>
-            <p
-              style={{
-                height: '80%',
-                width: '30%',
-                top: '5%',
-                left: '20%',
-                transform: 'translateX(50%)',
-                position: 'absolute',
-                borderRadius: '582px',
-                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
-                filter: 'blur(180px)'
-              }}
-            ></p>
-          </span>
-          <div className="flex justify-center pt-5 md:pt-0">
+        <div className="">
+          <div className="relative flex justify-center pt-5 md:pt-0">
+            <span>
+              <p
+                style={{
+                  height: '400%',
+                  width: '20%',
+                  top: '-200%',
+                  left: '30%',
+                  transform: 'translateX(50%)',
+                  position: 'absolute',
+                  borderRadius: '582px',
+                  background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+                  filter: 'blur(80px)'
+                }}
+              ></p>
+            </span>
             <button className="border-white-500 hello rounded-full border-2 px-6 py-3 text-sm text-[#FFF] duration-300 md:text-xl">
               Unleash Limitless Possibilities
             </button>
@@ -217,17 +217,12 @@ export default function PowerOfDataSet() {
             </p>
           </div>
           <a href="https://inrahive.io">
-          <div className="mt-10 flex justify-center">
-            <button className="rounded-full border bg-white p-3 px-5 font-bold">Sign Up Now</button>
-          </div>
+            <div className="mt-10 flex justify-center">
+              <button className="rounded-full border bg-white p-3 text-black px-5 font-bold">Sign Up Now</button>
+            </div>
           </a>
         </div>
       </div>
     </div>
   );
 }
-
-
-
-
-

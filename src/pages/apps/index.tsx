@@ -8,7 +8,7 @@ import useConfig from 'hooks/useConfig';
 const AppCard = (props: { logo: string; heading: string; desc: string; url: string; color: string }) => {
   return (
     <a href={props.url}>
-      <div className="min-h-[12rem] rounded-md border border-slate-500 bg-black p-4 text-white">
+      <div className="min-h-[12rem] rounded-md border border-slate-500 bg-[#0E0C15] p-4 text-white">
         <img src={props.logo} alt={props.heading} className={`h-12 ${props.color} p-2`} />
         <p className="text-md mt-4 font-semibold">{props.heading}</p>
         <p className="text-sm text-slate-400 ">{props.desc}</p>
@@ -130,17 +130,17 @@ const index = () => {
     onChangeMenuType('light');
   }, []);
   return (
-    <div className='bg-black'>
+    <div className="bg-[#0E0C15]">
       <AppBar background={'transparent'} />
       <div className="mx-auto mt-24 max-w-5xl px-4">
-        <h1 className="my-4 text-center text-2xl font-semibold  text-[#BDC8F0]">Explore Apps</h1>
+        <h1 className="my-4 text-center text-2xl font-semibold  text-[#FFFFFF]">Explore Apps</h1>
         <hr className="opacity-40" />
         {/* Categories */}
         <div className="my-4 flex justify-between">
           <div className="flex gap-4">
             {CategoriesBar.map((cat, index) => (
               <button onClick={() => setCategory(cat.value)}>
-                <p className={`${category === cat.value ? 'text-white' : 'text-slate-500'}`}>{cat.name}</p>
+                <p className={`${category === cat.value ? 'font-semibold text-white' : 'font-semibold text-slate-500'}`}>{cat.name}</p>
               </button>
             ))}
           </div>
@@ -157,7 +157,7 @@ const index = () => {
         </div>
 
         {/* Apps */}
-        <div className="my-12 grid grid-cols-3 gap-4">
+        <div className="my-12 grid grid-cols-3 gap-4 ">
           {Data.map((app, index) =>
             category === 'all' ? (
               <AppCard
