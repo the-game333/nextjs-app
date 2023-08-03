@@ -140,7 +140,9 @@ const index = () => {
           <div className="flex gap-4">
             {CategoriesBar.map((cat, index) => (
               <button onClick={() => setCategory(cat.value)}>
-                <p className={`${category === cat.value ? 'font-semibold text-white' : 'font-semibold text-slate-500'}`}>{cat.name}</p>
+                <p className={`${category === cat.value ? 'font-semibold text-white' : 'font-semibold text-slate-500'} text-xs md:text-sm`}>
+                  {cat.name}
+                </p>
               </button>
             ))}
           </div>
@@ -157,7 +159,7 @@ const index = () => {
         </div>
 
         {/* Apps */}
-        <div className="my-12 grid grid-cols-3 gap-4 ">
+        <div className="my-12 grid grid-cols-1 gap-4 md:grid-cols-3 sm:grid-cols-2  ">
           {Data.map((app, index) =>
             category === 'all' ? (
               <AppCard
