@@ -25,7 +25,7 @@ export default function FullyFeatured() {
           ></p>
 
           <div className="space-y-4 px-6 pb-10 md:px-0">
-            <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white md:text-5xl">
+            <h2 className="text-center text-3xl font-bold text-white dark:text-white md:text-5xl">
               Introducing{' '}
               <span className="relative whitespace-nowrap">
                 Prompt Engineering <p className="mt-5">Refine your AI Model</p>
@@ -60,7 +60,7 @@ export default function FullyFeatured() {
           </div>
           <div className="relative ml-auto">
             <div className="mx-auto text-center lg:w-2/3">
-              <p className="mt-5 pb-0 text-base leading-7 text-gray-700 dark:text-gray-300 md:mt-10 md:pb-10">
+              <p className="mt-5 pb-0 text-base leading-7 text-white dark:text-gray-300 md:mt-10 md:pb-10">
                 Take control & Customize your AI model's responses, enhance it's accuracy, and ensure it's performance. Refine and optimize
                 your model to deliver better results, faster.
               </p>
