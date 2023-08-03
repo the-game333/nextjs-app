@@ -16,6 +16,9 @@ const nextConfig = withTM({
   reactStrictMode: true,
   eslint: {
     ignoreDuringBuilds: true
+  },
+  experimental: {
+    esmExternals: false
   }
 });
 
