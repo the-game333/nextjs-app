@@ -26,7 +26,7 @@ export default function Header() {
       </div>
       <div className="relative ml-auto w-full pt-36">
         <div className="mx-auto text-center lg:w-2/3">
-          <h1 className="before:bg- relative mb-3 flex flex-col  justify-center gap-1 text-4xl font-bold text-gray-900 before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-full before:content-[''] dark:text-white sm:flex-row sm:gap-2 md:text-5xl xl:gap-5 xl:text-6xl">
+          <h1 className="before:bg- relative mb-3 flex flex-col  justify-center gap-1 text-4xl font-bold text-white before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-full before:content-[''] dark:text-white sm:flex-row sm:gap-2 md:text-5xl xl:gap-5 xl:text-6xl">
             With
             <span className="mt-5 md:mt-0">
               InfraH
@@ -86,7 +86,7 @@ export default function Header() {
             }}
           ></p>
           <div className="flex-row justify-center md:flex">
-            <div className="flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
+            <div className="flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-white dark:text-white  sm:flex-row ">
               <h1> Supercharge </h1>
             </div>
             <div className=" heading flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
@@ -117,7 +117,7 @@ export default function Header() {
             </div>
           </div>
 
-          <p className="mx-14 mt-8 leading-[1.5rem] text-gray-700 dark:text-gray-300">
+          <p className="mx-14 mt-8 leading-[1.5rem] text-white dark:text-gray-300">
             Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps, LLM-powered
             Workflows, Tools and more, at Unmatched speed.
           </p>

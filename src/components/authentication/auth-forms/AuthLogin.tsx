@@ -35,8 +35,9 @@ import AnimateButton from 'ui-component/extended/AnimateButton';
 // assets
 import Visibility from '@mui/icons-material/Visibility';
 import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import { signIn, useSession } from 'next-auth/react';
+// import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 const Google = '/assets/images/icons/social-google.svg';
 const Github = '/assets/images/icons/github.svg';
@@ -49,25 +50,27 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
   const { borderRadius } = useConfig();
   const [checked, setChecked] = React.useState(true);
-  const { data: session } = useSession();
+  // const { data: session } = useSession();
   const router = useRouter();
 
-  const { firebaseEmailPasswordSignIn, firebaseGoogleSignIn, apiLogin } = useAuth();
-  const googleHandler = async () => {
-    try {
-      await signIn('google');
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const { user, error, isLoading } = useUser();
 
-  const githubHandler = async () => {
-    try {
-      await signIn('github');
-    } catch (err) {
-      console.error(err);
-    }
-  };
+  const { firebaseEmailPasswordSignIn, firebaseGoogleSignIn, apiLogin } = useAuth();
+  // const googleHandler = async () => {
+  //   try {
+  //     await signIn('google');
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
+
+  // const githubHandler = async () => {
+  //   try {
+  //     await signIn('github');
+  //   } catch (err) {
+  //     console.error(err);
+  //   }
+  // };
 
   const [showPassword, setShowPassword] = React.useState(false);
   const handleClickShowPassword = () => {
@@ -78,24 +81,25 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
     event.preventDefault();
   };
 
-  useEffect(() => {
-    if (session) {
-      router.push('/dashboard');
-    }
-  }, [session]);
+  // useEffect(() => {
+  //   if (session) {
+  //     router.push('/dashboard');
+  //   }
+  // }, [session]);
 
   const TypedLink = Link as React.ElementType;
-
 
   return (
     <>
       <Grid container direction="column" justifyContent="center" spacing={2}>
+        {/* <a href="/api/auth/login">Login</a> */}
         <Grid item xs={12}>
           <AnimateButton>
             <Button
+              onClick={() => router.push('/api/auth/login')}
               disableElevation
               fullWidth
-              onClick={googleHandler}
+              // onClick={googleHandler}
               size="large"
               variant="outlined"
               sx={{
@@ -116,7 +120,7 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
             <Button
               disableElevation
               fullWidth
-              onClick={githubHandler}
+              // onClick={githubHandler}
               size="large"
               variant="outlined"
               sx={{

@@ -12,7 +12,7 @@ export default function LanguageCodeType() {
       <div className="relative grid grid-cols-1 gap-8 px-3 pb-0 pt-0 md:columns-1 md:grid-cols-2 md:pb-40 md:pt-10">
         <div className="aspect-auto rounded-3xl  border-gray-100  shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
           <div className="gap-4">
-            <h6 className="text-4xl font-medium leading-10 text-gray-700 dark:text-white md:text-5xl">
+            <h6 className="text-4xl font-medium leading-10 text-white dark:text-white md:text-5xl">
               Transform your data, the smart way
             </h6>
           </div>

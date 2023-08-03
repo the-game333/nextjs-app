@@ -10,9 +10,9 @@ import Image from 'next/image';
 export default function PowerOfDataSet() {
   return (
     <div className="grid grid-cols-1 gap-8  px-3  pt-20 md:columns-1 md:grid-cols-1 md:px-5 xl:px-0 ">
-      <div className="aspect-auto rounded-3xl  border border-gray-100 bg-[#15131D] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+      <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent dark:bg-[#15131D] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
         <div className="space-y-4 px-6 pb-10 md:px-0">
-          <h2 className="text-center text-4xl font-bold text-gray-800 dark:text-white md:text-5xl">
+          <h2 className="text-center text-4xl font-bold text-white dark:text-white md:text-5xl">
             Power of{' '}
             <span className="relative">
               Datasets
@@ -150,7 +150,7 @@ export default function PowerOfDataSet() {
           <Image src={Circles} />
         </div>
         <div className="space-y-4 px-6 pb-10 md:px-0">
-          <h2 className="flex flex-col text-center text-3xl font-bold text-gray-800 dark:text-white md:text-5xl">
+          <h2 className="flex flex-col text-center text-3xl font-bold text-white dark:text-white md:text-5xl">
             Optimize and Streamline the{' '}
             <span className="relative mt-0 whitespace-nowrap md:mt-5">
               AI Development

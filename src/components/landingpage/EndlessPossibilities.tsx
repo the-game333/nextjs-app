@@ -10,13 +10,13 @@ import Tools from '../../../public/assets/images/Tools.svg';
 import Image from 'next/image';
 export default function InfraSpeed() {
   return (
-    <div className="mx-auto  md:max-w-5xl lg:max-w-6xl xl:px-0 md:px-5 px-3">
-      <div className="text-gray-600 dark:text-gray-300" id="testimonials">
+    <div className="mx-auto  px-3 md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
+      <div className="text-white dark:text-gray-300" id="testimonials">
         <div className="space-y-4 px-6 pb-10 md:px-0">
-          <h2 className="text-center text-3xl font-bold text-gray-800 dark:text-white md:text-5xl">
+          <h2 className="text-center text-3xl font-bold text-white dark:text-white md:text-5xl">
             The Endless{' '}
             <span className="relative whitespace-nowrap">
-              possibilities <p className='mt-2'>with InfraHive</p>
+              possibilities <p className="mt-2">with InfraHive</p>
               <span className="absolute left-0 top-14 -mt-5 md:mt-0">
                 <svg
                   className="lg:w-55 mx-auto w-40 sm:w-40 md:w-60 xl:w-full"
@@ -53,7 +53,7 @@ export default function InfraSpeed() {
             </span>
           </h2>
         </div>
-        <div className="mt-5 md:mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-5 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
               <Image src={ChatBoat} />
@@ -130,8 +130,10 @@ export default function InfraSpeed() {
             <p className="text-2xl">Tools</p>
           </div>
         </div>
-        <div className="mt-10 md:mt-20 flex justify-center pb-5 md:pb-10">
-          <a href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4" className="bg rounded-full border px-7 py-2">View More</a>
+        <div className="mt-10 flex justify-center pb-5 md:mt-20 md:pb-10">
+          <a href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4" className="bg rounded-full border px-7 py-2">
+            View More
+          </a>
         </div>
       </div>
     </div>

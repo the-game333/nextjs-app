@@ -7,7 +7,7 @@ const Partnership = () => {
     <div className="mx-auto px-3 md:max-w-5xl md:px-5 md:pb-20 md:pt-20 lg:max-w-6xl xl:px-0">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="mb-20 space-y-4 px-6 md:px-0">
-          <h2 className="text-center text-4xl  font-bold text-gray-800 dark:text-white md:text-5xl">
+          <h2 className="text-center text-4xl  font-bold text-white dark:text-white md:text-5xl">
             The Product{' '}
             <span className="relative">
               Philosophy{' '}
@@ -52,7 +52,7 @@ const Partnership = () => {
             <div className=" relative  h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none ">
               <div className="flex gap-4">
                 <div>
-                  <h6 className="text-2xl font-medium text-gray-700 dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
+                  <h6 className="text-2xl font-medium text-white dark:text-white">Embracing Tomorrow Today, Empowering Humans</h6>
                   {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
                 </div>
               </div>
@@ -68,7 +68,7 @@ const Partnership = () => {
             <div className="relative aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15]  p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none ">
               <div className="flex gap-4">
                 <div>
-                  <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Uncompromising Data Security & Privacy</h6>
+                  <h6 className="text-2xl font-medium leading-8 text-white dark:text-white">Uncompromising Data Security & Privacy</h6>
                   {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
                 </div>
               </div>
@@ -109,7 +109,7 @@ const Partnership = () => {
             <div className="aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
               <div className="flex gap-4">
                 <div className="relative">
-                  <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Where Solutions Transend Boundaries</h6>
+                  <h6 className="text-2xl font-medium leading-8 text-white dark:text-white">Where Solutions Transend Boundaries</h6>
                   {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
                 </div>
               </div>
@@ -122,7 +122,7 @@ const Partnership = () => {
             <div className="relative aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
               <div className="flex gap-4">
                 <div>
-                  <h6 className="text-2xl font-medium leading-8 text-gray-700 dark:text-white">Architecting Tomorrow with AI Core</h6>
+                  <h6 className="text-2xl font-medium leading-8 text-white dark:text-white">Architecting Tomorrow with AI Core</h6>
                   {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
                 </div>
               </div>
