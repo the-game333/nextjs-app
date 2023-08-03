@@ -13,7 +13,7 @@ import Eclipse from '../../../public/assets/images/Eclipse.svg';
 
 export default function Howtowork() {
   return (
-    <div className="mx-auto md:max-w-5xl lg:max-w-6xl xl:px-0 md:px-5 px-3">
+    <div className="mx-auto px-3 md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
       <div className="text-gray-600 dark:text-gray-300" id="testimonials">
         <div className="space-y-4 px-6 pb-10 md:px-0">
           <h2 className="text-center text-4xl font-bold text-white dark:text-white md:text-5xl">
@@ -59,8 +59,8 @@ export default function Howtowork() {
         <div className="relative ml-auto">
           <div className="mx-auto text-center lg:w-2/3">
             <p className="px-3 text-sm leading-7 text-white dark:text-gray-300 md:px-0 md:text-base">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio incidunt nam itaque sed eius modi error totam sit illum.
-              Voluptas doloribus asperiores quaerat aperiam. Quidem harum omnis beatae ipsum soluta!
+              Revolutionize your app development experience & experience the future of AI-driven innovation. Unleash your imagination and
+              conquer the world of apps with us.
             </p>
           </div>
         </div>
