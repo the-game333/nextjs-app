@@ -99,7 +99,7 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
 
   useEffect(() => {
     if (session) {
-      router.push('/contact-us');
+      router.push('/dashboard');
     }
   }, [session]);
 
