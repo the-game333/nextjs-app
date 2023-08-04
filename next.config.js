@@ -17,9 +17,9 @@ const nextConfig = withTM({
   eslint: {
     ignoreDuringBuilds: true
   },
-  // experimental: {
-  //   // esmExternals: false
-  // }
+  experimental: {
+    esmExternals: false
+  }
 });
 
 module.exports = nextConfig;

@@ -356,7 +356,7 @@ const AppBar = ({ ...others }) => {
                   <Box sx={{ width: 'auto', backgroundColor: 'black', color: 'white !important' }} role="presentation">
                     <List>
                       {/* <div className="mb-4 w-full text-center md:mb-0 md:w-1/2 md:text-left lg:w-1/3">
-                        <Image width={255} height={80} src="/Footer/InfraHiveLogo.svg" alt="InfraHiveLogo" />
+                        <Image width={255} height={80} src="/footer/InfraHiveLogo.svg" alt="InfraHiveLogo" />
                       </div> */}
 
                       <MenuAccordion title="Product" icon={<ProductionQuantityLimitsIcon />} data={fdata}></MenuAccordion>

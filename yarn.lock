@@ -33,6 +33,7 @@
     "promise-polyfill" "^8.2.3"
     "unfetch" "^4.2.0"
 
+
 "@auth0/nextjs-auth0@^3.0.1":
   "integrity" "sha512-ng6kiYJVkOgASg9HBxoivYHEnFyErnAhqp/pXMlFty+XTZFwza0kykDDlQ/q3qDcoh6mIzZopLkQ8y00UItkrw=="
   "resolved" "https://registry.npmjs.org/@auth0/nextjs-auth0/-/nextjs-auth0-3.0.1.tgz"
@@ -47,6 +48,7 @@
     "openid-client" "^5.2.1"
     "tslib" "^2.4.0"
     "url-join" "^4.0.1"
+
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.12.13", "@babel/code-frame@^7.22.5":
   "integrity" "sha512-Xmwn266vad+6DAqEB2A6V/CcZVp62BbwVmcOJc2RPuwih1kw02TjQvWVWlcKGbBPd+8/0V5DEkOcizRGYsspYQ=="
@@ -2375,6 +2377,7 @@
   dependencies:
     "glob" "7.1.7"
 
+
 "@next/swc-win32-x64-msvc@12.1.0":
   "integrity" "sha512-aBvcbMwuanDH4EMrL2TthNJy+4nP59Bimn8egqv6GHMVj0a44cU6Au4PjOhLNqEh9l+IpRGBqMTzec94UdC5xg=="
   "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.1.0.tgz"
@@ -4588,10 +4591,12 @@
     "domelementtype" "^2.2.0"
     "domhandler" "^4.2.0"
 
+
 "dotenv@^16.3.1":
   "integrity" "sha512-IPzF4w4/Rd94bA9imS68tZBaYyBWSCE47V1RGuMrB94iyTOIEwRmVL2x/4An+6mETpLrKJ5hQkB8W4kFAadeIQ=="
   "resolved" "https://registry.npmjs.org/dotenv/-/dotenv-16.3.1.tgz"
   "version" "16.3.1"
+
 
 "draft-js@^0.10.x || ^0.11.x", "draft-js@^0.11.7", "draft-js@^0.11.x":
   "integrity" "sha512-ne7yFfN4sEL82QPQEn80xnADR8/Q6ALVworbC5UOSzOvjffmYfFsr3xSZtxbIirti14R7Y33EZC5rivpLgIbsg=="
@@ -5428,6 +5433,7 @@
   "integrity" "sha512-hlq4+BU0hlPmwsFjwGGzZ+OZ9N/wq9Ljg/sq3pX+2CD7hrJsX9tJgWWK/wiNTFM212CLHWhicOoqwXyZGGetJg=="
   "resolved" "https://registry.npmjs.org/fscreen/-/fscreen-1.2.0.tgz"
   "version" "1.2.0"
+
 
 "function-bind@^1.1.1":
   "integrity" "sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A=="
@@ -6307,7 +6313,9 @@
   "resolved" "https://registry.npmjs.org/jiti/-/jiti-1.19.1.tgz"
   "version" "1.19.1"
 
+
 "joi@^17.2.1", "joi@^17.6.0":
+
   "integrity" "sha512-Itk/r+V4Dx0V3c7RLFdRh12IOjySm2/WGPMubBT92cQvRfYZhPM2W0hZlctjj72iES8jsRCwp7S/cRmWBnJ4nw=="
   "resolved" "https://registry.npmjs.org/joi/-/joi-17.9.2.tgz"
   "version" "17.9.2"
@@ -6317,6 +6325,7 @@
     "@sideway/address" "^4.1.3"
     "@sideway/formula" "^3.0.1"
     "@sideway/pinpoint" "^2.0.0"
+
 
 "jose@^4.11.4", "jose@^4.14.4", "jose@^4.9.2":
   "integrity" "sha512-j8GhLiKmUAh+dsFXlX1aJCbt5KMibuKb+d7j1JaOJG6s2UjX1PQlW+OKB/sD4a/5ZYF4RcmYmLSndOoU3Lt/3g=="
@@ -7543,7 +7552,9 @@
   "resolved" "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz"
   "version" "2.6.2"
 
+
 "next-auth@^4.22.3":
+
   "integrity" "sha512-XAgy9xV3J2eJOXrQhmxdjV6MLM29ibm6WtMXc3KY6IPZeApf+SuBuPvlqCUfbu5YsAzlg9WSw6u01dChTfeZOA=="
   "resolved" "https://registry.npmjs.org/next-auth/-/next-auth-4.22.3.tgz"
   "version" "4.22.3"
@@ -7566,7 +7577,9 @@
     "enhanced-resolve" "^5.10.0"
     "escalade" "^3.1.1"
 
+
 "next@^12.2.5 || ^13", "next@>=10", "next@12.1.0":
+
   "integrity" "sha512-s885kWvnIlxsUFHq9UGyIyLiuD0G3BUC/xrH0CEnH5lHEWkwQcHOORgbDF0hbrW9vr/7am4ETfX4A7M6DjrE7Q=="
   "resolved" "https://registry.npmjs.org/next/-/next-12.1.0.tgz"
   "version" "12.1.0"
@@ -7670,10 +7683,12 @@
   "resolved" "https://registry.npmjs.org/oauth/-/oauth-0.9.15.tgz"
   "version" "0.9.15"
 
+
 "oauth4webapi@^2.3.0":
   "integrity" "sha512-JGkb5doGrwzVDuHwgrR4nHJayzN4h59VCed6EW8Tql6iHDfZIabCJvg6wtbn5q6pyB2hZruI3b77Nudvq7NmvA=="
   "resolved" "https://registry.npmjs.org/oauth4webapi/-/oauth4webapi-2.3.0.tgz"
   "version" "2.3.0"
+
 
 "ob1@0.76.7":
   "integrity" "sha512-BQdRtxxoUNfSoZxqeBGOyuT9nEYSn18xZHwGMb0mMVpn2NBcYbnyKY4BK2LIHRgw33CBGlUmE+KMaNvyTpLLtQ=="
@@ -7803,7 +7818,9 @@
   dependencies:
     "is-wsl" "^1.1.0"
 
+
 "openid-client@^5.2.1", "openid-client@^5.4.0":
+
   "integrity" "sha512-sVQOvjsT/sbSfYsQI/9liWQGVZH/Pp3rrtlGEwgk/bbHfrUDZ24DN57lAagIwFtuEu+FM9Ev7r85s8S/yPjimQ=="
   "resolved" "https://registry.npmjs.org/openid-client/-/openid-client-5.4.3.tgz"
   "version" "5.4.3"
@@ -9899,7 +9916,9 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
+
 "tslib@^2.0.0", "tslib@^2.0.1", "tslib@^2.0.3", "tslib@^2.1.0", "tslib@^2.3.1", "tslib@^2.4.0":
+
   "integrity" "sha512-t0hLfiEKfMUoqhG+U1oid7Pva4bbDPHYfJNiB7BiIjRkj1pyC++4N3huJfqY6aRH6VTB0rvtzQwjM4K6qpfOig=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.6.1.tgz"
   "version" "2.6.1"
@@ -10134,6 +10153,7 @@
   "version" "4.4.1"
   dependencies:
     "punycode" "^2.1.0"
+
 
 "url-join@^4.0.1":
   "integrity" "sha512-jk1+QP6ZJqyOiuEI9AEWQfju/nB2Pw466kbA0LEZljHwKeMgd9WrAEgEGxjPDD2+TNbbb37rTyhEfrCXfuKXnA=="
