@@ -7,7 +7,7 @@ const Partnership = () => {
     <div className="mx-auto px-3 md:max-w-5xl md:px-5 md:pb-20 md:pt-20 lg:max-w-6xl xl:px-0">
       <div id="main" className="grid grid-cols-1 justify-evenly gap-5 md:grid-cols-2 ">
         <div>
-          <p className="mb-5 px-3 text-2xl font-medium text-white dark:text-white md:text-2xl">
+          <p className="mb-5 px-3 text-2xl font-medium text-white dark:text-white md:text-3xl">
             Auto Deployed Back-End Service: Available with API reference
           </p>
           <div className="relative rounded-3xl border border-white p-8 dark:border-[#ffffff1a]">
@@ -49,8 +49,9 @@ const Partnership = () => {
           </div>
         </div>
         <div>
-          <p className="mb-5 px-3 text-2xl font-medium text-white dark:text-white md:text-2xl">
+          <p className="mb-5 px-3 text-2xl font-medium text-white dark:text-white md:text-3xl">
             Preview your App before deploying the Front-End
+            <span className="invisible">Extra value</span>
           </p>
           <div className="relative rounded-3xl border border-white p-8 dark:border-[#ffffff1a]">
             <div className="absolute right-2 top-4 flex gap-3 md:right-5 md:top-4">

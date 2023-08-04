@@ -38,6 +38,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff';
 // import { signIn, useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { signIn, useSession } from 'next-auth/react';
 
 const Google = '/assets/images/icons/social-google.svg';
 const Github = '/assets/images/icons/github.svg';
@@ -50,12 +51,19 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
   const matchDownSM = useMediaQuery(theme.breakpoints.down('md'));
   const { borderRadius } = useConfig();
   const [checked, setChecked] = React.useState(true);
-  // const { data: session } = useSession();
+  const { data: session } = useSession();
   const router = useRouter();
 
   const { user, error, isLoading } = useUser();
 
   const { firebaseEmailPasswordSignIn, firebaseGoogleSignIn, apiLogin } = useAuth();
+  const auth0Handler = async () => {
+    try {
+      await signIn('auth0');
+    } catch (err) {
+      console.error('errrrr ===> > >>', err);
+    }
+  };
   // const googleHandler = async () => {
   //   try {
   //     await signIn('google');
@@ -63,6 +71,14 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
   //     console.error(err);
   //   }
   // };
+
+  const auth0GitHubHandler = async () => {
+    try {
+      await signIn('github');
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   // const githubHandler = async () => {
   //   try {
@@ -81,11 +97,11 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
     event.preventDefault();
   };
 
-  // useEffect(() => {
-  //   if (session) {
-  //     router.push('/dashboard');
-  //   }
-  // }, [session]);
+  useEffect(() => {
+    if (session) {
+      router.push('/dashboard');
+    }
+  }, [session]);
 
   const TypedLink = Link as React.ElementType;
 
@@ -96,10 +112,10 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
         <Grid item xs={12}>
           <AnimateButton>
             <Button
-              onClick={() => router.push('/api/auth/login')}
+              // onClick={() => router.push('/api/auth/login')}
               disableElevation
               fullWidth
-              // onClick={googleHandler}
+              onClick={auth0Handler}
               size="large"
               variant="outlined"
               sx={{
@@ -113,6 +129,24 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
               </Box>
               Sign in with Google
             </Button>
+            {/* <Button
+              // onClick={() => router.push('/api/auth/login')}
+              disableElevation
+              fullWidth
+              onClick={googleHandler}
+              size="large"
+              variant="outlined"
+              sx={{
+                color: 'grey.700',
+                backgroundColor: theme.palette.mode === 'dark' ? theme.palette.dark.main : theme.palette.grey[50],
+                borderColor: theme.palette.mode === 'dark' ? theme.palette.dark.light + 20 : theme.palette.grey[100]
+              }}
+            >
+              <Box sx={{ mr: { xs: 1, sm: 2 }, width: 20, height: 20, marginRight: matchDownSM ? 8 : 16 }}>
+                <Image src={Google} alt="Berry Dashboard" layout="intrinsic" width={'16'} height={'16'} />
+              </Box>
+              Sign in with Google
+            </Button> */}
           </AnimateButton>
         </Grid>
         <Grid item xs={12}>
@@ -120,7 +154,7 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
             <Button
               disableElevation
               fullWidth
-              // onClick={githubHandler}
+              onClick={auth0GitHubHandler}
               size="large"
               variant="outlined"
               sx={{

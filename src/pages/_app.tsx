@@ -38,6 +38,7 @@ import InfraLayout from 'layout/InfraLayout';
 import { LayoutType } from 'types';
 import { SessionProvider } from 'next-auth/react';
 import Script from 'next/script';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
 
 const Noop: React.FC = ({ children }) => {
   return <> {children} </>;
@@ -95,14 +96,14 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & {
               <ThemeCustomization>
                 <RTLLayout>
                   <Locales>
-                    {/* <NavigationScroll> */}
+                    <UserProvider>
                     <AuthProvider>
                       <Layout>
                         <Component {...pageProps} />
                         <Snackbar />
                       </Layout>
                     </AuthProvider>
-                    {/* </NavigationScroll> */}
+                    </UserProvider>
                   </Locales>
                 </RTLLayout>
               </ThemeCustomization>
