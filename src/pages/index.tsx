@@ -20,6 +20,8 @@ import { useEffect } from 'react';
 import ProductPhilosophy from 'components/landingpage/ProductPhilosophy';
 import EmbededDirectly from 'components/landingpage/EmbededDirectly';
 import PowerOfDataSet from 'components/landingpage/PowerOfDataSet';
+import Blogs from 'components/landingpage/Blogs';
+import OptimizeStreamline from 'components/landingpage/OptimizeStreamline';
 // import NewHeader from 'components/landingpage/NewHeader';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
@@ -61,6 +63,14 @@ const FullyWrapper = styled('div')(({ theme }) => ({
   }
 }));
 const LastWrapper = styled('div')(({ theme }) => ({
+  position: 'relative',
+  // paddingTop: 100,
+  backgroundColor: '#0E0C15',
+  [theme.breakpoints.down('md')]: {
+    paddingTop: 30
+  }
+}));
+const SecondLastWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   // paddingTop: 100,
   backgroundColor: '#0E0C15',
@@ -123,6 +133,16 @@ const Landing: React.FC = () => {
       <LastWrapper>
         <PowerOfDataSet />
       </LastWrapper>
+
+      {/*  */}
+      <SecondLastWrapper>
+        <Blogs />
+      </SecondLastWrapper>
+      <LastWrapper>
+        <OptimizeStreamline />
+      </LastWrapper>
+      {/*  */}
+
       <ThirdWrapper>
         {/* <Notification /> */}
         <Footer />
