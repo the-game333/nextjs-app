@@ -39,7 +39,7 @@ const index = () => {
           working with other Engineers to integrate these onto the platform
           <br />
           <br />
-          Just drop me hello out at kunal@infrahive.io 😉
+          Just drop me hello out at contact@infrahive.io 😉
         </p>
       </div>
       <FooterPage />
