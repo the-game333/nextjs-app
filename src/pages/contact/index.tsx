@@ -72,11 +72,14 @@ export default function ContactUsPage() {
   };
   return (
     <div className="min-h-screen bg-[#0E0C15]">
-      <AppBar background={'transparent'} />
+      <AppBar background="transparent" />
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#0E0C15] p-4">
-        <form className="w-full max-w-2xl rounded-lg bg-white p-6 shadow-md" onSubmit={handleSubmit}>
+        <form
+          className="w-full max-w-2xl rounded-lg border border-gray-400 border-t-white bg-transparent p-6 shadow-md dark:bg-[#15131D]"
+          onSubmit={handleSubmit}
+        >
           <div className="mb-4">
-            <label className="font-family: ui-monospace word- mb-2 block font-bold text-black" htmlFor="team">
+            <label className="font-family: ui-monospace word- mb-2 block font-bold text-white" htmlFor="team">
               What team are you part of?
             </label>
             <select
@@ -84,7 +87,7 @@ export default function ContactUsPage() {
               name="team"
               value={formData.team}
               onChange={handleChange}
-              className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               required
             >
               <option value="">Select an option</option>
@@ -97,7 +100,7 @@ export default function ContactUsPage() {
 
           {/* Q:2 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-black " htmlFor="name">
+            <label className="mb-2 block font-bold text-gray-600 dark:text-gray-200" htmlFor="name">
               Hi 👋 And how about your Individual name?
             </label>
             <input
@@ -107,13 +110,13 @@ export default function ContactUsPage() {
               placeholder="Type your answer here...."
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               required
             />
           </div>
           {/* Q:3 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-black " htmlFor="goals">
+            <label className="mb-2 block font-bold text-slate-200 " htmlFor="goals">
               Great, What are the goals you’re looking to achieve?
             </label>
             <select
@@ -121,7 +124,7 @@ export default function ContactUsPage() {
               name="goals"
               value={formData.goals}
               onChange={handleChange}
-              className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               required
             >
               <option value="">Select an option</option>
@@ -137,7 +140,7 @@ export default function ContactUsPage() {
 
           {/* Q:4 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-black " htmlFor="industry">
+            <label className="mb-2 block font-bold text-white " htmlFor="industry">
               Which industry you specifically serve in?
             </label>
             <select
@@ -145,7 +148,7 @@ export default function ContactUsPage() {
               name="industry"
               value={formData.industry}
               onChange={handleChange}
-              className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               required
             >
               <option value="">Select an option</option>
@@ -159,7 +162,7 @@ export default function ContactUsPage() {
           </div>
           {/* Q:5 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-black" htmlFor="customerSize">
+            <label className="mb-2 block font-bold text-white" htmlFor="customerSize">
               What will be end customers size?
             </label>
             <select
@@ -167,7 +170,7 @@ export default function ContactUsPage() {
               name="customerSize"
               value={formData.customerSize}
               onChange={handleChange}
-              className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               required
             >
               <option value="">Select an option</option>
@@ -181,7 +184,7 @@ export default function ContactUsPage() {
           {/* Q:6 */}
           <div className="mb-4 grid grid-cols-2 gap-4">
             <div>
-              <label className="mb-2 block font-bold text-black" htmlFor="firstName">
+              <label className="mb-2 block font-bold text-white" htmlFor="firstName">
                 First Name
               </label>
               <input
@@ -190,13 +193,13 @@ export default function ContactUsPage() {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+                className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
                 placeholder="First Name"
                 required
               />
             </div>
             <div>
-              <label className="mb-2 block font-bold text-black" htmlFor="lastName">
+              <label className="mb-2 block font-bold text-white" htmlFor="lastName">
                 Last Name
               </label>
               <input
@@ -205,7 +208,7 @@ export default function ContactUsPage() {
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+                className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
                 placeholder="Last Name"
                 required
               />
@@ -213,16 +216,16 @@ export default function ContactUsPage() {
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-black" htmlFor="phoneCountryCode">
+            <label className="mb-2 block font-bold text-white" htmlFor="phoneCountryCode">
               Phone Country Code
             </label>
-            <div className="flex">
+            <div className="flex gap-2">
               <select
                 id="phoneCountryCode"
                 name="phoneCountryCode"
                 value={formData.phoneCountryCode}
                 onChange={handleChange}
-                className="w-1/3 rounded-l-lg border bg-gray-100 px-4 py-2 focus:border-blue-300 focus:outline-none focus:ring"
+                className="w:1/3 rounded-lg  border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring "
                 required
               >
                 <option value="">Select</option>
@@ -236,7 +239,7 @@ export default function ContactUsPage() {
                 name="phoneNumber"
                 value={formData.phoneNumber}
                 onChange={handleChange}
-                className="w-2/3 rounded-r-lg border bg-gray-100 px-4 py-2 focus:border-blue-300 focus:outline-none focus:ring"
+                className="w-2/3 flex-grow rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
                 placeholder="Phone Number"
                 required
                 pattern="^[0-9]{10}$"
@@ -246,7 +249,7 @@ export default function ContactUsPage() {
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-black" htmlFor="email">
+            <label className="mb-2 block font-bold text-white" htmlFor="email">
               Email
             </label>
             <input
@@ -256,14 +259,14 @@ export default function ContactUsPage() {
               value={formData.email}
               pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i"
               onChange={handleChange}
-              className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               placeholder="name@example.com"
               required
             />
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-black" htmlFor="company">
+            <label className="mb-2 block font-bold text-white" htmlFor="company">
               Company
             </label>
             <input
@@ -272,7 +275,7 @@ export default function ContactUsPage() {
               name="company"
               value={formData.company}
               onChange={handleChange}
-              className="w-full rounded-lg border bg-gray-100 px-4 py-2 focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               placeholder="Your Company name..."
               required
             />
@@ -280,7 +283,7 @@ export default function ContactUsPage() {
 
           <button
             type="submit"
-            className="mt-4 w-full rounded-lg bg-green-500 py-2 text-white hover:bg-green-600 focus:outline-none focus:ring"
+            className="mt-4 w-full rounded-lg bg-green-500 py-2 text-white transition-colors duration-300 ease-in-out hover:bg-green-600 focus:outline-none focus:ring"
           >
             Submit
           </button>
