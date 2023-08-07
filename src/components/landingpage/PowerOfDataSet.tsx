@@ -3,14 +3,14 @@ import Div1 from '../../../public/assets/images/Div1.svg';
 import Div2 from '../../../public/assets/images/Div2.svg';
 import Step2 from '../../../public/assets/images/Step2.svg';
 import Step3 from '../../../public/assets/images/Step3.svg';
-import Circles from '../../../public/assets/images/Circles.png';
+// import Circles from '../../../public/assets/images/Circles.png';
 import Accent from '../../../public/assets/images/Accent.svg';
 
 import Image from 'next/image';
 export default function PowerOfDataSet() {
   return (
     <div className="grid grid-cols-1 gap-8  px-3  pt-20 md:columns-1 md:grid-cols-1 md:px-5 xl:px-0 ">
-      <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent dark:bg-[#15131D] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+      <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-[#15131D] dark:shadow-none">
         <div className="space-y-4 px-6 pb-10 md:px-0">
           <h2 className="text-center text-4xl font-bold text-white dark:text-white md:text-5xl">
             Power of{' '}
@@ -145,7 +145,8 @@ export default function PowerOfDataSet() {
           </div>
         </div>
       </div>
-      <div className="relative mt-0 py-5 md:mt-20 md:py-40">
+
+      {/* <div className="relative mt-0 py-5 md:mt-20 md:py-40">
         <div className="absolute left-2/4 top-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <Image src={Circles} />
         </div>
@@ -218,11 +219,11 @@ export default function PowerOfDataSet() {
           </div>
           <a href="https://inrahive.io">
             <div className="mt-10 flex justify-center">
-              <button className="rounded-full border bg-white p-3 text-black px-5 font-bold">Sign Up Now</button>
+              <button className="rounded-full border bg-white p-3 px-5 font-bold text-black">Sign Up Now</button>
             </div>
           </a>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }
