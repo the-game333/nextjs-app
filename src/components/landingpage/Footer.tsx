@@ -5,7 +5,7 @@ const FooterLinks = [
   { name: '', path: '#' },
   { name: '', path: '#' },
   { name: '', path: '#' },
-  { name: 'Contact Now', path: 'https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4' }
+  { name: 'Contact Now', path: '/contact' }
 ];
 
 const SocialMedia = [
