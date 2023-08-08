@@ -75,7 +75,7 @@ export default function ContactUsPage() {
       <AppBar background="transparent" />
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#0E0C15] p-4">
         <form
-          className="w-full max-w-2xl rounded-lg border border-gray-400 border-t-white bg-transparent p-6 shadow-md dark:bg-[#15131D]"
+          className="w-full max-w-2xl rounded-lg border border-white border-t-white bg-transparent p-6 shadow-md dark:bg-[#15131D]"
           onSubmit={handleSubmit}
         >
           <div className="mb-4">
@@ -100,7 +100,7 @@ export default function ContactUsPage() {
 
           {/* Q:2 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-gray-600 dark:text-gray-200" htmlFor="name">
+            <label className="mb-2 block font-bold text-white dark:text-white" htmlFor="name">
               Hi 👋 And how about your Individual name?
             </label>
             <input
@@ -110,13 +110,13 @@ export default function ContactUsPage() {
               placeholder="Type your answer here...."
               value={formData.name}
               onChange={handleChange}
-              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full rounded-lg border bg-[#0E0C15] px-4 py-2 text-white  focus:border-green-300 focus:outline-none focus:ring"
               required
             />
           </div>
           {/* Q:3 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-slate-200 " htmlFor="goals">
+            <label className="mb-2 block font-bold text-white dark:text-white" htmlFor="goals">
               Great, What are the goals you’re looking to achieve?
             </label>
             <select

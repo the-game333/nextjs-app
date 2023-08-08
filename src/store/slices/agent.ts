@@ -1,15 +1,15 @@
 // third-party
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 // project imports
 import axios from '../../utils/axios';
 import { dispatch } from '../index';
-import { AGENT_PAUSE, AUTOMATIC_MODE, AgentPlaybackControl } from "types/agentTypes";
-import { useSelector } from "store";
+import { AGENT_PAUSE, AUTOMATIC_MODE, AgentPlaybackControl } from 'types/agentTypes';
+import { useSelector } from 'store';
 
 // types
 import { DefaultRootStateProps } from '../../types';
-import AutonomousAgent from "services/agent/autonomous-agent";
+import AutonomousAgent from 'services/agent/autonomous-agent';
 
 const initialState: DefaultRootStateProps['agent'] = {
   error: null,
@@ -20,7 +20,7 @@ const initialState: DefaultRootStateProps['agent'] = {
 };
 
 const slice = createSlice({
-  name: "agent",
+  name: 'agent',
   initialState,
   reducers: {
     // HAS ERROR
@@ -60,13 +60,13 @@ export function updateAgentMode(agentMode: any) {
 
 export function updateIsAgentPaused(isAgentPaused: AgentPlaybackControl) {
   return () => {
-      dispatch(slice.actions.updateIsAgentPaused(isAgentPaused === AGENT_PAUSE));
+    dispatch(slice.actions.updateIsAgentPaused(isAgentPaused === AGENT_PAUSE));
   };
 }
 
 export function updateIsAgentStopped() {
   return () => {
-      dispatch(slice.actions.updateIsAgentStopped(!useSelector(state => state.agent.agent)?.isRunning));
+    dispatch(slice.actions.updateIsAgentStopped(!useSelector((state) => state.agent.agent)?.isRunning));
   };
 }
 

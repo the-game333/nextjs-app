@@ -21,6 +21,8 @@ import agentMessageReducer from './slices/agentmessage';
 import agentReducer from './slices/agent';
 import agentToolReducer from './slices/agenttool';
 
+import blogReducer from './slices/blog';
+
 // ==============================|| COMBINE REDUCER ||============================== //
 
 const reducer = combineReducers({
@@ -46,6 +48,7 @@ const reducer = combineReducers({
   agent: agentReducer,
   agenttool: agentToolReducer,
   agentmessage: agentMessageReducer,
+  blog: blogReducer
 });
 
 export default reducer;
