@@ -42,6 +42,7 @@ import AppShortcutIcon from '@mui/icons-material/AppShortcut';
 import Diversity3Icon from '@mui/icons-material/Diversity3';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import ScrollBar from 'react-perfect-scrollbar';
+import ContactPageIcon from '@mui/icons-material/ContactPage';
 import Image from 'next/image';
 // elevation scroll
 interface ElevationScrollProps {
@@ -160,7 +161,7 @@ const AppBar = ({ ...others }) => {
   return (
     <ElevationScroll {...others}>
       <MuiAppBar
-        position="sticky"
+        position="relative"
         sx={{
           background: `${others.background} !important`
         }}
@@ -307,7 +308,7 @@ const AppBar = ({ ...others }) => {
                   Pre-Built Apps
                 </Button>
               </a>
-              <a href="/join">
+              {/* <a href="/join">
                 <Button
                   color="inherit"
                   sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
@@ -316,7 +317,7 @@ const AppBar = ({ ...others }) => {
                 >
                   Join Us
                 </Button>
-              </a>
+              </a> */}
               {/* <a href="/partnerships">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Partnerships
@@ -341,8 +342,7 @@ const AppBar = ({ ...others }) => {
                   height: '3rem'
                 }}
                 variant="contained"
-                href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
-                target={'_blank'}
+                href="/contact"
               >
                 Contact Now
               </Button>
@@ -413,6 +413,21 @@ const AppBar = ({ ...others }) => {
                           </ListItemIcon>
                           <ListItemText
                             secondary="Blog"
+                            secondaryTypographyProps={{
+                              sx: {
+                                color: 'white'
+                              }
+                            }}
+                          />
+                        </ListItemButton>
+                      </Link>
+                      <Link style={{ textDecoration: 'none' }} href="/contact">
+                        <ListItemButton component="a">
+                          <ListItemIcon>
+                            <ContactPageIcon />
+                          </ListItemIcon>
+                          <ListItemText
+                            secondary="Contact Now"
                             secondaryTypographyProps={{
                               sx: {
                                 color: 'white'

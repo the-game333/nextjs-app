@@ -130,7 +130,7 @@ const index = () => {
     onChangeMenuType('light');
   }, []);
   return (
-    <div className="bg-[#0E0C15]">
+    <div className="min-h-screen bg-[#0E0C15]">
       <AppBar background={'transparent'} />
       <div className="mx-auto mt-24 max-w-5xl px-4">
         <h1 className="my-4 text-center text-2xl font-semibold  text-[#FFFFFF]">Explore Apps</h1>
@@ -157,7 +157,32 @@ const index = () => {
             <Search className="text-slate-500" />
           </div> */}
         </div>
-
+        <p
+          style={{
+            height: '30%',
+            width: '10%',
+            top: '20%',
+            right: '22%',
+            transform: 'translateX(50%)',
+            position: 'absolute',
+            borderRadius: '582px',
+            background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+            filter: 'blur(90px)'
+          }}
+        ></p>
+        <p
+          style={{
+            height: '20%',
+            width: '10%',
+            bottom: '10%',
+            left: '10%',
+            transform: 'translateX(50%)',
+            position: 'absolute',
+            borderRadius: '582px',
+            background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+            filter: 'blur(120px)'
+          }}
+        ></p>
         {/* Apps */}
         <div className="my-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  ">
           {Data.map((app, index) =>
