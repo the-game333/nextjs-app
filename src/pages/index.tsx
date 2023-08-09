@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 import Header from 'components/landingpage/Header';
 import EasyToUse from 'components/landingpage/EasyToUse';
 import DiverseSupport from 'components/landingpage/DiverseSupport';
-import ApiServices from 'components/landingpage/ApiServices.tsx';
+import ApiServices from 'components/landingpage/ApiServices';
 import PromptEngineering from 'components/landingpage/PromptEngineering';
 import EndlessPossibilities from 'components/landingpage/EndlessPossibilities';
 import NextExperience from 'components/landingpage/NextExperience';
