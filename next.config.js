@@ -20,20 +20,20 @@ const nextConfig = withTM({
   experimental: {
     esmExternals: false
   },
-  images: {
-    domains: [
-      'blog.infrahive.io',       // Your own domain
-      'images.unsplash.com',     // Unsplash images
-    ],
-  },
-  async rewrites() {
-    return [
-      {
-        source: '/:any*',
-        destination: 'https://images.unsplash.com/:any*',
-      },
-    ];
-  },
+  // images: {
+  //   domains: [
+  //     'blog.infrahive.io',       // Your own domain
+  //     'images.unsplash.com',     // Unsplash images
+  //   ],
+  // },
+  // async rewrites() {
+  //   return [
+  //     {
+  //       source: '/:any*',
+  //       destination: '/apps/[id]',        
+  //     },
+  //   ];
+  // },
 });
 
 module.exports = nextConfig;

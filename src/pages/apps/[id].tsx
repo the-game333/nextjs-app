@@ -30,6 +30,8 @@ const ValidationTextField = styled(TextField)({
 const Apps = () => {
   const router = useRouter();
   const path = router.query.id;
+  console.log('>>>>>>>>>>>>>>', router);
+
   const [prompt, setPrompt] = useState<any>({});
   const [result, setResult] = useState<any>('');
   const [loading, setLoading] = useState<any>(false);
@@ -75,6 +77,7 @@ const Apps = () => {
 
   return (
     <div className="bg-[#0E0C15]">
+      {console.log(path)}
       <AppBar background={'transparent'} />
       <div className="mx-auto my-20 max-w-6xl px-8 text-white">
         <div className="my-4 flex justify-between">
@@ -85,54 +88,54 @@ const Apps = () => {
         </div>
 
         <div className="mt-8">
-          {PageData?.desc.map((text, index) => (
+          {PageData?.desc?.map((text, index) => (
             <p key={index} className="mt-4 text-lg">
               {text}
             </p>
           ))}
         </div>
 
-        {PageData.features[0].desc != '' && (
+        {PageData?.features && PageData?.features?.length > 0 && PageData?.features[0]?.desc !== '' && (
           <ul className="mt-8 list-disc">
             <p className="text-lg font-semibold">Key Features</p>
-            {PageData.features.map((feat, index) => (
-              <li className="ml-4 text-lg">
-                <span className="font-semibold">{feat.heading && `${feat.heading} : `}</span> {feat.desc}
+            {PageData?.features?.map((feat, index) => (
+              <li key={index} className="ml-4 text-lg">
+                <span className="font-semibold">{feat?.heading && `${feat?.heading} : `}</span> {feat?.desc}
               </li>
             ))}
           </ul>
         )}
 
-        {PageData.useCases[0].desc != '' && (
+        {PageData?.useCases[0]?.desc != '' && (
           <div className="mt-12">
             <h2 className="text-3xl font-semibold">Use Cases</h2>
             <div className="mt-4 grid grid-cols-1 gap-4 text-lg md:grid-cols-2 lg:grid-cols-3">
-              {PageData.useCases.map((use, index) => (
-                <div key={index} className={`${PageData.color} rounded-sm p-6`}>
+              {PageData?.useCases?.map((use, index) => (
+                <div key={index} className={`${PageData?.color} rounded-sm p-6`}>
                   <span className="rounded-full bg-black px-2 py-1 text-white">{index + 1}</span>
-                  <p className="my-2 mt-4">{use.heading}</p>
-                  <p className="my-2 leading-6">{use.desc}</p>
+                  <p className="my-2 mt-4">{use?.heading}</p>
+                  <p className="my-2 leading-6">{use?.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         )}
 
-        {PageData.name && <h2 className="my-5 text-3xl font-semibold">Test {PageData.name}</h2>}
+        {PageData?.name && <h2 className="my-5 text-3xl font-semibold">Test {PageData?.name}</h2>}
         <Box display={'flex'} gap={'1rem'}>
           <Box width={'50%'}>
-            {inputData?.values.map((data: { name: string; placeHolder: string }, index: number) => (
+            {inputData?.values?.map((data: { name: string; placeHolder: string }, index: number) => (
               <ValidationTextField
                 onChange={handlePromptChange}
                 size="medium"
                 sx={{ width: '100%', margin: '0 0 1rem', '& .MuiInputBase-input': { backgroundColor: '#0E0C15', color: 'white' } }}
                 // label={data.placeHolder}
-                placeholder={data.placeHolder}
-                value={prompt[data.name]}
-                name={data.name}
+                placeholder={data?.placeHolder}
+                value={prompt[data?.name]}
+                name={data?.name}
                 key={index}
                 disabled={loading}
-                minRows={4 / inputData?.values.length}
+                minRows={4 / inputData?.values?.length}
                 multiline
                 variant="outlined"
               />
