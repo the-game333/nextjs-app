@@ -1,19 +1,27 @@
 import { Search } from '@mui/icons-material';
 import FooterPage from 'components/landingpage/Footer';
 import React, { useEffect, useState } from 'react';
-import { Button, Link } from '@mui/material';
+import { Button } from '@mui/material';
 import AppBar from 'ui-component/extended/AppBar';
 import useConfig from 'hooks/useConfig';
+import Link from 'next/link';
 
 const AppCard = (props: { logo: string; heading: string; desc: string; url: string; color: string }) => {
   return (
-    <a href={props.url}>
+    <Link
+      href={{
+        pathname: props.url,
+        query: { id: props.url.split('/').pop() }
+      }}
+    >
+      {/* <a> */}
       <div className="min-h-[12rem] rounded-md border border-slate-500 bg-[#0E0C15] p-4 text-white">
         <img src={props.logo} alt={props.heading} className={`h-12 ${props.color} p-2`} />
         <p className="text-md mt-4 font-semibold">{props.heading}</p>
         <p className="text-sm text-slate-400 ">{props.desc}</p>
       </div>
-    </a>
+      {/* </a> */}
+    </Link>
   );
 };
 
@@ -139,7 +147,7 @@ const index = () => {
         <div className="my-4 flex justify-between">
           <div className="flex gap-4">
             {CategoriesBar.map((cat, index) => (
-              <button onClick={() => setCategory(cat.value)}>
+              <button key={index} onClick={() => setCategory(cat.value)}>
                 <p className={`${category === cat.value ? 'font-semibold text-white' : 'font-semibold text-slate-500'} text-xs md:text-sm`}>
                   {cat.name}
                 </p>
