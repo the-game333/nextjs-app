@@ -5,8 +5,8 @@ import AppBar from 'ui-component/extended/AppBar';
 const Card = (props: { heading: string; desc: string; key: number }) => {
   return (
     <div key={props.key} className="rounded-lg bg-[#0E0C15] p-6  text-white">
-      <h2 className="text-5xl text-infra-yellow">{props.heading}</h2>
-      <p className="text-xl leading-relaxed">{props.desc}</p>
+      <h2 className="mb-2 text-5xl text-infra-yellow">{props.heading}</h2>
+      <p className="text-md leading-relaxed">{props.desc}</p>
     </div>
   );
 };
@@ -31,7 +31,7 @@ const index = () => {
     }
   ];
   return (
-    <div className="bg-[#0E0C15]">
+    <div className="min-h-screen bg-[#0E0C15]">
       <AppBar background={'transparent'} />
       <div className=" mx-4 py-24">
         <div className="mx-auto max-w-2xl lg:max-w-3xl">
@@ -41,8 +41,46 @@ const index = () => {
             empower innovation, simplify complex processes, and unlock the transformative potential of AI across industries.
           </p>
         </div>
-      </div>
-
+      </div>{' '}
+      <p
+        style={{
+          height: '20%',
+          width: '10%',
+          top: '15%',
+          left: '15%',
+          transform: 'translateX(50%)',
+          position: 'absolute',
+          borderRadius: '582px',
+          background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+          filter: 'blur(120px)'
+        }}
+      ></p>
+      <p
+        style={{
+          height: '20%',
+          width: '10%',
+          bottom: '25%',
+          right: '25%',
+          transform: 'translateX(50%)',
+          position: 'absolute',
+          borderRadius: '582px',
+          background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+          filter: 'blur(120px)'
+        }}
+      ></p>
+      <p
+        style={{
+          height: '10%',
+          width: '10%',
+          top: '85%',
+          left: '20%',
+          transform: 'translateX(50%)',
+          position: 'absolute',
+          borderRadius: '582px',
+          background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+          filter: 'blur(120px)'
+        }}
+      ></p>
       {/* Cards */}
       <div className=" mx-4 py-24 ">
         <div className="mx-auto grid max-w-xl grid-cols-1 gap-6 lg:max-w-5xl lg:grid-cols-2 ">
@@ -51,7 +89,6 @@ const index = () => {
           ))}
         </div>
       </div>
-
       <FooterPage />
     </div>
   );

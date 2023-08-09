@@ -308,7 +308,7 @@ const AppBar = ({ ...others }) => {
                   Pre-Built Apps
                 </Button>
               </a>
-              <a href="/join">
+              {/* <a href="/join">
                 <Button
                   color="inherit"
                   sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
@@ -317,7 +317,7 @@ const AppBar = ({ ...others }) => {
                 >
                   Join Us
                 </Button>
-              </a>
+              </a> */}
               {/* <a href="/partnerships">
                 <Button color="inherit" sx={{ '&:hover': { backgroundColor: 'transparent' } }} component={Link} target="_blank">
                   Partnerships

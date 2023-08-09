@@ -116,11 +116,12 @@ export default function Header() {
               </div>
             </div>
           </div>
-
-          <p className="mx-14 mt-8 leading-[1.5rem] text-white dark:text-gray-300">
-            Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps, LLM-powered
-            Workflows, Tools and more, at Unmatched speed.
-          </p>
+          <div className="m-auto flex w-full justify-center text-center">
+            <p className="mx-14 mt-8 max-w-xl leading-[1.5rem] text-white dark:text-gray-300 md:text-[20px]">
+              Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps,
+              LLM-powered Workflows, Tools and more, at Unmatched speed.
+            </p>
+          </div>
           <div className="relative mt-16 flex flex-wrap justify-center gap-x-6 gap-y-4">
             <a
               href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"

@@ -67,7 +67,7 @@ export default function FullyFeatured() {
             </div>
           </div>
 
-          <div className="mt-10 flex justify-center pb-10 md:pb-60">
+          <div className="md:pb-50 mt-5 flex justify-center pb-10">
             <Image src={Main} height={430} width={779} className="rounded-xl" />
           </div>
         </div>

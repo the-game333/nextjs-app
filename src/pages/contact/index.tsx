@@ -26,8 +26,11 @@
 // export default ContactUsPage;
 
 import React, { useState, ChangeEvent, FormEvent } from 'react';
+import sendThankYouEmail from 'pages/api/utils/sendThankyouEmail';
 import AppBar from 'ui-component/extended/AppBar';
 import Footer from 'components/landingpage/Footer';
+import axios from 'axios';
+import sendEmailToTeam from 'pages/api/utils/sendEmailToTeam';
 
 interface FormData {
   team: string;
@@ -65,15 +68,66 @@ export default function ContactUsPage() {
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 
-  const handleSubmit = (event: FormEvent) => {
+  const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     console.log(formData);
-    setFormData(initialFormData);
+
+    try {
+      // Send thank you email
+      await sendThankYouEmail(formData.email);
+      // Send contact data to the team
+      await sendEmailToTeam(formData);
+      // await axios.post('/api/sendEmailToTeam', formData);
+
+      setFormData(initialFormData);
+    } catch (error) {
+      console.error('Error sending thank you email:', error);
+    }
   };
+
   return (
-    <div className="min-h-screen bg-[#0E0C15]">
+    <div className="relative min-h-screen bg-[#0E0C15]">
       <AppBar background="transparent" />
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#0E0C15] p-4">
+        <p
+          style={{
+            height: '30%',
+            width: '10%',
+            top: '20%',
+            left: '10%',
+            transform: 'translateX(50%)',
+            position: 'absolute',
+            borderRadius: '582px',
+            background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+            filter: 'blur(100px)'
+          }}
+        ></p>
+        <p
+          style={{
+            height: '10%',
+            width: '10%',
+            top: '50%',
+            left: '65%',
+            transform: 'translateX(50%)',
+            position: 'absolute',
+            borderRadius: '582px',
+            background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+            filter: 'blur(80px)'
+          }}
+        ></p>
+        <p
+          style={{
+            height: '10%',
+            width: '10%',
+            top: '85%',
+            left: '20%',
+            transform: 'translateX(50%)',
+            position: 'absolute',
+            borderRadius: '582px',
+            background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
+            filter: 'blur(120px)'
+          }}
+        ></p>
         <form
           className="w-full max-w-2xl rounded-lg border border-white border-t-white bg-transparent p-6 shadow-md dark:bg-[#15131D]"
           onSubmit={handleSubmit}
