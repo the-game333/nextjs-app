@@ -97,6 +97,7 @@ const Partnership = () => {
               style={{
                 height: '30%',
                 width: '10%',
+                zIndex: '10',
                 top: '30%',
                 left: '55%',
                 transform: 'translateX(50%)',
@@ -118,7 +119,7 @@ const Partnership = () => {
               </p>
             </div>
           </div>
-          <div className="h-[20.5rem]  w-full rounded-3xl  bg-gradient-to-b from-yellow-500 via-gray-900 to-gray-900 p-0.5">
+          <div className="h-[20.5rem]  w-full rounded-3xl bg-gradient-to-b from-yellow-500 via-gray-900 to-gray-900 p-0.5">
             <div className="relative aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
               <div className="flex gap-4">
                 <div>

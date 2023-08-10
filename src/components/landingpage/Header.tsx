@@ -146,7 +146,9 @@ export default function Header() {
                     </clipPath>
                   </defs>
                 </svg>
-                <Link href="https://getwaitlist.com/waitlist/9765">Get Demo</Link>
+                <Link sx={{ color: 'rgba(48, 48, 48, 1)', textDecoration: 'none' }} href="https://getwaitlist.com/waitlist/9765">
+                  Get Demo
+                </Link>
               </span>
             </a>
           </div>

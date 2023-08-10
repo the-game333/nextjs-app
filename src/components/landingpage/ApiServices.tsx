@@ -1,6 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const ApiServices = () => {
+  const [isServiceEnabled, setIsServiceEnabled] = useState<boolean>(false);
+  const [isServiceEnabled2, setIsServiceEnabled2] = useState<boolean>(false);
+
+  const toggleService = () => {
+    setIsServiceEnabled(!isServiceEnabled);
+  };
+  const toggleService2 = () => {
+    setIsServiceEnabled2(!isServiceEnabled2);
+  };
   return (
     <div className="mx-auto px-3 md:max-w-5xl md:px-5 md:pb-20 md:pt-20 lg:max-w-6xl xl:px-0">
       <div id="main" className="grid grid-cols-1 justify-evenly gap-5 md:grid-cols-2 ">
@@ -11,12 +20,9 @@ const ApiServices = () => {
           <div className="relative rounded-3xl border border-white p-8 dark:border-[#ffffff1a]">
             <div className="absolute right-2 top-4 flex gap-3 md:right-5 md:top-4">
               <p className="text-white dark:text-white">In service</p>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="20" viewBox="0 0 38 20" fill="none">
-                  <rect width="38" height="20" rx="10" fill="#FEC200" />
-                  <rect x="21" y="3" width="14" height="14" rx="7" fill="white" />
-                </svg>
-              </span>
+              <button className={`toggle-button ${isServiceEnabled ? 'on' : ''}`} onClick={toggleService}>
+                <div className="slider"></div>
+              </button>
             </div>
             <div className="gap-4">
               <h6 className="text-2xl font-medium text-white dark:text-white md:text-3xl">Backend service API</h6>
@@ -54,12 +60,9 @@ const ApiServices = () => {
           <div className="relative rounded-3xl border border-white p-8 dark:border-[#ffffff1a]">
             <div className="absolute right-2 top-4 flex gap-3 md:right-5 md:top-4">
               <p className="text-white dark:text-white">In service</p>
-              <span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="38" height="20" viewBox="0 0 38 20" fill="none">
-                  <rect width="38" height="20" rx="10" fill="#FEC200" />
-                  <rect x="21" y="3" width="14" height="14" rx="7" fill="white" />
-                </svg>
-              </span>
+              <button className={`toggle-button ${isServiceEnabled2 ? 'on' : ''}`} onClick={toggleService2}>
+                <div className="slider"></div>
+              </button>
             </div>
             <div className="gap-4">
               <h6 className="text-2xl font-medium text-white dark:text-white md:text-3xl">Test-app</h6>

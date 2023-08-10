@@ -333,6 +333,16 @@ const AppBar = ({ ...others }) => {
                   Blog
                 </Button>
               </a>
+              <Link href="/contact">
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
+                  component={Link}
+                  target="_blank"
+                >
+                  Contact Us
+                </Button>
+              </Link>
               <Button
                 className="my-auto mt-4"
                 sx={{
@@ -342,9 +352,9 @@ const AppBar = ({ ...others }) => {
                   height: '3rem'
                 }}
                 variant="contained"
-                href="/contact"
+                href="https://getwaitlist.com/waitlist/9765"
               >
-                Contact Now
+                Get Demo
               </Button>
             </Stack>
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>

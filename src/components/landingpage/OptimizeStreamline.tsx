@@ -8,7 +8,7 @@ const OptimizeStreamline = () => {
   return (
     <div className="grid grid-cols-1 gap-8  px-3  pt-20 md:columns-1 md:grid-cols-1 md:px-5 xl:px-0 ">
       <div className="relative mt-0 py-5 md:mt-20 md:py-40">
-        <div className="absolute left-2/4 top-2/4 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
+        <div className="pointer-events-none absolute left-2/4 top-2/4 z-0 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
           <Image src={Circles} />
         </div>
         <div className="space-y-4 px-6 pb-10 md:px-0">
@@ -78,9 +78,9 @@ const OptimizeStreamline = () => {
               Sign up & Start Building with InfraHive now and soar to new heights of AI-powered success.
             </p>
           </div>
-          <div className="mt-10 justify-center text-center">
+          <div className=" mt-10 justify-center text-center">
             <Link href="https://getwaitlist.com/waitlist/9765">
-              <span className="rounded-full border bg-white p-3 px-5 font-bold text-black">Book a Demo Now</span>
+              <span className="cursor-pointer rounded-full border bg-white p-3 px-5 font-bold text-black">Get Demo</span>
             </Link>
           </div>
         </div>
