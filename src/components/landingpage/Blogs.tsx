@@ -73,7 +73,7 @@ const Blogs = () => {
               </div>
               <div className=" flex items-center justify-between py-4">
                 <a
-                  href="#_"
+                  href={blog.url}
                   className="group relative inline-flex items-center justify-center overflow-hidden rounded-full p-4 px-5 py-3 font-medium text-indigo-600 shadow-xl transition duration-300 ease-out hover:ring-1 hover:ring-purple-500"
                 >
                   <span className="absolute inset-0 h-full w-full bg-gradient-to-br from-blue-600 via-purple-600 to-pink-700"></span>
