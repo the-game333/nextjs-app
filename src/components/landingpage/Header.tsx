@@ -91,7 +91,7 @@ export default function Header() {
               <h1> Supercharge </h1>
             </div>
             <div className=" heading flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
-              <div className="animated max-h-[2rem]  text-4xl md:text-5xl">
+              <div className="animated flex max-h-[2rem] flex-col gap-[10px]  text-4xl md:text-5xl">
                 <h5 style={{ color: '#FEDE00' }}>AI Powered Apps</h5>
                 <h5
                   style={{
@@ -118,7 +118,7 @@ export default function Header() {
             </div>
           </div>
           <div className="m-auto flex w-full justify-center text-center">
-            <p className="mx-14 mt-8 max-w-xl leading-[1.5rem] text-white dark:text-gray-300 md:text-[20px]">
+            <p className="mx-14 mt-8 max-w-3xl leading-[1.5rem] text-white dark:text-gray-300 md:text-[20px]">
               Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps,
               LLM-powered Workflows, Tools and more, at Unmatched speed.
             </p>
@@ -146,7 +146,9 @@ export default function Header() {
                     </clipPath>
                   </defs>
                 </svg>
-                <Link href="https://getwaitlist.com/waitlist/9765">Get Demo</Link>
+                <Link sx={{ color: 'rgba(48, 48, 48, 1)', textDecoration: 'none' }} href="https://getwaitlist.com/waitlist/9765">
+                  Get Demo
+                </Link>
               </span>
             </a>
           </div>
