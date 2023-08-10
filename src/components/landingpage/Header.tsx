@@ -3,6 +3,7 @@ import Bee from '../../../public/bee.png';
 import Image from 'next/image';
 import { Typography, createStyles } from '@mui/material';
 import Pattern from '../../../public/Pattern.png';
+import Link from 'Link';
 export default function Header() {
   const labels = ['Generative AI', 'Enterprise AI'];
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -145,7 +146,7 @@ export default function Header() {
                     </clipPath>
                   </defs>
                 </svg>
-                Start Building
+                <Link href="https://getwaitlist.com/waitlist/9765">Get Demo</Link>
               </span>
             </a>
           </div>

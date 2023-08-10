@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 
 import Circles from '../../../public/assets/images/Circles.png';
@@ -77,11 +78,11 @@ const OptimizeStreamline = () => {
               Sign up & Start Building with InfraHive now and soar to new heights of AI-powered success.
             </p>
           </div>
-          <a href="https://inrahive.io">
-            <div className="mt-10 flex justify-center">
-              <button className="rounded-full border bg-white p-3 px-5 font-bold text-black">Sign Up Now</button>
-            </div>
-          </a>
+          <div className="mt-10 justify-center text-center">
+            <Link href="https://getwaitlist.com/waitlist/9765">
+              <span className="rounded-full border bg-white p-3 px-5 font-bold text-black">Book a Demo Now</span>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
