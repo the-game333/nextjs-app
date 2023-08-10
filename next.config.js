@@ -20,17 +20,14 @@ const nextConfig = withTM({
   experimental: {
     esmExternals: false
   },
-  // images: {
-  //   domains: [
-  //     'blog.infrahive.io',       // Your own domain
-  //     'images.unsplash.com',     // Unsplash images
-  //   ],
-  // },
+  images: {
+    domains: ['blog.infrahive.io', 'images.unsplash.com']
+  }
   // async rewrites() {
   //   return [
   //     {
   //       source: '/:any*',
-  //       destination: '/apps/[id]',        
+  //       destination: '/apps/[id]',
   //     },
   //   ];
   // },
