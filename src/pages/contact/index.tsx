@@ -311,7 +311,6 @@ export default function ContactUsPage() {
               id="email"
               name="email"
               value={formData.email}
-              pattern="^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i"
               onChange={handleChange}
               className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
               placeholder="name@example.com"
