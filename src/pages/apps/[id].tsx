@@ -121,7 +121,7 @@ const Apps = () => {
           </div>
         )}
 
-        {PageData?.name && <h2 className="my-5 text-3xl font-semibold">Test {PageData?.name}</h2>}
+        {/* {PageData?.name && <h2 className="my-5 text-3xl font-semibold">Test {PageData?.name}</h2>}
         <Box display={'flex'} gap={'1rem'}>
           <Box width={'50%'}>
             {inputData?.values?.map((data: { name: string; placeHolder: string }, index: number) => (
@@ -174,7 +174,7 @@ const Apps = () => {
         )}
         <Button type="button" onClick={handleSubmit} variant="outlined">
           Submit
-        </Button>
+        </Button> */}
       </div>
       <FooterPage />
     </div>
