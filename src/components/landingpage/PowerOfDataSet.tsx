@@ -58,7 +58,7 @@ export default function PowerOfDataSet() {
               <p className="w-max rounded-xl border border-none bg-[#fec2004d] p-2 px-3 text-xl text-white md:text-2xl">Step: 1</p>
               <p className="mt-5 text-xl  text-white md:text-4xl">Create your own dataset from data cleaning and processing.</p>
               <span className="absolute right-20 top-40 hidden lg:block">
-                <Image src={Accent} width={168} height={91} />
+                <Image alt="accent" src={Accent} width={168} height={91} />
               </span>
             </div>
 
@@ -77,9 +77,9 @@ export default function PowerOfDataSet() {
                 }}
               ></p>
               <div className="relative">
-                <Image src={Div1} className="rounded-xl" />
+                <Image alt="div1" src={Div1} className="rounded-xl" />
                 <div className="absolute  -top-1/4 left-1/2">
-                  <Image src={Div2} className="rounded-xl" />
+                  <Image alt="div2" src={Div2} className="rounded-xl" />
                 </div>
               </div>
             </div>
@@ -102,7 +102,7 @@ export default function PowerOfDataSet() {
               }}
             ></p>
             <div className="aspect-auto rounded-3xl border-gray-100 pt-2 shadow-2xl  shadow-gray-600/10 dark:border-gray-700 dark:shadow-none sm:pt-20">
-              <Image src={Step2} className="rounded-xl" />
+              <Image alt="step2" src={Step2} className="rounded-xl" />
             </div>
             <div className="aspect-auto rounded-3xl bg-transparent p-0 md:p-8">
               <div>
@@ -135,11 +135,11 @@ export default function PowerOfDataSet() {
               }}
             ></p>
             <span className="absolute left-1/3 top-2/3 hidden rotate-12 lg:block">
-              <Image src={Accent} />
+              <Image alt="accent" src={Accent} />
             </span>
             <div className="aspect-auto rounded-3xl bg-transparent p-8">
               <div className="aspect-auto rounded-3xl border-gray-100 pt-2 shadow-2xl  shadow-gray-600/10 dark:border-gray-700 dark:shadow-none sm:pt-20">
-                <Image src={Step3} className="rounded-xl" />
+                <Image alt="step3" src={Step3} className="rounded-xl" />
               </div>
             </div>
           </div>

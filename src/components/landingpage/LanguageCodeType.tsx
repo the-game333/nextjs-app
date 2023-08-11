@@ -40,7 +40,7 @@ export default function LanguageCodeType() {
           }}
         ></p>
         <span className="absolute left-1/3 top-80 hidden lg:block">
-          <Image src={Hero} width={154} height={250} />
+          <Image alt='hero' src={Hero} width={154} height={250} />
         </span>
         <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
           <div>
@@ -50,7 +50,7 @@ export default function LanguageCodeType() {
             </div>
             <div className="mt-5 w-full flex-none items-center justify-between sm:flex">
               <div className="flex justify-center rounded-full bg-white p-2 px-6">
-                <Image src={Notions} width={71} height={26} />
+                <Image alt='notions' src={Notions} width={71} height={26} />
               </div>
               <div className="mt-2 flex items-center justify-between sm:mt-0 w-full sm:w-auto gap-2">
                 <button className="h-7 w-24 rounded-md border border-none bg-[#00B05C] text-white">Synchronized</button>
@@ -59,7 +59,7 @@ export default function LanguageCodeType() {
             </div>
             <div className="mt-5 w-full flex-none items-center justify-between sm:flex">
               <div className="flex justify-center rounded-full bg-white p-2 px-6">
-                <Image src={Slack} width={71} height={26} />
+                <Image alt='slack' src={Slack} width={71} height={26} />
               </div>
               <div className="mt-2 flex items-center justify-between sm:mt-0 w-full sm:w-auto gap-2">
                 <button className="h-7 w-24 rounded-md border border-none bg-[#00B05C] text-white">Synchronized</button>
@@ -68,7 +68,7 @@ export default function LanguageCodeType() {
             </div>
             <div className="mt-5 w-full flex-none items-center justify-between sm:flex">
               <div className="flex justify-center rounded-full bg-white p-2 px-6">
-                <Image src={Drive} width={71} height={26} />
+                <Image alt='drive' src={Drive} width={71} height={26} />
               </div>
               <div className="mt-2 flex items-center sm:mt-0">
                 <button className="h-7 w-24 rounded-md border  bg-transparent text-white">Connect</button>
@@ -77,7 +77,7 @@ export default function LanguageCodeType() {
             </div>
             <div className="mt-5 w-full flex-none items-center justify-between sm:flex">
               <div className="flex justify-center rounded-full bg-white p-2 px-6">
-                <Image src={GitHub} width={71} height={26} />
+                <Image alt='github' src={GitHub} width={71} height={26} />
               </div>
               <div className="mt-2 flex items-center sm:mt-0">
                 <button className="h-7 w-24 rounded-md border  bg-transparent text-white ">Connect</button>

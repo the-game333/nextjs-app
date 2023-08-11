@@ -13,7 +13,7 @@ interface SubCardProps {
   secondary?: ReactNode | string | {};
   sx?: {};
   contentSX?: {};
-  title?: ReactNode | string | {};
+  title?: ReactNode | any | {};
 }
 
 // ==============================|| CUSTOM SUB CARD ||============================== //
@@ -39,8 +39,8 @@ const SubCard = React.forwardRef(
         {...others}
       >
         {/* card header and action */}
-        {!darkTitle && title && <CardHeader sx={{ p: 2.5 }} title={<Typography variant="h5">{title}</Typography>} action={secondary} />}
-        {darkTitle && title && <CardHeader sx={{ p: 2.5 }} title={<Typography variant="h4">{title}</Typography>} action={secondary} />}
+        {!darkTitle && title && <CardHeader sx={{ p: 2.5 }} title={<Typography variant="h5">{title}</Typography>} />}
+        {darkTitle && title && <CardHeader sx={{ p: 2.5 }} title={<Typography variant="h4">{title}</Typography>} />}
 
         {/* content & header divider */}
         {title && (

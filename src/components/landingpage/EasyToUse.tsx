@@ -3,6 +3,7 @@ import React from 'react';
 import Mobile from '../../../public/assets/images/Mobile.png';
 import Logs from '../../../public/assets/images/Logs.png';
 import Logs2 from '../../../public/assets/images/Logs2.png';
+import Mask from '../../../public/assets/images/Mask.png';
 import Code from '../../../public/assets/images/Code.png';
 import Image1 from '../../../public/assets/images/Image1.png';
 import Image2 from '../../../public/assets/images/Image2.png';
@@ -84,9 +85,9 @@ export default function Howtowork() {
 
           <div className="relative mt-10 flex justify-center md:mt-5">
             <span className="-z-1 absolute -top-[100px]">
-              <Image src={Eclipse} />
+              <Image alt="Eclipse" src={Eclipse} />
             </span>
-            <Image src={Mobile} height={250} width={300} />
+            <Image alt="Mobile" src={Mobile} height={250} width={300} />
           </div>
         </div>
         <div className="aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
@@ -111,19 +112,19 @@ export default function Howtowork() {
           </div>
           <div className="mt-20 grid grid-cols-5 items-center gap-4">
             <div>
-              <Image src={Image1} height={64} width={64} />
+              <Image alt="Image1" src={Image1} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image2} height={64} width={64} />
+              <Image alt="Image2" src={Image2} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image3} height={64} width={64} />
+              <Image alt="Image3" src={Image3} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image4} height={64} width={64} />
+              <Image alt="Image4" src={Image4} height={64} width={64} />
             </div>
             <div>
-              <Image src={Image5} height={64} width={64} />
+              <Image alt="Image5" src={Image5} height={64} width={64} />
             </div>
           </div>
           <div></div>
@@ -158,7 +159,7 @@ export default function Howtowork() {
                 filter: 'blur(80px)'
               }}
             ></p>
-            <Image src={Code} className="rounded-xl" height={250} width={350} />
+            <Image alt="code" src={Code} className="rounded-xl" height={250} width={350} />
           </div>
         </div>
         <div className="col-span-3 aspect-auto rounded-3xl border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
@@ -175,10 +176,11 @@ export default function Howtowork() {
             Embracing and unlock the potential of AI applications. Continuously refine and optimize its capabilities through active
             engagement with the technology by visually inspecting logs and annotating data to enhance their performance.
           </p>
-          <div className="mt-10 md:mt-20">
+          <div className="mt-20 lg:mt-[130px]">
             <div className="h-[100px] max-w-[618px]">
               {/* <Image src={Logs} className="rounded-xl" /> */}
-              <Image src={Logs2} className="rounded-xl" />
+              <Image alt="logo2" src={Logs2} className="rounded-xl" />
+              {/* <Image src={Mask} className="rounded-xl" /> */}
             </div>
           </div>
         </div>

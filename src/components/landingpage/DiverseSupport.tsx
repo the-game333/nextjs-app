@@ -64,37 +64,37 @@ export default function Howtowork2() {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image src={OpenAI} width={176} height={48} />
+              <Image alt="OpenAI" src={OpenAI} width={176} height={48} />
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image src={ChatGPT2} width={176} height={48} />
+              <Image alt="ChatGPT2" src={ChatGPT2} width={176} height={48} />
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image src={Anthrop} width={176} height={48} />
+              <Image alt="Anthrop" src={Anthrop} width={176} height={48} />
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image src={Claude} width={176} height={48} />
+              <Image alt="Claude" src={Claude} width={176} height={48} />
             </div>
           </div>
         </div>
         <div className="mt-6 flex justify-center sm:mt-10">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image src={Cohere} width={176} height={48} />
+              <Image alt="Cohere" src={Cohere} width={176} height={48} />
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image src={HugFace} width={176} height={48} />
+              <Image alt="HugFace" src={HugFace} width={176} height={48} />
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image src={LangChain} width={176} height={48} />
+              <Image alt="LangChain" src={LangChain} width={176} height={48} />
             </div>
           </div>
         </div>
-       
+
         {/* <div className="mt-20 grid grid-cols-6 gap-4">
           <div className="relative col-start-1 col-end-7 rounded-3xl border border-[#ffffff1a] bg-[#ffffff1a]">
             <div className="absolute top-0">
-              <Image src={Pattern} height={500} />
+              <Image alt="Pattern" src={Pattern} height={500} />
             </div>
             <div className="space-y-4 px-6 pb-10 md:px-0">
               <h2 className="mt-20 text-center text-5xl font-bold text-gray-800 dark:text-white md:text-5xl">

@@ -101,6 +101,8 @@ const FirebaseLogin = ({ loginProp, ...others }: { loginProp?: number }) => {
     if (session) {
       router.push('/dashboard');
     }
+
+    // auth0Handler();
   }, [session]);
 
   const TypedLink = Link as React.ElementType;

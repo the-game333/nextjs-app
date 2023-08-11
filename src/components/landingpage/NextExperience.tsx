@@ -36,7 +36,7 @@ export default function BulitCommunity() {
         <div className="grid grid-cols-1 gap-8  pt-10 md:columns-1 md:grid-cols-3 pb-20">
           <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent dark:bg-[#15131D] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex justify-center">
-              <Image src={Cover} height={80} width={80} />
+              <Image alt='cover' src={Cover} height={80} width={80} />
             </div>
             <div className="flex justify-center gap-4">
               <div>
@@ -51,7 +51,7 @@ export default function BulitCommunity() {
           </div>
           <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent dark:bg-[#15131D] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex justify-center">
-              <Image src={FollowUp} height={80} width={80} />
+              <Image alt='followup' src={FollowUp} height={80} width={80} />
             </div>
             <div className="flex justify-center gap-4">
               <div>
@@ -66,7 +66,7 @@ export default function BulitCommunity() {
           </div>
           <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent dark:bg-[#15131D] p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
             <div className="flex justify-center">
-              <Image src={Text} height={80} width={80} />
+              <Image alt='text' src={Text} height={80} width={80} />
             </div>
             <div className="flex justify-center gap-4">
               <div>

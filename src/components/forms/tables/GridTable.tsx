@@ -62,7 +62,7 @@ export default function TableDataGrid() {
         }
       }}
     >
-      <DataGrid rows={rows} columns={columns} pageSize={5} rowsPerPageOptions={[5]} checkboxSelection />
+      <DataGrid rows={rows} columns={columns} checkboxSelection />
     </Box>
   );
 }

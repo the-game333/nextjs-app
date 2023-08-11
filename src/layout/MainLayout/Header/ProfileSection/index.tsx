@@ -37,7 +37,7 @@ import useAuth from 'hooks/useAuth';
 import { IconLogout, IconSearch, IconSettings, IconUser } from '@tabler/icons';
 import useConfig from 'hooks/useConfig';
 import Link from 'next/link';
-import { signOut } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 const User1 = '/assets/images/users/user-round.svg';
 
@@ -47,6 +47,7 @@ const ProfileSection = () => {
   const theme = useTheme();
   const { borderRadius } = useConfig();
   // const navigate = useNavigate();
+  const { data: session } = useSession();
 
   const [sdm, setSdm] = useState(true);
   const [value, setValue] = useState('');
@@ -94,7 +95,8 @@ const ProfileSection = () => {
 
     prevOpen.current = open;
   }, [open]);
-
+  
+  console.log("sessiom" , session);
   return (
     <>
       <Chip

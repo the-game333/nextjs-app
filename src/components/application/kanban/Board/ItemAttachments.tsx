@@ -26,32 +26,33 @@ const DropZoneStyle = styled('div')(({ theme }) => ({
 }));
 
 function UploadFile() {
-  const [files, setFiles] = useState([]);
+  const [files, setFiles] = useState<any>([]);
 
   const handleRemove = (file: File) => {
-    const filteredItems = files.filter((_file) => _file !== file);
+    const filteredItems = files.filter((_file :  any) => _file !== file);
     setFiles(filteredItems);
   };
 
   const handleDrop = useCallback(
-    (acceptedFiles) => {
-      setFiles(
-        acceptedFiles.map((file: File) => {
-          const reader = new FileReader();
+    (acceptedFiles: File[]) => {
+      const updatedFiles = acceptedFiles.map((file: File) => {
+        const reader = new FileReader();
 
-          reader.onabort = () => console.log('file reading was aborted');
-          reader.onerror = () => console.log('file reading has failed');
-          reader.onload = () => console.log('file reading result');
-          reader.readAsArrayBuffer(file);
+        reader.onabort = () => console.log('file reading was aborted');
+        reader.onerror = () => console.log('file reading has failed');
+        reader.onload = () => console.log('file reading result');
+        reader.readAsArrayBuffer(file);
 
-          return Object.assign(file, {
-            preview: URL.createObjectURL(file)
-          });
-        })
-      );
+        return Object.assign(file, {
+          preview: URL.createObjectURL(file)
+        });
+      });
+
+      setFiles(updatedFiles);
     },
-    [setFiles]
+    [] // Remember to add any dependencies in this array if needed
   );
+
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop: handleDrop
@@ -59,7 +60,7 @@ function UploadFile() {
 
   return (
     <>
-      {files.map((file) => {
+      {files.map((file :  any) => {
         const { name, preview } = file;
         const key = isString(file) ? file : name;
 
