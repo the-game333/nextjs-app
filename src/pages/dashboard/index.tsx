@@ -1,4 +1,7 @@
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/router';
+
+import { useSelector } from 'react-redux';
 
 // material-ui
 import { Grid } from '@mui/material';
@@ -11,27 +14,33 @@ import TotalIncomeDarkCard from '../../components/dashboard/Default/TotalIncomeD
 import TotalIncomeLightCard from '../../components/dashboard/Default/TotalIncomeLightCard';
 import TotalGrowthBarChart from '../../components/dashboard/Default/TotalGrowthBarChart';
 import { gridSpacing } from '../../store/constant';
-import ScrollDialog from 'pages/on-boarding';
+// import OnBoarding from 'pages/onboarding';
 import IsFormFilled from 'components/dashboard/Default/IsFormFilled';
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 
 const Dashboard = () => {
+  const router = useRouter();
   const [isLoading, setLoading] = useState(true);
+
   useEffect(() => {
     setLoading(false);
   }, []);
 
-  const [isFilled, setIsFilled] = useState(false);
+  const interests = useSelector((state) => state.personalInterest.interests);
+
+  const handleFormFilledClick = () => {
+    router.push('/onboarding');
+  };
 
   return (
     <Grid container spacing={gridSpacing}>
-      <ScrollDialog setIsFilled={setIsFilled} />
-      {/* {isFilled && (<></>)} */}
       <Grid item xs={12}>
-        <Grid item lg={12} md={12} sm={12} xs={12}>
-          <IsFormFilled />
-        </Grid>
+        {interests.length === 0 && (
+          <Grid item lg={12} md={12} sm={12} xs={12}>
+            <IsFormFilled onClick={handleFormFilledClick} />
+          </Grid>
+        )}
         <Grid container spacing={gridSpacing} sx={{ paddingTop: '10px' }}>
           <Grid item lg={4} md={6} sm={6} xs={12}>
             <EarningCard isLoading={isLoading} />
