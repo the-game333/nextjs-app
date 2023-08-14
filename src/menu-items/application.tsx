@@ -3,28 +3,26 @@ import { FormattedMessage } from 'react-intl';
 
 // assets
 import { IconUserCheck, IconBasket, IconMessages, IconLayoutKanban, IconMail, IconCalendar, IconNfc, IconSql } from '@tabler/icons';
-import {
-  Source,
-  Article,
-  PostAdd,
-  AltRoute,
-  Summarize,
-  Pets,
-  BarChart,
-  SupportAgent,
-  QuestionAnswer,
-  Mediation,
-  ManageSearch,
-  FormatColorText,
-  InsertEmoticon,
-  Colorize,
-  InsertDriveFileOutlined,
-  OndemandVideo,
-  FontDownload,
-  Language
-} from '@mui/icons-material';
+import FormatColorTextRounded from '@mui/icons-material/FormatColorTextRounded';
+import InsertEmoticon from '@mui/icons-material/InsertEmoticon';
+import InsertDriveFileOutlined from '@mui/icons-material/InsertDriveFileOutlined';
+import OndemandVideo from '@mui/icons-material/OndemandVideo';
+import FontDownload from '@mui/icons-material/FontDownload';
+import Language from '@mui/icons-material/Language';
+import Source from '@mui/icons-material/Source';
+import Article from '@mui/icons-material/Article';
+import PostAdd from '@mui/icons-material/PostAdd';
+import AltRoute from '@mui/icons-material/AltRoute';
+import Summarize from '@mui/icons-material/Summarize';
+import Pets from '@mui/icons-material/Pets';
+import BarChart from '@mui/icons-material/BarChart';
+import SupportAgent from '@mui/icons-material/SupportAgent';
+import QuestionAnswer from '@mui/icons-material/QuestionAnswer';
+import Mediation from '@mui/icons-material/Mediation';
+import ManageSearch from '@mui/icons-material/ManageSearch';
+import Colorize from '@mui/icons-material/Colorize';
 
-// import FormatColorTextIcon from '@mui/icons-material/FormatColorText';
+import FormatColorText from '@mui/icons-material/FormatColorText';
 
 // constant
 const icons = {
@@ -133,7 +131,7 @@ const application = {
       type: 'item',
       icon: icons.Language,
       url: '/dashboard/explore/language_translate'
-    },
+    }
     // {
     //   id: 'document_analysis',
     //   title: <FormattedMessage id="document_analysis" />,

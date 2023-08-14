@@ -15,7 +15,7 @@ const Flag4 = '/assets/images/widget/UK.jpg';
 const Flag5 = '/assets/images/widget/USA.jpg';
 
 // table data
-function createData(image: string, subject: string, dept: string, date: Date | string) {
+function createData(image: string, subject: string, dept: string, date: Date | any) {
   return { image, subject, dept, date };
 }
 const rows = [

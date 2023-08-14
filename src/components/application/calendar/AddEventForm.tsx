@@ -250,7 +250,7 @@ const AddEventFrom = ({ event, range, handleDelete, handleCreate, handleUpdate, 
                   label="Title"
                   {...getFieldProps('title')}
                   error={Boolean(touched.title && errors.title)}
-                  helperText={touched.title && errors.title}
+                  // helperText={touched.title && errors.title}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -261,7 +261,7 @@ const AddEventFrom = ({ event, range, handleDelete, handleCreate, handleUpdate, 
                   label="Description"
                   {...getFieldProps('description')}
                   error={Boolean(touched.description && errors.description)}
-                  helperText={touched.description && errors.description}
+                  // helperText={touched.description && errors.description}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -299,7 +299,7 @@ const AddEventFrom = ({ event, range, handleDelete, handleCreate, handleUpdate, 
                       {...params}
                       fullWidth
                       error={Boolean(touched.end && errors.end)}
-                      helperText={touched.end && errors.end}
+                      // helperText={touched.end && errors.end}
                       InputProps={{
                         endAdornment: (
                           <InputAdornment position="end">

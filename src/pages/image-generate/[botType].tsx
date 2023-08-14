@@ -18,7 +18,7 @@ import React, { ChangeEvent, FormEvent, ReactComponentElement, SetStateAction, u
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import styled from '@emotion/styled';
 import { toNumber } from 'lodash';
-import { Download } from '@mui/icons-material';
+import Download from '@mui/icons-material/Download';
 import { useRouter } from 'next/router';
 import ReplyIcon from '@mui/icons-material/Reply';
 
@@ -36,16 +36,16 @@ type SelectValue = {
 
 // Download button styled compoennt so it can be displayed on top of the image
 const DownloadBtn = styled('a')`
-    position: absolute;
-    top: 10px; /* Adjust the top position as needed */
-    right: 10px; /* Adjust the left position as needed */
-    background-color: #ffffff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-  `;
+  position: absolute;
+  top: 10px; /* Adjust the top position as needed */
+  right: 10px; /* Adjust the left position as needed */
+  background-color: #ffffff;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+`;
 
 const images = () => {
   // State to track api being used
@@ -140,7 +140,6 @@ const images = () => {
       setMode(String(router.query['botType']));
     }
   }, []);
-  
 
   // Handler to track the prompt being typed
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -259,13 +258,15 @@ const images = () => {
     if (data !== undefined) {
       for (let key in data.data) {
         const newName = data.data[key];
-        setPromptName((prevName) => [...prevName, { promptsName: newName.promptsName, promptsValue: newName.promptsValue, imageStyle: newName.imageStyle }]);
+        setPromptName((prevName) => [
+          ...prevName,
+          { promptsName: newName.promptsName, promptsValue: newName.promptsValue, imageStyle: newName.imageStyle }
+        ]);
       }
-}
-  }
+    }
+  };
 
   console.log(mode);
-  
 
   useEffect(() => {
     loadData();
@@ -277,36 +278,27 @@ const images = () => {
       <Grid container spacing={4}>
         {/* Container for prompt and config */}
         <Grid item xs={12} md={3}>
-          <Button sx={{ m: '3px' }} onClick={back} startIcon={<ReplyIcon />} color='secondary'>
+          <Button sx={{ m: '3px' }} onClick={back} startIcon={<ReplyIcon />} color="secondary">
             Back
           </Button>
           <form onSubmit={handleSubmit}>
             {/* Selector Component to select engine based on MUI Component */}
-            <div style={{ display: 'flex', flexDirection: 'row', gap: "4px", alignItems: 'center' }}>
+            <div style={{ display: 'flex', flexDirection: 'row', gap: '4px', alignItems: 'center' }}>
               <InputLabel id="engine-select-label">Engine:</InputLabel>
-              <Typography variant='h5'>
-                {mode === "dalle" ? "Dall-E" : "Stability-AI"}
-              </Typography>
+              <Typography variant="h5">{mode === 'dalle' ? 'Dall-E' : 'Stability-AI'}</Typography>
             </div>
             <Stack sx={{ my: 2 }}>
-              <FormControl sx={{ minWidth: 200 }} >
-                <InputLabel id='select-prompt'>Select Prompt</InputLabel>
-                <Select
-                  labelId='select-prompt'
-                  name="Select Prompt"
-                  label="Select Prompt"
-                  onChange={handleSelectPromptChange}
-                >
-                  {
-                    promptName.map((content: any, index) => {
-                      if (content.promptsName !== '')
-                        return (
-                          <MenuItem value={content} key={index}>
-                            {content.promptsName}
-                          </MenuItem>
-                        )
-                    })
-                  }
+              <FormControl sx={{ minWidth: 200 }}>
+                <InputLabel id="select-prompt">Select Prompt</InputLabel>
+                <Select labelId="select-prompt" name="Select Prompt" label="Select Prompt" onChange={handleSelectPromptChange}>
+                  {promptName.map((content: any, index) => {
+                    if (content.promptsName !== '')
+                      return (
+                        <MenuItem value={content} key={index}>
+                          {content.promptsName}
+                        </MenuItem>
+                      );
+                  })}
                 </Select>
               </FormControl>
             </Stack>
@@ -314,24 +306,15 @@ const images = () => {
             {/* Div element containing Prompt, image size, number of images and submit button */}
             <div style={{ marginTop: '24px' }}>
               {/* Prompt Field */}
-              <TextField
-                id="prompt"
-                label="Prompt"
-                multiline
-                rows={6}
-                fullWidth={true}
-                onChange={handleChange}
-                value={prompt}
-              />
+              <TextField id="prompt" label="Prompt" multiline rows={6} fullWidth={true} onChange={handleChange} value={prompt} />
 
               {/* Div element containing image size and number of images selector in a inline flex */}
-              <div style={{ display: 'flex', flexDirection: "column", marginTop: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', marginTop: '16px' }}>
                 {/* Image Size select MUI Component */}
                 {mode == 'dream' ? <ImageSelectorComp imageArray={sizes} /> : <ImageSelectorComp imageArray={dalleSizes} />}
                 {/* <ImageSelectorComp imageArray={sizes}/> */}
 
                 <div style={{ display: 'flex', marginTop: '16px' }}>
-
                   {/* Number of images selector MUI Component */}
                   <div>
                     <InputLabel id="image-number-select-label">Number</InputLabel>

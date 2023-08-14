@@ -29,8 +29,11 @@ import React, { useState, ChangeEvent, FormEvent } from 'react';
 import sendThankYouEmail from 'pages/api/utils/sendThankyouEmail';
 import AppBar from 'ui-component/extended/AppBar';
 import Footer from 'components/landingpage/Footer';
-import axios from 'axios';
+import Loader from 'ui-component/Loader';
 import sendEmailToTeam from 'pages/api/utils/sendEmailToTeam';
+import Alert from '@mui/material/Alert';
+import AlertTitle from '@mui/material/AlertTitle';
+import { Snackbar } from '@mui/material';
 
 interface FormData {
   team: string;
@@ -47,6 +50,13 @@ interface FormData {
 }
 
 export default function ContactUsPage() {
+  const [loading, setLoading] = useState(false);
+  const [submissionSuccess, setSubmissionSuccess] = useState(false);
+
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertSeverity, setAlertSeverity] = useState('success');
+  const [alertMessage, setAlertMessage] = useState('');
+
   const initialFormData: FormData = {
     team: '',
     name: '',
@@ -70,18 +80,33 @@ export default function ContactUsPage() {
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
+    setLoading(true);
     console.log(formData);
+
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     try {
       // Send thank you email
       await sendThankYouEmail(formData.email);
       // Send contact data to the team
       await sendEmailToTeam(formData);
-      // await axios.post('/api/sendEmailToTeam', formData);
 
       setFormData(initialFormData);
+      setSubmissionSuccess(true);
+
+      // Show success alert
+      setAlertOpen(true);
+      setAlertSeverity('success');
+      setAlertMessage('Form submitted successfully!');
     } catch (error) {
-      console.error('Error sending thank you email:', error);
+      console.error('Error sending email:', error);
+
+      // Show error alert
+      setAlertOpen(true);
+      setAlertSeverity('error');
+      setAlertMessage('An error occurred while submitting the form.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -341,6 +366,13 @@ export default function ContactUsPage() {
             Submit
           </button>
         </form>
+        {alertOpen && (
+          <Snackbar open={alertOpen} autoHideDuration={6000} onClose={() => setAlertOpen(false)}>
+            <Alert onClose={() => setAlertOpen(false)} severity="success" sx={{ width: '100%' }}>
+              Form submitted successfully!
+            </Alert>
+          </Snackbar>
+        )}
       </div>
       <Footer />
     </div>

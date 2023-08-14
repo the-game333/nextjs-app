@@ -134,7 +134,7 @@ const CodeVerification = () => {
                 }}
                 xs={12}
               >
-                <Image alt="Auth method" src={imgMain} layout="intrinsic" width={'300px'} height={'340px'} />
+                <Image alt="Auth method" src={imgMain} layout="intrinsic" width={300} height={340} />
               </Grid>
             </Grid>
           </BackgroundPattern2>

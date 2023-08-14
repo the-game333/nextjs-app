@@ -1,12 +1,13 @@
 import React from 'react';
 import Main from '../../../public/assets/images/Main.png';
+import Prompt from '../../../public/assets/images/Prompt.png';
 import Meliukliuk from '../../../public/assets/images/Meliuk-liuk.svg';
 import Image from 'next/image';
 export default function FullyFeatured() {
   return (
     <>
       <span className="absolute -top-60 right-0">
-        <Image src={Meliukliuk} />
+        <Image alt='Meliukliuk' src={Meliukliuk} />
       </span>
       <div className="mx-auto px-3 pt-10 md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
         <div className="relative text-gray-600 dark:text-gray-300" id="testimonials">
@@ -68,7 +69,14 @@ export default function FullyFeatured() {
           </div>
 
           <div className="md:pb-50 mt-5 flex justify-center pb-10">
-            <Image src={Main} height={430} width={779} className="rounded-xl" />
+            {/* <Image alt='main' src={Main} height={430} width={779} className="rounded-xl" /> */}
+            <Image
+              alt="Prompt"
+              src={Prompt}
+              height={430}
+              width={779}
+              className="rounded-xl shadow-[rgba(255,255,255,0.3)_17px_10px_20px] "
+            />
           </div>
         </div>
       </div>

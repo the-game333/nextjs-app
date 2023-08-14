@@ -7,7 +7,7 @@ import '@fortawesome/fontawesome-svg-core/styles.css';
 config.autoAddCss = false;
 
 // google tag manager
-import { useEffect } from 'react';
+import { useEffect, ReactNode } from 'react';
 import TagManager from 'react-gtm-module';
 
 import type { AppProps } from 'next/app';
@@ -22,9 +22,9 @@ import { persister } from '../store';
 import Locales from 'ui-component/Locales';
 import { ConfigProvider } from '../contexts/ConfigContext';
 import '../scss/style.scss';
-import '@fullcalendar/common/main.css';
-import '@fullcalendar/daygrid/main.css';
-import '@fullcalendar/timegrid/main.css';
+// import '@fullcalendar/common/main.css';
+// import '@fullcalendar/daygrid/main.css';
+// import '@fullcalendar/timegrid/main.css';
 import { FirebaseProvider as AuthProvider } from '../contexts/FirebaseContext';
 // import { Auth0Provider as AuthProvider } from '../contexts/Auth0Context';
 // import { JWTProvider as AuthProvider } from 'contexts/JWTContext';
@@ -40,7 +40,10 @@ import { SessionProvider } from 'next-auth/react';
 import Script from 'next/script';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
 
-const Noop: React.FC = ({ children }) => {
+interface NoopProps {
+  children: ReactNode;
+}
+const Noop: React.FC<NoopProps> = ({ children }) => {
   return <> {children} </>;
 };
 
@@ -77,9 +80,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & {
         <link rel="icon" href="/favicon.ico" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="UZCBen_9acSNbhCD18KTr1GcKS70gGTy5JyzKa8LqVs" />
-        <style>
-          @import url('https://fonts.googleapis.com/css2?family=Sansita:wght@400;700;800;900&display=swap');
-        </style>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Sansita:wght@400;700;800;900&display=swap');</style>
       </Head>
       <Script async src="https://www.googletagmanager.com/gtag/js?id=G-RR7ES8TW6Q" />
       <Script id="google-analytics">
@@ -97,12 +98,12 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & {
                 <RTLLayout>
                   <Locales>
                     <UserProvider>
-                    <AuthProvider>
-                      <Layout>
-                        <Component {...pageProps} />
-                        <Snackbar />
-                      </Layout>
-                    </AuthProvider>
+                      <AuthProvider>
+                        <Layout>
+                          <Component {...pageProps} />
+                          <Snackbar />
+                        </Layout>
+                      </AuthProvider>
                     </UserProvider>
                   </Locales>
                 </RTLLayout>

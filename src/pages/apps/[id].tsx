@@ -77,7 +77,7 @@ const Apps = () => {
 
   return (
     <div className="bg-[#0E0C15]">
-      {console.log(path)}
+      {/* {console.log(path)} */}
       <AppBar background={'transparent'} />
       <div className="mx-auto my-20 max-w-6xl px-8 text-white">
         <div className="my-4 flex justify-between">

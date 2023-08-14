@@ -29,6 +29,8 @@ import { AgentStateProps } from './agent';
 import { AgentToolStateProps } from './agenttool';
 import { AgentMessageStateProps } from './agentmessage';
 
+import { SavePersonalInterestProps } from './savePersonalInterestProps ';
+
 declare module '@mui/styles/defaultTheme' {
   // eslint-disable-next-line @typescript-eslint/no-empty-interface
   interface DefaultTheme extends Theme {}
@@ -146,6 +148,7 @@ export interface DefaultRootStateProps {
   agent: AgentStateProps;
   agentTool: AgentToolStateProps;
   agentMessage: AgentMessageStateProps;
+  personalInterest: SavePersonalInterestProps | null;
 }
 
 export interface ColorProps {

@@ -69,9 +69,8 @@ const AuthResetPassword = ({ ...others }) => {
       }}
       validationSchema={Yup.object().shape({
         password: Yup.string().max(255).required('Password is required'),
-        confirmPassword: Yup.string().when('password', {
-          is: (val: string) => !!(val && val.length > 0),
-          then: Yup.string().oneOf([Yup.ref('password')], 'Both Password must be match!')
+        confirmPassword: Yup.string().when('password', (password, schema) => {
+          return password ? schema.oneOf([Yup.ref('password')], 'Both passwords must match') : schema;
         })
       })}
       onSubmit={async (values, { setErrors, setStatus, setSubmitting }) => {

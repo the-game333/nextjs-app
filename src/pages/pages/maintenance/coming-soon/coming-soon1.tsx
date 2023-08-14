@@ -236,7 +236,7 @@ const ComingSoon1 = () => {
                       <Link
                         href="#"
                         variant="inherit"
-                        component="div"
+                        component="a"
                         sx={{
                           width: 'calc(100% - 20px)',
                           mt: 2.5,

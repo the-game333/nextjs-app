@@ -4,7 +4,9 @@ import { useEffect, useRef, useState } from 'react';
 import { Button, Dialog, Theme, useMediaQuery } from '@mui/material';
 
 // third-party
-import FullCalendar, { DateSelectArg, EventClickArg, EventDropArg } from '@fullcalendar/react';
+// import FullCalendar, { DateSelectArg, EventClickArg, EventDropArg } from '@fullcalendar/react';
+import FullCalendar from '@fullcalendar/react';
+
 import listPlugin from '@fullcalendar/list';
 import dayGridPlugin from '@fullcalendar/daygrid';
 import timeGridPlugin from '@fullcalendar/timegrid';
@@ -111,7 +113,7 @@ const Calendar = () => {
     setSelectedRange(null);
   };
 
-  const handleRangeSelect = (arg: DateSelectArg) => {
+  const handleRangeSelect = (arg: any) => {
     const calendarEl = calendarRef.current;
     if (calendarEl) {
       const calendarApi = calendarEl.getApi();
@@ -125,7 +127,7 @@ const Calendar = () => {
     setIsModalOpen(true);
   };
 
-  const handleEventSelect = (arg: EventClickArg) => {
+  const handleEventSelect = (arg: any) => {
     if (arg.event.id) {
       const selectEvent = events.find((_event: FormikValues) => _event.id === arg.event.id);
       setSelectedEvent(selectEvent as FormikValues[]);
@@ -135,7 +137,7 @@ const Calendar = () => {
     setIsModalOpen(true);
   };
 
-  const handleEventUpdate = async ({ event }: EventResizeDoneArg | EventDropArg) => {
+  const handleEventUpdate = async ({ event }: any) => {
     try {
       dispatch(
         updateEvent({

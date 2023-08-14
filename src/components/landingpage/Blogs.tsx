@@ -12,7 +12,7 @@ const Blogs = () => {
   const error = useSelector(selectError);
 
   useEffect(() => {
-    dispatch(fetchBlogs());
+    dispatch(fetchBlogs() as any);
   }, [dispatch, error]);
 
   return (
@@ -63,14 +63,20 @@ const Blogs = () => {
           <p>Loading...</p>
         ) : (
           blogs.map((blog: any, index) => (
-            <div key={index} className="overflow-hidden rounded-2xl border border-gray-400 bg-transparent p-3 shadow-lg">
-              <Image src={blog.feature_image} alt={blog.title} width={400} height={250} layout="responsive" className="rounded-2xl" />
-              <div className="py-4">
-                <h3 className="mb-2 text-xl font-semibold text-white dark:text-white">
-                  {blog.title.split('').slice(0, 42).join('') + '...'}
-                </h3>
-                <p className="text-gray-400 dark:text-gray-400">{blog.excerpt.split('').slice(0, 115).join('') + '...'}</p>
+            <div
+              key={index}
+              className="overflow-hidden rounded-2xl flex justify-between flex-col border border-gray-400 bg-transparent p-3 shadow-lg"
+            >
+              <div>
+                <Image src={blog.feature_image} alt={blog.title} width={400} height={250} layout="responsive" className="rounded-2xl" />
+                <div className="py-4">
+                  <h3 className="mb-2 text-xl font-semibold text-white dark:text-white">
+                    {blog.title.split('').slice(0, 42).join('') + '...'}
+                  </h3>
+                  <p className="text-gray-400 dark:text-gray-400">{blog.excerpt.split('').slice(0, 115).join('') + '...'}</p>
+                </div>
               </div>
+
               <div className=" flex items-center justify-between py-4">
                 <a
                   href={blog.url}

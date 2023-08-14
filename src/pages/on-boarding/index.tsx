@@ -1,70 +1,58 @@
-import * as React from 'react';
-import Button from '@mui/material/Button';
-import Dialog, { DialogProps } from '@mui/material/Dialog';
-import DialogActions from '@mui/material/DialogActions';
+import React, { useState, FormEvent } from 'react';
+import Dialog from '@mui/material/Dialog';
 import DialogContent from '@mui/material/DialogContent';
 import DialogContentText from '@mui/material/DialogContentText';
 import DialogTitle from '@mui/material/DialogTitle';
-import { useRouter } from 'next/router';
 import { GridCloseIcon } from '@mui/x-data-grid';
+import { useDispatch } from 'react-redux';
 
-export default function ScrollDialog({ setIsFilled }: any) {
-  const [open, setOpen] = React.useState(true);
-  const [scroll, setScroll] = React.useState<DialogProps['scroll']>('paper');
+import { savePersonalInterest } from 'store/slices/personalInterest';
 
-  const [occupation, setOcupation] = React.useState('');
-  const [goals, setGoals] = React.useState('');
+interface ScrollDialogProps {
+  setIsFilled: React.Dispatch<React.SetStateAction<boolean>>;
+}
 
-  const handleClickOpen = (scrollType: DialogProps['scroll']) => () => {
-    setOpen(true);
-    setScroll(scrollType);
+export default function ScrollDialog({ setIsFilled }: ScrollDialogProps): JSX.Element {
+  const [open, setOpen] = useState(true);
+  const [occupation, setOccupation] = useState('');
+  const [goals, setGoals] = useState('');
+
+  const dispatch = useDispatch();
+
+  const handleClose = (): void => {
+    setOpen(false);
   };
 
-  const router = useRouter();
-
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    const formData = new FormData(e.target);
+    const formData = new FormData(e.target as HTMLFormElement);
 
     const data = {
       firstName: formData.get('firstName'),
       lastName: formData.get('lastName'),
       phone: formData.get('phone'),
-      ocupation: formData.get('ocupation') === 'other' ? formData.get('ocupation-other') : formData.get('ocupation'),
+      occupation: formData.get('occupation') === 'other' ? formData.get('occupation-other') : formData.get('occupation'),
       role: formData.get('role'),
       goals: formData.get('goals') === 'other' ? formData.get('goals-other') : formData.get('goals')
     };
-    console.log('data', data);
+    const dataArray = Object.values(data).map((value) => value as string);
+
+    dispatch(savePersonalInterest(dataArray) as any);
     setIsFilled(true);
-    router.push('/dashboard');
+    handleClose();
   };
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const descriptionElementRef = React.useRef<HTMLElement>(null);
-  React.useEffect(() => {
-    if (open) {
-      const { current: descriptionElement } = descriptionElementRef;
-      if (descriptionElement !== null) {
-        descriptionElement.focus();
-      }
-    }
-  }, [open]);
-
   return (
     <div>
       <Dialog
         open={open}
         onClose={handleClose}
-        scroll={scroll}
+        // scroll={scroll}
         aria-labelledby="scroll-dialog-title"
         aria-describedby="scroll-dialog-description"
       >
         <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle>
-        <DialogContent dividers={scroll === 'paper'}>
-          <DialogContentText id="scroll-dialog-description" ref={descriptionElementRef} tabIndex={-1}>
+        <DialogContent>
+          <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
             <Dialog
               open={open}
               onClose={handleClose}
@@ -74,7 +62,7 @@ export default function ScrollDialog({ setIsFilled }: any) {
             >
               {/* <DialogTitle id="scroll-dialog-title">Subscribe</DialogTitle> */}
               <DialogContent>
-                <DialogContentText id="scroll-dialog-description" ref={descriptionElementRef} tabIndex={-1}>
+                <DialogContentText id="scroll-dialog-description" tabIndex={-1}>
                   <form onSubmit={handleSubmit} id="form" className="mx-auto max-w-screen-xl px-10 md:px-10 lg:px-10">
                     <div className=" space-y-1">
                       <div className="border-b border-gray-900/10 pb-12">
@@ -153,8 +141,8 @@ export default function ScrollDialog({ setIsFilled }: any) {
                             </label>
                             <select
                               id="small"
-                              onChange={(e) => setOcupation(e.target.value)}
-                              name="ocupation"
+                              onChange={(e) => setOccupation(e.target.value)}
+                              name="occupation"
                               // onChange={handleChange}
                               className="mb-6 block w-full rounded-lg border border-gray-300 bg-gray-50 p-3 text-sm text-gray-900  dark:border-gray-600 dark:bg-transparent dark:dark:text-black dark:placeholder-gray-400"
                             >
@@ -167,12 +155,6 @@ export default function ScrollDialog({ setIsFilled }: any) {
                             </select>
                             {occupation === 'other' ? (
                               <>
-                                {/* <div className="mt-1">
-                      <input
-                        onChange={handleChange}
-                        className="block w-full rounded-md border-0 bg-transparent py-1.5 dark:text-black shadow-sm ring-1 ring-inset ring-gray-300 placeholder:dark:text-black focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                      />
-                    </div> */}
                                 <div className="flex">
                                   <input
                                     name="ocupation-other"
@@ -189,7 +171,7 @@ export default function ScrollDialog({ setIsFilled }: any) {
                           </div>
                           <div className="sm:col-span-3">
                             <label className="mb-2 block text-sm font-medium text-gray-900 dark:dark:text-black">
-                              What are the goals you're looking to achieve?
+                              What are the goals you are looking to achieve?
                             </label>
                             <select
                               id="small"

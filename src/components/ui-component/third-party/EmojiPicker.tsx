@@ -5,8 +5,10 @@ import { useTheme, styled } from '@mui/material/styles';
 import { Box, IconButton, ClickAwayListener, BoxProps } from '@mui/material';
 
 // third-party
-import 'emoji-mart/css/emoji-mart.css';
-import { BaseEmoji, Picker } from 'emoji-mart';
+// import '../../../../node_modules/emoji-mart/dist/index';
+
+// import { BaseEmoji, Picker } from 'emoji-mart';
+import { Picker } from 'emoji-mart';
 
 // assets
 import MoodTwoToneIcon from '@mui/icons-material/MoodTwoTone';
@@ -83,7 +85,8 @@ export default function EmojiPicker({ disabled, value, setValue, alignRight = fa
         color={theme.palette.primary.main}
         title="Pick your emoji…"
         emoji="point_up"
-        onSelect={(emoji: BaseEmoji) => setValue(value + emoji?.native)}
+        // onSelect={(emoji: BaseEmoji) => setValue(value + emoji?.native)}
+        onSelect={(emoji: any) => setValue(value + emoji?.native)}
       />
     );
   }

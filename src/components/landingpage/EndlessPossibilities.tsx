@@ -56,19 +56,19 @@ export default function InfraSpeed() {
         <div className="mt-5 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={ChatBoat} />
+              <Image alt='ChatBoat' src={ChatBoat} />
             </div>
             <p className="text-2xl">Chat Bots</p>
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={WorkFlows} />
+              <Image alt='WorkFlows' src={WorkFlows} />
             </div>
             <p className="text-2xl">Workflows</p>
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={ChatAggent} />
+              <Image alt='ChatAggent' src={ChatAggent} />
             </div>
             <p className="text-2xl">Chat Agents</p>
             <p
@@ -87,20 +87,20 @@ export default function InfraSpeed() {
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={AssistsAI} />
+              <Image alt='AssistsAI' src={AssistsAI} />
             </div>
             <p className="text-2xl">Assistive AI</p>
           </div>
 
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={CodeConveter} />
+              <Image alt='CodeConveter' src={CodeConveter} />
             </div>
             <p className="text-2xl">Code Converter</p>
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={Batch} />
+              <Image alt='Batch' src={Batch} />
             </div>
             <p className="text-2xl">Batch Operations</p>
             <p
@@ -119,13 +119,13 @@ export default function InfraSpeed() {
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={Sql} />
+              <Image alt='sql' src={Sql} />
             </div>
             <p className="text-2xl">SQL Generator</p>
           </div>
           <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
             <div className="rounded-xl bg-[#15131D] p-1">
-              <Image src={Tools} />
+              <Image alt='tools' src={Tools} />
             </div>
             <p className="text-2xl">Tools</p>
           </div>

@@ -17,7 +17,10 @@ const TooltipButton = ({ text, image }: { text: String; image: String }) => {
           height: '40px',
           cursor: 'pointer',
           borderRadius: '50%',
-          backgroundColor: 'transparent'
+          display: 'flex',
+          backgroundColor: 'transparent',
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
       >
         <Box component={'img'} src={`/assets/images/${image}.png`} width={'100%'} height={'auto'} />

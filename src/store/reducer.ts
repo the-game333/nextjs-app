@@ -22,6 +22,7 @@ import agentReducer from './slices/agent';
 import agentToolReducer from './slices/agenttool';
 
 import blogReducer from './slices/blog';
+import personalInterestReducer from './slices/personalInterest'; // Update the path as needed
 
 // ==============================|| COMBINE REDUCER ||============================== //
 
@@ -48,7 +49,8 @@ const reducer = combineReducers({
   agent: agentReducer,
   agenttool: agentToolReducer,
   agentmessage: agentMessageReducer,
-  blog: blogReducer
+  blog: blogReducer,
+  personalInterest: personalInterestReducer
 });
 
 export default reducer;

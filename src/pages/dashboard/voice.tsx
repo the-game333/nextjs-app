@@ -1,4 +1,4 @@
-import { AudioFile } from '@mui/icons-material';
+import AudioFile from '@mui/icons-material/AudioFile';
 import { MenuItem, Select, SelectChangeEvent, Slider, Switch, ToggleButton, ToggleButtonGroup, Tooltip } from '@mui/material';
 import React, { ChangeEvent, useState } from 'react';
 import { FaClipboard } from 'react-icons/fa';
@@ -124,7 +124,7 @@ const voice = () => {
           setText('There had been some issue with the request. Kindly try again.');
           console.log(error);
         }
-      } 
+      }
       setLoading(false);
     }
   };
@@ -134,39 +134,39 @@ const voice = () => {
     const url = 'http://localhost:2000/api/voice/elevenlabsai';
     formData.append('text', inputText);
     formData.append('model_id', 'eleven_monolingual_v1');
-    const voice_settings =       {
-        stability: 0,
-        similarity_boost: 0
-      }
+    const voice_settings = {
+      stability: 0,
+      similarity_boost: 0
+    };
 
     formData.append('voice_settings', JSON.stringify(voice_settings));
     // formData.append('model_id', 'eleven_monolingual_v1');
     // formData.append('model_id', 'eleven_monolingual_v1');
     const tempBody = {
       text: inputText,
-      model_id: "eleven_monolingual_v1",
+      model_id: 'eleven_monolingual_v1',
       voice_settings: {
         stability: 0,
         similarity_boost: 0
       }
-    }
+    };
     const data = {
       method: 'POST',
       // body: JSON.stringify(tempBody),
-      'body': JSON.stringify(tempBody)
+      body: JSON.stringify(tempBody)
     };
-    console.log(data)
+    console.log(data);
     // console.log(formData.values());
     // for (const value of formData.values()) {
     //   console.log(value);
     // }
-    
+
     const res = await fetch(url, data);
-    if(res.status === 200){
+    if (res.status === 200) {
       const json = await res.json();
-      console.log(json)
+      console.log(json);
     }
-    console.log(res)
+    console.log(res);
   };
 
   const handleMode = (event: React.MouseEvent<HTMLElement>, newAlignment: string) => {

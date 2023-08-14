@@ -38,7 +38,7 @@ const ImageList = ({ itemData }: ImageListProps) => {
 
         return (
           <ImageListItem key={index} cols={cols} rows={rows} sx={{ overflow: 'hidden', borderRadius: `${borderRadius}px` }}>
-            <Image src={srcset(item.img, 250, 200, rows, cols)} alt={item.title} layout="intrinsic" width={'400'} height={'270'} />
+            <Image src={srcset(item.img, 250, 200, rows, cols)} alt="intrinsic" layout="intrinsic" width={'400'} height={'270'} />
 
             <ImageListItemBar
               sx={{

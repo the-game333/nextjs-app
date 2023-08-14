@@ -15,7 +15,7 @@ import React, { ChangeEvent, FormEvent, ReactComponentElement, useEffect, useSta
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import styled from '@emotion/styled';
 import { toNumber } from 'lodash';
-import { Download } from '@mui/icons-material';
+import Download from '@mui/icons-material/Download';
 
 // Download button styled compoennt so it can be displayed on top of the image
 const DownloadBtn = styled('a')`
@@ -245,14 +245,14 @@ const images = () => {
               />
 
               {/* Div element containing image size and number of images selector in a inline flex */}
-              <div style={{ display: 'flex', flexDirection: "column", marginTop: '16px' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', marginTop: '16px' }}>
                 {/* Image Size select MUI Component */}
                 {mode == 'dream' ? <ImageSelectorComp imageArray={sizes} /> : <ImageSelectorComp imageArray={dalleSizes} />}
                 {/* <ImageSelectorComp imageArray={sizes}/> */}
 
-                <div style={{ display: 'flex' , marginTop: '16px' }}>
+                <div style={{ display: 'flex', marginTop: '16px' }}>
                   {/* Image Style select MUI Component */}
-                  <div style={{marginRight: "2rem"}}>
+                  <div style={{ marginRight: '2rem' }}>
                     <InputLabel id="image-style-select-label">Style</InputLabel>
                     <Select
                       labelId="image-style-select-label"
