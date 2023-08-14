@@ -37,7 +37,7 @@ export default function ScrollDialog({ setIsFilled }: ScrollDialogProps): JSX.El
     };
     const dataArray = Object.values(data).map((value) => value as string);
 
-    dispatch(savePersonalInterest(dataArray));
+    dispatch(savePersonalInterest(dataArray) as any);
     setIsFilled(true);
     handleClose();
   };

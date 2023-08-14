@@ -3,7 +3,8 @@ import { FormattedMessage } from 'react-intl';
 
 // assets
 import { IconClipboardList, IconChartInfographic, IconCursorText } from '@tabler/icons';
-import { PhotoSizeSelectActual, KeyboardVoice } from '@mui/icons-material';
+import PhotoSizeSelectActual from '@mui/icons-material/PhotoSizeSelectActual';
+import KeyboardVoice from '@mui/icons-material/KeyboardVoice';
 // constant
 const icons = {
   IconClipboardList,

@@ -1,4 +1,4 @@
-import { FormatColorTextRounded } from '@mui/icons-material';
+import FormatColorTextRounded from '@mui/icons-material/FormatColorTextRounded';
 import Image from 'next/image';
 
 const FooterLinks = [
@@ -10,7 +10,7 @@ const FooterLinks = [
 
 const SocialMedia = [
   { path: '/footer/Twitter.svg', alt: 'Twitter', link: 'https://twitter.com/infrahive' },
-  { path: '/footer/linkedin.svg', alt: 'LinkedIn', link: 'https://linkedin.com/company/infrahive' },
+  { path: '/footer/linkedin.svg', alt: 'LinkedIn', link: 'https://linkedin.com/company/infrahive' }
 ];
 
 const Footer = () => {
@@ -36,8 +36,8 @@ const Footer = () => {
         </div>
         <div className="flex w-full text-white flex-wrap justify-center gap-4 md:w-1/2 md:justify-end md:gap-8 lg:w-2/3 lg:gap-12 xl:gap-16">
           {SocialMedia.map((item) => (
-            <a href={item.link} className='text-white' style={{textDecoration: 'none', color: 'white'}}>
-            <Image className='text-white' key={item.alt} width={24} height={24} src={item.path} alt={item.alt} />
+            <a href={item.link} className="text-white" style={{ textDecoration: 'none', color: 'white' }}>
+              <Image className="text-white" key={item.alt} width={24} height={24} src={item.path} alt={item.alt} />
             </a>
           ))}
         </div>

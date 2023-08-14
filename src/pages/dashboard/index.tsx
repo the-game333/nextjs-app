@@ -27,7 +27,7 @@ const Dashboard = () => {
     setLoading(false);
   }, []);
 
-  const interests = useSelector((state) => state.personalInterest.interests);
+  const interests = useSelector((state: any) => state.personalInterest.interests);
 
   const handleFormFilledClick = () => {
     router.push('/onboarding');

@@ -1,4 +1,4 @@
-import React, { useMemo, FC } from 'react';
+import React, { useMemo, FC, ReactNode } from 'react';
 
 // material-ui
 import { styled, useTheme, Theme } from '@mui/material/styles';
@@ -69,7 +69,10 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(({
 
 // ==============================|| MAIN LAYOUT ||============================== //
 
-const MainLayout: FC = ({ children }) => {
+interface MainLayoutProps {
+  children: ReactNode;
+}
+const MainLayout: FC<MainLayoutProps> = ({ children }) => {
   const theme = useTheme();
   const matchDownMd = useMediaQuery(theme.breakpoints.down('lg'));
 

@@ -1,4 +1,4 @@
-import { Search } from '@mui/icons-material';
+import Search from '@mui/icons-material/Search';
 import FooterPage from 'components/landingpage/Footer';
 import React, { useEffect, useState } from 'react';
 import { Button } from '@mui/material';

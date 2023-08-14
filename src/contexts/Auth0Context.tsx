@@ -19,7 +19,7 @@ let auth0Client: Auth0Client;
 const initialState: InitialLoginContextProps = {
   isLoggedIn: false,
   isInitialized: false,
-  accessToken: "",
+  accessToken: '',
   user: null
 };
 
@@ -34,8 +34,8 @@ export const Auth0Provider = ({ children }: { children: React.ReactElement }) =>
     const init = async () => {
       try {
         auth0Client = new Auth0Client({
-          redirect_uri: window.location.origin,
-          ...AUTH0_API
+          clientId: AUTH0_API.client_id, // clientId instead of client_id
+          domain: AUTH0_API.domain
         });
 
         await auth0Client.checkSession();
@@ -48,7 +48,7 @@ export const Auth0Provider = ({ children }: { children: React.ReactElement }) =>
             type: LOGIN,
             payload: {
               isLoggedIn: true,
-              accessToken: "",
+              accessToken: '',
               user: {
                 id: user?.sub,
                 email: user?.email
@@ -80,7 +80,7 @@ export const Auth0Provider = ({ children }: { children: React.ReactElement }) =>
         type: LOGIN,
         payload: {
           isLoggedIn: true,
-          accessToken: "",
+          accessToken: '',
           user: {
             id: user?.sub,
             avatar: user?.picture,
@@ -101,9 +101,9 @@ export const Auth0Provider = ({ children }: { children: React.ReactElement }) =>
     });
   };
 
-  const resetPassword = (email: string) => { };
+  const resetPassword = (email: string) => {};
 
-  const updateProfile = () => { };
+  const updateProfile = () => {};
 
   if (state.isInitialized !== undefined && !state.isInitialized) {
     return <Loader />;

@@ -48,7 +48,7 @@ export default function OnBoarding(): JSX.Element {
     const dataArray = Object.values(data).map((value) => value as string);
 
     try {
-      dispatch(savePersonalInterest(dataArray));
+      dispatch(savePersonalInterest(dataArray) as any);
       handleClose();
       router.push('/dashboard');
     } catch (error) {

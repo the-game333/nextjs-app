@@ -3,7 +3,8 @@ import { FormattedMessage } from 'react-intl';
 
 // assets
 import { IconDashboard, IconDeviceAnalytics, IconDatabase, IconZoomQuestion } from '@tabler/icons';
-import { Explore, Storage } from '@mui/icons-material';
+import Storage from '@mui/icons-material/Storage';
+import Explore from '@mui/icons-material/Explore';
 import { OverrideIcon } from 'types';
 
 // constant
@@ -68,7 +69,7 @@ const dashboard: DashboardMenuProps = {
       url: '/dashboard/explore',
       icon: icons.Explore,
       breadcrumbs: false
-    },
+    }
     // {
     //   id: 'analytics',
     //   title: <FormattedMessage id="Data" />,
