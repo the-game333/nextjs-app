@@ -1,6 +1,7 @@
 import axios from 'axios';
+import NextAuth from "next-auth";
 
-const BREVO_API_KEY = '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';
+const BREVO_API_KEY = process.env.NEXT_PUBLIC_BREVO_KEY;
 const BREVO_EMAIL_SENDER = 'team@infrahive.io';
 
 const sendThankYouEmail = async (recipientEmail: any) => {
