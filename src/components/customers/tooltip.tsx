@@ -1,16 +1,27 @@
 // material-ui
 import { Box, Stack, Typography } from '@mui/material';
-import { useTheme } from '@mui/material/styles';
-import { useRouter } from 'next/router';
+// import { useTheme } from '@mui/material/styles';
+// import { useRouter } from 'next/router';
 
 // ==============================|| customer Tooltip Button ||============================== //
 
-const TooltipButton = ({ text, image, description }: { text: String; image?: String; description?: string }) => {
-  const theme = useTheme();
+const TooltipButton = ({
+  text,
+  image,
+  description,
+  onClick = () => {}
+}: {
+  text: String;
+  image?: String;
+  description?: string;
+  onClick?: () => void;
+}) => {
+  // const theme = useTheme();
   // const router = useRouter();
 
   return (
     <Stack
+      onClick={onClick}
       style={{
         cursor: 'pointer',
         padding: '6px 12px',

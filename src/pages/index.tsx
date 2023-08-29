@@ -1,5 +1,6 @@
 // material-ui
 import { styled } from '@mui/material/styles';
+import React from 'react';
 
 // project imports
 import Header from 'components/landingpage/Header';
@@ -38,6 +39,7 @@ const SecondWrapper = styled('div')(({ theme }) => ({
     paddingTop: 60
   }
 }));
+
 const ThirdWrapper = styled('div')(({ theme }) => ({
   position: 'relative',
   paddingTop: 60,
@@ -86,11 +88,17 @@ const Landing: React.FC = () => {
   useEffect(() => {
     onChangeMenuType('light');
   }, []);
+
+  const llmref = React.useRef<HTMLDivElement>(null);
+  const ref2 = React.useRef<HTMLDivElement>(null);
+  const ref3 = React.useRef<HTMLDivElement>(null);
+  const ref4 = React.useRef<HTMLDivElement>(null);
+
   return (
     <>
       <HeaderWrapper id="home">
         {/* <Banner /> */}
-        <AppBar background={'transparent'} />
+        <AppBar background={'transparent'} llmref={llmref} ref2={ref2} ref3={ref3} ref4={ref4} />
         {/* <Box
           component={'img'}
           src="/assets/images/header/background.svg"
@@ -112,20 +120,20 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <EndlessPossibilities />
       </FullyWrapper>
-      <SecondWrapper>
+      <SecondWrapper ref={llmref}>
         <EasyToUse />
       </SecondWrapper>
 
       <ThirdWrapper>
         <DiverseSupport />
       </ThirdWrapper>
-      <ThirdWrapper>
+      <ThirdWrapper ref={ref2}>
         <ApiServices />
       </ThirdWrapper>
       <FourthWrapper>
         <EmbededDirectly />
       </FourthWrapper>
-      <FullyWrapper>
+      <FullyWrapper ref={ref3}>
         <PromptEngineering />
       </FullyWrapper>
       <FullyWrapper>
@@ -134,7 +142,7 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <LanguageCodeType />
       </FullyWrapper>
-      <LastWrapper>
+      <LastWrapper ref={ref4}>
         <PowerOfDataSet />
       </LastWrapper>
 

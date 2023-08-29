@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ElementRef, ReactElement, useRef } from 'react';
 
 // material-ui
 import { useTheme, withStyles } from '@mui/material/styles';
@@ -112,9 +112,9 @@ const MenuAccordion = (props: any) => {
       </AccordionSummary>
       <AccordionDetails className="max-h-[300px]">
         <ScrollBar style={{ maxHeight: '300px' }}>
-          {props.data.map((i: any) => {
+          {props.data.map((i: any, idx: number) => {
             return (
-              <Button className="justify -start flex  w-[100%]">
+              <Button key={idx} className="justify -start flex  w-[100%]">
                 <TooltipButton text={i.text} image={i.image} />
               </Button>
             );
@@ -156,6 +156,15 @@ const AppBar = ({ ...others }) => {
       return;
     }
     setDrawerToggle(open);
+  };
+
+  const { llmref, ref2, ref3, ref4 } = others;
+
+  const scrollToView = (elementRef: React.RefObject<HTMLDivElement>) => {
+    window.scrollTo({
+      top: elementRef.current?.offsetTop,
+      behavior: 'smooth'
+    });
   };
 
   return (
@@ -220,21 +229,25 @@ const AppBar = ({ ...others }) => {
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>INDUSTRIES</Typography>
                           <TooltipButton
+                            onClick={() => scrollToView(llmref)}
                             description={'Create & Craft AI-driven apps in mere minutes'}
                             text={'LLMOps Platform'}
                             // image={'solutions/generative-ai'}
                           />
                           <TooltipButton
+                            onClick={() => scrollToView(ref2)}
                             description={'Auto Deploy AI Models and Applications'}
                             text={'On Platform Deployment'}
                             // image={'solutions/llm'}
                           />
                           <TooltipButton
+                            onClick={() => scrollToView(ref3)}
                             description={'Refine and optimize prompts to deliver better results, faster.'}
                             text={'Prompt Engineering'}
                             // image={'solutions/langchain'}
                           />
                           <TooltipButton
+                            onClick={() => scrollToView(ref4)}
                             description={'Automatically complete text preprocessing, vectorization and segmentation'}
                             text={'Data Preprocessing Automation'}
                             // image={'solutions/plugins'}
