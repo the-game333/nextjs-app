@@ -219,10 +219,26 @@ const AppBar = ({ ...others }) => {
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>INDUSTRIES</Typography>
-                          <TooltipButton text={'Generative AI'} image={'solutions/generative-ai'} />
-                          <TooltipButton text={'LLMs Fine Tune'} image={'solutions/llm'} />
-                          <TooltipButton text={'LangChain Apps'} image={'solutions/langchain'} />
-                          <TooltipButton text={'ChatGPT Plugins'} image={'solutions/plugins'} />
+                          <TooltipButton
+                            description={'Create & Craft AI-driven apps in mere minutes'}
+                            text={'LLMOps Platform'}
+                            // image={'solutions/generative-ai'}
+                          />
+                          <TooltipButton
+                            description={'Auto Deploy AI Models and Applications'}
+                            text={'On Platform Deployment'}
+                            // image={'solutions/llm'}
+                          />
+                          <TooltipButton
+                            description={'Refine and optimize prompts to deliver better results, faster.'}
+                            text={'Prompt Engineering'}
+                            // image={'solutions/langchain'}
+                          />
+                          <TooltipButton
+                            description={'Automatically complete text preprocessing, vectorization and segmentation'}
+                            text={'Data Preprocessing Automation'}
+                            // image={'solutions/plugins'}
+                          />
                         </Grid>
                         {/* <Grid item md={6} display={'flex'} flexDirection={'column'} gap={'20px'}>
                           <Typography>USE CASES</Typography>
@@ -246,7 +262,7 @@ const AppBar = ({ ...others }) => {
                   component={Link}
                   target="_blank"
                 >
-                  Products
+                  Features
                 </Button>
               </HtmlTooltip>
 
@@ -365,7 +381,7 @@ const AppBar = ({ ...others }) => {
                 {drawerToggle && (
                   <Box sx={{ width: 'auto', backgroundColor: 'black', color: 'white !important' }} role="presentation">
                     <List>
-                      {/* <div className="mb-4 w-full text-center md:mb-0 md:w-1/2 md:text-left lg:w-1/3">
+                      {/* <div className="w-full mb-4 text-center md:mb-0 md:w-1/2 md:text-left lg:w-1/3">
                         <Image width={255} height={80} src="/footer/InfraHiveLogo.svg" alt="InfraHiveLogo" />
                       </div> */}
 
