@@ -120,20 +120,20 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <EndlessPossibilities />
       </FullyWrapper>
-      <SecondWrapper ref={llmref}>
+      <SecondWrapper id="llm" ref={llmref}>
         <EasyToUse />
       </SecondWrapper>
 
       <ThirdWrapper>
         <DiverseSupport />
       </ThirdWrapper>
-      <ThirdWrapper ref={ref2}>
+      <ThirdWrapper id="deploy" ref={ref2}>
         <ApiServices />
       </ThirdWrapper>
       <FourthWrapper>
         <EmbededDirectly />
       </FourthWrapper>
-      <FullyWrapper ref={ref3}>
+      <FullyWrapper id="prompt" ref={ref3}>
         <PromptEngineering />
       </FullyWrapper>
       <FullyWrapper>
@@ -142,7 +142,7 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <LanguageCodeType />
       </FullyWrapper>
-      <LastWrapper ref={ref4}>
+      <LastWrapper id="data" ref={ref4}>
         <PowerOfDataSet />
       </LastWrapper>
 

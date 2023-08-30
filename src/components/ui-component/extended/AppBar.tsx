@@ -1,7 +1,7 @@
-import React, { ElementRef, ReactElement, useRef } from 'react';
+import React, { ReactElement, useEffect } from 'react';
 
 // material-ui
-import { useTheme, withStyles } from '@mui/material/styles';
+import { useTheme } from '@mui/material/styles';
 import {
   AppBar as MuiAppBar,
   Box,
@@ -33,7 +33,7 @@ import Logo from '../Logo';
 import TooltipButton from 'components/customers/tooltip';
 
 // assets
-import { IconBook, IconCreditCard, IconDashboard, IconHome2 } from '@tabler/icons';
+// import { IconBook, IconCreditCard, IconDashboard, IconHome2 } from '@tabler/icons';
 import MenuIcon from '@mui/icons-material/Menu';
 import ProductionQuantityLimitsIcon from '@mui/icons-material/ProductionQuantityLimits';
 import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
@@ -43,12 +43,14 @@ import Diversity3Icon from '@mui/icons-material/Diversity3';
 import EditNoteIcon from '@mui/icons-material/EditNote';
 import ScrollBar from 'react-perfect-scrollbar';
 import ContactPageIcon from '@mui/icons-material/ContactPage';
-import Image from 'next/image';
+// import Image from 'next/image';
+import { useRouter } from 'next/router';
 // elevation scroll
 interface ElevationScrollProps {
   children: ReactElement;
   window?: Window | Node;
 }
+
 function ElevationScroll({ children, window }: ElevationScrollProps) {
   const theme = useTheme();
   const trigger = useScrollTrigger({
@@ -84,8 +86,9 @@ const MenuAccordion = (props: any) => {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleAccordionChange = () => {
-    setExpanded(!expanded);
+    setExpanded((prev) => !prev);
   };
+
   return (
     <Accordion
       expanded={expanded}
@@ -114,7 +117,7 @@ const MenuAccordion = (props: any) => {
         <ScrollBar style={{ maxHeight: '300px' }}>
           {props.data.map((i: any, idx: number) => {
             return (
-              <Button key={idx} className="justify -start flex  w-[100%]">
+              <Button onClick={() => props.onClick(props.refs.at(idx), i.id)} key={idx} className="justify -start flex  w-[100%]">
                 <TooltipButton text={i.text} image={i.image} />
               </Button>
             );
@@ -125,11 +128,26 @@ const MenuAccordion = (props: any) => {
   );
 };
 
+// const fdata = [
+//   { text: 'Generative AI', image: 'solutions/generative-ai' },
+//   { text: 'LangChain Apps', image: 'solutions/langchain' },
+//   { text: 'LLMs Fine Tune', image: 'solutions/llm' },
+//   { text: 'ChatGPT Plugins', image: 'solutions/plugins' }
+// ];
 const fdata = [
-  { text: 'Generative AI', image: 'solutions/generative-ai' },
-  { text: 'LangChain Apps', image: 'solutions/langchain' },
-  { text: 'LLMs Fine Tune', image: 'solutions/llm' },
-  { text: 'ChatGPT Plugins', image: 'solutions/plugins' }
+  { text: 'LLMops Platform', description: 'Create & Craft AI-driven apps in mere minutes', id: 'llm' },
+  { text: 'On Platform Deployment', description: 'Auto Deploy AI Models and Applications', id: 'deploy' },
+  { text: 'Prompt Engineering', description: 'Refine and optimize prompts to deliver better results, faster.', id: 'prompt' },
+  {
+    text: 'Data Preprocessing Automation',
+    description: 'Automatically complete text preprocessing, vectorization and segmentation',
+    id: 'data'
+  },
+  {
+    text: 'Actionable AI',
+    description: 'AI that can book appointment, fill contact form or order a pizza 🍕',
+    id: 'llm'
+  }
 ];
 
 const Sdata = [
@@ -150,21 +168,39 @@ const Sdata = [
 
 const AppBar = ({ ...others }) => {
   const [drawerToggle, setDrawerToggle] = React.useState<boolean>(false);
+  const router = useRouter();
   /** Method called on multiple components with different event types */
   const drawerToggler = (open: boolean) => (event: any) => {
     if (event.type! === 'keydown' && (event.key! === 'Tab' || event.key! === 'Shift')) {
+      event.stopPropagation();
       return;
     }
     setDrawerToggle(open);
   };
 
-  const { llmref, ref2, ref3, ref4 } = others;
+  const targetId = router.query.view as string;
 
-  const scrollToView = (elementRef: React.RefObject<HTMLDivElement>) => {
-    window.scrollTo({
-      top: elementRef.current?.offsetTop,
-      behavior: 'smooth'
-    });
+  useEffect(() => {
+    if (targetId) {
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, [targetId]);
+
+  const { llmref, ref2, ref3, ref4 } = others;
+  const refs = [llmref, ref2, ref3, ref4, llmref];
+
+  const scrollToView = (elementRef: React.RefObject<HTMLDivElement>, id: string) => {
+    if (elementRef) {
+      window.scrollTo({
+        top: elementRef?.current?.offsetTop,
+        behavior: 'smooth'
+      });
+    } else {
+      router.push(`/?view=${id}`);
+    }
   };
 
   return (
@@ -172,7 +208,8 @@ const AppBar = ({ ...others }) => {
       <MuiAppBar
         position="relative"
         sx={{
-          background: `${others.background} !important`
+          background: `${others.background} !important`,
+          top: 0
         }}
       >
         <Container>
@@ -227,29 +264,34 @@ const AppBar = ({ ...others }) => {
                     <CardContent sx={{ color: 'rgb(255, 255, 255)' }}>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
-                          <Typography>INDUSTRIES</Typography>
                           <TooltipButton
-                            onClick={() => scrollToView(llmref)}
+                            onClick={() => scrollToView(llmref, 'llm')}
                             description={'Create & Craft AI-driven apps in mere minutes'}
                             text={'LLMOps Platform'}
                             // image={'solutions/generative-ai'}
                           />
                           <TooltipButton
-                            onClick={() => scrollToView(ref2)}
+                            onClick={() => scrollToView(ref2, 'deploy')}
                             description={'Auto Deploy AI Models and Applications'}
                             text={'On Platform Deployment'}
                             // image={'solutions/llm'}
                           />
                           <TooltipButton
-                            onClick={() => scrollToView(ref3)}
+                            onClick={() => scrollToView(ref3, 'prompt')}
                             description={'Refine and optimize prompts to deliver better results, faster.'}
                             text={'Prompt Engineering'}
                             // image={'solutions/langchain'}
                           />
                           <TooltipButton
-                            onClick={() => scrollToView(ref4)}
+                            onClick={() => scrollToView(ref4, 'data')}
                             description={'Automatically complete text preprocessing, vectorization and segmentation'}
                             text={'Data Preprocessing Automation'}
+                            // image={'solutions/plugins'}
+                          />
+                          <TooltipButton
+                            onClick={() => scrollToView(llmref, 'ai')}
+                            description={'AI that can book appointment, fill contact form or order a pizza 🍕'}
+                            text={'Create AI that can do actions'}
                             // image={'solutions/plugins'}
                           />
                         </Grid>
@@ -273,7 +315,7 @@ const AppBar = ({ ...others }) => {
                   color="inherit"
                   sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
                   component={Link}
-                  target="_blank"
+                  // href="/"
                 >
                   Features
                 </Button>
@@ -317,7 +359,7 @@ const AppBar = ({ ...others }) => {
                 </Button>
               </HtmlTooltip>
 
-              <a href="/vision">
+              <Link href="/vision">
                 <Button
                   color="inherit"
                   sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
@@ -326,8 +368,8 @@ const AppBar = ({ ...others }) => {
                 >
                   Vision
                 </Button>
-              </a>
-              <a href="/apps">
+              </Link>
+              <Link href="/apps">
                 <Button
                   color="inherit"
                   sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
@@ -336,7 +378,7 @@ const AppBar = ({ ...others }) => {
                 >
                   Pre-Built Apps
                 </Button>
-              </a>
+              </Link>
               {/* <a href="/join">
                 <Button
                   color="inherit"
@@ -390,7 +432,7 @@ const AppBar = ({ ...others }) => {
               <IconButton sx={{ color: 'white' }} onClick={drawerToggler(true)} size="large">
                 <MenuIcon />
               </IconButton>
-              <Drawer anchor="top" open={drawerToggle} onClose={drawerToggler(false)}>
+              <Drawer disableScrollLock={true} anchor="top" open={drawerToggle} onClose={drawerToggler(false)}>
                 {drawerToggle && (
                   <Box sx={{ width: 'auto', backgroundColor: 'black', color: 'white !important' }} role="presentation">
                     <List>
@@ -398,7 +440,13 @@ const AppBar = ({ ...others }) => {
                         <Image width={255} height={80} src="/footer/InfraHiveLogo.svg" alt="InfraHiveLogo" />
                       </div> */}
 
-                      <MenuAccordion title="Product" icon={<ProductionQuantityLimitsIcon />} data={fdata}></MenuAccordion>
+                      <MenuAccordion
+                        title="Features"
+                        icon={<ProductionQuantityLimitsIcon />}
+                        refs={refs}
+                        onClick={scrollToView}
+                        data={fdata}
+                      />
                       <MenuAccordion title="Solutions" icon={<EmojiObjectsIcon />} data={Sdata}></MenuAccordion>
                       <Link style={{ textDecoration: 'none' }} href="/vision">
                         <ListItemButton component="a">
