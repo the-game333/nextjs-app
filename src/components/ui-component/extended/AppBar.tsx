@@ -264,6 +264,12 @@ const AppBar = ({ ...others }) => {
                     <CardContent sx={{ color: 'rgb(255, 255, 255)' }}>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                        <TooltipButton
+                            onClick={() => scrollToView(llmref, 'ai')}
+                            description={'AI that can book appointment, fill contact form or order a pizza 🍕'}
+                            text={'Create AI that can do actions'}
+                            // image={'solutions/plugins'}
+                          />
                           <TooltipButton
                             onClick={() => scrollToView(llmref, 'llm')}
                             description={'Create & Craft AI-driven apps in mere minutes'}
@@ -286,12 +292,6 @@ const AppBar = ({ ...others }) => {
                             onClick={() => scrollToView(ref4, 'data')}
                             description={'Automatically complete text preprocessing, vectorization and segmentation'}
                             text={'Data Preprocessing Automation'}
-                            // image={'solutions/plugins'}
-                          />
-                          <TooltipButton
-                            onClick={() => scrollToView(llmref, 'ai')}
-                            description={'AI that can book appointment, fill contact form or order a pizza 🍕'}
-                            text={'Create AI that can do actions'}
                             // image={'solutions/plugins'}
                           />
                         </Grid>

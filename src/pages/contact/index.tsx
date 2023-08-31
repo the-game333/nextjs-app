@@ -30,6 +30,7 @@ import sendThankYouEmail from 'pages/api/utils/sendThankyouEmail';
 import AppBar from 'ui-component/extended/AppBar';
 import Footer from 'components/landingpage/Footer';
 import Loader from 'ui-component/Loader';
+import CircularProgress from '@mui/material/CircularProgress';
 import sendEmailToTeam from 'pages/api/utils/sendEmailToTeam';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
@@ -113,6 +114,8 @@ export default function ContactUsPage() {
       await sendThankYouEmail(formData.email);
       // Send contact data to the team
       await sendEmailToTeam(formData);
+
+      // console.log(formData)
 
       setFormData(initialFormData);
       setSubmissionSuccess(true);
@@ -402,7 +405,8 @@ export default function ContactUsPage() {
             type="submit"
             className="w-full py-2 mt-4 text-white transition-colors duration-300 ease-in-out bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring"
           >
-            Submit
+            {loading ? (<CircularProgress color='inherit'/>):"Submit"}
+            
           </button>
         </form>
         {alertOpen && (
