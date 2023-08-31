@@ -25,7 +25,7 @@
 // ContactUsPage.Layout = 'minimalLayout';
 // export default ContactUsPage;
 
-import React, { useState, ChangeEvent, FormEvent } from 'react';
+import React, { useState, ChangeEvent, FormEvent, useRef, useEffect } from 'react';
 import sendThankYouEmail from 'pages/api/utils/sendThankyouEmail';
 import AppBar from 'ui-component/extended/AppBar';
 import Footer from 'components/landingpage/Footer';
@@ -47,6 +47,7 @@ interface FormData {
   phoneNumber: string;
   email: string;
   company: string;
+  note: string;
 }
 
 export default function ContactUsPage() {
@@ -68,15 +69,37 @@ export default function ContactUsPage() {
     phoneCountryCode: '',
     phoneNumber: '',
     email: '',
-    company: ''
+    company: '',
+    note: ''
   };
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+  const handleChange = (event: ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
+
+  const ref = useRef<HTMLTextAreaElement>(null);
+
+  const handleHeight = () => {
+    if (ref.current) {
+      ref.current.style.height = '0px';
+      const newHeight = ref.current.scrollHeight;
+      ref.current.style.height = newHeight + 'px';
+      ref.current.style.minHeight = '96px';
+    }
+  };
+
+  useEffect(() => {
+    const el = ref.current;
+
+    el?.addEventListener('keydown', handleHeight);
+
+    return () => {
+      el?.removeEventListener('keydown', handleHeight);
+    };
+  }, []);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -158,7 +181,7 @@ export default function ContactUsPage() {
           onSubmit={handleSubmit}
         >
           <div className="mb-4">
-            <label className="font-family: ui-monospace word- mb-2 block font-bold text-white" htmlFor="team">
+            <label className="block mb-2 font-bold text-white font-family: ui-monospace word-" htmlFor="team">
               What team are you part of?
             </label>
             <select
@@ -179,7 +202,7 @@ export default function ContactUsPage() {
 
           {/* Q:2 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-white dark:text-white" htmlFor="name">
+            <label className="block mb-2 font-bold text-white dark:text-white" htmlFor="name">
               Hi 👋 And how about your Individual name?
             </label>
             <input
@@ -195,7 +218,7 @@ export default function ContactUsPage() {
           </div>
           {/* Q:3 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-white dark:text-white" htmlFor="goals">
+            <label className="block mb-2 font-bold text-white dark:text-white" htmlFor="goals">
               Great, What are the goals you’re looking to achieve?
             </label>
             <select
@@ -219,7 +242,7 @@ export default function ContactUsPage() {
 
           {/* Q:4 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-white " htmlFor="industry">
+            <label className="block mb-2 font-bold text-white " htmlFor="industry">
               Which industry you specifically serve in?
             </label>
             <select
@@ -241,7 +264,7 @@ export default function ContactUsPage() {
           </div>
           {/* Q:5 */}
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-white" htmlFor="customerSize">
+            <label className="block mb-2 font-bold text-white" htmlFor="customerSize">
               What will be end customers size?
             </label>
             <select
@@ -261,9 +284,9 @@ export default function ContactUsPage() {
             </select>
           </div>
           {/* Q:6 */}
-          <div className="mb-4 grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-2 gap-4 mb-4">
             <div>
-              <label className="mb-2 block font-bold text-white" htmlFor="firstName">
+              <label className="block mb-2 font-bold text-white" htmlFor="firstName">
                 First Name
               </label>
               <input
@@ -278,7 +301,7 @@ export default function ContactUsPage() {
               />
             </div>
             <div>
-              <label className="mb-2 block font-bold text-white" htmlFor="lastName">
+              <label className="block mb-2 font-bold text-white" htmlFor="lastName">
                 Last Name
               </label>
               <input
@@ -295,7 +318,7 @@ export default function ContactUsPage() {
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-white" htmlFor="phoneCountryCode">
+            <label className="block mb-2 font-bold text-white" htmlFor="phoneCountryCode">
               Phone Country Code
             </label>
             <div className="flex gap-2">
@@ -328,7 +351,7 @@ export default function ContactUsPage() {
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-white" htmlFor="email">
+            <label className="block mb-2 font-bold text-white" htmlFor="email">
               Email
             </label>
             <input
@@ -344,7 +367,7 @@ export default function ContactUsPage() {
           </div>
 
           <div className="mb-4">
-            <label className="mb-2 block font-bold text-white" htmlFor="company">
+            <label className="block mb-2 font-bold text-white" htmlFor="company">
               Company
             </label>
             <input
@@ -359,9 +382,25 @@ export default function ContactUsPage() {
             />
           </div>
 
+          <div className="mb-4">
+            <label className="block mb-2 font-bold text-white" htmlFor="company">
+              Additional note (optional)
+            </label>
+            <textarea
+              ref={ref}
+              id="note"
+              name="note"
+              value={formData.note}
+              onChange={handleChange}
+              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 h-24 focus:outline-none focus:ring"
+              placeholder="Your Company name..."
+              required
+            />
+          </div>
+
           <button
             type="submit"
-            className="mt-4 w-full rounded-lg bg-green-500 py-2 text-white transition-colors duration-300 ease-in-out hover:bg-green-600 focus:outline-none focus:ring"
+            className="w-full py-2 mt-4 text-white transition-colors duration-300 ease-in-out bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring"
           >
             Submit
           </button>
