@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import React from 'react';
 
 // project imports
+import { Dialog } from '@mui/material';
 import Header from 'components/landingpage/Header';
 import EasyToUse from 'components/landingpage/EasyToUse';
 import DiverseSupport from 'components/landingpage/DiverseSupport';
@@ -89,6 +90,8 @@ const Landing: React.FC = () => {
     onChangeMenuType('light');
   }, []);
 
+  const [open, setOpen] = React.useState(false);
+
   const llmref = React.useRef<HTMLDivElement>(null);
   const ref2 = React.useRef<HTMLDivElement>(null);
   const ref3 = React.useRef<HTMLDivElement>(null);
@@ -121,7 +124,7 @@ const Landing: React.FC = () => {
         <EndlessPossibilities />
       </FullyWrapper>
       <SecondWrapper id="llm" ref={llmref}>
-        <EasyToUse />
+        <EasyToUse setOpen={setOpen} />
       </SecondWrapper>
 
       <ThirdWrapper>
@@ -160,6 +163,69 @@ const Landing: React.FC = () => {
         <Footer />
       </ThirdWrapper>
       {/* <Customization /> */}
+      <Dialog maxWidth="md" fullWidth open={open} onClose={() => setOpen(false)}>
+        <div className="w-full font-sans text-gray-900 bg-white rounded-xl">
+          <div className="flex items-center justify-between px-6 pb-3 border-b border-gray-400">
+            <h2>
+              <span className="text-2xl font-semibold">List of Actions</span>
+            </h2>
+            <button className="text-gray-900 rounded-3xl" onClick={() => setOpen(false)}>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2}
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <div className="px-6 py-6">
+            <div className="grid grid-cols-1 gap-5 md:grid-cols-2">
+              <div className="flex items-center justify-between p-4 border-2 border-stone-300 rounded-xl">
+                <div>
+                  <h6 className="text-xl font-semibold">Submit a Form</h6>
+                  <p className="mt-2 text-stone-500">Submit the contact form in hospital.com/form</p>
+                </div>
+                <div>
+                  <button className={`toggle-button ${true ? 'on' : ''}`} onClick={() => {}}>
+                    <div className="slider"></div>
+                  </button>
+                </div>
+              </div>
+              <div className="flex items-center justify-between p-4 border-2 border-stone-300 rounded-xl">
+                <div>
+                  <h6 className="text-xl font-semibold">Book a call</h6>
+                  <p className="mt-2 text-stone-500">Book a call through hospital.com/booking</p>
+                </div>
+                <div>
+                  <button className={`toggle-button ${true ? 'on' : ''}`} onClick={() => {}}>
+                    <div className="slider"></div>
+                  </button>
+                </div>
+              </div>
+              <div className="flex items-center justify-between p-4 border-2 border-stone-300 rounded-xl">
+                <div>
+                  <h6 className="text-xl font-semibold">Order a Pizza</h6>
+                  <p className="mt-2 text-stone-500">Order a pizza 🍕 using AI</p>
+                </div>
+                <div>
+                  <button className={`toggle-button ${true ? 'on' : ''}`} onClick={() => {}}>
+                    <div className="slider"></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <footer className="flex justify-end mt-6">
+              <button onClick={() => setOpen(false)} className="bg-[#FEC200] text-white rounded-full px-14 py-3 text-xl">
+                Save
+              </button>
+            </footer>
+          </div>
+        </div>
+      </Dialog>
     </>
   );
 };
