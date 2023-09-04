@@ -4,16 +4,16 @@ import ChatGPT from '../../../public/assets/images/ChatGPT.png';
 import Image from 'next/image';
 const Partnership = () => {
   return (
-    <div className="mx-auto px-3 md:max-w-5xl md:px-5 md:pb-20 md:pt-20 lg:max-w-6xl xl:px-0">
+    <div className="px-3 mx-auto md:max-w-5xl md:px-5 md:pb-20 md:pt-20 lg:max-w-6xl xl:px-0">
       <div className="mt-10 text-gray-600 dark:text-gray-300" id="testimonials">
-        <div className="mb-20 space-y-4 px-6 md:px-0">
-          <h2 className="text-center text-4xl  font-bold text-white dark:text-white md:text-5xl">
+        <div className="px-6 mb-20 space-y-4 md:px-0">
+          <h2 className="text-4xl font-bold text-center text-white dark:text-white md:text-5xl">
             The Product{' '}
             <span className="relative">
               Philosophy{' '}
               <span className="absolute left-0 top-14">
                 <svg
-                  className="lg:w-55 mx-auto w-40 sm:w-40 md:w-60 xl:w-full"
+                  className="w-40 mx-auto lg:w-55 sm:w-40 md:w-60 xl:w-full"
                   xmlns="http://www.w3.org/2000/svg"
                   width="249"
                   height="17"
@@ -59,8 +59,8 @@ const Partnership = () => {
               <p className="relative mt-8 leading-6 text-[#C2C2C2]">
                 We prioritize human-centric AI development to enhance abilities, streamline processes, and improve user experiences.
               </p>
-              <div className="absolute bottom-0 left-20 right-0 opacity-10">
-                <Image alt='robot' src={Robot} />
+              <div className="absolute bottom-0 right-0 left-20 opacity-10">
+                <Image alt="robot" src={Robot} />
               </div>
             </div>
           </div>
@@ -110,7 +110,7 @@ const Partnership = () => {
             <div className="aspect-auto h-[20.30rem] rounded-3xl  bg-[#0E0C15] p-8 shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
               <div className="flex gap-4">
                 <div className="relative">
-                  <h6 className="text-2xl font-medium leading-8 text-white dark:text-white">Where Solutions Transend Boundaries</h6>
+                  <h6 className="text-2xl font-medium leading-8 text-white dark:text-white">Where Solutions Transcend Boundaries</h6>
                   {/* <p className="text-sm text-gray-500 dark:text-gray-300">Developer</p> */}
                 </div>
               </div>
@@ -131,8 +131,8 @@ const Partnership = () => {
                 Making AI the cornerstone of progress for all sectors. A bold vision to build foundations with innovative solutions
                 anticipating challenges and forge new paths to success.
               </p>
-              <div className="absolute bottom-0 left-20 right-0 opacity-10">
-                <Image alt='chatgpt' src={ChatGPT} />
+              <div className="absolute bottom-0 right-0 left-20 opacity-10">
+                <Image alt="chatgpt" src={ChatGPT} />
               </div>
             </div>
           </div>
