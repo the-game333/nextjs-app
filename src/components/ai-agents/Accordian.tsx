@@ -63,15 +63,15 @@ const AccordianItemComp: React.FC<T> = (props) => {
         `${rounded && idx === ACCORDIAN_DATA.length - 1 && 'rounded-b-xl'}`
       )}
     >
-      <button className="flex items-center gap-5 p-5 text-lg text-left text-gray-800">
+      <button className="flex items-center gap-5 p-5 text-base text-left text-gray-800 md:text-lg">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-5 h-5">
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
         </svg>
 
         <span className="w-full">{question}</span>
       </button>
-      <div className={`${isOpen ? 'max-h-[600px]' : 'max-h-0'} overflow-hidden transition-all duration-400`}>
-        <p className="pb-5 text-base px-14">{answer}</p>
+      <div className={`${isOpen ? 'max-h-[500px]' : 'max-h-0'} overflow-hidden transition-all duration-500`}>
+        <p className="pb-5 md:text-base text-stone-500 px-14">{answer}</p>
       </div>
     </div>
   );
@@ -95,10 +95,13 @@ const Accordian: React.FC<AccordianProps> = () => {
   };
 
   return (
-    <div className="max-w-screen-xl px-6 mx-auto my-8">
-      {state.map((item, idx) => (
-        <AccordianItemComp key={idx} {...item} idx={idx} handleClick={() => handleClick(idx)} />
-      ))}
+    <div className="my-12">
+      <h6 className="mb-6 text-3xl font-bold text-center">Frequently Asked Questions</h6>
+      <div>
+        {state.map((item, idx) => (
+          <AccordianItemComp key={idx} {...item} idx={idx} handleClick={() => handleClick(idx)} />
+        ))}
+      </div>
     </div>
   );
 };

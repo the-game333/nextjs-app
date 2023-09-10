@@ -15,7 +15,7 @@ const Card = (props: P) => {
           reverse ? 'md:order-1' : 'md:-order-1'
         } h-[300px] bg-gradient-to-r from-slate-900 via-purple-900 to-slate-900 w-full rounded-xl`}
       ></div>
-      <div className={`${reverse ? 'md:-order-1 pl-6' : 'md:order-1 pr-6'} self-center text-left`}>
+      <div className={`${reverse ? 'md:-order-1 md:pl-6' : 'md:order-1 md:pr-6'} self-center text-left`}>
         <div>
           <h6 className="mb-3 text-2xl">Your voice, your knowledge</h6>
           <p className="text-gray-400">
