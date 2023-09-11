@@ -264,7 +264,7 @@ const AppBar = ({ ...others }) => {
                     <CardContent sx={{ color: 'rgb(255, 255, 255)' }}>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
-                        <TooltipButton
+                          <TooltipButton
                             onClick={() => scrollToView(llmref, 'ai')}
                             description={'AI that can book appointment, fill contact form or order a pizza 🍕'}
                             text={'Create AI that can do actions'}
@@ -318,6 +318,30 @@ const AppBar = ({ ...others }) => {
                   // href="/"
                 >
                   Features
+                </Button>
+              </HtmlTooltip>
+              <HtmlTooltip
+                title={
+                  <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(255, 255, 255)' }}>
+                    <CardContent sx={{ color: 'rgb(255, 255, 255)' }}>
+                      <Grid container spacing={2}>
+                        <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
+                          <TooltipButton onClick={() => router.push('/businesses')} text={'Business'} />
+                          <TooltipButton onClick={() => router.push('/ai-agents')} text={'Ai Agents'} />
+                        </Grid>
+                      </Grid>
+                    </CardContent>
+                  </Card>
+                }
+                arrow
+              >
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
+                  component={Link}
+                  // href="/"
+                >
+                  Business
                 </Button>
               </HtmlTooltip>
 
