@@ -320,7 +320,7 @@ const AppBar = ({ ...others }) => {
                   Features
                 </Button>
               </HtmlTooltip>
-              <HtmlTooltip
+              {/* <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(255, 255, 255)' }}>
                     <CardContent sx={{ color: 'rgb(255, 255, 255)' }}>
@@ -343,7 +343,7 @@ const AppBar = ({ ...others }) => {
                 >
                   Business
                 </Button>
-              </HtmlTooltip>
+              </HtmlTooltip> */}
 
               <HtmlTooltip
                 title={
