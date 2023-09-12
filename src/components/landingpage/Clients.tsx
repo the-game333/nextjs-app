@@ -46,32 +46,32 @@ const Clients: React.FC<ClientsProps> = () => {
         </span>
       </h2>
 
-      <div className="mt-12 text-white">
-        <div className="grid items-center grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
-          <Image width={130} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/kpmg.png'} alt="brand logo" />
+      <div className="mt-24 text-white">
+        <div className="grid items-center grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2">
           <Image
-            width={150}
-            className="mx-auto max-w-max brightness-0 invert"
+            width={160}
+            className="mx-auto shadow-inner max-w-max"
             height={60}
-            src={'/brands/mediamarkt.png'}
+            src={'/assets/images/clients/apex-removebg-preview.png'}
             alt="brand logo"
           />
-          <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/naver.png'} alt="brand logo" />
+          <Image width={150} className="mx-auto max-w-max" height={60} src={'/assets/images/clients/fl.png'} alt="brand logo" />
+          {/* <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/naver.png'} alt="brand logo" />
           <Image
             width={160}
             className="mx-auto max-w-max brightness-0 invert"
             height={60}
             src={'/brands/qatar airways.png'}
             alt="brand logo"
-          />
-          <Image width={200} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/shopee.png'} alt="brand logo" />
+          /> */}
+          {/* <Image width={200} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/shopee.png'} alt="brand logo" />
           <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/shopify.png'} alt="brand logo" />
           <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/upwork.png'} alt="brand logo" />
           <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/upwork.png'} alt="brand logo" />
           <Image width={200} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/shopee.png'} alt="brand logo" />
           <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/shopify.png'} alt="brand logo" />
           <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/upwork.png'} alt="brand logo" />
-          <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/upwork.png'} alt="brand logo" />
+          <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/upwork.png'} alt="brand logo" /> */}
         </div>
       </div>
     </div>
