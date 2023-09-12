@@ -23,6 +23,7 @@ const sendEmailToTeam = async (formData: any) => {
         <p><strong>Goals:</strong> ${formData.goals}</p>
         <p><strong>Industry:</strong> ${formData.industry}</p>
         <p><strong>Customer Size:</strong> ${formData.customerSize}</p>
+        <p><strong>Additional Note:</strong> ${formData.note}</p>
       `
     };
 

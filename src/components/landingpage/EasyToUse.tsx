@@ -26,9 +26,9 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
   return (
     <React.Fragment>
       <div className="px-3 mx-auto md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
-        <div className="text-gray-600 dark:text-gray-300" id="testimonials">
+        <div className="text-gray-600 " id="testimonials">
           <div className="px-6 pb-10 space-y-4 md:px-0">
-            <h2 className="text-4xl font-bold text-center text-white dark:text-white md:text-5xl">
+            <h2 className="text-4xl font-bold text-center text-white  md:text-5xl">
               Easy-to-use LLMOps{' '}
               <span className="relative ">
                 platform{' '}
@@ -70,7 +70,7 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
           </div>
           <div className="relative ml-auto">
             <div className="mx-auto text-center lg:w-2/3">
-              <p className="px-3 text-sm leading-7 text-white dark:text-gray-300 md:px-0 md:text-base">
+              <p className="px-3 text-sm leading-7 text-white  md:px-0 md:text-base">
                 Revolutionize your app development experience & experience the future of AI-driven innovation. Unleash your imagination and
                 conquer the world of apps with us.
               </p>
@@ -79,10 +79,10 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
         </div>
 
         <div className="grid grid-cols-1 gap-8 pt-10 md:columns-1 md:grid-cols-5">
-          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
+          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10  md:col-span-2">
             <div className="flex gap-4">
               <div>
-                <h6 className="text-3xl font-medium leading-10 text-white dark:text-white md:text-4xl">
+                <h6 className="text-3xl font-medium leading-10 text-white  md:text-4xl">
                   Create & Craft AI-driven apps in mere <span className="text-[#FEC200]">minutes</span>
                 </h6>
                 {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
@@ -101,10 +101,10 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
               <Image alt="Mobile" src={Mobile} height={250} width={300} />
             </div>
           </div>
-          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
+          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10  md:col-span-3">
             <div className="flex gap-4">
               <div>
-                <h6 className="text-3xl font-medium leading-10 text-white dark:text-white md:text-4xl">Create AI that takes Actions</h6>
+                <h6 className="text-3xl font-medium leading-10 text-white  md:text-4xl">Create AI that takes <span className="text-[#FEC200]">Actions</span></h6>
                 {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
               </div>
             </div>
@@ -169,10 +169,10 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
 
         {/* REPLACED SECTION */}
         <div className="grid grid-cols-1 gap-8 pt-10 md:columns-1 md:grid-cols-5">
-          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl col-span-full aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none">
+          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl col-span-full aspect-auto rounded-3xl shadow-gray-600/10 ">
             <div className="flex gap-4">
               <div>
-                <h6 className="text-3xl font-medium leading-10 text-white dark:text-white md:text-4xl">
+                <h6 className="text-3xl font-medium leading-10 text-white  md:text-4xl">
                   Leverage your data to enhance AI capabilities
                 </h6>
                 {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
@@ -211,10 +211,10 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
         </div>
 
         <div className="grid grid-cols-1 pt-10 pb-20 gap-y-8 md:columns-1 md:grid-cols-5 md:gap-x-8">
-          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-2">
+          <div className="p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10  md:col-span-2">
             <div className="flex gap-4">
               <div>
-                <h6 className="text-3xl font-medium leading-10 text-white dark:text-white md:text-4xl">Streamlined set of APIs</h6>
+                <h6 className="text-3xl font-medium leading-10 text-white  md:text-4xl">Streamlined set of APIs</h6>
                 {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
               </div>
             </div>
@@ -241,10 +241,10 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
               <Image alt="code" src={Code} className="rounded-xl" height={250} width={350} />
             </div>
           </div>
-          <div className="col-span-3 p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:col-span-3">
+          <div className="col-span-3 p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 e md:col-span-3">
             <div className="flex gap-4">
               <div>
-                <h6 className="text-3xl font-medium leading-10 text-white dark:text-white md:text-4xl">
+                <h6 className="text-3xl font-medium leading-10 text-white  md:text-4xl">
                   Continuous improvement and operation
                 </h6>
                 {/* <p className="text-sm text-gray-500 dark:text-gray-300">Marketing</p> */}
