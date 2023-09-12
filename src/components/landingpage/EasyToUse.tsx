@@ -127,7 +127,7 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
                       <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                     </svg>
                   </div>
-                  <span className="text-2xl font-semibold">Action</span>
+                  <span className="text-xl font-semibold sm:text-2xl">Action</span>
                 </h2>
                 <button className="px-6 py-1 text-sm text-white bg-gray-900 rounded-3xl" onClick={() => props.setOpen(true)}>
                   See All
@@ -139,9 +139,9 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
                   <p className="px-3 py-2 mt-2 text-blue-500 bg-neutral-100 max-w-max">https://www.hospital.com</p>
                 </div>
                 <div className="flex flex-col gap-5 mt-6">
-                  <div className="flex items-center justify-between p-4 border-2 border-stone-300 rounded-xl">
+                  <div className="flex items-center justify-between p-3 border-2 sm:p-4 border-stone-300 rounded-xl">
                     <div>
-                      <h6 className="text-xl font-semibold">Submit a Form</h6>
+                      <h6 className="text-lg font-semibold sm:text-xl">Submit a Form</h6>
                       <p className="mt-2 text-stone-500">Submit the contact form in hospital.com/form</p>
                     </div>
                     <div>
@@ -150,9 +150,9 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
                       </button>
                     </div>
                   </div>
-                  <div className="flex items-center justify-between p-4 border-2 border-stone-300 rounded-xl">
+                  <div className="flex items-center justify-between p-3 border-2 sm:p-4 border-stone-300 rounded-xl">
                     <div>
-                      <h6 className="text-xl font-semibold">Book a call</h6>
+                      <h6 className="text-lg font-semibold sm:text-xl">Book a call</h6>
                       <p className="mt-2 text-stone-500">Book a call through hospital.com/booking</p>
                     </div>
                     <div>

@@ -40,15 +40,15 @@ interface FormData {
   team: string;
   name: string;
   goals: string;
-  industry: string;
-  customerSize: string;
-  firstName: string;
-  lastName: string;
-  phoneCountryCode: string;
-  phoneNumber: string;
   email: string;
-  company: string;
   note: string;
+  // industry: string;
+  //   customerSize: string;
+  //   firstName: string;
+  //   lastName: string;
+  //   phoneCountryCode: string;
+  //   phoneNumber: string;
+  //   company: string;
 }
 
 export default function ContactUsPage() {
@@ -63,15 +63,15 @@ export default function ContactUsPage() {
     team: '',
     name: '',
     goals: '',
-    industry: '',
-    customerSize: '',
-    firstName: '',
-    lastName: '',
-    phoneCountryCode: '',
-    phoneNumber: '',
     email: '',
-    company: '',
     note: ''
+    // industry: '',
+    // customerSize: '',
+    // firstName: '',
+    // lastName: '',
+    // phoneCountryCode: '',
+    // phoneNumber: '',
+    // company: '',
   };
 
   const [formData, setFormData] = useState<FormData>(initialFormData);
@@ -137,7 +137,7 @@ export default function ContactUsPage() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#0E0C15]">
+    <div className="relative bg-[#0E0C15]">
       <AppBar background="transparent" />
       <div className="flex min-h-screen flex-col items-center justify-center bg-[#0E0C15] p-4">
         <p
@@ -179,20 +179,50 @@ export default function ContactUsPage() {
             filter: 'blur(120px)'
           }}
         ></p>
-        <form
-          className="w-full max-w-2xl rounded-lg border border-white border-t-white bg-transparent p-6 shadow-md dark:bg-[#15131D]"
-          onSubmit={handleSubmit}
-        >
+        <form className="w-full max-w-2xl p-6 text-gray-900 bg-white rounded-lg shadow-md" onSubmit={handleSubmit}>
+          {/* Q:2 */}
           <div className="mb-4">
-            <label className="block mb-2 font-bold text-white font-family: ui-monospace word-" htmlFor="team">
-              What team are you part of?
+            <label className="block mb-3 text-sm font-semibold max-w-max" htmlFor="name">
+              Name/Company Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Type your answer here...."
+              value={formData.name}
+              onChange={handleChange}
+              className="w-full px-4 py-3 text-gray-700 bg-transparent border-2 border-gray-100 rounded-lg focus:border-yellow-300 focus:outline-none"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 font-bold" htmlFor="email">
+              Email <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              className="w-full px-4 py-3 text-gray-700 bg-transparent border-2 border-gray-100 rounded-lg focus:border-yellow-300 focus:outline-none"
+              placeholder="name@example.com"
+              required
+            />
+          </div>
+
+          <div className="mb-4">
+            <label className="block mb-2 font-bold font-family: ui-monospace word-" htmlFor="team">
+              What team are you part of? <span className="text-red-500">*</span>
             </label>
             <select
               id="team"
               name="team"
               value={formData.team}
               onChange={handleChange}
-              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full px-4 py-3 text-gray-700 bg-transparent border-2 border-gray-100 rounded-lg focus:border-yellow-300 focus:outline-none"
               required
             >
               <option value="">Select an option</option>
@@ -203,33 +233,17 @@ export default function ContactUsPage() {
             </select>
           </div>
 
-          {/* Q:2 */}
-          <div className="mb-4">
-            <label className="block mb-2 font-bold text-white dark:text-white" htmlFor="name">
-              Hi 👋 And how about your Individual name?
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Type your answer here...."
-              value={formData.name}
-              onChange={handleChange}
-              className="w-full rounded-lg border bg-[#0E0C15] px-4 py-2 text-white  focus:border-green-300 focus:outline-none focus:ring"
-              required
-            />
-          </div>
           {/* Q:3 */}
           <div className="mb-4">
-            <label className="block mb-2 font-bold text-white dark:text-white" htmlFor="goals">
-              Great, What are the goals you’re looking to achieve?
+            <label className="block mb-2 font-bold " htmlFor="goals">
+              Great, What are the goals you’re looking to achieve? <span className="text-red-500">*</span>
             </label>
             <select
               id="goals"
               name="goals"
               value={formData.goals}
               onChange={handleChange}
-              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
+              className="w-full px-4 py-3 text-gray-700 bg-transparent border-2 border-gray-100 rounded-lg focus:border-yellow-300 focus:outline-none"
               required
             >
               <option value="">Select an option</option>
@@ -244,7 +258,7 @@ export default function ContactUsPage() {
           </div>
 
           {/* Q:4 */}
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="block mb-2 font-bold text-white " htmlFor="industry">
               Which industry you specifically serve in?
             </label>
@@ -265,7 +279,6 @@ export default function ContactUsPage() {
               <option value="Other">Other</option>
             </select>
           </div>
-          {/* Q:5 */}
           <div className="mb-4">
             <label className="block mb-2 font-bold text-white" htmlFor="customerSize">
               What will be end customers size?
@@ -285,9 +298,9 @@ export default function ContactUsPage() {
               <option value="<100K">&lt;10M</option>
               <option value="<100K">&gt;10M</option>
             </select>
-          </div>
+          </div> */}
           {/* Q:6 */}
-          <div className="grid grid-cols-2 gap-4 mb-4">
+          {/* <div className="grid grid-cols-2 gap-4 mb-4">
             <div>
               <label className="block mb-2 font-bold text-white" htmlFor="firstName">
                 First Name
@@ -318,9 +331,9 @@ export default function ContactUsPage() {
                 required
               />
             </div>
-          </div>
+          </div> */}
 
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="block mb-2 font-bold text-white" htmlFor="phoneCountryCode">
               Phone Country Code
             </label>
@@ -351,25 +364,9 @@ export default function ContactUsPage() {
                 title="Please enter a valid phone number"
               />
             </div>
-          </div>
+          </div> */}
 
-          <div className="mb-4">
-            <label className="block mb-2 font-bold text-white" htmlFor="email">
-              Email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 focus:outline-none focus:ring"
-              placeholder="name@example.com"
-              required
-            />
-          </div>
-
-          <div className="mb-4">
+          {/* <div className="mb-4">
             <label className="block mb-2 font-bold text-white" htmlFor="company">
               Company
             </label>
@@ -383,10 +380,10 @@ export default function ContactUsPage() {
               placeholder="Your Company name..."
               required
             />
-          </div>
+          </div> */}
 
           <div className="mb-4">
-            <label className="block mb-2 font-bold text-white" htmlFor="company">
+            <label className="block mb-2 font-bold" htmlFor="company">
               Additional note (optional)
             </label>
             <textarea
@@ -395,18 +392,29 @@ export default function ContactUsPage() {
               name="note"
               value={formData.note}
               onChange={handleChange}
-              className="w-full  rounded-lg border bg-[#0E0C15] px-4 py-2 text-white focus:border-green-300 h-24 focus:outline-none focus:ring"
-              placeholder="Your Company name..."
+              className="w-full h-24 px-4 py-3 text-gray-700 bg-transparent border-2 border-gray-100 rounded-lg focus:border-yellow-300 focus:outline-none"
+              placeholder="Type your answer here..."
               required
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-2 mt-4 text-white transition-colors duration-300 ease-in-out bg-green-500 rounded-lg hover:bg-green-600 focus:outline-none focus:ring"
+            className="flex items-center justify-center w-full gap-3 py-2 text-base tracking-widest text-white uppercase transition-all duration-300 ease-in-out bg-yellow-400 rounded-lg hover:bg-yellow-500 hover:gap-5 active:gap-3"
           >
-            {loading ? (<CircularProgress color='inherit'/>):"Submit"}
-            
+            <span>
+              {loading ? (<CircularProgress color='inherit'/>):"Submit"}
+            </span>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+            </svg>
           </button>
         </form>
         {alertOpen && (

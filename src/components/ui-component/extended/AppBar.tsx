@@ -84,6 +84,7 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => <Tooltip {
 
 const MenuAccordion = (props: any) => {
   const [expanded, setExpanded] = React.useState(false);
+  const router = useRouter();
 
   const handleAccordionChange = () => {
     setExpanded((prev) => !prev);
@@ -117,7 +118,11 @@ const MenuAccordion = (props: any) => {
         <ScrollBar style={{ maxHeight: '300px' }}>
           {props.data.map((i: any, idx: number) => {
             return (
-              <Button onClick={() => props.onClick(props.refs.at(idx), i.id)} key={idx} className="justify -start flex  w-[100%]">
+              <Button
+                onClick={() => (props.onClick ? props.onClick(props.refs.at(idx), i.id) : router.push(i.link || router.pathname))}
+                key={idx}
+                className="justify-start flex  w-[100%]"
+              >
                 <TooltipButton text={i.text} image={i.image} />
               </Button>
             );
@@ -470,6 +475,17 @@ const AppBar = ({ ...others }) => {
                         refs={refs}
                         onClick={scrollToView}
                         data={fdata}
+                      />
+                      <MenuAccordion
+                        title="Business"
+                        icon={<ProductionQuantityLimitsIcon />}
+                        data={[
+                          {
+                            text: 'Business',
+                            link: '/businesses'
+                          },
+                          { text: 'AI Agents', link: '/ai-agents' }
+                        ]}
                       />
                       <MenuAccordion title="Solutions" icon={<EmojiObjectsIcon />} data={Sdata}></MenuAccordion>
                       <Link style={{ textDecoration: 'none' }} href="/vision">

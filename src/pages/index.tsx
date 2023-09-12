@@ -25,6 +25,7 @@ import EmbededDirectly from 'components/landingpage/EmbededDirectly';
 import PowerOfDataSet from 'components/landingpage/PowerOfDataSet';
 import Blogs from 'components/landingpage/Blogs';
 import OptimizeStreamline from 'components/landingpage/OptimizeStreamline';
+import Clients from 'components/landingpage/Clients';
 // import NewHeader from 'components/landingpage/NewHeader';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
@@ -117,6 +118,9 @@ const Landing: React.FC = () => {
         <Header />
         {/* <NewHeader /> */}
       </HeaderWrapper>
+      <FullyWrapper>
+        <Clients />
+      </FullyWrapper>
       <FullyWrapper>
         <ProductPhilosophy />
       </FullyWrapper>
