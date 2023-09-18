@@ -1,34 +1,138 @@
-import clsx from 'clsx';
+import Image from 'next/image';
 import React from 'react';
 
 type AwardsProps = {};
 
+const Star = (props: { className?: string }) => (
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className={props.className || 'w-6 h-6'}>
+    <path
+      fillRule="evenodd"
+      d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z"
+      clipRule="evenodd"
+    />
+  </svg>
+);
+
+const Steps: React.FC = () => {
+  return (
+    <React.Fragment>
+      <section className="w-full my-12 md:my-16">
+        <div className="flex flex-col items-center justify-between w-full gap-8 mb-6 md:flex-row md:gap-0">
+          <div className="flex-1">
+            <div className="text-center">
+              <span className="px-4 py-2 border border-yellow-500 rounded-full">Step 1</span>
+            </div>
+            <h6 className="px-4 my-4 text-3xl font-bold text-center">Data Wrangling and EDA</h6>
+            <div className="mt-4 md:hidden md:mt-0">
+              <p className="flex items-center w-full gap-5 my-4 text-left">
+                <span className="text-yellow-300">
+                  <Star />
+                </span>
+                <span>Use language prompts to transform, visualize and featurize data</span>
+              </p>
+              <p className="flex items-center w-full gap-5 my-4 text-left">
+                <span className="text-yellow-300">
+                  <Star />
+                </span>
+                <span>AI agents and chat surface insights in data sets</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <Image width={80} height={30} src={'/assets/images/arrow.png'} alt="arrow" className="rotate-90 md:rotate-0" />
+          </div>
+          <div className="flex-1">
+            <div className="text-center">
+              <span className="px-4 py-2 border border-yellow-500 rounded-full">Step 2</span>
+            </div>
+            <h6 className="px-4 my-4 text-3xl font-bold text-center">Model Building and Iteration</h6>
+            <div className="mt-4 md:hidden md:mt-0">
+              <p className="flex items-center w-full gap-5 my-4 text-left">
+                <span className="text-yellow-300">
+                  <Star />
+                </span>
+                <span>Novel neural network techniques to build enterprise class custom models</span>
+              </p>
+              <p className="flex items-center w-full gap-5 my-4 text-left">
+                <span className="text-yellow-300">
+                  <Star />
+                </span>
+                <span>AI-chat to evaluate and iterate models</span>
+              </p>
+            </div>
+          </div>
+          <div>
+            <Image width={80} height={30} src={'/assets/images/arrow.png'} alt="arrow" className="rotate-90 md:rotate-0" />
+          </div>
+          <div className="flex-1">
+            <div className="text-center">
+              <span className="px-4 py-2 border border-yellow-500 rounded-full">Step 3</span>
+            </div>
+            <h6 className="px-4 my-4 text-3xl font-bold text-center">
+              Production
+              <br />
+              &nbsp;
+            </h6>
+            <div className="mt-4 md:hidden md:mt-0">
+              <p className="flex items-center w-full gap-5 my-4 text-left">
+                <span className="text-yellow-300">
+                  <Star />
+                </span>
+                <span>AI agents that monitor model deployments and drift in production</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="items-stretch justify-between hidden gap-8 md:flex">
+          <div>
+            <p className="flex items-center w-full gap-5 my-4 text-left">
+              <span className="text-yellow-300">
+                <Star />
+              </span>
+              <span>Use language prompts to transform, visualize and featurize data</span>
+            </p>
+            <p className="flex items-center w-full gap-5 my-4 text-left">
+              <span className="text-yellow-300">
+                <Star />
+              </span>
+              <span>AI agents and chat surface insights in data sets</span>
+            </p>
+          </div>
+          <div className="bg-yellow-300 w-[2px]"></div>
+          <div>
+            <p className="flex items-center w-full gap-5 my-4 text-left">
+              <span className="text-yellow-300">
+                <Star />
+              </span>
+              <span>Novel neural network techniques to build enterprise class custom models</span>
+            </p>
+            <p className="flex items-center w-full gap-5 my-4 text-left">
+              <span className="text-yellow-300">
+                <Star />
+              </span>
+              <span>AI-chat to evaluate and iterate models</span>
+            </p>
+          </div>
+          <div className="bg-yellow-300 w-[2px]"></div>
+          <div>
+            <p className="flex items-center w-full gap-5 my-4 text-left">
+              <span className="text-yellow-300">
+                <Star />
+              </span>
+              <span>AI agents that monitor model deployments and drift in production</span>
+            </p>
+          </div>
+        </div>
+      </section>
+    </React.Fragment>
+  );
+};
+
 const Awards: React.FC<AwardsProps> = () => {
   return (
-    <section className="flex flex-col items-center gap-6 my-16 text-center">
-      <p className="text-gray-500 uppercase">You can trust us</p>
-      <h6 className="text-xl font-bold sm:text-2xl">Our Awards</h6>
-      <div className="grid grid-cols-1 gap-6 mt-8 sm:grid-cols-3">
-        {Array.from({ length: 3 }).map((_, idx) => (
-          <div
-            key={idx}
-            className={clsx(
-              'flex flex-col items-center gap-4',
-              idx !== 2 ? 'sm:border-r-2 sm:pr-6 pr-0 border-r-0' : 'sm:border-r-2 border-r-0 border-transparent sm:pr-6 pr-0'
-            )}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="#facc15" className="w-8 h-8">
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"
-              />
-            </svg>
-
-            <h6 className="text-xl font-bold">Microsoft Awards 2021</h6>
-          </div>
-        ))}
-      </div>
+    <section className="flex flex-col items-center gap-6 my-8 text-center">
+      <h6 className="text-xl font-bold sm:text-2xl">AI-Assisted Data Science</h6>
+      <Steps />
     </section>
   );
 };

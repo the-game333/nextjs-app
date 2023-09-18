@@ -9,7 +9,7 @@ const CARD_DATA = [
     emo: '🚀'
   },
   {
-    title: 'AI CONSULTING',
+    title: 'Custom AI',
     content: 'Together with our clients, we identify and scope their challenges. We help them understand the value of their data…',
     emo: '💬'
   },
@@ -42,9 +42,9 @@ const Our: React.FC<OurProps> = () => {
         <strong>AI EXPERTS</strong>
       </h2>
       <p className="max-w-lg mx-auto leading-relaxed text-center">
-        We help companies harness the power of artificial intelligence by designing tailored solutions. Blindspot.AI is an expert in
-        delivering services and precisely engineered software products standing on machine learning, AI, cybersecurity, and resource
-        optimization principles. We are one of the top three fastest growing companies in CE according to 2019 and 2020 Deloitte Fast 50.
+        We help companies harness the power of artificial intelligence by designing tailored solutions. InfraHive is an expert in delivering
+        services and precisely engineered software products standing on machine learning, AI, security, and resource optimization
+        principles.
       </p>
       <div className="grid grid-cols-1 gap-16 pb-8 mt-24 sm:pb-0 sm:gap-6 sm:grid-cols-3">
         {CARD_DATA.map((item, idx) => (

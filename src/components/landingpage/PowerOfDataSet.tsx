@@ -146,10 +146,12 @@ export default function PowerOfDataSet() {
                 filter: 'blur(100px)'
               }}
             ></p>
-            <div className="flex flex-col-reverse items-center gap-10 pt-2 border-gray-100 shadow-2xl md:flex-row aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none sm:pt-20">
+            <div className="relative flex items-center justify-center gap-10 pt-2 border-gray-100 shadow-2xl md:block aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:pt-40">
               <Image alt="step2" src={'/assets/images/landing/step-2-1-img.png'} width={250} height={500} className="rounded-xl" />
 
-              <Image alt="step2" src={'/assets/images/landing/step-2-2-img.png'} width={250} height={500} className="rounded-xl" />
+              <div className="md:absolute static top-[3.25%] right-1/4">
+                <Image alt="step2" src={'/assets/images/landing/step-2-2-img.png'} width={250} height={500} className="rounded-xl" />
+              </div>
             </div>
             <div className="p-0 bg-transparent aspect-auto rounded-3xl md:p-8">
               <div>

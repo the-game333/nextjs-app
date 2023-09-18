@@ -476,7 +476,7 @@ const AppBar = ({ ...others }) => {
                         onClick={scrollToView}
                         data={fdata}
                       />
-                      <MenuAccordion
+                      {/* <MenuAccordion
                         title="Business"
                         icon={
                           <>
@@ -503,7 +503,7 @@ const AppBar = ({ ...others }) => {
                           },
                           { text: 'AI Agents', link: '/ai-agents' }
                         ]}
-                      />
+                      /> */}
                       <MenuAccordion title="Solutions" icon={<EmojiObjectsIcon />} data={Sdata}></MenuAccordion>
                       <Link style={{ textDecoration: 'none' }} href="/vision">
                         <ListItemButton component="a">

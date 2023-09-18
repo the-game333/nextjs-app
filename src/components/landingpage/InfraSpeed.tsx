@@ -5,13 +5,13 @@ type InfraSpeedProps = {};
 const InfraSpeedComp: React.FC<InfraSpeedProps> = () => {
   return (
     <div>
-      <div className="px-3 mx-auto md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
+      <div className="px-3 py-20 mx-auto md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
         <div className="text-white dark:text-gray-300" id="testimonials">
           <div className="px-6 pb-10 space-y-4 md:px-0">
             <h2 className="text-3xl font-bold text-center text-white dark:text-white md:text-5xl">
               Introducing{' '}
               <span className="relative whitespace-nowrap">
-                Infraspeed <p className="mt-2">with InfraHive</p>
+                Infraspeed
                 <span className="absolute left-0 -mt-5 top-14 md:mt-0">
                   <svg
                     className="w-40 mx-auto lg:w-55 sm:w-40 md:w-60 xl:w-full"
@@ -51,6 +51,13 @@ const InfraSpeedComp: React.FC<InfraSpeedProps> = () => {
           <div className="relative ml-auto">
             <div className="mx-auto text-center lg:w-2/3">
               <p className="px-3 text-sm leading-7 text-white md:px-0 md:text-base">Train/Fine Tune AI Models upto 15x faster</p>
+            </div>
+          </div>
+          <div className="mt-12">
+            <div className="text-center text-9xl animate-text">
+              <span>1</span>
+              <span>5</span>
+              <span>x</span>
             </div>
           </div>
         </div>
