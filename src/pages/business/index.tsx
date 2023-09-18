@@ -1,9 +1,10 @@
 import Awards from 'components/business-page/Awards';
 import Contact from 'components/business-page/Contact';
 import Hero from 'components/business-page/Hero';
-import HowTo from 'components/business-page/HowTo';
+// import HowTo from 'components/business-page/HowTo';
 import Our from 'components/business-page/Our';
-import Products from 'components/business-page/Products';
+// import Products from 'components/business-page/Products';
+import NewProducts from 'components/business-page/NewProducts';
 import Footer from 'components/landingpage/Footer';
 import React from 'react';
 import AppBar from 'ui-component/extended/AppBar';
@@ -33,7 +34,8 @@ export default function Businesses() {
           ></path>
         </svg>
         <Container>
-          <Products />
+          <NewProducts />
+          {/* <Products /> */}
           {/* <HowTo /> */}
           <Awards />
           <Contact />
