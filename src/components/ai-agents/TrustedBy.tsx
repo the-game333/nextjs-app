@@ -11,6 +11,10 @@ const TrustedBy: React.FC<TrustedByProps> = () => {
   return (
     <section className="w-full my-12 sm:my-20">
       <h6 className="mb-6 text-3xl font-bold text-center">Trusted By</h6>
+      <p className="max-w-lg mx-auto my-6 leading-normal text-center text-gray-400">
+        At InfraHive, our commitment to excellence has earned us the trust of a diverse range of industries and partners. We&apos;re proud
+        to be the choice of:
+      </p>
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:grid-rows-[200px_80px_200px]">
         <Card classes="lg:col-[1_/_2] lg:row-span-1">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos quis nisi reiciendis distinctio dignissimos nostrum quas odio maxime

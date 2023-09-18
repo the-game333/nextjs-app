@@ -27,14 +27,14 @@ export default function Header() {
           <div className="from-primary h-56 bg-gradient-to-br to-purple-400 blur-[106px] dark:from-blue-700"></div>
           <div className="h-32 bg-gradient-to-r from-cyan-400 to-sky-300 blur-[106px] dark:to-indigo-600"></div>
         </div>
-        <div className="relative ml-auto w-full pt-36">
+        <div className="relative w-full ml-auto pt-36">
           <div className="mx-auto text-center lg:w-2/3">
             <h1 className="before:bg- relative mb-3 flex flex-col  justify-center gap-1 text-4xl font-bold text-white before:absolute before:left-0 before:top-0 before:h-full before:w-full before:rounded-full before:content-[''] dark:text-white sm:flex-row sm:gap-2 md:text-5xl xl:gap-5 xl:text-6xl">
               With
               <span className="mt-5 md:mt-0">
                 InfraH
                 <span className="relative">
-                  <span className="-left-x-1/2 absolute -top-6 w-7 -translate-x-1/2">
+                  <span className="absolute -translate-x-1/2 -left-x-1/2 -top-6 w-7">
                     <Image alt="Bee" src={Bee} width={35} height={35} className="absolute" />
                   </span>
                   i
@@ -42,7 +42,7 @@ export default function Header() {
                 ve
                 <span>
                   <svg
-                    className="lg:w-55 mx-auto w-40 sm:w-40 md:w-60 xl:w-full"
+                    className="w-40 mx-auto lg:w-55 sm:w-40 md:w-60 xl:w-full"
                     xmlns="http://www.w3.org/2000/svg"
                     width="264"
                     height="18"
@@ -89,48 +89,50 @@ export default function Header() {
               }}
             ></p>
             <div className="flex-row justify-center md:flex">
-              <div className="flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-white dark:text-white  sm:flex-row ">
-                <h1> Supercharge </h1>
-              </div>
-              <div className=" heading flex flex-col  justify-center gap-5 break-all p-2 text-5xl font-bold text-gray-900 dark:text-white  sm:flex-row ">
+              <div className="flex flex-col justify-center gap-5 p-2 text-5xl font-bold text-gray-900 break-all heading dark:text-white sm:flex-row">
                 <div className="animated flex max-h-[2rem] flex-col gap-[10px]  text-4xl md:text-5xl">
-                  <h5 style={{ color: '#FEDE00' }}>AI Powered Apps</h5>
                   <h5
                     style={{
                       color: '#00FE75'
                     }}
                   >
-                    Generative AI
+                    Create
                   </h5>
                   <h5
                     style={{
                       color: '#E35961'
                     }}
                   >
-                    LLM Platforms
+                    Test
                   </h5>
                   <h5
                     style={{
                       color: '#4B82D8'
                     }}
                   >
-                    Teams & More
+                    Deploy
                   </h5>
+                  <h5 style={{ color: '#FEDE00' }}>Secure</h5>
                 </div>
               </div>
+              <div className="flex flex-col justify-center gap-5 p-2 text-5xl font-bold text-white break-all dark:text-white sm:flex-row ">
+                <h1> AI Workflows </h1>
+              </div>
             </div>
-            <div className="m-auto flex w-full justify-center text-center">
+            <div className="flex justify-center w-full m-auto text-center">
               <p className="mx-14 mt-8 max-w-3xl leading-[1.5rem] text-white dark:text-gray-300 md:text-[20px]">
-                Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps,
-                LLM-powered Workflows, Tools and more, at Unmatched speed.
+                {/* Supercharge Your User-Experience and Team Efficiency with InfraHive. Ideate, Build, Scale & Deploy AI-powered Apps,
+                LLM-powered Workflows, Tools and more, at Unmatched speed. */}
+                Create and deploy AI Apps, Workflows and AI Agents, incorporating state-of-the-art language models such as GPT-4, Llama-2,
+                and Claude-2, with a focus on efficiency, speed, and security
               </p>
             </div>
-            <div className="relative mt-16 flex flex-wrap justify-center gap-x-6 gap-y-4">
+            <div className="relative flex flex-wrap justify-center mt-16 gap-x-6 gap-y-4">
               <a
                 href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
-                className="before:bg-primary relative flex h-11 w-full items-center justify-center px-6 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
+                className="relative flex items-center justify-center w-full px-6 before:bg-primary h-11 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
               >
-                <span className="relative flex items-center gap-2 rounded-full bg-white px-6 py-4 text-base font-semibold text-black">
+                <span className="relative flex items-center gap-2 px-6 py-4 text-base font-semibold text-black bg-white rounded-full">
                   <svg xmlns="http://www.w3.org/2000/svg" width="17" height="16" viewBox="0 0 17 16" fill="none">
                     <g clip-path="url(#clip0_47_79)">
                       <path
@@ -160,7 +162,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-      <div className="mt-20 flex justify-center pb-10 p-3 md:pd-0">
+      <div className="flex justify-center p-3 pb-10 mt-20 md:pd-0">
         <Image
           alt="Overview"
           src={Overview}

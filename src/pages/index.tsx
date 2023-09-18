@@ -26,6 +26,8 @@ import PowerOfDataSet from 'components/landingpage/PowerOfDataSet';
 import Blogs from 'components/landingpage/Blogs';
 import OptimizeStreamline from 'components/landingpage/OptimizeStreamline';
 import Clients from 'components/landingpage/Clients';
+import InfraSpeed from 'components/landingpage/EndlessPossibilities';
+import InfraSpeedComp from 'components/landingpage/InfraSpeed';
 // import NewHeader from 'components/landingpage/NewHeader';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
@@ -122,10 +124,10 @@ const Landing: React.FC = () => {
         <Clients />
       </FullyWrapper>
       <FullyWrapper>
-        <ProductPhilosophy />
+        <EndlessPossibilities />
       </FullyWrapper>
       <FullyWrapper>
-        <EndlessPossibilities />
+        <InfraSpeedComp />
       </FullyWrapper>
       <SecondWrapper id="llm" ref={llmref}>
         <EasyToUse setOpen={setOpen} />
@@ -152,14 +154,17 @@ const Landing: React.FC = () => {
       <LastWrapper id="data" ref={ref4}>
         <PowerOfDataSet />
       </LastWrapper>
+      <FullyWrapper>
+        <ProductPhilosophy />
+      </FullyWrapper>
 
       {/*  */}
       <SecondLastWrapper>
         <Blogs />
       </SecondLastWrapper>
-      <LastWrapper>
+      {/* <LastWrapper>
         <OptimizeStreamline />
-      </LastWrapper>
+      </LastWrapper> */}
       {/*  */}
 
       <ThirdWrapper>
