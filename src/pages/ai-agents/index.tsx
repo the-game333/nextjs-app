@@ -13,13 +13,13 @@ const Container = ({ children }: { children: React.ReactNode }) => <div classNam
 export default function AiAgents() {
   return (
     <React.Fragment>
-      <main className="bg-[#01051B] text-white">
+      <main className="text-white bg-hero">
         <AppBar background={'transparent'} />
         <Container>
           <Hero />
           <Features />
           <How />
-          <TrustedBy />
+          {/* <TrustedBy /> */}
           <GetStarted />
           <Accordian />
         </Container>
