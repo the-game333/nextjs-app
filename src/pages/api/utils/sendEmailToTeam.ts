@@ -12,17 +12,13 @@ const sendEmailToTeam = async (formData: any) => {
     const sendinblueData = {
       sender: { email: formData.email },
       to: [{ email: TEAM_EMAIL }],
-      subject: `New Contact Form Submission from ${formData.firstName} ${formData.lastName}`,
+      subject: `New Contact Form Submission from ${formData.name}`,
       htmlContent: `
         <p>You have received a new contact form submission:</p>
-        <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+        <p><strong>Name:</strong> ${formData.name}</p>
         <p><strong>Email:</strong> ${formData.email}</p>
-        <p><strong>Phone Number:</strong> ${formData.phoneCountryCode} ${formData.phoneNumber}</p>
-        <p><strong>Company:</strong> ${formData.company}</p>
         <p><strong>Team:</strong> ${formData.team}</p>
         <p><strong>Goals:</strong> ${formData.goals}</p>
-        <p><strong>Industry:</strong> ${formData.industry}</p>
-        <p><strong>Customer Size:</strong> ${formData.customerSize}</p>
         <p><strong>Additional Note:</strong> ${formData.note}</p>
       `
     };

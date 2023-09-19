@@ -105,14 +105,14 @@ export default function ContactUsPage() {
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setLoading(true);
-    console.log(formData);
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
 
     try {
-      // Send thank you email
+      // // Send thank you email
       await sendThankYouEmail(formData.email);
       // Send contact data to the team
+      // console.log(formData)
       await sendEmailToTeam(formData);
 
       // console.log(formData)
