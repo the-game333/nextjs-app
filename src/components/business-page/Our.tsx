@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 type OurProps = {};
 
@@ -27,9 +28,11 @@ const Card: React.FC<Record<keyof (typeof CARD_DATA)[number], string>> = (props)
       <div className="absolute p-4 text-3xl -translate-x-1/2 translate-y-full rounded-full bg-gradient-to-b from-gray-900 to-gray-600 -top-1/2 left-1/2">
         {emo}
       </div>
-      <h6 className="text-lg">{title}</h6>
-      <p className="my-5 text-gray-600">{content}</p>
-      <button className="font-semibold underline">Read More</button>
+      <h6 className="text-xl">{title}</h6>
+      <p className="my-5 text-base text-gray-600">{content}</p>
+      <Link href={'/contact'}>
+        <button className="text-base font-semibold underline">Read More</button>
+      </Link>
     </div>
   );
 };

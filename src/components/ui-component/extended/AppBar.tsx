@@ -325,13 +325,13 @@ const AppBar = ({ ...others }) => {
                   Features
                 </Button>
               </HtmlTooltip>
-              {/* <HtmlTooltip
+              <HtmlTooltip
                 title={
                   <Card sx={{ boxShadow: '0px 1px 4px 0px black', backgroundColor: 'black', color: 'rgb(255, 255, 255)' }}>
                     <CardContent sx={{ color: 'rgb(255, 255, 255)' }}>
                       <Grid container spacing={2}>
                         <Grid item md={12} display={'flex'} flexDirection={'column'} gap={'20px'}>
-                          <TooltipButton onClick={() => router.push('/businesses')} text={'Business'} />
+                          <TooltipButton onClick={() => router.push('/business')} text={'Business'} />
                           <TooltipButton onClick={() => router.push('/ai-agents')} text={'Ai Agents'} />
                         </Grid>
                       </Grid>
@@ -348,7 +348,7 @@ const AppBar = ({ ...others }) => {
                 >
                   Business
                 </Button>
-              </HtmlTooltip> */}
+              </HtmlTooltip>
 
               <HtmlTooltip
                 title={
@@ -476,7 +476,7 @@ const AppBar = ({ ...others }) => {
                         onClick={scrollToView}
                         data={fdata}
                       />
-                      {/* <MenuAccordion
+                      <MenuAccordion
                         title="Business"
                         icon={
                           <>
@@ -499,11 +499,11 @@ const AppBar = ({ ...others }) => {
                         data={[
                           {
                             text: 'Business',
-                            link: '/businesses'
+                            link: '/business'
                           },
                           { text: 'AI Agents', link: '/ai-agents' }
                         ]}
-                      /> */}
+                      />
                       <MenuAccordion title="Solutions" icon={<EmojiObjectsIcon />} data={Sdata}></MenuAccordion>
                       <Link style={{ textDecoration: 'none' }} href="/vision">
                         <ListItemButton component="a">

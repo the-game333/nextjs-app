@@ -22,7 +22,7 @@ const DATA = [
     subHeading: "Chat Support That's Available Around the Clock: Always Ready to Assist, No Matter When You Reach Out",
     paragraph:
       "Have you ever had a chat with a chatbot that felt surprisingly human? That's because of Natural Language Understanding (NLU). It's the special ability that allows chatbots to grasp what you're saying and respond like a real person. InfraHive's chatbots are experts at this. They understand your questions and messages effortlessly, making your conversations smooth and enjoyable.\nInfraHive's cutting-edge AI technology powers our chatbots, giving them this remarkable ability. When you engage with InfraHive's chatbots, you'll be pleasantly surprised at how easy and natural it feels, just like chatting with a helpful friend.",
-    src: '/assets/images/f-3.png'
+    src: '/assets/images/f-3.jpg'
   }
 ];
 
@@ -53,8 +53,8 @@ const Card = (props: P) => {
         break;
       case 'blue':
         colorClass = {
-          dark: 'text-blue-400',
-          light: 'text-blue-200'
+          dark: 'text-blue-500',
+          light: 'text-blue-300'
         };
         break;
       case 'green':

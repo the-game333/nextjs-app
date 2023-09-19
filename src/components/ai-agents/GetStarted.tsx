@@ -14,7 +14,7 @@ const GetStarted: React.FC<GetStartedProps> = () => {
       </p>
       <button
         onClick={() => router.push('/contact')}
-        className="w-full max-w-sm px-12 py-3 hover:-translate-y-[2px] active:translate-y-0 transition-all duration-500 text-base text-white bg-gradient-to-r from-yellow-100 via-yellow-300 to-yellow-500 rounded-xl"
+        className="py-4 font-medium text-base w-full min-w-[240px] text-white bg-yellow-400 px-7 rounded-xl sm:w-auto transition-all duration-300 hover:-translate-y-[2px] active:translate-y-0"
       >
         Contact Us
       </button>
