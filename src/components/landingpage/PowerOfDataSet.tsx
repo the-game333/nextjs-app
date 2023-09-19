@@ -13,9 +13,8 @@ export default function PowerOfDataSet() {
       <div className="aspect-auto rounded-3xl  border border-gray-100 bg-transparent p-8 shadow-2xl shadow-gray-600/10 dark:border-gray-700 dark:bg-[#15131D] dark:shadow-none">
         <div className="px-6 pb-10 space-y-4 md:px-0">
           <h2 className="text-3xl font-bold text-center text-white dark:text-white md:text-5xl">
-            Data is{' '}
             <span className="relative whitespace-nowrap">
-              Fuel to AI
+              Fuel the AI
               <span className="absolute left-0 top-10 md:top-14">
                 <svg className="w-full" xmlns="http://www.w3.org/2000/svg" width="249" height="17" viewBox="0 0 249 17" fill="none">
                   <path
@@ -43,6 +42,7 @@ export default function PowerOfDataSet() {
                 </svg>
               </span>{' '}
             </span>
+            with your own data
           </h2>
         </div>
         <div className="relative ml-auto">
