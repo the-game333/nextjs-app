@@ -434,16 +434,17 @@ const AppBar = ({ ...others }) => {
                 </Button>
               </a>
               <Link href="/contact">
-                <Button
-                  color="inherit"
-                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
-                  component={Link}
-                  target="_blank"
+                <span
+                  className="inline-block bg-yellow-400 border border-yellow-400 hover:bg-transparent text-white hover:text-yellow-400 no-underline px-6 pt-2 pb-3 rounded-lg transition-all duration-500"
+                  // color="inherit"
+                  // sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
+                  // component={Link}
+                  // target="_blank"
                 >
                   Contact Us
-                </Button>
+                </span>
               </Link>
-              <Button
+              {/* <Button
                 className="my-auto mt-4"
                 sx={{
                   color: '#000000',
@@ -455,7 +456,7 @@ const AppBar = ({ ...others }) => {
                 href="https://getwaitlist.com/waitlist/9765"
               >
                 Get Demo
-              </Button>
+              </Button> */}
             </Stack>
             <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
               <IconButton sx={{ color: 'white' }} onClick={drawerToggler(true)} size="large">
