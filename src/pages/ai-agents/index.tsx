@@ -3,7 +3,7 @@ import Accordian from 'components/ai-agents/Accordian';
 import React from 'react';
 import Footer from 'components/landingpage/Footer';
 import GetStarted from 'components/ai-agents/GetStarted';
-import TrustedBy from 'components/ai-agents/TrustedBy';
+// import TrustedBy from 'components/ai-agents/TrustedBy';
 import How from 'components/ai-agents/How';
 import Hero from 'components/ai-agents/Hero';
 import Features from 'components/ai-agents/Features';

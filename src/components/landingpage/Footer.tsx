@@ -3,8 +3,8 @@ import Image from 'next/image';
 
 const FooterLinks = [
   { name: '', path: '#' },
-  { name: '', path: '#' },
-  { name: '', path: '#' },
+  { name: 'Privacy Policy', path: '/privacy-policy' },
+  { name: 'Terms & Conditions', path: '/terms-and-conditions' },
   { name: 'Contact Now', path: '/contact' }
 ];
 

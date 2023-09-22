@@ -64,7 +64,7 @@ const AccordianItemComp: React.FC<T> = (props) => {
     <div
       onClick={handleClick}
       className={clsx(
-        'border-t border-t-gray-200 bg-gradient-to-r from-pink-200 via-purple-200 to-indigo-300',
+        'border-t border-t-yellow-600 bg-gradient-to-r from-yellow-200 to-yellow-400',
         `${rounded && idx === 0 && 'rounded-t-xl'}`,
         `${rounded && idx === ACCORDIAN_DATA.length - 1 && 'rounded-b-xl'}`
       )}
