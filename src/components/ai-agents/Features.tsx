@@ -47,20 +47,20 @@ const Card = (props: P) => {
     switch (colorArg) {
       case 'red':
         colorClass = {
-          dark: 'text-red-400',
-          light: 'text-red-200'
+          dark: 'text-yellow-300',
+          light: 'text-white'
         };
         break;
       case 'blue':
         colorClass = {
-          dark: 'text-blue-500',
-          light: 'text-blue-300'
+          dark: 'text-yellow-300',
+          light: 'text-white'
         };
         break;
       case 'green':
         colorClass = {
-          dark: 'text-green-400',
-          light: 'text-green-300'
+          dark: 'text-yellow-300',
+          light: 'text-white'
         };
         break;
       default:
@@ -82,8 +82,8 @@ const Card = (props: P) => {
       </div>
       <div className={`${reverse ? 'md:-order-1 md:pl-6' : 'md:order-1 md:pr-6'} self-center text-left`}>
         <div>
-          <h6 className={clsx('mb-3 text-2xl', getColor(color).dark)}>{heading}</h6>
-          <p className={clsx('text-gray-400', getColor(color).light)}>{subHeading}</p>
+          <h6 className={clsx('mb-3 text-2xl', getColor(color).light)}>{heading}</h6>
+          <p className={clsx('text-gray-400', getColor(color).dark)}>{subHeading}</p>
           <br />
           <br />
           <p className="text-gray-500">
