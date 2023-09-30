@@ -120,9 +120,9 @@ const Landing: React.FC = () => {
         <Header />
         {/* <NewHeader /> */}
       </HeaderWrapper>
-      <FullyWrapper>
+      {/* <FullyWrapper>
         <Clients />
-      </FullyWrapper>
+      </FullyWrapper> */}
       <FullyWrapper>
         <EndlessPossibilities />
       </FullyWrapper>
