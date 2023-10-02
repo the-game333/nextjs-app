@@ -12,7 +12,7 @@ const Intro = () => {
           sx={{ color: 'black', height: '55px', width: '140px' }}
           variant="contained"
           component={Link}
-          href="/contact"
+          href="https://calendar.app.google/gxXHjamQLvYxxdpA9"
           target="_blank"
         >
           Request demo
@@ -25,10 +25,10 @@ const Intro = () => {
             width: '140px'
           }}
           variant="contained"
-          href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
+          href="https://calendar.app.google/gxXHjamQLvYxxdpA9"
           target={'_blank'}
         >
-          Contact Now
+          Book Demo
         </Button>
       </div>
     </div>

@@ -13,7 +13,7 @@ const GetStarted: React.FC<GetStartedProps> = () => {
         Let&apos;s dive in and get started on this exciting adventure together!&quot;
       </p>
       <button
-        onClick={() => router.push('/contact')}
+        onClick={() => router.push('https://calendar.app.google/gxXHjamQLvYxxdpA9')}
         className="py-4 font-medium text-base w-full min-w-[240px] text-white bg-yellow-400 px-7 rounded-xl sm:w-auto transition-all duration-300 hover:-translate-y-[2px] active:translate-y-0"
       >
         Contact Us

@@ -388,7 +388,7 @@ const AppBar = ({ ...others }) => {
                 </Button>
               </HtmlTooltip>
 
-              <Link href="/vision">
+              {/* <Link href="/vision">
                 <Button
                   color="inherit"
                   sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
@@ -397,7 +397,7 @@ const AppBar = ({ ...others }) => {
                 >
                   Vision
                 </Button>
-              </Link>
+              </Link> */}
               <Link href="/apps">
                 <Button
                   color="inherit"
@@ -433,7 +433,17 @@ const AppBar = ({ ...others }) => {
                   Blog
                 </Button>
               </a>
-              <Link href="/contact">
+              <a href="/contact" target={'_blank'}>
+                <Button
+                  color="inherit"
+                  sx={{ '&:hover': { backgroundColor: 'transparent' }, color: 'rgb(255, 255, 255);' }}
+                  component={Link}
+                  target="_blank"
+                >
+                  Contact
+                </Button>
+              </a>
+              <Link href="https://calendar.app.google/gxXHjamQLvYxxdpA9">
                 <span
                   className="inline-block bg-yellow-400 border border-yellow-400 hover:bg-transparent text-white hover:text-yellow-400 no-underline px-6 pt-2 pb-3 rounded-lg transition-all duration-500"
                   // color="inherit"
@@ -441,7 +451,7 @@ const AppBar = ({ ...others }) => {
                   // component={Link}
                   // target="_blank"
                 >
-                  Contact Us
+                  Book Demo
                 </span>
               </Link>
               {/* <Button

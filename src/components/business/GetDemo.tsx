@@ -24,7 +24,7 @@ const GetDemo = () => {
         }}
         variant="contained"
         component={Link}
-        href="/contact"
+        href="https://calendar.app.google/gxXHjamQLvYxxdpA9"
         target="_blank"
       >
         Request Demo

@@ -39,7 +39,7 @@ const Notification = () => (
             <Button
               variant="contained"
               color="inherit"
-              href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
+              href="https://calendar.app.google/gxXHjamQLvYxxdpA9"
               target={'_blank'}
               sx={{
                 width: '60%',

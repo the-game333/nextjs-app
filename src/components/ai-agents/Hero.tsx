@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = () => {
         collaboration applications, and an extensible platform to your team’s fingertips.
       </p>
       <button
-        onClick={() => router.push('/contact')}
+        onClick={() => router.push('https://calendar.app.google/gxXHjamQLvYxxdpA9')}
         className="py-3 mt-8 font-medium text-base w-full min-w-[240px] text-white bg-yellow-400 px-7 rounded-xl sm:w-auto transition-all duration-300 hover:-translate-y-[2px] active:translate-y-0"
       >
         Get Started

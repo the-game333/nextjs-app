@@ -131,7 +131,7 @@ export default function InfraSpeed() {
           </div>
         </div>
         <div className="mt-10 flex justify-center pb-5 md:mt-20 md:pb-10">
-          <a href="https://getwaitlist.com/waitlist/9765" className="bg rounded-full border px-7 py-2">
+          <a href="https://calendar.app.google/gxXHjamQLvYxxdpA9" className="bg rounded-full border px-7 py-2">
             Explore More with a Demo
           </a>
         </div>

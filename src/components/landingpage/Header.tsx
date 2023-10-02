@@ -129,7 +129,7 @@ export default function Header() {
             </div>
             <div className="relative flex flex-wrap justify-center mt-16 gap-x-6 gap-y-4">
               <a
-                href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
+                href="https://calendar.app.google/gxXHjamQLvYxxdpA9"
                 className="relative flex items-center justify-center w-full px-6 before:bg-primary h-11 before:absolute before:inset-0 before:rounded-full before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max"
               >
                 <span className="relative flex items-center gap-2 px-6 py-4 text-base font-semibold text-black bg-white rounded-full">
@@ -150,7 +150,7 @@ export default function Header() {
                       </clipPath>
                     </defs>
                   </svg>
-                  <Link sx={{ color: 'rgba(48, 48, 48, 1)', textDecoration: 'none' }} href="https://getwaitlist.com/waitlist/9765">
+                  <Link sx={{ color: 'rgba(48, 48, 48, 1)', textDecoration: 'none' }} href="https://calendar.app.google/gxXHjamQLvYxxdpA9">
                     Get Demo
                   </Link>
                 </span>

@@ -30,7 +30,7 @@ const Card: React.FC<Record<keyof (typeof CARD_DATA)[number], string>> = (props)
       </div>
       <h6 className="text-xl">{title}</h6>
       <p className="my-5 text-base text-gray-600">{content}</p>
-      <Link href={'/contact'}>
+      <Link href={'https://calendar.app.google/gxXHjamQLvYxxdpA9'}>
         <button className="text-base font-semibold underline">Read More</button>
       </Link>
     </div>

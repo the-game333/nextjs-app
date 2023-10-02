@@ -79,7 +79,7 @@ const OptimizeStreamline = () => {
             </p>
           </div>
           <div className=" mt-10 justify-center text-center">
-            <Link href="https://getwaitlist.com/waitlist/9765">
+            <Link href="https://calendar.app.google/gxXHjamQLvYxxdpA9">
               <span className="cursor-pointer rounded-full border bg-white p-3 px-5 font-bold text-black">Get Demo</span>
             </Link>
           </div>

@@ -22,7 +22,7 @@ const Hero: React.FC<HeroProps> = () => {
           {/* <button className="w-full py-4 font-medium text-black bg-white px-7 rounded-xl sm:w-auto transition-all duration-300 hover:-translate-y-[2px] active:translate-y-0">
             Request Demo
           </button> */}
-          <Link href={'/contact'}>
+          <Link href={'https://calendar.app.google/gxXHjamQLvYxxdpA9'}>
             <button className="py-4 shadow-yellow-100 shadow font-medium text-base w-full min-w-[240px] text-white bg-yellow-400 px-7 rounded-xl sm:w-auto transition-all duration-300 hover:-translate-y-[2px] active:translate-y-0">
               Get Started
             </button>
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = () => {
           <div className="self-center text-center sm:-order-1 sm:text-left sm:flex">
             <div>
               <h2 className="text-2xl sm:text-3xl">WE HELP COMPANIES HARNESS THE POWER OF ARTIFICIAL INTELLIGENCE</h2>
-              <Link href={'/contact'}>
+              <Link href={'https://calendar.app.google/gxXHjamQLvYxxdpA9'}>
                 <button className="w-full py-3 mt-5 bg-white bg-opacity-30 px-7 rounded-xl sm:max-w-xs">Learn More</button>
               </Link>
             </div>

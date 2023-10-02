@@ -39,7 +39,7 @@ const PricingComp = () => {
           variant="contained"
           component={TypedLink}
           target={'_blank'}
-          href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
+          href="https://calendar.app.google/gxXHjamQLvYxxdpA9"
           //  target="_blank"
         >
           Contact Now

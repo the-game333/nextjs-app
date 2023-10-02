@@ -17,8 +17,8 @@ export default function AiAgents() {
         <AppBar background={'transparent'} />
         <Container>
           <Hero />
-          <Features />
           <How />
+          <Features />
           {/* <TrustedBy /> */}
           <GetStarted />
           <Accordian />

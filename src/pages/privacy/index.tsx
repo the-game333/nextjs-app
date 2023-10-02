@@ -1652,7 +1652,7 @@ const PrivacyPolicy = () => {
                                                                     that information, or delete it.&nbsp;To request to review, update, or
                                                                     delete your personal information, please&nbsp;visit:&nbsp;
                                                                     <a
-                                                                      href="https://w0zxkfg7yyu.typeform.com/to/uUt0n1S4"
+                                                                      href="https://calendar.app.google/gxXHjamQLvYxxdpA9"
                                                                       target="_blank"
                                                                       rel="noopener noreferrer"
                                                                     >
