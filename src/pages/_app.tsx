@@ -81,6 +81,16 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="google-site-verification" content="UZCBen_9acSNbhCD18KTr1GcKS70gGTy5JyzKa8LqVs" />
         <style>@import url('https://fonts.googleapis.com/css2?family=Sansita:wght@400;700;800;900&display=swap');</style>
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-Q3VTFQ4NNE" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-Q3VTFQ4NNE');
+        `}
+      </Script>
       </Head>
 
       <Provider store={store}>
