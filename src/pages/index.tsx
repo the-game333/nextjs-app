@@ -28,6 +28,8 @@ import OptimizeStreamline from 'components/landingpage/OptimizeStreamline';
 import Clients from 'components/landingpage/Clients';
 import InfraSpeed from 'components/landingpage/EndlessPossibilities';
 import InfraSpeedComp from 'components/landingpage/InfraSpeed';
+import Script from 'next/script'
+
 // import NewHeader from 'components/landingpage/NewHeader';
 const HeaderWrapper = styled('div')(({ theme }) => ({
   overflowX: 'hidden',
@@ -102,6 +104,18 @@ const Landing: React.FC = () => {
 
   return (
     <>
+    <div className="container">
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-Q3VTFQ4NNE" />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+        
+          gtag('config', 'G-Q3VTFQ4NNE');
+        `}
+      </Script>
+    </div>
       <HeaderWrapper id="home">
         {/* <Banner /> */}
         <AppBar background={'transparent'} llmref={llmref} ref2={ref2} ref3={ref3} ref4={ref4} />

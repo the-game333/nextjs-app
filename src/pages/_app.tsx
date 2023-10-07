@@ -82,13 +82,6 @@ function MyApp({ Component, pageProps: { session, ...pageProps } }: AppProps & {
         <meta name="google-site-verification" content="UZCBen_9acSNbhCD18KTr1GcKS70gGTy5JyzKa8LqVs" />
         <style>@import url('https://fonts.googleapis.com/css2?family=Sansita:wght@400;700;800;900&display=swap');</style>
       </Head>
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-RR7ES8TW6Q" />
-      <Script id="google-analytics">
-        {`window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-RR7ES8TW6Q');`}
-      </Script>
 
       <Provider store={store}>
         <PersistGate loading={null} persistor={persister}>
