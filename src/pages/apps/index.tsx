@@ -181,10 +181,10 @@ const index = () => {
         <h1 className="my-4 text-center text-2xl font-semibold  text-[#FFFFFF]">Explore Apps</h1>
         <hr className="opacity-40" />
         {/* Categories */}
-        <div className="my-4 flex justify-between">
-          <div className="flex gap-4">
+        <div className="my-3  justify-between absolute">
+          <div className=" gap-3">
             {CategoriesBar.map((cat, index) => (
-              <button key={index} onClick={() => setCategory(cat.value)}>
+              <button key={index} onClick={() => setCategory(cat.value)} className='px-2' >
                 <p className={`${category === cat.value ? 'font-semibold text-white' : 'font-semibold text-slate-500'} text-xs md:text-sm`}>
                   {cat.name}
                 </p>
@@ -229,7 +229,7 @@ const index = () => {
           }}
         ></p>
         {/* Apps */}
-        <div className="my-12 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  ">
+        <div className="my-12 pt-3 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3  ">
           {Data.map((app, index) =>
             category === 'all' ? (
               <AppCard

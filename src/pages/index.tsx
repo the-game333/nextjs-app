@@ -140,9 +140,9 @@ const Landing: React.FC = () => {
       <FullyWrapper>
         <EndlessPossibilities />
       </FullyWrapper>
-      <FullyWrapper>
+      {/* <FullyWrapper>
         <InfraSpeedComp />
-      </FullyWrapper>
+      </FullyWrapper> */}
       <SecondWrapper id="llm" ref={llmref}>
         <EasyToUse setOpen={setOpen} />
       </SecondWrapper>
