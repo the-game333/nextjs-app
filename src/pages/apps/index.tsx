@@ -30,72 +30,104 @@ const Data: {
   heading: string;
   desc: string;
   url: string;
-  category: 'all' | 'data' | 'analysis' | 'generation' | 'custom';
+  category: 'all' | 'programming' | 'translate' | 'hr' | 'writing' | 'assistant';
   color: 'bg-yellow-500' | 'bg-blue-500' | 'bg-orange-400' | 'bg-green-400';
 }[] = [
   {
-    logo: '/assets/images/apps/sentiment.png',
-    heading: 'Sentiment Analyze',
-    desc: 'Assess the sentiment of any text as positive or negative.',
+    logo: '/assets/images/apps/sql.png',
+    heading: 'SQL Creator',
+    desc: 'Write SQL from natural language by pasting in your schema with the request.',
     url: '/apps/sentiment-analyze',
-    category: 'custom',
+    category: 'programming',
     color: 'bg-orange-400'
   },
   {
-    logo: '/assets/images/apps/text_summarise.png',
-    heading: 'Text Summarize',
-    desc: 'Summarize any text, exactly how you need it.',
+    logo: '/assets/images/apps/developer.png',
+    heading: 'Developer Relation Advisor',
+    desc: 'I am Developer Relations Consultant Tom. I can research software packages and their available documentation.',
     url: '/apps/text-summarize',
-    category: 'analysis',
+    category: 'programming',
     color: 'bg-green-400'
   },
   {
-    logo: '/assets/images/apps/entity.png',
-    heading: 'Entity Extract',
-    desc: 'Detect, extract, and count relevant keywords and phrases from text data',
+    logo: '/assets/images/apps/code.png',
+    heading: 'Code Interpreter',
+    desc: 'Code interpreter, clarifying the syntax and semantics of the code.',
     url: '/apps/entity-extract',
-    category: 'data',
+    category: 'programming',
     color: 'bg-blue-500'
   },
   {
-    logo: '/assets/images/apps/transformer.png',
-    heading: 'Data Transformer',
-    desc: 'A general purpose interface to apply a function to a set of points.',
+    logo: '/assets/images/apps/languages.png',
+    heading: 'Translate Assistant',
+    desc: 'A multilingual translator that provides translation capabilities in multiple languages. Input the text you need to translate and select the target language.',
     url: '/apps/data-transformer',
-    category: 'data',
+    category: 'translate',
     color: 'bg-blue-500'
   },
   {
-    logo: '/assets/images/apps/video.png',
-    heading: 'Video Summarize',
-    desc: 'Summarize any video or audio file from a Google Drive URL',
+    logo: '/assets/images/apps/employee.png',
+    heading: 'Employee Training Plan',
+    desc: 'Employee Training Program Assistant',
     url: '/apps/video-summerize',
-    category: 'custom',
+    category: 'hr',
     color: 'bg-orange-400'
   },
   {
-    logo: '/assets/images/apps/sql.png',
-    heading: 'SQL Write with Pasted Schema',
-    desc: 'Write SQL from natural language by pasting in your schema with the request.',
+    logo: '/assets/images/apps/interviewer.png',
+    heading: 'AI FrontEnd Interviewer',
+    desc: 'A simulated front-end interviewer that tests the skill level of front-end development through questioning.',
     url: '/apps/sql-write',
-    category: 'data',
+    category: 'hr',
     color: 'bg-blue-500'
   },
   {
-    logo: '/assets/images/apps/text_classification.png',
-    heading: 'Text Classification',
-    desc: 'Craft any type of content.',
+    logo: '/assets/images/apps/copy.png',
+    heading: 'Social Media Copy-Writing Assistant',
+    desc: 'Write promotional copy for multiple social media platforms for you.',
     url: '/apps/text-classification',
-    category: 'generation',
+    category: 'writing',
     color: 'bg-yellow-500'
   },
   {
-    logo: '/assets/images/apps/translator.png',
-    heading: 'Language Translate',
-    desc: 'Translate text from any language to any language.',
+    logo: '/assets/images/apps/meeting.png',
+    heading: 'Meeting Minutes & Summary',
+    desc: 'Generate Meeting Minutes',
     url: '/apps/language-translate',
-    category: 'analysis',
+    category: 'writing',
     color: 'bg-green-400'
+  },
+  {
+    logo: '/assets/images/apps/planning.png',
+    heading: 'Project Planner Agent',
+    desc: 'Project Plan Writing',
+    url: '/apps/sql-write',
+    category: 'writing',
+    color: 'bg-blue-500'
+  },
+  {
+    logo: '/assets/images/apps/consultant.png',
+    heading: 'Strategic Consultant Expert',
+    desc: 'I can answer your questions related to strategic marketing.',
+    url: '/apps/text-classification',
+    category: 'assistant',
+    color: 'bg-yellow-500'
+  },
+  {
+    logo: '/assets/images/apps/advisor.png',
+    heading: 'Legal Advisor',
+    desc: 'As your legal advisor, I will answer your legal questions for you.',
+    url: '/apps/language-translate',
+    category: 'assistant',
+    color: 'bg-green-400'
+  },
+  {
+    logo: "/assets/images/apps/seo.png",
+    heading: "Fully SEO Optimized Article including FAQ's",
+    desc: "Fully SEO Optimized Article including FAQ's",
+    url: "/apps/language-translate",
+    category: "assistant",
+    color:"bg-green-400"
   }
 ];
 
@@ -106,24 +138,29 @@ const CategoriesBar: { name: string; value: string; color: string }[] = [
     color: 'red-500'
   },
   {
-    name: 'Data',
-    value: 'data',
+    name: 'Programming',
+    value: 'programming',
     color: 'blue-400'
   },
   {
-    name: 'Text Analysis',
-    value: 'analysis',
+    name: 'Translate',
+    value: 'translate',
     color: 'green-500'
   },
   {
-    name: 'Text Generation',
-    value: 'generation',
+    name: 'HR',
+    value: 'hr',
     color: 'yellow-500'
   },
   {
-    name: 'Custom',
-    value: 'custom',
+    name: 'Writing',
+    value: 'writing',
     color: 'orange-500'
+  },
+  {
+    name:"Assistant",
+    value: "assistant",
+    color: 'blue-400'
   }
 ];
 
@@ -200,7 +237,7 @@ const index = () => {
                 desc={app.desc}
                 heading={app.heading}
                 // url={'https://calendly.com/infrahive/infrahive-demo'}
-                url={app.url}
+                url={""}
                 key={index}
                 color={app.color}
               />
@@ -210,7 +247,7 @@ const index = () => {
                   logo={app.logo}
                   desc={app.desc}
                   heading={app.heading}
-                  url={'https://calendly.com/infrahive/infrahive-demo'}
+                  url={''}
                   key={index}
                   color={app.color}
                 />
