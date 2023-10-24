@@ -65,7 +65,7 @@ const OrderComplete = ({ open }: { open: boolean }) => {
             </Grid>
             <Grid item xs={12} sx={{ m: 3 }}>
               <Box sx={{ position: 'relative', width: { xs: '200px', md: '400px' }, height: { xs: '112px', md: '223px' } }}>
-                <Image src={completed} alt="Order Complete" layout="fill" />
+                {completed && <Image src={completed} alt="Order Complete" layout="fill" /> }
               </Box>
             </Grid>
             <Grid item xs={12} sm={9}>

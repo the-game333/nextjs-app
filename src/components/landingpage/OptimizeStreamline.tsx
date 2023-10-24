@@ -9,7 +9,7 @@ const OptimizeStreamline = () => {
     <div className="grid grid-cols-1 gap-8  px-3  pt-20 md:columns-1 md:grid-cols-1 md:px-5 xl:px-0 ">
       <div className="relative mt-0 py-5 md:mt-20 md:py-40">
         <div className="pointer-events-none absolute left-2/4 top-2/4 z-0 hidden -translate-x-2/4 -translate-y-2/4 lg:block">
-          <Image alt='circles' src={Circles} />
+         {Circles &&  <Image alt='circles' src={Circles} />}
         </div>
         <div className="space-y-4 px-6 pb-10 md:px-0">
           <h2 className="flex flex-col text-center text-3xl font-bold text-white dark:text-white md:text-5xl">

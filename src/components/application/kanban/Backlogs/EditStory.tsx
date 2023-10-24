@@ -220,7 +220,7 @@ const EditStory = ({ story, open, handleDrawerOpen }: Props) => {
                                   isOptionEqualToValue={(option) => option.id === formik.values.assign}
                                   renderOption={(props, option) => (
                                     <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                                      <Image height="20" width="20" src={`${avatarImage}/${option.avatar}`} alt="" />
+                                     {avatarImage && <Image height="20" width="20" src={`${avatarImage}/${option.avatar}`} alt="" /> } 
                                       {option.name}
                                     </Box>
                                   )}

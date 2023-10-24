@@ -96,9 +96,9 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
 
             <div className="relative flex justify-center mt-10 md:mt-5">
               <span className="-z-1 absolute -top-[100px]">
-                <Image alt="Eclipse" src={Eclipse} />
+             {Eclipse && <Image alt="Eclipse" src={Eclipse} />}   
               </span>
-              <Image alt="Mobile" src={Mobile} height={250} width={300} />
+             {Mobile && <Image alt="Mobile" src={Mobile} height={250} width={300} /> }
             </div>
           </div>
           <div className="p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10  md:col-span-3">
@@ -191,19 +191,19 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
             </div>
             <div className="grid items-center grid-cols-5 gap-4 mt-20">
               <div>
-                <Image alt="Image1" src={Image1} height={64} width={64} />
+              {Image1 &&   <Image alt="Image1" src={Image1} height={64} width={64} />}
               </div>
               <div>
-                <Image alt="Image2" src={Image2} height={64} width={64} />
+                {Image2 &&  <Image alt="Image2" src={Image2} height={64} width={64} />}
               </div>
               <div>
-                <Image alt="Image3" src={Image3} height={64} width={64} />
+                {Image3 && <Image alt="Image3" src={Image3} height={64} width={64} />}
               </div>
               <div>
-                <Image alt="Image4" src={Image4} height={64} width={64} />
+                {Image4 && <Image alt="Image4" src={Image4} height={64} width={64} />}
               </div>
               <div>
-                <Image alt="Image5" src={Image5} height={64} width={64} />
+                {Image5 && <Image alt="Image5" src={Image5} height={64} width={64} />}
               </div>
             </div>
             <div></div>
@@ -238,7 +238,7 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
                   filter: 'blur(80px)'
                 }}
               ></p>
-              <Image alt="code" src={Code} className="rounded-xl" height={250} width={350} />
+           {Code &&    <Image alt="code" src={Code} className="rounded-xl" height={250} width={350} />}
             </div>
           </div>
           <div className="col-span-3 p-8 bg-transparent border border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 e md:col-span-3">
@@ -258,7 +258,7 @@ export default function Howtowork(props: { setOpen: React.Dispatch<React.SetStat
             <div className="mt-20 lg:mt-[130px]">
               <div className="h-[100px] max-w-[618px]">
                 {/* <Image src={Logs} className="rounded-xl" /> */}
-                <Image alt="logo2" src={Logs2} className="rounded-xl" />
+             {Logs2 &&    <Image alt="logo2" src={Logs2} className="rounded-xl" />}
                 {/* <Image src={Mask} className="rounded-xl" /> */}
               </div>
             </div>

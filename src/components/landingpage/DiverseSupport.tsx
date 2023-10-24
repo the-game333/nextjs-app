@@ -64,29 +64,29 @@ export default function Howtowork2() {
         <div className="flex justify-center">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-4">
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image alt="OpenAI" src={OpenAI} width={176} height={48} />
+            {OpenAI &&  <Image alt="OpenAI" src={OpenAI} width={176} height={48} />} 
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image alt="ChatGPT2" src={ChatGPT2} width={176} height={48} />
+              { ChatGPT2 && <Image alt="ChatGPT2" src={ChatGPT2} width={176} height={48} />}
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image alt="Anthrop" src={Anthrop} width={176} height={48} />
+              {Anthrop && <Image alt="Anthrop" src={Anthrop} width={176} height={48} />}
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image alt="Claude" src={Claude} width={176} height={48} />
+              {Claude && <Image alt="Claude" src={Claude} width={176} height={48} />}
             </div>
           </div>
         </div>
         <div className="mt-6 flex justify-center sm:mt-10">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image alt="Cohere" src={Cohere} width={176} height={48} />
+             {Cohere &&  <Image alt="Cohere" src={Cohere} width={176} height={48} />}
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image alt="HugFace" src={HugFace} width={176} height={48} />
+              {HugFace && <Image alt="HugFace" src={HugFace} width={176} height={48} />}
             </div>
             <div className="flex justify-center rounded-full bg-white p-6">
-              <Image alt="LangChain" src={LangChain} width={176} height={48} />
+              {LangChain && <Image alt="LangChain" src={LangChain} width={176} height={48} />}
             </div>
           </div>
         </div>

@@ -32,13 +32,13 @@ const Hero: React.FC<HeroProps> = () => {
       <div className="pb-12 sm:p b-0">
         <div className="grid grid-cols-1 sm:grid-cols-2">
           <div className="sm:order-1">
-            <Image
+           {true &&  <Image
               src={'/assets/images/graphc.png'}
               alt="ai graphic"
               width={400}
               height={200}
               className="block mx-auto shadow-hero animate-pulse"
-            />
+            />}
           </div>
           <div className="self-center text-center sm:-order-1 sm:text-left sm:flex">
             <div>

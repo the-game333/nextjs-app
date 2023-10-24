@@ -7,7 +7,7 @@ export default function FullyFeatured() {
   return (
     <>
       <span className="absolute -top-60 right-0">
-        <Image alt='Meliukliuk' src={Meliukliuk} />
+     {Meliukliuk &&    <Image alt='Meliukliuk' src={Meliukliuk} />}
       </span>
       <div className="mx-auto px-3 pt-10 md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
         <div className="relative text-gray-600 dark:text-gray-300" id="testimonials">
@@ -70,13 +70,13 @@ export default function FullyFeatured() {
 
           <div className="md:pb-50 mt-5 flex justify-center pb-10">
             {/* <Image alt='main' src={Main} height={430} width={779} className="rounded-xl" /> */}
-            <Image
+         {Prompt &&    <Image
               alt="Prompt"
               src={Prompt}
               height={430}
               width={779}
               className="rounded-xl shadow-[rgba(255,255,255,0.3)_17px_10px_20px] "
-            />
+            />}
           </div>
         </div>
       </div>

@@ -147,7 +147,7 @@ const AddStory = ({ open, handleDrawerOpen }: Props) => {
                           isOptionEqualToValue={(option) => option.id === formik.values.assign}
                           renderOption={(props, option) => (
                             <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                              <Image width={20} height={20} src={`${avatarImage}/${option.avatar}`} alt="" />
+                             {(avatarImage && option.avatar) && <Image width={20} height={20} src={`${avatarImage}/${option.avatar}`} alt="" /> } 
                               {option.name}
                             </Box>
                           )}

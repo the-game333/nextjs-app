@@ -68,7 +68,7 @@ const Blogs = () => {
               className="flex flex-col justify-between p-3 overflow-hidden bg-transparent border border-gray-400 shadow-lg rounded-2xl"
             >
               <div>
-                <Image src={blog.feature_image} alt={blog.title} width={400} height={250} layout="responsive" className="rounded-2xl" />
+              {blog.feature_image && <Image src={blog.feature_image} alt={blog.title} width={400} height={250} layout="responsive" className="rounded-2xl" />}  
                 <div className="py-4">
                   <h3 className="mb-2 text-xl font-semibold text-white dark:text-white">
                     {blog.title.split('').slice(0, 42).join('') + '...'}

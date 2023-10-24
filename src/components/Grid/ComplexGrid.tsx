@@ -25,7 +25,7 @@ export default function ComplexGrid() {
       <Grid container spacing={2}>
         <Grid item>
           <ButtonBase sx={{ width: { xs: '100%', sm: 200 } }}>
-            <Img height={100} width={100} alt="complex" src={banner} />
+         {banner &&    <Img height={100} width={100} alt="complex" src={banner} />}
           </ButtonBase>
         </Grid>
         <Grid item xs={12} sm container>

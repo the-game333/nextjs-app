@@ -103,7 +103,7 @@ export default function PowerOfDataSet() {
                 Import data from your files or Notion to website URL or slack or databases
               </p>
               <span className="absolute hidden right-20 top-40 lg:block">
-                <Image alt="accent" src={Accent} width={168} height={91} />
+             {Accent &&    <Image alt="accent" src={Accent} width={168} height={91} />}
               </span>
             </div>
 
@@ -122,7 +122,7 @@ export default function PowerOfDataSet() {
                 }}
               ></p>
               <div className="relative">
-                <Image alt="div1" src={'/assets/images/landing/step-1-img.png'} className="rounded-xl" width={500} height={200} />
+             {true &&    <Image alt="div1" src={'/assets/images/landing/step-1-img.png'} className="rounded-xl" width={500} height={200} />}
                 {/* <div className="absolute -top-1/4 left-1/2">
                   <Image alt="div2" src={Div2} className="rounded-xl" />
                 </div> */}
@@ -147,10 +147,10 @@ export default function PowerOfDataSet() {
               }}
             ></p>
             <div className="relative flex items-center justify-center gap-10 pt-2 border-gray-100 shadow-2xl md:block aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none md:pt-40">
-              <Image alt="step2" src={'/assets/images/landing/step-2-1-img.png'} width={250} height={500} className="rounded-xl" />
+            {true &&  <Image alt="step2" src={'/assets/images/landing/step-2-1-img.png'} width={250} height={500} className="rounded-xl" /> }
 
               <div className="md:absolute static top-[3.25%] right-1/4">
-                <Image alt="step2" src={'/assets/images/landing/step-2-2-img.png'} width={250} height={500} className="rounded-xl" />
+               {true &&  <Image alt="step2" src={'/assets/images/landing/step-2-2-img.png'} width={250} height={500} className="rounded-xl" />}
               </div>
             </div>
             <div className="p-0 bg-transparent aspect-auto rounded-3xl md:p-8">
@@ -182,11 +182,11 @@ export default function PowerOfDataSet() {
               }}
             ></p>
             <span className="absolute hidden left-1/3 top-2/3 rotate-12 lg:block">
-              <Image alt="accent" src={Accent} />
+            {Accent &&   <Image alt="accent" src={Accent} />}
             </span>
             <div className="p-8 bg-transparent aspect-auto rounded-3xl">
               <div className="pt-2 border-gray-100 shadow-2xl aspect-auto rounded-3xl shadow-gray-600/10 dark:border-gray-700 dark:shadow-none sm:pt-20">
-                <Image alt="step3" width={400} height={300} src={'/assets/images/landing/step-3.png'} className="rounded-xl" />
+               {true && <Image alt="step3" width={400} height={300} src={'/assets/images/landing/step-3.png'} className="rounded-xl" />} 
               </div>
             </div>
           </div>

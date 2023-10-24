@@ -21,7 +21,7 @@ export default function Header() {
     <>
       <div className="relative mb-10 md:mb-20" id="home">
         <div className="absolute top-0">
-          <Image alt="Pattern" src={Pattern} height={500} />
+          {Pattern && <Image alt="Pattern" src={Pattern} height={500} />}
         </div>
         <div aria-hidden="true" className="absolute inset-0 grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
           <div className="from-primary h-56 bg-gradient-to-br to-purple-400 blur-[106px] dark:from-blue-700"></div>
@@ -35,7 +35,7 @@ export default function Header() {
                 InfraH
                 <span className="relative">
                   <span className="absolute -translate-x-1/2 -left-x-1/2 -top-6 w-7">
-                    <Image alt="Bee" src={Bee} width={35} height={35} className="absolute" />
+                   {Bee &&  <Image alt="Bee" src={Bee} width={35} height={35} className="absolute" />}
                   </span>
                   i
                 </span>
@@ -158,19 +158,19 @@ export default function Header() {
             </div>
           </div>
           <div className="absolute w-full">
-            <Image alt="pattern" src={Pattern} height={500} />
+           {Pattern &&  <Image alt="pattern" src={Pattern} height={500} />}
           </div>
         </div>
       </div>
       <div className="flex justify-center p-3 pb-10 mt-20 md:pd-0">
-        <Image
+       {Overview &&  <Image
           alt="Overview"
           src={Overview}
           height={430}
           width={779}
           // className="rounded-xl shadow-[rgba(255,255,255,0.5)_15px_10px_20px]"
           className="rounded-xl shadow-[rgba(255,255,255,0.3)_17px_10px_20px] "
-        />
+        />}
       </div>
     </>
   );

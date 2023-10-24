@@ -341,7 +341,7 @@ const ComingSoon1 = () => {
                               </Typography>
                             </Grid>
                             <Grid item>
-                              <Image src={companyLogo} alt="Berry" width={128} height={27} />
+                            {companyLogo &&   <Image src={companyLogo} alt="Berry" width={128} height={27} />}
                             </Grid>
                           </Grid>
                         </Grid>

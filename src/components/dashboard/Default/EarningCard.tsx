@@ -98,7 +98,7 @@ const EarningCard = ({ isLoading }: EarningCardProps) => {
                         mt: 1
                       }}
                     >
-                      <Image src={EarningIcon} height={30} width={30} alt="Notification" />
+                  {EarningIcon &&     <Image src={EarningIcon} height={30} width={30} alt="Notification" />}
                     </Avatar>
                   </Grid>
                   <Grid item>

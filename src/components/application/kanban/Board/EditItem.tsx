@@ -135,7 +135,7 @@ const EditItem = ({ item, profiles, userStory, columns, handleDrawerOpen }: Prop
                     isOptionEqualToValue={(option) => option.id === formik.values.assign}
                     renderOption={(props, option) => (
                       <Box component="li" sx={{ '& > img': { mr: 2, flexShrink: 0 } }} {...props}>
-                        <Image loading="lazy" width="20" height="20" src={`${avatarImage}/${option.avatar}`} alt="" />
+                      {avatarImage && <Image loading="lazy" width="20" height="20" src={`${avatarImage}/${option.avatar}`} alt="" />}  
                         {option.name}
                       </Box>
                     )}

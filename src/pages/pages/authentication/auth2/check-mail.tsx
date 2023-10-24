@@ -115,7 +115,7 @@ const CheckMail = () => {
                 }}
                 xs={12}
               >
-                <Image alt="Auth method" src={imgMain} width={300} height={300} />
+              {imgMain &&   <Image alt="Auth method" src={imgMain} width={300} height={300} />}
               </Grid>
             </Grid>
           </BackgroundPattern2>

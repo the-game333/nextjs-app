@@ -39,7 +39,7 @@ const Steps: React.FC = () => {
             </div>
           </div>
           <div>
-            <Image width={80} height={30} src={'/assets/images/arrow.png'} alt="arrow" className="rotate-90 md:rotate-0" />
+        {true &&    <Image width={80} height={30} src={'/assets/images/arrow.png'} alt="arrow" className="rotate-90 md:rotate-0" /> }
           </div>
           <div className="flex-1">
             <div className="text-center">
@@ -62,7 +62,7 @@ const Steps: React.FC = () => {
             </div>
           </div>
           <div>
-            <Image width={80} height={30} src={'/assets/images/arrow.png'} alt="arrow" className="rotate-90 md:rotate-0" />
+       {true &&      <Image width={80} height={30} src={'/assets/images/arrow.png'} alt="arrow" className="rotate-90 md:rotate-0" />}
           </div>
           <div className="flex-1">
             <div className="text-center">

@@ -11,7 +11,7 @@ const How: React.FC<HowProps> = () => {
         Boost sales, enhance customer experience, 24*7 availability, cost savings, unmatched speed of responses.
       </p>
       <div className="mx-auto text-center shadow-hero animate-pulse max-w-max">
-        <Image src={'/assets/images/ai-agent-removebg-preview.png'} width={500} height={500} alt="ai-agent" />
+       {"'/assets/images/ai-agent-removebg-preview.png'" && <Image src={'/assets/images/ai-agent-removebg-preview.png'} width={500} height={500} alt="ai-agent" />} 
       </div>
     </section>
   );

@@ -48,14 +48,15 @@ const Clients: React.FC<ClientsProps> = () => {
 
       <div className="mt-24 text-white">
         <div className="grid items-center grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-2">
-          <Image
+      {true &&     <Image
             width={160}
             className="mx-auto shadow-inner max-w-max"
             height={60}
             src={'/assets/images/clients/apex-removebg-preview.png'}
             alt="brand logo"
-          />
-          <Image width={150} className="mx-auto max-w-max" height={60} src={'/assets/images/clients/fl.png'} alt="brand logo" />
+          />}
+         {true && <Image width={150} className="mx-auto max-w-max" height={60} src={'/assets/images/clients/fl.png'} alt="brand logo" />} 
+          
           {/* <Image width={140} className="mx-auto max-w-max brightness-0 invert" height={60} src={'/brands/naver.png'} alt="brand logo" />
           <Image
             width={160}

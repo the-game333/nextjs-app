@@ -78,7 +78,8 @@ const Card = (props: P) => {
   return (
     <div className="grid grid-cols-1 gap-6 my-12 sm:gap-12 md:grid-cols-2">
       <div className={`${reverse ? 'md:order-1' : 'md:-order-1'} h-[300px] bg-white w-full rounded-xl relative overflow-hidden`}>
-        <Image src={src} alt="feature" fill />
+        {src && <Image src={src} alt="feature" fill />}
+        
       </div>
       <div className={`${reverse ? 'md:-order-1 md:pl-6' : 'md:order-1 md:pr-6'} self-center text-left`}>
         <div>

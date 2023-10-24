@@ -77,30 +77,30 @@ export default function Howtowork3() {
                 <h2 className="rounded-t-3xl bg-[#0F0C16] p-6 text-center text-lg text-white md:text-2xl">As full website</h2>
                 <div className="relative flex justify-center py-12">
                   <span className="absolute left-[168px]">
-                    <Image src={Eclipse} alt="" />
+                 {Eclipse &&    <Image src={Eclipse} alt="" />}
                   </span>
-                  <Image src={Alpha} alt="" width={110} height={110} />
+                  {Alpha && <Image src={Alpha} alt="" width={110} height={110} />}
                 </div>
                 <div className="m-3 flex flex-col justify-center rounded-xl bg-[#0E0C15] text-white dark:text-white">
                   <p className="p-7 text-sm  md:text-xs">
                     To add the chat app anywhere on your website, add this iframe to your HTML code.
                   </p>
-                  <Image className="m-auto object-contain" src={AsFullWebsite} alt="AsFullWebsite" width={420} height={110} />
+                  {AsFullWebsite && <Image className="m-auto object-contain" src={AsFullWebsite} alt="AsFullWebsite" width={420} height={110} />}
                 </div>
               </div>
               <div className="relative rounded-3xl border border-t-white dark:border-[#ffffff1a] ">
                 <h2 className="rounded-t-3xl bg-[#0E0C15] p-6 text-center text-lg text-white md:text-2xl">As chatbot</h2>
                 <div className="relative flex justify-center py-12">
                   <span className=" absolute left-[168px]">
-                    <Image src={Eclipse} alt="Eclipse" />
+                  {Eclipse &&   <Image src={Eclipse} alt="Eclipse" />}
                   </span>
-                  <Image src={Robot2} alt="Robot2" width={110} height={110} />
+                 {Robot2 &&  <Image src={Robot2} alt="Robot2" width={110} height={110} />}
                 </div>
                 <div className="m-3 flex flex-col justify-center rounded-xl bg-[#0E0C15] text-white dark:text-white">
                   <p className="p-7 text-sm md:text-xs">
                     To add a chat app to the bottom right of your website add this code to your HTML.
                   </p>
-                  <Image className="m-auto object-contain" src={AsChatBot} alt="AsChatBot" width={420} height={110} />
+                 {AsChatBot &&  <Image className="m-auto object-contain" src={AsChatBot} alt="AsChatBot" width={420} height={110} />}
                 </div>
               </div>
             </div>

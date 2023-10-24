@@ -103,7 +103,7 @@ const Faqs = () => {
                 animation: '5s wings ease-in-out infinite'
               }}
             >
-              <Image src={mailImg} alt="Berry Dashboard" layout="intrinsic" width={'400'} height={'270'} />
+            {mailImg &&  <Image src={mailImg} alt="Berry Dashboard" layout="intrinsic" width={'400'} height={'270'} />} 
             </Box>
           </Grid>
           <Grid item xs={12}>

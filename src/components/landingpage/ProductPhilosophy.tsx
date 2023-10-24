@@ -60,7 +60,7 @@ const Partnership = () => {
                 We prioritize human-centric AI development to enhance abilities, streamline processes, and improve user experiences.
               </p>
               <div className="absolute bottom-0 right-0 left-20 opacity-10">
-                <Image alt="robot" src={Robot} />
+              {Robot &&   <Image alt="robot" src={Robot} />}
               </div>
             </div>
           </div>
@@ -132,7 +132,7 @@ const Partnership = () => {
                 anticipating challenges and forge new paths to success.
               </p>
               <div className="absolute bottom-0 right-0 left-20 opacity-10">
-                <Image alt="chatgpt" src={ChatGPT} />
+              {ChatGPT &&   <Image alt="chatgpt" src={ChatGPT} />}
               </div>
             </div>
           </div>
