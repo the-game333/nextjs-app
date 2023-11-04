@@ -1,0 +1,93 @@
+/* styles/yourComponent.module.css */
+.logos {
+    overflow: hidden;
+    padding: 60px 0;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .logos:before,
+  .logos:after {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  .logos:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(30, 30, 30, 0), rgb(0, 0, 0));
+  }
+  
+  .logos:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  }
+  
+  .moveBox:before {
+    left: 0;
+    background: linear-gradient(to left, rgba(30, 30, 30, 0), rgb(0, 0, 0));
+  }
+  
+  .moveBox:after {
+    right: 0;
+    background: linear-gradient(to right, rgba(0, 0, 0, 0), rgb(0, 0, 0));
+  }
+  .logos:hover .logos-slide {
+    animation-play-state: paused;
+  }
+  
+ 
+  .logos_slide_right {
+    display: flex;
+    animation: animation-slide-right 26s infinite linear;
+  }
+  .logos_slide_right1 {
+    display: flex;
+    animation: animation-slide-right1 32s infinite linear;
+  }
+  .logos_slide_right2 {
+    display: flex;
+    animation: animation-slide-right2 28s infinite linear;
+  }
+
+  
+  
+  
+  @keyframes animation-slide-right {
+    0% {
+      transform: translateX(0%);
+    }
+    99.9% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  @keyframes animation-slide-right1 {
+    0% {
+      transform: translateX(0%);
+    }
+    99.9% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  
+  @keyframes animation-slide-right2 {
+    0% {
+      transform: translateX(0%);
+    }
+    99.9% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0%);
+    }
+  }
+  

@@ -34,6 +34,7 @@ const Footer = () => {
         <div className="w-full mb-4 text-center text-white md:mb-0 md:w-1/2 md:pl-10 md:text-left lg:w-1/3 lg:pl-10">
           <span>Aivinya Inc. © {new Date().getFullYear()}</span>
         </div>
+        
         <div className="flex flex-wrap justify-center w-full gap-4 text-white md:w-1/2 md:justify-end md:gap-8 lg:w-2/3">
           {SocialMedia.map((item, idx) => (
             <a key={idx} target="_blank" href={item.link} className="text-white" style={{ textDecoration: 'none', color: 'white' }}>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ChatBoat from '../../../public/assets/images/ChatBoat.svg';
 import WorkFlows from '../../../public/assets/images/WorkFlows.svg';
 import ChatAggent from '../../../public/assets/images/ChatAggent.svg';
@@ -8,7 +8,12 @@ import Batch from '../../../public/assets/images/Batch.svg';
 import Sql from '../../../public/assets/images/Sql.svg';
 import Tools from '../../../public/assets/images/Tools.svg';
 import Image from 'next/image';
+import styles from "../../styles/EndlessPossibility.module.css";
+import { useEffect } from 'react';
+import InfiLoop from './InfiniteLoop';
+
 export default function InfraSpeed() {
+
   return (
     <div className="mx-auto  px-3 md:max-w-5xl md:px-5 lg:max-w-6xl xl:px-0">
       <div className="text-white dark:text-gray-300" id="testimonials">
@@ -53,89 +58,15 @@ export default function InfraSpeed() {
             </span>
           </h2>
         </div>
-        <div className="mt-5 grid grid-cols-1 gap-4 md:mt-10 md:grid-cols-2 lg:grid-cols-4">
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-              {ChatBoat && <Image alt='ChatBoat' src={ChatBoat} />}
-            </div>
-            <p className="text-2xl">Chat Bots</p>
-          </div>
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-              {WorkFlows && <Image alt='WorkFlows' src={WorkFlows} />}
-            </div>
-            <p className="text-2xl">Workflows</p>
-          </div>
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-              {ChatAggent && <Image alt='ChatAggent' src={ChatAggent} />}
-            </div>
-            <p className="text-2xl">Chat Agents</p>
-            <p
-              style={{
-                height: '30%',
-                width: '10%',
-                top: '20%',
-                left: '52%',
-                transform: 'translateX(50%)',
-                position: 'absolute',
-                borderRadius: '582px',
-                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
-                filter: 'blur(80px)'
-              }}
-            ></p>
-          </div>
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-            {AssistsAI &&   <Image alt='AssistsAI' src={AssistsAI} />}
-            </div>
-            <p className="text-2xl">Assistive AI</p>
-          </div>
+        <InfiLoop/>
 
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-             {CodeConveter &&  <Image alt='CodeConveter' src={CodeConveter} />}
-            </div>
-            <p className="text-2xl">Code Converter</p>
+          <div className="mt-10 flex justify-center pb-5 md:mt-20 md:pb-10">
+            <a href="https://calendar.app.google/gxXHjamQLvYxxdpA9" className="bg rounded-full border px-7 py-2">
+              Explore More with a Demo
+            </a>
           </div>
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-              {Batch && <Image alt='Batch' src={Batch} />}
-            </div>
-            <p className="text-2xl">Batch Operations</p>
-            <p
-              style={{
-                height: '20%',
-                width: '15%',
-                top: '60%',
-                left: '30%',
-                transform: 'translateX(50%)',
-                position: 'absolute',
-                borderRadius: '582px',
-                background: 'linear-gradient(180deg, rgba(99, 35, 196, 0.00) 0%, #FE851D 100%)',
-                filter: 'blur(100px)'
-              }}
-            ></p>
-          </div>
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-             {Sql &&  <Image alt='sql' src={Sql} />}
-            </div>
-            <p className="text-2xl">SQL Generator</p>
-          </div>
-          <div className="flex items-center gap-8 rounded-xl border border-[#ffffff4d] bg-transparent p-7">
-            <div className="rounded-xl bg-[#15131D] p-1">
-             {Tools &&  <Image alt='tools' src={Tools} />}
-            </div>
-            <p className="text-2xl">Tools</p>
-          </div>
-        </div>
-        <div className="mt-10 flex justify-center pb-5 md:mt-20 md:pb-10">
-          <a href="https://calendar.app.google/gxXHjamQLvYxxdpA9" className="bg rounded-full border px-7 py-2">
-            Explore More with a Demo
-          </a>
         </div>
       </div>
-    </div>
+
   );
 }

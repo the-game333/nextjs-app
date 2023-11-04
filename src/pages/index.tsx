@@ -14,6 +14,7 @@ import NextExperience from 'components/landingpage/NextExperience';
 import LanguageCodeType from 'components/landingpage/LanguageCodeType';
 import Notification from 'components/landingpage/Notification';
 import Footer from 'components/landingpage/Footer';
+import Explore from 'components/landingpage/Explore';
 // import Customization from 'layout/Customization';
 import AppBar from 'ui-component/extended/AppBar';
 // import Banner from 'ui-component/extended/Banner';
@@ -143,38 +144,41 @@ const Landing: React.FC = () => {
       {/* <FullyWrapper>
         <InfraSpeedComp />
       </FullyWrapper> */}
-      <SecondWrapper id="llm" ref={llmref}>
+      {/* <SecondWrapper id="llm" ref={llmref}>
         <EasyToUse setOpen={setOpen} />
-      </SecondWrapper>
+      </SecondWrapper> */}
 
-      <ThirdWrapper>
+      {/* <ThirdWrapper>
         <DiverseSupport />
-      </ThirdWrapper>
+      </ThirdWrapper> */}
       <ThirdWrapper id="deploy" ref={ref2}>
         <ApiServices />
       </ThirdWrapper>
-      <FourthWrapper>
+      {/* <FourthWrapper>
         <EmbededDirectly />
-      </FourthWrapper>
-      <FullyWrapper id="prompt" ref={ref3}>
+      </FourthWrapper> */}
+      {/* <FullyWrapper id="prompt" ref={ref3}>
         <PromptEngineering />
-      </FullyWrapper>
-      <FullyWrapper>
+      </FullyWrapper> */}
+      {/* <FullyWrapper>
         <NextExperience />
-      </FullyWrapper>
+      </FullyWrapper> */}
       <FullyWrapper>
         <LanguageCodeType />
       </FullyWrapper>
       <LastWrapper id="data" ref={ref4}>
         <PowerOfDataSet />
       </LastWrapper>
-      <FullyWrapper>
+      {/* <FullyWrapper>
         <ProductPhilosophy />
-      </FullyWrapper>
+      </FullyWrapper> */}
 
       {/*  */}
-      <SecondLastWrapper>
+      {/* <SecondLastWrapper>
         <Blogs />
+      </SecondLastWrapper> */}
+      <SecondLastWrapper>
+        <Explore />
       </SecondLastWrapper>
       {/* <LastWrapper>
         <OptimizeStreamline />
